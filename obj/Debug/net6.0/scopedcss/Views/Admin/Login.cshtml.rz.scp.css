@@ -1,0 +1,227 @@
+*[b-5w4vkayr2p] {
+    font-family: 'Montserrat';
+    box-sizing: border-box;
+}
+
+body[b-5w4vkayr2p] {
+    margin: 0;
+}
+
+.login-box[b-5w4vkayr2p] {
+    width: 100%;
+    margin: auto;
+    max-width: 525px;
+    min-height: 670px;
+    position: relative;
+    background: url(https://info-imgs.vgcloud.vn/2021/09/02/09/dan-mang-lac-mat-voi-mam-com-day-huong-vi-viet-tren-dat-nhat-cua-me-dam-8x.jpeg) no-repeat center;
+    box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
+}
+
+.login-snip[b-5w4vkayr2p] {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding: 90px 70px 50px 70px;
+    background: rgba(28, 43, 43, 0.9);
+}
+
+.login-snip .login[b-5w4vkayr2p],
+.login-snip .sign-up-form[b-5w4vkayr2p] {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    transition: all .4s linear;
+}
+
+.login-snip .sign-in[b-5w4vkayr2p],
+.login-snip .sign-up[b-5w4vkayr2p],
+.login-space .group .check[b-5w4vkayr2p] {
+    display: none;
+}
+
+.login-snip .tab[b-5w4vkayr2p],
+.login-space .group .label[b-5w4vkayr2p],
+.login-space .group .button[b-5w4vkayr2p] {
+    text-transform: uppercase;
+}
+
+.login-snip .tab[b-5w4vkayr2p] {
+    color: lightgray;
+    font-size: 22px;
+    margin-right: 15px;
+    padding-bottom: 5px;
+    margin: 0 15px 10px 0;
+    display: inline-block;
+    border-bottom: 2px solid transparent;
+}
+
+.login-snip .tab:hover[b-5w4vkayr2p] {
+    color: rgb(0, 119, 132);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.login-snip .sign-in:checked+.tab[b-5w4vkayr2p],
+.login-snip .sign-up:checked+.tab[b-5w4vkayr2p] {
+    color: rgb(0, 119, 132);
+    border-color: white;
+}
+
+.login-space[b-5w4vkayr2p] {
+    min-height: 345px;
+    position: relative;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.login-space .group[b-5w4vkayr2p] {
+    margin-bottom: 15px;
+}
+
+.login-space .group .label[b-5w4vkayr2p],
+.login-space .group .input[b-5w4vkayr2p],
+.login-space .group .button[b-5w4vkayr2p] {
+    width: 100%;
+    color: #fff;
+    display: block;
+}
+
+.login-space .group .input[b-5w4vkayr2p],
+.login-space .group .button[b-5w4vkayr2p] {
+    border: none;
+    padding: 15px 20px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, .1);
+}
+
+.login-space .group input[data-type="password"][b-5w4vkayr2p] {
+    -webkit-text-security: circle;
+}
+
+.login-space .group .label[b-5w4vkayr2p] {
+    color: #aaa;
+    font-size: 12px;
+}
+
+.login-space .group .button[b-5w4vkayr2p] {
+    background: rgb(0, 119, 132);
+}
+
+.login-space .group .button:hover[b-5w4vkayr2p] {
+    background: white;
+    color: rgb(0, 119, 132);
+    transition: 0.3s;
+}
+
+.login-space .group label .icon[b-5w4vkayr2p] {
+    width: 15px;
+    height: 15px;
+    border-radius: 2px;
+    position: relative;
+    display: inline-block;
+    background: rgba(255, 255, 255, .1);
+}
+
+.login-space .group label .icon[b-5w4vkayr2p]:before,
+.login-space .group label .icon[b-5w4vkayr2p]:after {
+    content: '';
+    width: 10px;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    transition: all .2s ease-in-out 0s;
+}
+
+.login-space .group label .icon[b-5w4vkayr2p]:before {
+    left: 3px;
+    width: 5px;
+    bottom: 6px;
+    transform: scale(0) rotate(0);
+}
+
+.login-space .group label .icon[b-5w4vkayr2p]:after {
+    top: 6px;
+    right: 0;
+    transform: scale(0) rotate(0);
+}
+
+.login-space .group .check:checked+label[b-5w4vkayr2p] {
+    color: #fff;
+}
+
+.login-space .group .check:checked+label .icon[b-5w4vkayr2p] {
+    background: rgb(0, 119, 132);
+}
+
+.login-space .group .check:checked+label .icon[b-5w4vkayr2p]:before {
+    transform: scale(1) rotate(45deg);
+}
+
+.login-space .group .check:checked+label .icon[b-5w4vkayr2p]:after {
+    transform: scale(1) rotate(-45deg);
+}
+
+.login-snip .sign-in:checked+.tab+.sign-up+.tab+.login-space .login[b-5w4vkayr2p] {
+    transform: rotate(0);
+}
+
+.login-snip .sign-up:checked+.tab+.login-space .sign-up-form[b-5w4vkayr2p] {
+    transform: rotate(0);
+}
+
+*[b-5w4vkayr2p],
+[b-5w4vkayr2p]:after,
+[b-5w4vkayr2p]:before {
+    box-sizing: border-box
+}
+
+.clearfix[b-5w4vkayr2p]:after,
+.clearfix[b-5w4vkayr2p]:before {
+    content: '';
+    display: table
+}
+
+.clearfix[b-5w4vkayr2p]:after {
+    clear: both;
+    display: block
+}
+
+a[b-5w4vkayr2p] {
+    color: inherit;
+    text-decoration: none
+}
+
+
+.hr[b-5w4vkayr2p] {
+    height: 2px;
+    margin: 60px 0 50px 0;
+    background: rgba(255, 255, 255, .2);
+}
+
+.foot[b-5w4vkayr2p] {
+    color: rgb(0, 119, 132);
+    text-align: center;
+}
+
+.foot a:hover[b-5w4vkayr2p] {
+    color: white;
+}
+
+.card[b-5w4vkayr2p] {
+    width: 500px;
+    left: 100px;
+}
+
+[b-5w4vkayr2p]::placeholder {
+    color: #b3b3b3;
+}
+
+@media (max-width:575px) {
+    .card[b-5w4vkayr2p] {
+        left: 33px;
+    }
+}

@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Product Page";
+    var viewItemData = ViewData["Item"];
+}
+
+<div class="text-center">
+    <h1 class="display-4">Product Details</h1>
+    <p>This is Product Index Page</p>
+    @if (viewItemData == null)
+    {
+        <h3>@TempData["msg"]</h3>
+    }
+    else if (viewItemData is Item)
+    {
+        var item = (Item)viewItemData;
+        <dl>
+            <li>Item ID: @item.ItemId</li>
+            <li>Item Name: @item.ItemName</li>
+            <li>Unit Price: @item.UnitPrice</li>
+            <li>Amount: @item.Amount</li>
+            <li>Description: @item.ItemDescription</li>
+        </dl>
+    }
+</div>

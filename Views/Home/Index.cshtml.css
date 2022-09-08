@@ -1,0 +1,212 @@
+* {
+    font-family: 'Montserrat';
+    box-sizing: border-box;
+}
+
+.watchall {
+    margin-left: auto;
+    margin-right: auto;
+    width: 14%;
+    border: 2px solid rgb(0, 119, 132);
+    padding: 10px;
+    color: rgb(0, 119, 132);
+    font-weight: bold;
+}
+
+.watchall:hover {
+    transition: 0.2s;
+    color: white;
+    background-color: rgb(0, 119, 132);
+}
+
+.BestsellerText {
+    font-weight: bold;
+}
+
+/*   Product Card   */
+.containerCard {
+    margin: 30px auto
+}
+
+.containerCard .product-item {
+    min-height: 450px;
+    border: none;
+    overflow: hidden;
+    position: relative;
+    border-radius: 0
+}
+
+.containerCard .product-item .product {
+    width: 100%;
+    height: 350px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer
+}
+
+.containerCard .product-item .product img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
+
+.containerCard .product-item .product .icons .icon {
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.6s ease;
+    transform: rotate(180deg);
+    cursor: pointer
+}
+
+.containerCard .product-item .product .icons .icon:hover {
+    background-color: rgb(0, 119, 132);
+    color: #fff
+}
+
+.containerCard .product-item .product .icons .icon:nth-last-of-type(3) {
+    transition-delay: 0.2s
+}
+
+.containerCard .product-item .product .icons .icon:nth-last-of-type(2) {
+    transition-delay: 0.15s
+}
+
+.containerCard .product-item .product .icons .icon:nth-last-of-type(1) {
+    transition-delay: 0.1s
+}
+
+.containerCard .product-item:hover .product .icons .icon {
+    transform: translateY(-60px)
+}
+
+.containerCard .product-item .tag {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 500;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    padding: 0 0.4rem
+}
+
+.containerCard .product-item .title {
+    font-size: 0.95rem;
+    letter-spacing: 0.5px
+}
+
+.containerCard .product-item .fa-star {
+    font-size: 0.65rem;
+    color: goldenrod
+}
+
+.containerCard .product-item .price {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: 600
+}
+
+.fw-800 {
+    font-weight: 800
+}
+
+.bg-green {
+    background-color: #208f20 !important;
+    color: #fff
+}
+
+.bg-black {
+    background-color: #1f1d1d;
+    color: #fff
+}
+
+.bg-red {
+    background-color: #bb3535;
+    color: #fff
+}
+
+/*   Product Card   */
+
+.BackToHome {
+    display: inline-block;
+    text-align: center;
+    width: 9%;
+    padding: 3px;
+    border: 2px solid rgb(0, 119, 132);
+    color: rgb(0, 119, 132);
+    font-weight: bold;
+}
+
+.BackToHome:hover {
+    transition: 0.2s;
+    color: white;
+    background-color: rgb(0, 119, 132);
+}
+
+.coverThis {
+    text-align: center;
+}
+
+@media (max-width:575px) {
+    .BackToHome {
+        width: 18%;
+    }
+}
+
+/*   Gif Banner   */
+
+.textCentered1 {
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.textCentered2 {
+    margin-right: 5px;
+    padding: 5px;
+    display: inline-block;
+    background-color: #3B5998;
+    font-weight: bold;
+    border: 1.5px solid #3B5998;
+    color: white;
+}
+
+.textCentered3 {
+    margin-left: 5px;
+    padding: 5px;
+    display: inline-block;
+    background-color: #00aced;
+    font-weight: bold;
+    border: 1.5px solid #00aced;
+    color: white;
+}
+
+.textCentered2:hover {
+    background-color: #324a7e;
+    border: 1.5px solid #324a7e;
+}
+
+.textCentered3:hover {
+    background-color: #0299cf;
+    border: 1.5px solid #0299cf;
+}
+
+.coverBanner {
+    position: relative;
+    text-align: center;
+}
+
+/*   FeedBack   */
+
+.user-photo {
+    width: 120px;
+    border-radius: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+}

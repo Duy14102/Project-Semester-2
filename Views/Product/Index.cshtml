@@ -1,0 +1,34 @@
+﻿@model Item
+@{
+    ViewData["Title"] = "Product Page";
+    var viewItemsData = ViewData["Items"];
+}
+
+<div class="text-center">
+    <h1 class="display-4">Product List</h1>
+    <p>This is All Product Page</p>
+
+    @if (viewItemsData is List<Item>)
+    {
+        List<Item> items = (List<Item>)viewItemsData;
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th>Item Id</th>
+                <th>Item Name</th>
+                <th>Unit Price</th>
+                <th>Amount</th>
+                <th>&nbsp;</th>
+            </tr>
+            @foreach (var item in items)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.ItemId)</td>
+                    <td>@Html.DisplayFor(modelItem => item.ItemName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.UnitPrice)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Amount)</td>
+                    <td>@Html.ActionLink("Details", "Details", new { id=item.ItemId })</td>
+                </tr>
+            }
+        </table>
+    }
+</div>
