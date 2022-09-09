@@ -28,6 +28,11 @@
     margin: 30px auto
 }
 
+.paddingItem {
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
 .containerCard .product-item {
     min-height: 450px;
     border: none;

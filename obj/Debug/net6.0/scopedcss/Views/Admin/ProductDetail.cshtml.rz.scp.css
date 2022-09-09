@@ -4,10 +4,6 @@
     box-sizing: border-box;
 }
 
-.pd-wrap[b-nau152m9q9] {
-    padding: 40px 0;
-}
-
 .heading-section[b-nau152m9q9] {
     text-align: center;
     margin-bottom: 20px;
@@ -245,6 +241,7 @@ input#number[b-nau152m9q9] {
     height: 25px;
 }
 
+
 input[type=number][b-nau152m9q9]::-webkit-inner-spin-button,
 input[type=number][b-nau152m9q9]::-webkit-outer-spin-button {
     -webkit-appearance: none;
@@ -344,3 +341,111 @@ input[type=number][b-nau152m9q9]::-webkit-outer-spin-button {
     text-transform: uppercase;
     cursor: pointer;
 }
+
+/*   Product Card   */
+.containerCard[b-nau152m9q9] {
+    margin: 30px auto
+}
+
+.containerCard .product-item[b-nau152m9q9] {
+    min-height: 450px;
+    border: none;
+    overflow: hidden;
+    position: relative;
+    border-radius: 0
+}
+
+.containerCard .product-item .product[b-nau152m9q9] {
+    width: 100%;
+    height: 350px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer
+}
+
+.containerCard .product-item .product img[b-nau152m9q9] {
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
+
+.containerCard .product-item .product .icons .icon[b-nau152m9q9] {
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.6s ease;
+    transform: rotate(180deg);
+    cursor: pointer
+}
+
+.containerCard .product-item .product .icons .icon:hover[b-nau152m9q9] {
+    background-color: rgb(0, 119, 132);
+    color: #fff
+}
+
+.containerCard .product-item .product .icons .icon:nth-last-of-type(3)[b-nau152m9q9] {
+    transition-delay: 0.2s
+}
+
+.containerCard .product-item .product .icons .icon:nth-last-of-type(2)[b-nau152m9q9] {
+    transition-delay: 0.15s
+}
+
+.containerCard .product-item .product .icons .icon:nth-last-of-type(1)[b-nau152m9q9] {
+    transition-delay: 0.1s
+}
+
+.containerCard .product-item:hover .product .icons .icon[b-nau152m9q9] {
+    transform: translateY(-60px)
+}
+
+.containerCard .product-item .tag[b-nau152m9q9] {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 500;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    padding: 0 0.4rem
+}
+
+.containerCard .product-item .title[b-nau152m9q9] {
+    font-size: 0.95rem;
+    letter-spacing: 0.5px
+}
+
+.containerCard .product-item .fa-star[b-nau152m9q9] {
+    font-size: 0.65rem;
+    color: goldenrod
+}
+
+.containerCard .product-item .price[b-nau152m9q9] {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: 600
+}
+
+.fw-800[b-nau152m9q9] {
+    font-weight: 800
+}
+
+.bg-green[b-nau152m9q9] {
+    background-color: #208f20 !important;
+    color: #fff
+}
+
+.bg-black[b-nau152m9q9] {
+    background-color: #1f1d1d;
+    color: #fff
+}
+
+.bg-red[b-nau152m9q9] {
+    background-color: #bb3535;
+    color: #fff
+}
+
+/*   Product Card   */
