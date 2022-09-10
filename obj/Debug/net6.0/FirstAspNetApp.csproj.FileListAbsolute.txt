@@ -113,3 +113,4 @@ D:\VTCA\WD07\ASP.NET core\Project Semester 2\obj\Debug\net6.0\scopedcss\Views\Pr
 D:\VTCA\WD07\ASP.NET core\Project Semester 2\obj\Debug\net6.0\scopedcss\Views\Product\Nuoc.cshtml.rz.scp.css
 D:\VTCA\WD07\ASP.NET core\Project Semester 2\obj\Debug\net6.0\scopedcss\Views\Admin\Login.cshtml.rz.scp.css
 D:\VTCA\WD07\ASP.NET core\Project Semester 2\obj\Debug\net6.0\scopedcss\Views\Admin\ProductDetail.cshtml.rz.scp.css
+D:\VTCA\WD07\ASP.NET core\Project Semester 2\obj\Debug\net6.0\scopedcss\Views\Home\Author.cshtml.rz.scp.css

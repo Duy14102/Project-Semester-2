@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "N3ai6TMw5atEZfBft4VN8xfAWVCsCaAXL6k6dE2/C0M=",
+  "Hash": "/2u/elHWOkzjIiuuMbVb1reLJgHgkLl8+mKx8AQ4Q40=",
   "Source": "FirstAspNetApp",
   "BasePath": "_content/FirstAspNetApp",
   "Mode": "Default",
@@ -202,6 +202,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\image\\logo.png"
+    },
+    {
+      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\Project Semester 2\\wwwroot\\image\\yasuo.png",
+      "SourceId": "FirstAspNetApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\Project Semester 2\\wwwroot\\",
+      "BasePath": "_content/FirstAspNetApp",
+      "RelativePath": "image/yasuo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\image\\yasuo.png"
+    },
+    {
+      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\Project Semester 2\\wwwroot\\image\\zed.png",
+      "SourceId": "FirstAspNetApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\Project Semester 2\\wwwroot\\",
+      "BasePath": "_content/FirstAspNetApp",
+      "RelativePath": "image/zed.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\image\\zed.png"
     },
     {
       "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\Project Semester 2\\wwwroot\\js\\site.js",
