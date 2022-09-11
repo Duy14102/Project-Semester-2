@@ -20,6 +20,7 @@ namespace FirstAspNetApp.Models
         public virtual DbSet<Item> Items { get; set; } = null!;
         public virtual DbSet<Order> Orders { get; set; } = null!;
         public virtual DbSet<OrderDetail> OrderDetails { get; set; } = null!;
+        public virtual DbSet<Feedback> Feedbacks { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -72,6 +73,19 @@ namespace FirstAspNetApp.Models
                     .HasPrecision(20, 2)
                     .HasColumnName("unit_price")
                     .HasDefaultValueSql("'0.00'");
+            });
+
+            modelBuilder.Entity<Feedback>(entity =>
+            {
+                entity.Property(e => e.FeedbackId).HasColumnName("feedback_id");
+
+                entity.Property(e => e.FeedbackName)
+                    .HasMaxLength(500)
+                    .HasColumnName("feedback_name");
+
+                entity.Property(e => e.FeedbackStory)
+                .HasMaxLength(500)
+                .HasColumnName("feedback_story");
             });
 
             modelBuilder.Entity<Order>(entity =>

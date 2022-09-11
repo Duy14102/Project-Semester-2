@@ -2,6 +2,11 @@
 @{
     ViewData["Title"] = "Trang Chủ";
     var viewItemsData = ViewData["Items"];
+    var Nuoc = "Nước";
+    var Canh = "Canh";
+    var DoAnKem = "Đồ Ăn Kèm";
+    var Thit = "Thịt";
+    var Rau = "Rau";
 }
 
 <head>
@@ -41,25 +46,52 @@
                             <div
                         class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
                                 <div class="product">
-                                    <a href="#"><img
-                                    src="https://images.pexels.com/photos/54203/pexels-photo-54203.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                                    alt=""></a>
+                                    <a href="#"><img src="@Url.Content(@item.ItemDescription)" /></a>
                                     <ul class="d-flex align-items-center justify-content-center list-unstyled icons">
                                         <li class="icon"><span class="fas fa-expand-arrows-alt"></span></li>
                                         <li class="icon mx-3"><span class="far fa-heart"></span></li>
                                         <li class="icon"><span class="fas fa-shopping-bag"></span></li>
                                     </ul>
                                 </div>
-                                <a style="text-decoration: none;" class="title pt-4 pb-1 text-dark"
-                            href="#">@Html.DisplayFor(modelItem => item.ItemId)</a>
-                                <div class="d-flex align-content-center justify-content-center"> <span
+                                @if (item.Category == DoAnKem)
+                                {
+                                    <a asp-area="" asp-controller="Product" asp-action="DoAnKem" class="text-muted pt-2"
+                            style="text-decoration: none;">@Html.DisplayFor(modelItem =>
+                            item.Category)</a>
+                                }
+                                @if (item.Category == Thit)
+                                {
+                                    <a asp-area="" asp-controller="Product" asp-action="Thit" class="text-muted pt-2"
+                            style="text-decoration: none;">@Html.DisplayFor(modelItem =>
+                            item.Category)</a>
+                                }
+                                @if (item.Category == Rau)
+                                {
+                                    <a asp-area="" asp-controller="Product" asp-action="Rau" class="text-muted pt-2"
+                            style="text-decoration: none;">@Html.DisplayFor(modelItem =>
+                            item.Category)</a>
+                                }
+                                @if (item.Category == Canh)
+                                {
+                                    <a asp-area="" asp-controller="Product" asp-action="Canh" class="text-muted pt-2"
+                            style="text-decoration: none;">@Html.DisplayFor(modelItem =>
+                            item.Category)</a>
+                                }
+                                @if (item.Category == Nuoc)
+                                {
+                                    <a asp-area="" asp-controller="Product" asp-action="Nuoc" class="text-muted pt-2"
+                            style="text-decoration: none;">@Html.DisplayFor(modelItem =>
+                            item.Category)</a>
+                                }
+                                <a style="text-decoration: none;" class="title pt-1 pb-1 text-dark"
+                            href="#">@Html.DisplayFor(modelItem => item.ItemName)</a>
+                                <div class="pt-1 d-flex align-content-center justify-content-center"> <span
                                 class="fas fa-star"></span>
                                     <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span
                                 class="fas fa-star"></span>
                                     <span class="fas fa-star"></span>
                                 </div>
-                                <div class="price">@Html.DisplayFor(modelItem => item.UnitPrice)</div>
-
+                                <div class="price">@Html.DisplayFor(modelItem => item.UnitPrice)0 ₫</div>
                             </div>
                         }
                     }
@@ -73,8 +105,8 @@
             <div class="textCentered1">
                 <h2><b>Cơm Nhé ?</b></h2>
                 <h6>Cập nhật thông tin món ăn mới</h6>
-                <h6 class="textCentered2">Facebook</h6>
-                <h6 class="textCentered3">Twitter</h6>
+                <a href="#" class="textCentered2">Facebook</a>
+                <a href="#" class="textCentered3">Twitter</a>
             </div>
         </div>
 

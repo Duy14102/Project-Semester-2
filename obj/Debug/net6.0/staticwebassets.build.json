@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "w3NVh/XJ5X+MoA+i7FJr1givyA3vpdP8yrQscors+8g=",
+  "Hash": "YlXMu/BzsFF+Td37P4RGmHIu4a1u7w/3fi88RmP1YkI=",
   "Source": "FirstAspNetApp",
   "BasePath": "_content/FirstAspNetApp",
   "Mode": "Default",
@@ -117,6 +117,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\image\\BannerHere.png"
+    },
+    {
+      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\Project Semester 2\\wwwroot\\image\\ComTrang.jpg",
+      "SourceId": "FirstAspNetApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\Project Semester 2\\wwwroot\\",
+      "BasePath": "_content/FirstAspNetApp",
+      "RelativePath": "image/ComTrang.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\image\\ComTrang.jpg"
     },
     {
       "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\Project Semester 2\\wwwroot\\image\\FeedBack1.jpg",

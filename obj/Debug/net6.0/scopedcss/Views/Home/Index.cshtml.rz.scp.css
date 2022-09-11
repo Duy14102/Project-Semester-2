@@ -180,9 +180,11 @@
     font-weight: bold;
     border: 1.5px solid #3B5998;
     color: white;
+    text-decoration: none;
 }
 
 .textCentered3[b-wltpxrv65e] {
+    text-decoration: none;
     margin-left: 5px;
     padding: 5px;
     display: inline-block;

@@ -33,34 +33,37 @@ public class ProductController : Controller
 
     public IActionResult DoAnKem()
     {
+        string water = "Đồ Ăn Kèm";
         using (Models.OrderDBContext context = new Models.OrderDBContext())
         {
-            ViewData["Items"] = context.Items.OrderBy(i => i.ItemId).ToList();
+            ViewData["Items"] = context.Items.OrderBy(i => i.ItemId).Where(i => i.Category == water).ToList();
         }
         return View();
     }
 
     public IActionResult Thit()
     {
+        string water = "Thịt";
         using (Models.OrderDBContext context = new Models.OrderDBContext())
         {
-            ViewData["Items"] = context.Items.OrderBy(i => i.UnitPrice).ToList();
+            ViewData["Items"] = context.Items.OrderBy(i => i.UnitPrice).Where(i => i.Category == water).ToList();
         }
         return View();
     }
 
     public IActionResult Rau()
     {
+        string water = "Rau";
         using (Models.OrderDBContext context = new Models.OrderDBContext())
         {
-            ViewData["Items"] = context.Items.OrderBy(i => i.UnitPrice).ToList();
+            ViewData["Items"] = context.Items.OrderBy(i => i.UnitPrice).Where(i => i.Category == water).ToList();
         }
         return View();
     }
 
     public IActionResult Canh()
     {
-        string water = "canh";
+        string water = "Canh";
         using (Models.OrderDBContext context = new Models.OrderDBContext())
         {
             ViewData["Items"] = context.Items.OrderBy(i => i.UnitPrice).Where(i => i.Category == water).ToList();
@@ -70,9 +73,10 @@ public class ProductController : Controller
 
     public IActionResult Nuoc()
     {
+        string water = "Nước";
         using (Models.OrderDBContext context = new Models.OrderDBContext())
         {
-            ViewData["Items"] = context.Items.OrderBy(i => i.UnitPrice).ToList();
+            ViewData["Items"] = context.Items.OrderBy(i => i.UnitPrice).Where(i => i.Category == water).ToList();
         }
         return View();
     }
