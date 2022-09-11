@@ -15,6 +15,10 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+        using (Models.OrderDBContext context = new Models.OrderDBContext())
+        {
+            ViewData["Items"] = context.Items.OrderBy(i => i.ItemId).Take(12).ToList();
+        }
         return View();
     }
 

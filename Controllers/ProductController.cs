@@ -17,7 +17,7 @@ public class ProductController : Controller
     {
         using (Models.OrderDBContext context = new Models.OrderDBContext())
         {
-            ViewData["Items"] = context.Items.OrderBy(i => i.UnitPrice).ToList();
+            ViewData["Items"] = context.Items.OrderBy(i => i.Category).ToList();
         }
         return View();
     }
@@ -35,7 +35,7 @@ public class ProductController : Controller
     {
         using (Models.OrderDBContext context = new Models.OrderDBContext())
         {
-            ViewData["Items"] = context.Items.OrderBy(i => i.UnitPrice).ToList();
+            ViewData["Items"] = context.Items.OrderBy(i => i.ItemId).ToList();
         }
         return View();
     }
@@ -60,9 +60,10 @@ public class ProductController : Controller
 
     public IActionResult Canh()
     {
+        string water = "canh";
         using (Models.OrderDBContext context = new Models.OrderDBContext())
         {
-            ViewData["Items"] = context.Items.OrderBy(i => i.UnitPrice).ToList();
+            ViewData["Items"] = context.Items.OrderBy(i => i.UnitPrice).Where(i => i.Category == water).ToList();
         }
         return View();
     }
