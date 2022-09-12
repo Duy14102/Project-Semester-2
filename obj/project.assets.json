@@ -710,11 +710,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\VTCA\\WD07\\ASP.NET core\\Project Semester 2\\FirstAspNetApp.csproj",
+      "projectUniqueName": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\FirstAspNetApp.csproj",
       "projectName": "FirstAspNetApp",
-      "projectPath": "D:\\VTCA\\WD07\\ASP.NET core\\Project Semester 2\\FirstAspNetApp.csproj",
+      "projectPath": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\FirstAspNetApp.csproj",
       "packagesPath": "C:\\Users\\KyThuat88\\.nuget\\packages\\",
-      "outputPath": "D:\\VTCA\\WD07\\ASP.NET core\\Project Semester 2\\obj\\",
+      "outputPath": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\KyThuat88\\AppData\\Roaming\\NuGet\\NuGet.Config"

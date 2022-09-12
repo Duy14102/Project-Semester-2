@@ -112,5 +112,51 @@ D:\VTCA\WD07\ASP.NET core\Project Semester 2\obj\Debug\net6.0\scopedcss\Views\Pr
 D:\VTCA\WD07\ASP.NET core\Project Semester 2\obj\Debug\net6.0\scopedcss\Views\Product\Canh.cshtml.rz.scp.css
 D:\VTCA\WD07\ASP.NET core\Project Semester 2\obj\Debug\net6.0\scopedcss\Views\Product\Nuoc.cshtml.rz.scp.css
 D:\VTCA\WD07\ASP.NET core\Project Semester 2\obj\Debug\net6.0\scopedcss\Views\Admin\Login.cshtml.rz.scp.css
-D:\VTCA\WD07\ASP.NET core\Project Semester 2\obj\Debug\net6.0\scopedcss\Views\Admin\ProductDetail.cshtml.rz.scp.css
 D:\VTCA\WD07\ASP.NET core\Project Semester 2\obj\Debug\net6.0\scopedcss\Views\Home\Author.cshtml.rz.scp.css
+D:\VTCA\WD07\ASP.NET core\Project Semester 2\obj\Debug\net6.0\scopedcss\Views\Product\ProductDetail.cshtml.rz.scp.css
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\bin\Debug\net6.0\appsettings.Development.json
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\bin\Debug\net6.0\appsettings.json
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\bin\Debug\net6.0\FirstAspNetApp.staticwebassets.runtime.json
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\bin\Debug\net6.0\FirstAspNetApp.exe
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\bin\Debug\net6.0\FirstAspNetApp.deps.json
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\bin\Debug\net6.0\FirstAspNetApp.runtimeconfig.json
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\bin\Debug\net6.0\FirstAspNetApp.dll
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\bin\Debug\net6.0\FirstAspNetApp.pdb
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\bin\Debug\net6.0\Humanizer.dll
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\bin\Debug\net6.0\MySqlConnector.dll
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\FirstAspNetApp.csproj.AssemblyReference.cache
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\FirstAspNetApp.GeneratedMSBuildEditorConfig.editorconfig
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\FirstAspNetApp.AssemblyInfoInputs.cache
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\FirstAspNetApp.AssemblyInfo.cs
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\FirstAspNetApp.csproj.CoreCompileInputs.cache
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\FirstAspNetApp.MvcApplicationPartsAssemblyInfo.cache
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\FirstAspNetApp.RazorAssemblyInfo.cache
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\FirstAspNetApp.RazorAssemblyInfo.cs
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\staticwebassets.build.json
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\staticwebassets.development.json
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\scopedcss\Views\Admin\Login.cshtml.rz.scp.css
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\scopedcss\Views\Home\Author.cshtml.rz.scp.css
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\scopedcss\Views\Home\Index.cshtml.rz.scp.css
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\scopedcss\Views\Home\Privacy.cshtml.rz.scp.css
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\scopedcss\Views\Product\Canh.cshtml.rz.scp.css
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\scopedcss\Views\Product\DoAnKem.cshtml.rz.scp.css
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\scopedcss\Views\Product\Nuoc.cshtml.rz.scp.css
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\scopedcss\Views\Product\ProductDetail.cshtml.rz.scp.css
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\scopedcss\Views\Product\Rau.cshtml.rz.scp.css
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\scopedcss\Views\Product\TatCa.cshtml.rz.scp.css
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\scopedcss\Views\Product\Thit.cshtml.rz.scp.css
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\scopedcss\bundle\FirstAspNetApp.styles.css
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\scopedcss\projectbundle\FirstAspNetApp.bundle.scp.css
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\FirstAspNetApp.csproj.CopyComplete
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\FirstAspNetApp.dll
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\refint\FirstAspNetApp.dll
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\FirstAspNetApp.pdb
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\FirstAspNetApp.genruntimeconfig.cache
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\ref\FirstAspNetApp.dll

@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using FirstAspNetApp.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace FirstAspNetApp.Controllers;
 
@@ -26,7 +27,7 @@ public class ProductController : Controller
     {
         using (Models.OrderDBContext context = new Models.OrderDBContext())
         {
-            ViewData["Items"] = context.Items.OrderBy(i => i.UnitPrice).ToList();
+            ViewData["Items"] = context.Items.OrderBy(i => i.ItemId).ToList();
         }
         return View();
     }
@@ -46,7 +47,7 @@ public class ProductController : Controller
         string water = "Thịt";
         using (Models.OrderDBContext context = new Models.OrderDBContext())
         {
-            ViewData["Items"] = context.Items.OrderBy(i => i.UnitPrice).Where(i => i.Category == water).ToList();
+            ViewData["Items"] = context.Items.OrderBy(i => i.ItemId).Where(i => i.Category == water).ToList();
         }
         return View();
     }
@@ -56,7 +57,7 @@ public class ProductController : Controller
         string water = "Rau";
         using (Models.OrderDBContext context = new Models.OrderDBContext())
         {
-            ViewData["Items"] = context.Items.OrderBy(i => i.UnitPrice).Where(i => i.Category == water).ToList();
+            ViewData["Items"] = context.Items.OrderBy(i => i.ItemId).Where(i => i.Category == water).ToList();
         }
         return View();
     }
@@ -66,7 +67,7 @@ public class ProductController : Controller
         string water = "Canh";
         using (Models.OrderDBContext context = new Models.OrderDBContext())
         {
-            ViewData["Items"] = context.Items.OrderBy(i => i.UnitPrice).Where(i => i.Category == water).ToList();
+            ViewData["Items"] = context.Items.OrderBy(i => i.ItemId).Where(i => i.Category == water).ToList();
         }
         return View();
     }
@@ -76,21 +77,20 @@ public class ProductController : Controller
         string water = "Nước";
         using (Models.OrderDBContext context = new Models.OrderDBContext())
         {
-            ViewData["Items"] = context.Items.OrderBy(i => i.UnitPrice).Where(i => i.Category == water).ToList();
+            ViewData["Items"] = context.Items.OrderBy(i => i.ItemId).Where(i => i.Category == water).ToList();
         }
         return View();
     }
 
-    public IActionResult Details(int? id)
+    public IActionResult ProductDetail(int? id)
     {
         using (Models.OrderDBContext context = new Models.OrderDBContext())
         {
-            // ViewData["Item"] = context.Items.Find(id);
             ViewData["Item"] = context.Items.Single(i => i.ItemId == id);
-        }
-        if (ViewData["Item"] == null)
-        {
-            TempData["msg"] = "Can't find Item with id = " + id;
+            if (ViewData["Item"] == null)
+            {
+                TempData["msg"] = "Can't find Item with id = " + id;
+            }
         }
         return View();
     }

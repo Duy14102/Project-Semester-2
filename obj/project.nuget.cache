@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mfIwQBf7dhRaQjA9351vjxQMkNxHVKqCXPBvxV1Pi7QbwaQocq4w3RHNxIJ5kQn9lXXHa1xk9C7MQ/KEzjAftw==",
+  "dgSpecHash": "lSVm8k2d0nreB/Rf83qXX1+KbtAwnunfkR1gsjZVJX657RFbQdO4p+wDL2GBmG3ZTweJ/USRRmKcvIFdfCRYIg==",
   "success": true,
-  "projectFilePath": "D:\\VTCA\\WD07\\ASP.NET core\\Project Semester 2\\FirstAspNetApp.csproj",
+  "projectFilePath": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\FirstAspNetApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\KyThuat88\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\KyThuat88\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.5\\microsoft.entityframeworkcore.6.0.5.nupkg.sha512",

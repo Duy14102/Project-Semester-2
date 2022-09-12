@@ -59,6 +59,10 @@ namespace FirstAspNetApp.Models
                     .HasMaxLength(500)
                     .HasColumnName("category");
 
+                entity.Property(e => e.ItemStory)
+                .HasMaxLength(500)
+                .HasColumnName("item_story");
+
                 entity.Property(e => e.ItemDescription)
                     .HasMaxLength(500)
                     .HasColumnName("item_description");

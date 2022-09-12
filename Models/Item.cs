@@ -16,6 +16,7 @@ namespace FirstAspNetApp.Models
         public int Amount { get; set; }
         public sbyte ItemStatus { get; set; }
         public string? Category { get; set; }
+        public string? ItemStory { get; set; }
         public string? ItemDescription { get; set; }
 
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
