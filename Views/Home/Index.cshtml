@@ -1,13 +1,14 @@
-﻿@model Item
-@{
+﻿@{
     ViewData["Title"] = "Trang Chủ";
     var viewItemsData = ViewData["Items"];
+    var viewFeedbacksData = ViewData["Feedbacks"];
     var Nuoc = "Nước";
     var Canh = "Canh";
     var DoAnKem = "Đồ Ăn Kèm";
     var Thit = "Thịt";
     var Rau = "Rau";
 }
+
 
 <head>
     <meta charset="utf-8" />
@@ -113,48 +114,36 @@
         </div>
 
         <!--   FeedBack    -->
-        <section id="testimonial-slider" class="py-5 FeedBack">
-            <h1 align="center" class="BestsellerText">FeedBack Từ Khách</h1>
-            <div class="container">
-                <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
-                            aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
-                            aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
-                            aria-label="Slide 3"></button>
-                    </div>
-                    <div class="col-sm-8 mx-auto">
-                        <div class="carousel-inner text-center text-dark py-5">
-                            <div class="carousel-item active" data-bs-interval="10000">
-                                <div class="user-photo shadow">
-                                    <img src="~/image/FeedBack1.jpg" class="img-fluid" alt="testimonial slider">
+                <div class="container mt-5 mb-5">
+                    <div class="row g-2">
+                              @if (viewFeedbacksData is List<Feedback>)
+        {
+            List<Feedback> feedbacks = (List<Feedback>)viewFeedbacksData;
+            @foreach (var feedback in feedbacks)
+            {
+                        <div class="col-md-4">
+                            <div class="card p-3 text-center px-4">
+                                <div class="user-image">
+                                    <img src="@Url.Content(@feedback.FeedbackLink)" class="rounded-circle" width="80">
                                 </div>
-                                <div class="slider-caption mt-3">
-                                    <p class="font-size:5vw;">Lorem Ipsum is simply dummy text of the printing and
-                                        typesetting
-                                        industry. Lorem Ipsum has been the industry's standard dummy text ever since the
-                                        1500s, when an unknown printer took a galley of type and scrambled it to make a
-                                        type specimen book.</p>
-                                    <figcaption class="blockquote-footer mt-3 text-dark font-size:5vw"><cite>Gurdeep
-                                            Dahiya</cite></figcaption>
+                                <div class="user-content">
+                                    <h5 class="mb-0">@Html.DisplayFor(modelFeedback => feedback.FeedbackName)</h5>
+                                    <span>Software Architect</span>
+                                    <p>@Html.DisplayFor(modelFeedback => feedback.FeedbackStory)</p>
+                                </div>
+                                <div class="ratings">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
                                 </div>
                             </div>
                         </div>
+                           }
+        }
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
                 </div>
-            </div>
-        </section>
     </div>
+    <script src="~/js/site.js" asp-append-version="true"></script>
 </body>

@@ -1,6 +1,8 @@
+@model Feedback
 @{
     ViewData["Title"] = "Product Page";
     var viewItemData = ViewData["Item"];
+    var viewFeedbackData = ViewData["Feedbacks"];
     var Nuoc = "Nước";
     var Canh = "Canh";
     var DoAnKem = "Đồ Ăn Kèm";
@@ -97,7 +99,7 @@
                                     <input type="radio" id="star1" name="rate" value="1" />
                                     <label for="star1" title="text">1 star</label>
                                 </div>
-                                <span>3 Đánh giá</span>
+                                <span>​</span>
                             </div>
                             <div class="text-muted pt-2">@item.UnitPrice<span>0 ₫</span>
                             </div>
@@ -143,7 +145,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab"
-                        aria-controls="review" aria-selected="false">Đánh giá (0)</a>
+                        aria-controls="review" aria-selected="false">Đánh giá </a>
                     </li>
                 </ul>
                 <div class="tab-content" id="myTabContent">
@@ -153,46 +155,93 @@
                     </div>
                     <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
                         <div class="review-heading">Đánh Giá</div>
-                        <p class="mb-20">Hiện chưa có đánh giá nào hết.</p>
-                        <form class="review-form">
-                            <div class="form-group">
-                                <label>Đánh giá của bạn</label>
-                                <div class="reviews-counter">
-                                    <div class="rate">
-                                        <input type="radio" id="star5" name="rate" value="5" />
-                                        <label for="star5" title="text">5 stars</label>
-                                        <input type="radio" id="star4" name="rate" value="4" />
-                                        <label for="star4" title="text">4 stars</label>
-                                        <input type="radio" id="star3" name="rate" value="3" />
-                                        <label for="star3" title="text">3 stars</label>
-                                        <input type="radio" id="star2" name="rate" value="2" />
-                                        <label for="star2" title="text">2 stars</label>
-                                        <input type="radio" id="star1" name="rate" value="1" />
-                                        <label for="star1" title="text">1 star</label>
+                        <div class="reviewCover">
+                            <div class="col-sm-5 col-md-6 col-12 pb-4">
+                                <div class="container">
+                                    <div class="row">
+                                        @if (viewFeedbackData is List<Feedback>)
+                                        {
+                                            List<Feedback> feedbacks = (List<Feedback>)viewFeedbackData;
+                                            @foreach (var feedback in feedbacks)
+                                            {
+                                                <div class="col-20">
+                                                    <div class="card-white post">
+                                                        <div class="post-heading">
+                                                            <div class="float-left image">
+                                                                <img src="@Url.Content(@feedback.FeedbackLink)"
+                                                        class="img-circle avatar" alt="user profile image">
+                                                            </div>
+                                                            <div class="float-left meta">
+                                                                <div class="title h5">
+                                                                    <a href="#"><b>@Html.DisplayFor(modelFeedback =>
+                                                                feedback.FeedbackName)</b></a>
+                                                                </div>
+                                                                <div class="rating">
+                                                                    <i class="fa fa-star"></i>
+                                                                    <i class="fa fa-star"></i>
+                                                                    <i class="fa fa-star"></i>
+                                                                    <i class="fa fa-star"></i>
+                                                                    <i class="fa fa-star"></i>
+                                                                </div>
+                                                                <h6 class="text-muted time">@Html.DisplayFor(modelFeedback =>
+                                                        feedback.FeedbackDate)</h6>
+                                                            </div>
+                                                        </div>
+                                                        <div class="post-description">
+                                                            <p>@Html.DisplayFor(modelFeedback =>
+                                                    feedback.FeedbackStory)</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            }
+                                        }
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <textarea class="form-control" rows="10" placeholder="Nhập gì đó..."></textarea>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
+                            <div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12 formCover">
+                                <form class="review-form">
                                     <div class="form-group">
-                                        <label for="nameReview">Họ và tên</label>
-                                        <input type="text" id="nameReview" name="" class="form-control"
-                                        placeholder="Nhập đầy đủ tên của bạn">
+                                        <label class="text-dark"><b>Đánh giá của bạn</b></label>
+                                        <div class="reviews-counter">
+                                            <div class="rate">
+                                                <input type="radio" id="star5" name="rate" value="5" />
+                                                <label for="star5" title="text">5 stars</label>
+                                                <input type="radio" id="star4" name="rate" value="4" />
+                                                <label for="star4" title="text">4 stars</label>
+                                                <input type="radio" id="star3" name="rate" value="3" />
+                                                <label for="star3" title="text">3 stars</label>
+                                                <input type="radio" id="star2" name="rate" value="2" />
+                                                <label for="star2" title="text">2 stars</label>
+                                                <input type="radio" id="star1" name="rate" value="1" />
+                                                <label for="star1" title="text">1 star</label>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="emailReview">Email</label>
-                                        <input type="text" id="emailReview" name="" class="form-control"
-                                        placeholder="Nhập địa chỉ email">
+                                        <label class="text-dark" for="Walkin"><b>Nhận xét của bạn</b></label>
+                                        <textarea id="Walkin" class="form-control" rows="10"
+                                        placeholder="Nhập gì đó..."></textarea>
                                     </div>
-                                </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="text-dark" for="nameReview"><b>Họ và tên</b></label>
+                                                <input type="text" id="nameReview" name="" class="form-control"
+                                                placeholder="Nhập tên">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="text-dark" for="emailReview"><b>Email</b></label>
+                                                <input type="text" id="emailReview" name="" class="form-control"
+                                                placeholder="Nhập địa chỉ email">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="round-black-btn">Gửi đánh giá</button>
+                                </form>
                             </div>
-                            <button class="round-black-btn">Gửi đánh giá</button>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -200,25 +249,33 @@
         <h2 align="center"><b>Sản phẩm tương tự</b></h2>
         <div class="containerCard">
             <div class="row">
-                <div
+                @if (viewItemData is List<Item>)
+                {
+                    List<Item> items = (List<Item>)viewItemData;
+                    @foreach (var itemd in items)
+                    {
+                        <div
                 class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
-                    <div class="product"><a href="#"><img
+                            <div class="product"><a href="#"><img
                             src="https://images.pexels.com/photos/54203/pexels-photo-54203.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
                             alt=""></a>
-                        <ul class="d-flex align-items-center justify-content-center list-unstyled icons">
-                            <li class="icon"><span class="fas fa-expand-arrows-alt"></span></li>
-                            <li class="icon mx-3"><span class="far fa-heart"></span></li>
-                            <li class="icon"><span class="fas fa-shopping-bag"></span></li>
-                        </ul>
-                    </div>
-                    <a style="text-decoration: none;" class="title pt-4 pb-1 text-dark" href="#">Winter Sweater</a>
-                    <div class="d-flex align-content-center justify-content-center"> <span class="fas fa-star"></span>
-                        <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span
+                                <ul class="d-flex align-items-center justify-content-center list-unstyled icons">
+                                    <li class="icon"><span class="fas fa-expand-arrows-alt"></span></li>
+                                    <li class="icon mx-3"><span class="far fa-heart"></span></li>
+                                    <li class="icon"><span class="fas fa-shopping-bag"></span></li>
+                                </ul>
+                            </div>
+                            <a style="text-decoration: none;" class="title pt-4 pb-1 text-dark" href="#">@Html.DisplayFor(modelItem
+                    => itemd.ItemName)</a>
+                            <div class="d-flex align-content-center justify-content-center"> <span class="fas fa-star"></span>
+                                <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span
                         class="fas fa-star"></span>
-                        <span class="fas fa-star"></span>
-                    </div>
-                    <div class="price">$ 60.0</div>
-                </div>
+                                <span class="fas fa-star"></span>
+                            </div>
+                            <div class="price">$ 60.0</div>
+                        </div>
+                    }
+                }
             </div>
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>

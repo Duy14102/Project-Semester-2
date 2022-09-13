@@ -86,6 +86,7 @@ public class ProductController : Controller
     {
         using (Models.OrderDBContext context = new Models.OrderDBContext())
         {
+            ViewData["Feedbacks"] = context.Feedbacks.OrderBy(a => a.FeedbackId).ToList();
             ViewData["Item"] = context.Items.Single(i => i.ItemId == id);
             if (ViewData["Item"] == null)
             {

@@ -211,9 +211,16 @@
 
 /*   FeedBack   */
 
-.user-photo[b-wltpxrv65e] {
-    width: 120px;
-    border-radius: 100%;
-    overflow: hidden;
-    margin: 0 auto;
+.card[b-wltpxrv65e] {
+    border: none;
+}
+
+.user-content p[b-wltpxrv65e] {
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+
+.ratings i[b-wltpxrv65e] {
+    color: rgb(255, 226, 52);
 }

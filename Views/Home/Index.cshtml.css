@@ -211,9 +211,16 @@
 
 /*   FeedBack   */
 
-.user-photo {
-    width: 120px;
-    border-radius: 100%;
-    overflow: hidden;
-    margin: 0 auto;
+.card {
+    border: none;
+}
+
+.user-content p {
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+
+.ratings i {
+    color: rgb(255, 226, 52);
 }

@@ -39,12 +39,15 @@ create table OrderDetails(
     constraint fk_OrderDetails_Items foreign key(item_id) references Items(item_id)
 );
 
-create table Feedback(
+create table Feedbacks(
 	feedback_id int auto_increment primary key,
 	feedback_name varchar(500),
-    feedback_story varchar(500)
+    feedback_story varchar(500),
+    feedback_date datetime default now() not null,
+    feedback_link varchar(500)
 );
-select * from Feedback;
+
+SELECT DATE_FORMAT(feedback_date, 'Ngày %d Tháng %m Năm %Y') FROM Feedbacks;
 
 delimiter $$
 create trigger tg_before_insert before insert
@@ -86,10 +89,11 @@ insert into Customers(customer_name, customer_address) values
     ('Nguyen Van A','Hanoi');
 select * from Customers;
 
-insert into Feedback(feedback_name, feedback_story) values
-('Bùi Xuân Huấn', 'Đồ ăn ở đây các món cũng giản dị thôi, nhưng mình ăn lại rất hợp, kiểu cơm nhà. Ăn các chỗ khác sẽ nêm nếm nhiều gia vị, rồi có nhiều sốt các thứ, nhưng ở đây món ăn khá đơn giản và mộc mạc. Cơm và thức ăn đầy đặn, được cái nhiều rau, thường có thêm tráng miệng là hoa quả.'),
-('Ngô Bá Khá', 'Bên này là chân ái của mình nè, ở đây mô hình bán cơm hơi khác, đầu tiên là người nấu là các mẹ nội trợ ý, thấy bảo start-up khởi nghiệp gì, trước lên báo cũng nổi lắm. Hai là họ thiên về bán theo gói cơm, cũng có bán lẻ theo suất nhưng hình như cx đắt hàng nên nhanh hết.'),
-('Nguyễn Thành Long', 'Hương vị món ăn ngon, nêm nếm ổn. Phong độ nấu có vẻ là ổn định nhất trong 3 bên. Đồ ăn cũng được đầy đặn. À có cả thực đơn eat clean cho chị em nào muốn giảm cân ạ, ăn gạo lứt hoặc bánh mì ngũ cốc ý :)) tất nhiên giá cũng chát, tầm 60k/suất.');
+insert into Feedbacks(feedback_link,feedback_name, feedback_story) values
+('~/image/FeedBack1.jpg','Bùi Xuân Huấn', 'Đồ ăn ở đây các món cũng giản dị thôi, nhưng mình ăn lại rất hợp, kiểu cơm nhà. Ăn các chỗ khác sẽ nêm nếm nhiều gia vị, rồi có nhiều sốt các thứ, nhưng ở đây món ăn khá đơn giản và mộc mạc. Cơm và thức ăn đầy đặn, được cái nhiều rau, thường có thêm tráng miệng là hoa quả.'),
+('~/image/FeedBack2.jpg','Ngô Bá Khá', 'Bên này là chân ái của mình nè, ở đây mô hình bán cơm hơi khác, đầu tiên là người nấu là các mẹ nội trợ ý, thấy bảo start-up khởi nghiệp gì, trước lên báo cũng nổi lắm. Hai là họ thiên về bán theo gói cơm, cũng có bán lẻ theo suất nhưng hình như cx đắt hàng nên nhanh hết.'),
+('~/image/FeedBack3.jpg','Nguyễn Thành Tiến', 'Hương vị món ăn ngon, nêm nếm ổn. Phong độ nấu có vẻ là ổn định nhất trong 3 bên. Đồ ăn cũng được đầy đặn. À có cả thực đơn eat clean cho chị em nào muốn giảm cân ạ, ăn gạo lứt hoặc bánh mì ngũ cốc ý :)) tất nhiên giá cũng chát, tầm 60k/suất. Công nhận là cơm ngon hơn cơm tù.');
+select * from Feedbacks;
 
 insert into Items(item_name, unit_price, category, item_status, item_description, item_story) values
 	('Cơm Trắng', 10.0, 'Đồ Ăn Kèm', 1, '~/image/ComTrang.jpg', 'Bạn nên ăn cơm hàng ngày vì nó rất giàu vitamin D, niacin, canxi, chất xơ, riboflavin, sắt và thiamine. Tất cả các thành phần dinh dưỡng này đều cần thiết cho cơ thể bạn để thúc đẩy hệ miễn dịch và giúp cân bằng các hoạt động chung của cơ thể.'),

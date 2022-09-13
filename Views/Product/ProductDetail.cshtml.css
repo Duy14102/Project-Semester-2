@@ -318,6 +318,11 @@ input[type=number]::-webkit-outer-spin-button {
     display: inline-block;
 }
 
+.reviewCover {
+    display: flex;
+    justify-content: space-between;
+}
+
 .review-heading {
     font-size: 24px;
     font-weight: 600;
@@ -325,6 +330,12 @@ input[type=number]::-webkit-outer-spin-button {
     margin-bottom: 6px;
     text-transform: uppercase;
     color: #000;
+}
+
+.formCover {
+    border: 2px solid rgb(0, 119, 132);
+    padding: 25px;
+    height: 555px;
 }
 
 .review-form .form-control {
@@ -452,8 +463,138 @@ input[type=number]::-webkit-outer-spin-button {
 
 /*   Product Card   */
 
+/*   Review Section   */
+
+.rating {
+    color: rgb(255, 226, 52);
+}
+
+.card-white .h5 {
+    font-size: 14px;
+}
+
+.card-white .time {
+    font-size: 12px;
+}
+
+.post .post-heading {
+    height: 95px;
+    padding: 20px 15px;
+}
+
+.post .post-heading .avatar {
+    width: 60px;
+    height: 60px;
+    display: block;
+    margin-right: 15px;
+}
+
+.post .post-heading .meta .title {
+    margin-bottom: 0;
+}
+
+.post .post-heading .meta .title a {
+    color: black;
+}
+
+.post .post-heading .meta .title a:hover {
+    color: #aaaaaa;
+}
+
+.post .post-heading .meta .time {
+    margin-top: 8px;
+    color: #999;
+}
+
+.post .post-image .image {
+    width: 100%;
+    height: auto;
+}
+
+.post .post-description {
+    padding: 15px;
+}
+
+.post .post-description p {
+    font-size: 14px;
+}
+
+.post .post-description .stats {
+    margin-top: 20px;
+}
+
+.post .post-description .stats .stat-item {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.post .post-description .stats .stat-item .icon {
+    margin-right: 8px;
+}
+
+.post .post-footer {
+    padding: 15px;
+}
+
+.post .post-footer .input-group-addon a {
+    color: #454545;
+}
+
+.post .post-footer .comments-list {
+    padding: 0;
+    margin-top: 20px;
+    list-style-type: none;
+}
+
+.post .post-footer .comments-list .comment {
+    display: block;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.post .post-footer .comments-list .comment .avatar {
+    width: 35px;
+    height: 35px;
+}
+
+.post .post-footer .comments-list .comment .comment-heading {
+    display: block;
+    width: 100%;
+}
+
+.post .post-footer .comments-list .comment .comment-heading .user {
+    font-size: 14px;
+    font-weight: bold;
+    display: inline;
+    margin-top: 0;
+    margin-right: 10px;
+}
+
+.post .post-footer .comments-list .comment .comment-heading .time {
+    font-size: 12px;
+    color: #aaa;
+    margin-top: 0;
+    display: inline;
+}
+
+.post .post-footer .comments-list .comment .comment-body {
+    margin-left: 50px;
+}
+
+.post .post-footer .comments-list .comment>.comments-list {
+    margin-left: 50px;
+}
+
 @media (max-width:575px) {
     .product-name {
         margin-top: 15px;
+    }
+
+    .reviewCover {
+        display: block;
+    }
+
+    .formCover {
+        height: 630px;
     }
 }

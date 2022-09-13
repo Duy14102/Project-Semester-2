@@ -18,6 +18,7 @@ public class HomeController : Controller
         using (Models.OrderDBContext context = new Models.OrderDBContext())
         {
             ViewData["Items"] = context.Items.OrderBy(i => i.ItemId).Take(12).ToList();
+            ViewData["Feedbacks"] = context.Feedbacks.OrderBy(a => a.FeedbackId).ToList();
         }
         return View();
     }

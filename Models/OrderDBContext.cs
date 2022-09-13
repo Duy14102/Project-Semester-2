@@ -90,6 +90,15 @@ namespace FirstAspNetApp.Models
                 entity.Property(e => e.FeedbackStory)
                 .HasMaxLength(500)
                 .HasColumnName("feedback_story");
+
+                entity.Property(e => e.FeedbackLink)
+                .HasMaxLength(500)
+                .HasColumnName("feedback_link");
+
+                entity.Property(e => e.FeedbackDate)
+                    .HasColumnType("datetime")
+                    .HasColumnName("feedback_date")
+                    .HasDefaultValueSql("CURRENT_TIMESTAMP");
             });
 
             modelBuilder.Entity<Order>(entity =>
