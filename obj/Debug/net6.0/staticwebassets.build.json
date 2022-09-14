@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5a93W8i38neIkX/opVMMG4CZAkI1bXGIRr3oSmpk0b8=",
+  "Hash": "x79L5QYYsP7TGBJUMapyp3kMEXEaN/sWIWtTMjkmwss=",
   "Source": "FirstAspNetApp",
   "BasePath": "_content/FirstAspNetApp",
   "Mode": "Default",
@@ -236,6 +236,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\image\\DauHu.jpg"
+    },
+    {
+      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\image\\DefaultFeedback.jpg",
+      "SourceId": "FirstAspNetApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "BasePath": "_content/FirstAspNetApp",
+      "RelativePath": "image/DefaultFeedback.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\image\\DefaultFeedback.jpg"
     },
     {
       "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\image\\DuaMuoi.jpg",

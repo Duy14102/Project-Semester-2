@@ -87,13 +87,39 @@ public class ProductController : Controller
         using (Models.OrderDBContext context = new Models.OrderDBContext())
         {
             ViewData["Feedbacks"] = context.Feedbacks.OrderBy(a => a.FeedbackId).ToList();
-            ViewData["Item"] = context.Items.Single(i => i.ItemId == id);
-            if (ViewData["Item"] == null)
+            ViewData["Items"] = context.Items.Single(i => i.ItemId == id);
+            if (ViewData["Items"] == null)
             {
                 TempData["msg"] = "Can't find Item with id = " + id;
             }
         }
         return View();
+    }
+
+    [HttpPost]
+    // [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Create([Bind("FeedbackName,FeedbackStory")] Feedback feedback)
+    {
+        using (Models.OrderDBContext context = new Models.OrderDBContext())
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    context.Feedbacks.Add(feedback);
+                    await context.SaveChangesAsync();
+                    return RedirectToAction(nameof(TatCa));
+                }
+            }
+            catch (DbUpdateException /* ex */)
+            {
+                //Log the error (uncomment ex variable name and write a log.
+                ModelState.AddModelError("", "Unable to save changes. " +
+                    "Try again, and if the problem persists " +
+                    "see your system administrator.");
+            }
+        }
+        return View(feedback);
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

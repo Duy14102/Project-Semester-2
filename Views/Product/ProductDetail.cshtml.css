@@ -335,7 +335,7 @@ input[type=number]::-webkit-outer-spin-button {
 .formCover {
     border: 2px solid rgb(0, 119, 132);
     padding: 25px;
-    height: 555px;
+    height: 585px;
 }
 
 .review-form .form-control {

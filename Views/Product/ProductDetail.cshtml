@@ -1,7 +1,7 @@
 @model Feedback
 @{
     ViewData["Title"] = "Product Page";
-    var viewItemData = ViewData["Item"];
+    var viewItemData = ViewData["Items"];
     var viewFeedbackData = ViewData["Feedbacks"];
     var Nuoc = "Nước";
     var Canh = "Canh";
@@ -138,6 +138,9 @@
 
             </div>
             <div class="product-info-tabs">
+                @if (viewFeedbackData is List<Feedback>)
+                {
+                List<Feedback> feedbacks = (List<Feedback>)viewFeedbackData;
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item">
                         <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab"
@@ -159,17 +162,18 @@
                             <div class="col-sm-5 col-md-6 col-12 pb-4">
                                 <div class="container">
                                     <div class="row">
-                                        @if (viewFeedbackData is List<Feedback>)
-                                        {
-                                            List<Feedback> feedbacks = (List<Feedback>)viewFeedbackData;
                                             @foreach (var feedback in feedbacks)
                                             {
                                                 <div class="col-20">
                                                     <div class="card-white post">
                                                         <div class="post-heading">
                                                             <div class="float-left image">
+                                                            @if(feedback.FeedbackLink == null){
+                                                                <img src="~/image/DefaultFeedback.jpg" style="margin-right: 15px;width:60px;height:60px;" class="img-circle avatar" alt="user profile image">
+                                                            }else{
                                                                 <img src="@Url.Content(@feedback.FeedbackLink)"
                                                         class="img-circle avatar" alt="user profile image">
+                                                        }
                                                             </div>
                                                             <div class="float-left meta">
                                                                 <div class="title h5">
@@ -187,19 +191,18 @@
                                                         feedback.FeedbackDate)</h6>
                                                             </div>
                                                         </div>
-                                                        <div class="post-description">
+                                                        <div class="text-dark post-description">
                                                             <p>@Html.DisplayFor(modelFeedback =>
                                                     feedback.FeedbackStory)</p>
                                                         </div>
                                                     </div>
                                                 </div>
                                             }
-                                        }
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12 formCover">
-                                <form class="review-form">
+                                <form action="/Product/Create" method="post" class="review-form">
                                     <div class="form-group">
                                         <label class="text-dark"><b>Đánh giá của bạn</b></label>
                                         <div class="reviews-counter">
@@ -219,31 +222,39 @@
                                     </div>
                                     <div class="form-group">
                                         <label class="text-dark" for="Walkin"><b>Nhận xét của bạn</b></label>
-                                        <textarea id="Walkin" class="form-control" rows="10"
-                                        placeholder="Nhập gì đó..."></textarea>
+                                        <textarea type="text" id="FeedbackStory" name="FeedbackStory" id="Walkin"
+                                        class="form-control" rows="10" placeholder="Nhập gì đó..." required
+                                        asp-for="FeedbackStory"></textarea>
+                                        <span class="text-danger field-validation-valid" data-valmsg-for="FeedbackStory"
+                                        data-valmsg-replace="true"></span>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label class="text-dark" for="nameReview"><b>Họ và tên</b></label>
-                                                <input type="text" id="nameReview" name="" class="form-control"
-                                                placeholder="Nhập tên">
+                                                <input type="text" id="FeedbackName" name="FeedbackName"
+                                                class="form-control" placeholder="Nhập tên" required
+                                                asp-for="FeedbackName">
+                                                <span class="text-danger field-validation-valid"
+                                                data-valmsg-for="FeedbackName" data-valmsg-replace="true"></span>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label class="text-dark" for="emailReview"><b>Email</b></label>
                                                 <input type="text" id="emailReview" name="" class="form-control"
-                                                placeholder="Nhập địa chỉ email">
+                                                placeholder="Nhập địa chỉ email" required>
                                             </div>
                                         </div>
                                     </div>
-                                    <button class="round-black-btn">Gửi đánh giá</button>
+                                    <button type="submit" value="Create Product" class="round-black-btn">Gửi đánh
+                                        giá</button>
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
+    }
             </div>
         </div><br><br>
         <h2 align="center"><b>Sản phẩm tương tự</b></h2>
