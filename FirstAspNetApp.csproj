@@ -13,6 +13,7 @@
     </PackageReference>
     <!-- <PackageReference Include="MySql.EntityFrameworkCore" Version="6.0.1" /> -->
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="6.0.1" />
+    <PackageReference Include="X.PagedList.Mvc.Core" Version="8.4.3" />
   </ItemGroup>
 
 </Project>

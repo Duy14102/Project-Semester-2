@@ -160,3 +160,8 @@ D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\refint\FirstAspNetAp
 D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\FirstAspNetApp.pdb
 D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\FirstAspNetApp.genruntimeconfig.cache
 D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\ref\FirstAspNetApp.dll
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\bin\Debug\net6.0\JetBrains.Annotations.dll
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\bin\Debug\net6.0\X.PagedList.dll
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\bin\Debug\net6.0\X.PagedList.Mvc.Core.dll
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\FirstAspNetApp.MvcApplicationPartsAssemblyInfo.cs
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\scopedcss\Views\Home\Search.cshtml.rz.scp.css

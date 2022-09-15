@@ -1,25 +1,25 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using FirstAspNetApp.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace FirstAspNetApp.Controllers;
 
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
+    private readonly OrderDBContext _context;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(ILogger<HomeController> logger, OrderDBContext context)
     {
         _logger = logger;
+        _context = context;
     }
 
     public IActionResult Index()
     {
-        using (Models.OrderDBContext context = new Models.OrderDBContext())
-        {
-            ViewData["Items"] = context.Items.OrderBy(i => i.ItemId).Take(12).ToList();
-            ViewData["Feedbacks"] = context.Feedbacks.OrderBy(a => a.FeedbackId).ToList();
-        }
+        ViewData["Items"] = _context.Items.OrderBy(i => i.ItemId).Take(12).ToList();
+        ViewData["Feedbacks"] = _context.Feedbacks.OrderBy(a => a.FeedbackId).ToList();
         return View();
     }
 
@@ -31,6 +31,26 @@ public class HomeController : Controller
     public IActionResult Privacy()
     {
         return View();
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> Search(string searchString)
+    {
+        var movies = from m in _context.Items
+                     select m;
+
+        if (!String.IsNullOrEmpty(searchString))
+        {
+            movies = movies.Where(s => s.ItemName.Contains(searchString));
+        }
+
+        return View(await movies.ToListAsync());
+    }
+
+    [HttpPost]
+    public string Search(string searchString, bool notUsed)
+    {
+        return "From [HttpPost]Index: filter on " + searchString;
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

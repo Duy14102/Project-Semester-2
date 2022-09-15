@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "x79L5QYYsP7TGBJUMapyp3kMEXEaN/sWIWtTMjkmwss=",
+  "Hash": "Au4SIHh57w9o5ePkZVWmcuUhVCFho1yYKeuC0Zj125w=",
   "Source": "FirstAspNetApp",
   "BasePath": "_content/FirstAspNetApp",
   "Mode": "Default",
@@ -119,12 +119,12 @@
       "OriginalItemSpec": "wwwroot\\image\\BannerHere.png"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\image\\Bia.jpg",
+      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\image\\Bia.png",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
-      "RelativePath": "image/Bia.jpg",
+      "RelativePath": "image/Bia.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -133,7 +133,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\image\\Bia.jpg"
+      "OriginalItemSpec": "wwwroot\\image\\Bia.png"
     },
     {
       "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\image\\CaMuoi.jpg",
@@ -187,12 +187,12 @@
       "OriginalItemSpec": "wwwroot\\image\\CanhCua.jpg"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\image\\Cocacola.jpg",
+      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\image\\Cocacola.png",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
-      "RelativePath": "image/Cocacola.jpg",
+      "RelativePath": "image/Cocacola.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -201,7 +201,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\image\\Cocacola.jpg"
+      "OriginalItemSpec": "wwwroot\\image\\Cocacola.png"
     },
     {
       "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\image\\ComTrang.jpg",
@@ -391,12 +391,12 @@
       "OriginalItemSpec": "wwwroot\\image\\LonLuoc.jpg"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\image\\Sprite.jpg",
+      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\image\\RauCaiLuoc.jpg",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
-      "RelativePath": "image/Sprite.jpg",
+      "RelativePath": "image/RauCaiLuoc.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -405,7 +405,41 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\image\\Sprite.jpg"
+      "OriginalItemSpec": "wwwroot\\image\\RauCaiLuoc.jpg"
+    },
+    {
+      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\image\\RauMuongXao.jpg",
+      "SourceId": "FirstAspNetApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "BasePath": "_content/FirstAspNetApp",
+      "RelativePath": "image/RauMuongXao.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\image\\RauMuongXao.jpg"
+    },
+    {
+      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\image\\Sprite.png",
+      "SourceId": "FirstAspNetApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "BasePath": "_content/FirstAspNetApp",
+      "RelativePath": "image/Sprite.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\image\\Sprite.png"
     },
     {
       "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\image\\VitQuay.png",

@@ -2,96 +2,82 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using FirstAspNetApp.Models;
 using Microsoft.EntityFrameworkCore;
+using X.PagedList;
 
 namespace FirstAspNetApp.Controllers;
 
 public class ProductController : Controller
 {
     private readonly ILogger<HomeController> _logger;
+    private readonly OrderDBContext _context;
 
-    public ProductController(ILogger<HomeController> logger)
+    public ProductController(ILogger<HomeController> logger, OrderDBContext contexted)
     {
         _logger = logger;
+        _context = contexted;
     }
 
     public IActionResult Index()
     {
-        using (Models.OrderDBContext context = new Models.OrderDBContext())
-        {
-            ViewData["Items"] = context.Items.OrderBy(i => i.Category).ToList();
-        }
+        ViewData["Items"] = _context.Items.OrderBy(i => i.Category).ToList();
         return View();
     }
 
-    public IActionResult TatCa()
+    public IActionResult TatCa(int? page = 1)
     {
-        using (Models.OrderDBContext context = new Models.OrderDBContext())
+        if (page != null && page < 1)
         {
-            ViewData["Items"] = context.Items.OrderBy(i => i.ItemId).ToList();
+            page = 1;
         }
-        return View();
+        var pageSize = 12;
+        var item = _context.Items.OrderBy(i => i.ItemId).ToPagedList(page ?? 1, pageSize);
+        // ViewData["Items"] = context.Items.OrderBy(i => i.ItemId).ToList(); //
+
+        return View(item);
     }
 
     public IActionResult DoAnKem()
     {
         string water = "Đồ Ăn Kèm";
-        using (Models.OrderDBContext context = new Models.OrderDBContext())
-        {
-            ViewData["Items"] = context.Items.OrderBy(i => i.ItemId).Where(i => i.Category == water).ToList();
-        }
+        ViewData["Items"] = _context.Items.OrderBy(i => i.ItemId).Where(i => i.Category == water).ToList();
         return View();
     }
 
     public IActionResult Thit()
     {
         string water = "Thịt";
-        using (Models.OrderDBContext context = new Models.OrderDBContext())
-        {
-            ViewData["Items"] = context.Items.OrderBy(i => i.ItemId).Where(i => i.Category == water).ToList();
-        }
+        ViewData["Items"] = _context.Items.OrderBy(i => i.ItemId).Where(i => i.Category == water).ToList();
         return View();
     }
 
     public IActionResult Rau()
     {
         string water = "Rau";
-        using (Models.OrderDBContext context = new Models.OrderDBContext())
-        {
-            ViewData["Items"] = context.Items.OrderBy(i => i.ItemId).Where(i => i.Category == water).ToList();
-        }
+        ViewData["Items"] = _context.Items.OrderBy(i => i.ItemId).Where(i => i.Category == water).ToList();
         return View();
     }
 
     public IActionResult Canh()
     {
         string water = "Canh";
-        using (Models.OrderDBContext context = new Models.OrderDBContext())
-        {
-            ViewData["Items"] = context.Items.OrderBy(i => i.ItemId).Where(i => i.Category == water).ToList();
-        }
+        ViewData["Items"] = _context.Items.OrderBy(i => i.ItemId).Where(i => i.Category == water).ToList();
         return View();
     }
 
     public IActionResult Nuoc()
     {
         string water = "Nước";
-        using (Models.OrderDBContext context = new Models.OrderDBContext())
-        {
-            ViewData["Items"] = context.Items.OrderBy(i => i.ItemId).Where(i => i.Category == water).ToList();
-        }
+        ViewData["Items"] = _context.Items.OrderBy(i => i.ItemId).Where(i => i.Category == water).ToList();
         return View();
     }
 
     public IActionResult ProductDetail(int? id)
     {
-        using (Models.OrderDBContext context = new Models.OrderDBContext())
+        ViewData["Feedbacks"] = _context.Feedbacks.OrderBy(i => i.FeedbackId).ToList();
+        ViewData["Items"] = _context.Items.Single(i => i.ItemId == id);
+        if (ViewData["Items"] == null)
         {
-            ViewData["Feedbacks"] = context.Feedbacks.OrderBy(a => a.FeedbackId).ToList();
-            ViewData["Items"] = context.Items.Single(i => i.ItemId == id);
-            if (ViewData["Items"] == null)
-            {
-                TempData["msg"] = "Can't find Item with id = " + id;
-            }
+            TempData["msg"] = "Can't find Item with id = " + id;
         }
         return View();
     }
