@@ -1,0 +1,24 @@
+@using Microsoft.AspNetCore.Http
+@{
+    ViewBag.Title = "AdminPanel";
+    var context = Context.Session;
+}
+<div class="row justify-content-md-start">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                Wellcome
+            </div>
+            <div class="card-body">
+                @if (context.GetString("Fullname") != null)
+                {
+                    <p>Name: @context.GetInt32("UserId")</p>
+                    <p>Name: @context.GetString("Fullname")</p>
+                    <p>Email: @context.GetString("Email")</p>
+                    <a href="@Url.Action("Login","Admin")" class="btn btn-warning">Logout</a>
+                }
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,90 @@
+@model User
+@{
+    ViewData["Title"] = "Đăng Nhập / Đăng Ký";
+    var viewItemsData = ViewData["Items"];
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="~/Admin/Login.cshtml.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+</head>
+
+<body class="bg-light">
+    <div class="row">
+        <div class="col-md-6 mx-auto p-0">
+            <div class="card">
+                <div class="login-box">
+                    <div class="login-snip">
+                        <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1"
+                            class="tab">Đăng Ký</label>
+                        <input id="tab-2" class="sign-up"><label for="tab-2" class="tab">
+                            </label>
+                        <div class="login-space">
+                            <div class="login">
+                                @using (Html.BeginForm("Register", "Admin", FormMethod.Post))
+                                {
+                                    @Html.AntiForgeryToken()
+                                        <div class="group">
+                                            <label for="Username" class="label">Tài khoản</label>
+                                            <input id="Username" name="Username" type="text" class="input"
+                                        placeholder="Nhập tài khoản" required>
+                                            <span class="text-danger field-validation-valid" data-valmsg-for="Username"
+                                        data-valmsg-replace="true"></span>
+                                        @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "badge badge-danger" })
+                                        </div>
+                                        <div class="group">
+                                            <label for="Password" class="label">Mật khẩu</label>
+                                            <input id="Password" name="Password" type="password" class="input"
+                                        data-type="password" placeholder="Nhập mật khẩu" required>
+                                            <span class="text-danger field-validation-valid" data-valmsg-for="Password"
+                                        data-valmsg-replace="true"></span>
+                                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "badge badge-danger" })
+                                        </div>
+                                        <div class="group">
+                                            <label for="ConfirmPassword" class="label">Nhập lại Mật khẩu</label>
+                                            <input id="ConfirmPassword" name="ConfirmPassword" type="password" class="input"
+                                        data-type="password" placeholder="Nhập lại mật khẩu" required>
+                                            <span class="text-danger field-validation-valid" data-valmsg-for="ConfirmPassword"
+                                        data-valmsg-replace="true"></span>
+                                        @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "badge badge-danger" })
+                                        </div>
+                                        <div class="group">
+                                            <label for="Email" class="label">Email</label>
+                                            <input id="Email" name="Email" type="email" class="input"
+                                        placeholder="Nhập Email" required>
+                                            <span class="text-danger field-validation-valid" data-valmsg-for="Email"
+                                        data-valmsg-replace="true"></span>
+                                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "badge badge-danger" })
+                                        @if (ViewBag.error != null)
+                                        {
+                                            <span class="badge badge-danger">@ViewBag.error</span>
+                                        }
+                                        </div>
+                                        <div class="group">
+                                            <label for="Fullname" class="label">Tên</label>
+                                            <input id="Fullname" name="Fullname" type="text" class="input" placeholder="Nhập tên" required>
+                                            <span class="text-danger field-validation-valid" data-valmsg-for="Fullname"
+                                        data-valmsg-replace="true"></span>
+                                        @Html.ValidationMessageFor(m => m.Fullname, "", new { @class = "badge badge-danger" })
+                                        </div>
+                                        <div class="group">
+                                            <input type="submit" name="submit" class="button" value="Đăng Ký">
+                                        </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+
+</html>

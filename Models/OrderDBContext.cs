@@ -17,6 +17,7 @@ namespace FirstAspNetApp.Models
         }
 
         public virtual DbSet<Customer> Customers { get; set; } = null!;
+        public virtual DbSet<User> Users { get; set; } = null!;
         public virtual DbSet<Item> Items { get; set; } = null!;
         public virtual DbSet<Order> Orders { get; set; } = null!;
         public virtual DbSet<OrderDetail> OrderDetails { get; set; } = null!;
@@ -49,10 +50,31 @@ namespace FirstAspNetApp.Models
                     .HasColumnName("customer_name");
             });
 
+            modelBuilder.Entity<User>(entity =>
+            {
+                entity.Property(e => e.UserId).HasColumnName("user_id");
+
+                entity.Property(e => e.UserName)
+                    .HasMaxLength(500)
+                    .HasColumnName("user_name");
+
+                entity.Property(e => e.Password)
+                    .HasMaxLength(500)
+                    .HasColumnName("user_password");
+
+                entity.Property(e => e.Fullname)
+                    .HasMaxLength(500)
+                    .HasColumnName("user_fullname");
+
+                entity.Property(e => e.Email)
+                    .HasMaxLength(500)
+                    .HasColumnName("user_email");
+
+                entity.Property(e => e.Role).HasColumnName("user_role").HasDefaultValue(2);
+            });
+
             modelBuilder.Entity<Item>(entity =>
             {
-                entity.Property(e => e.ItemId).HasColumnName("item_id");
-
                 entity.Property(e => e.ItemId).HasColumnName("item_id");
 
                 entity.Property(e => e.Category)
@@ -78,6 +100,7 @@ namespace FirstAspNetApp.Models
                     .HasColumnName("unit_price")
                     .HasDefaultValueSql("'0.00'");
             });
+
 
             modelBuilder.Entity<Feedback>(entity =>
             {

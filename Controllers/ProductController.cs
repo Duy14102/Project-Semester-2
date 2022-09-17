@@ -82,32 +82,6 @@ public class ProductController : Controller
         return View();
     }
 
-    [HttpPost]
-    // [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create([Bind("FeedbackName,FeedbackStory")] Feedback feedback)
-    {
-        using (Models.OrderDBContext context = new Models.OrderDBContext())
-        {
-            try
-            {
-                if (ModelState.IsValid)
-                {
-                    context.Feedbacks.Add(feedback);
-                    await context.SaveChangesAsync();
-                    return RedirectToAction(nameof(TatCa));
-                }
-            }
-            catch (DbUpdateException /* ex */)
-            {
-                //Log the error (uncomment ex variable name and write a log.
-                ModelState.AddModelError("", "Unable to save changes. " +
-                    "Try again, and if the problem persists " +
-                    "see your system administrator.");
-            }
-        }
-        return View(feedback);
-    }
-
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {

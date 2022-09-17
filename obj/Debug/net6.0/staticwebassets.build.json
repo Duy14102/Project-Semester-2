@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Au4SIHh57w9o5ePkZVWmcuUhVCFho1yYKeuC0Zj125w=",
+  "Hash": "zg9BiRkeInt2G5cNwXyIsOB3L5UGRO6+l9H20uUKJkg=",
   "Source": "FirstAspNetApp",
   "BasePath": "_content/FirstAspNetApp",
   "Mode": "Default",
@@ -119,12 +119,12 @@
       "OriginalItemSpec": "wwwroot\\image\\BannerHere.png"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\image\\Bia.png",
+      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\image\\Bia.jpg",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
-      "RelativePath": "image/Bia.png",
+      "RelativePath": "image/Bia.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -133,7 +133,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\image\\Bia.png"
+      "OriginalItemSpec": "wwwroot\\image\\Bia.jpg"
     },
     {
       "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\image\\CaMuoi.jpg",
@@ -425,12 +425,12 @@
       "OriginalItemSpec": "wwwroot\\image\\RauMuongXao.jpg"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\image\\Sprite.png",
+      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\image\\Sprite.jpg",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
-      "RelativePath": "image/Sprite.png",
+      "RelativePath": "image/Sprite.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -439,7 +439,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\image\\Sprite.png"
+      "OriginalItemSpec": "wwwroot\\image\\Sprite.jpg"
     },
     {
       "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\image\\VitQuay.png",

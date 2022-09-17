@@ -43,7 +43,7 @@ public class HomeController : Controller
         {
             movies = movies.Where(s => s.ItemName.Contains(searchString));
         }
-
+        ViewBag.Message = searchString;
         return View(await movies.ToListAsync());
     }
 

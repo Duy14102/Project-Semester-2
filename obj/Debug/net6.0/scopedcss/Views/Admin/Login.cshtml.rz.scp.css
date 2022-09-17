@@ -5,6 +5,7 @@
 
 body[b-5w4vkayr2p] {
     margin: 0;
+    font: 600 16px/18px;
 }
 
 .login-box[b-5w4vkayr2p] {
@@ -13,7 +14,7 @@ body[b-5w4vkayr2p] {
     max-width: 525px;
     min-height: 670px;
     position: relative;
-    background: url(https://info-imgs.vgcloud.vn/2021/09/02/09/dan-mang-lac-mat-voi-mam-com-day-huong-vi-viet-tren-dat-nhat-cua-me-dam-8x.jpeg) no-repeat center;
+    background: url(https://anh.eva.vn/upload/3-2017/images/2017-09-02/mam-com-hinh-chu-s-xuat-hien-dung-dot-quoc-khanh-29-khien-dan-mang-thich-thu-mam-com-gia-dinh-hinh-chu-s-2-1504368875-width600height800.jpg) no-repeat center;
     box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
 }
 
@@ -22,7 +23,7 @@ body[b-5w4vkayr2p] {
     height: 100%;
     position: absolute;
     padding: 90px 70px 50px 70px;
-    background: rgba(28, 43, 43, 0.9);
+    background: rgba(0, 54, 54, 0.9);
 }
 
 .login-snip .login[b-5w4vkayr2p],
@@ -50,7 +51,7 @@ body[b-5w4vkayr2p] {
 }
 
 .login-snip .tab[b-5w4vkayr2p] {
-    color: lightgray;
+    color: gray;
     font-size: 22px;
     margin-right: 15px;
     padding-bottom: 5px;
@@ -60,15 +61,14 @@ body[b-5w4vkayr2p] {
 }
 
 .login-snip .tab:hover[b-5w4vkayr2p] {
-    color: rgb(0, 119, 132);
-    transition: 0.3s;
     cursor: pointer;
 }
 
 .login-snip .sign-in:checked+.tab[b-5w4vkayr2p],
 .login-snip .sign-up:checked+.tab[b-5w4vkayr2p] {
-    color: rgb(0, 119, 132);
-    border-color: white;
+    cursor: pointer;
+    color: #fff;
+    border-color: rgb(0, 119, 132);
 }
 
 .login-space[b-5w4vkayr2p] {
@@ -112,9 +112,9 @@ body[b-5w4vkayr2p] {
 }
 
 .login-space .group .button:hover[b-5w4vkayr2p] {
-    background: white;
+    transition: 0.5s;
+    background-color: white;
     color: rgb(0, 119, 132);
-    transition: 0.3s;
 }
 
 .login-space .group label .icon[b-5w4vkayr2p] {
@@ -154,7 +154,7 @@ body[b-5w4vkayr2p] {
 }
 
 .login-space .group .check:checked+label .icon[b-5w4vkayr2p] {
-    background: rgb(0, 119, 132);
+    background: #1161ee;
 }
 
 .login-space .group .check:checked+label .icon[b-5w4vkayr2p]:before {
@@ -203,12 +203,8 @@ a[b-5w4vkayr2p] {
 }
 
 .foot[b-5w4vkayr2p] {
-    color: rgb(0, 119, 132);
+    color: gray;
     text-align: center;
-}
-
-.foot a:hover[b-5w4vkayr2p] {
-    color: white;
 }
 
 .card[b-5w4vkayr2p] {
@@ -218,10 +214,4 @@ a[b-5w4vkayr2p] {
 
 [b-5w4vkayr2p]::placeholder {
     color: #b3b3b3;
-}
-
-@media (max-width:575px) {
-    .card[b-5w4vkayr2p] {
-        left: 33px;
-    }
 }

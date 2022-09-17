@@ -27,6 +27,10 @@
             <a asp-area="" asp-controller="Home" asp-action="Index" class="nav-link text-muted">Trang Chủ</a> /
             <a class="nav-link text-dark" href="#">Tìm Kiếm</a>
         </div>
+        <div>
+            <h5><b>Kết quả tìm kiếm : "@ViewBag.Message"</b></h5>
+            <p>Có @Model.Count sản phẩm</p>
+        </div>
         <div class="row">
             @foreach (var item in Model)
             {

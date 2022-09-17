@@ -10,6 +10,15 @@ create table Customers(
     customer_address varchar(200)
 );
 
+create table Users(
+	user_id int auto_increment primary key,
+    user_name varchar(500) not null,
+    user_password varchar(500) not null,
+    user_fullname varchar(500)not null,
+    user_email varchar(500)not null,
+    user_role int default 2
+);
+
 create table Items(
 	item_id int auto_increment primary key,
     item_name varchar(200) not null,
@@ -89,6 +98,12 @@ insert into Customers(customer_name, customer_address) values
     ('Nguyen Van A','Hanoi');
 select * from Customers;
 
+insert into Users(user_name, user_password, user_fullname, user_email, user_role) values
+('vtca1234', 'vtca1234', 'VTCA', 'vtca@vtc.edu.vn', 1),
+('user1234', 'user1234', 'User', 'user@vtc.edu.vn', '2');
+select * from Users;
+select MD5('vtca1234');
+
 insert into Feedbacks(feedback_link,feedback_name, feedback_story) values
 ('~/image/FeedBack1.jpg','Bùi Xuân Huấn', 'Đồ ăn ở đây các món cũng giản dị thôi, nhưng mình ăn lại rất hợp, kiểu cơm nhà. Ăn các chỗ khác sẽ nêm nếm nhiều gia vị, rồi có nhiều sốt các thứ, nhưng ở đây món ăn khá đơn giản và mộc mạc. Cơm và thức ăn đầy đặn, được cái nhiều rau, thường có thêm tráng miệng là hoa quả.'),
 ('~/image/FeedBack2.jpg','Ngô Bá Khá', 'Bên này là chân ái của mình nè, ở đây mô hình bán cơm hơi khác, đầu tiên là người nấu là các mẹ nội trợ ý, thấy bảo start-up khởi nghiệp gì, trước lên báo cũng nổi lắm. Hai là họ thiên về bán theo gói cơm, cũng có bán lẻ theo suất nhưng hình như cx đắt hàng nên nhanh hết.'),
@@ -106,8 +121,8 @@ insert into Items(item_name, unit_price, category, item_status, item_description
     ('Canh Cua', 10.0, 'Canh', 1, '~/image/CanhCua.jpg', 'Canh cua đồng được xem là món ăn có tác dụng giải nhiệt hiệu quả trong mùa hè. Canh cua đồng được xem là món ăn tốt đối với trẻ còi xương và người bị loãng xương. Theo đông y, cua đồng có vị mặn, tính hàn, hơi độc, có tác dụng sinh phong liền gân nối xương.'),
     ('Canh Bí', 7.0, 'Canh', 1, '~/image/CanhBi.jpg', 'Trong bí xanh chứa rất nhiều kali. Kali có khả năng làm giãn mạch cũng như giảm sự căng thẳng trên mạch máu và động mạch, giúp ngăn ngừa các vấn đề liên quan đến tim mạch như đột quỵ và đau thắt cơ tim.'),
     ('Cocacola', 10.0, 'Nước', 1, '~/image/Cocacola.png', 'Thức uống này có công hiệu gần như gừng trong điều trị buồn nôn. Vậy nên, nếu bị chứng buồn nôn gây khó chịu, hãy nhấm nháp một chút nước ngọt Cocacola, chứng buồn nôn của bạn sẽ được cải thiện đáng kể.'),
-    ('Sprite', 10.0, 'Nước', 1, '~/image/Sprite.png', 'Sprite cũng được sử dụng để điều trị tắc nghẽn dạ dày. Các axit trong thức uống này tương tự như axit dạ dày; giúp tiêu hóa chất xơ và phá hủy các tắc nghẽn, nhấm nháp một chút Sprite ở nhiệt độ phòng sẽ làm dịu cổ họng.'),
-    ('Bia Các Loại', 10.0, 'Nước', 1, '~/image/Bia.png', 'Bia nhẹ chỉ có khoảng hai phần ba lượng calo của bia thông thường và ít cồn hơn một chút. Mặc dù bia chứa một lượng nhỏ vi chất dinh dưỡng, nhưng đây không phải là nguồn tốt so với thực phẩm nguyên chất như trái cây và rau quả.'),
+    ('Sprite', 10.0, 'Nước', 1, '~/image/Sprite.jpg', 'Sprite cũng được sử dụng để điều trị tắc nghẽn dạ dày. Các axit trong thức uống này tương tự như axit dạ dày; giúp tiêu hóa chất xơ và phá hủy các tắc nghẽn, nhấm nháp một chút Sprite ở nhiệt độ phòng sẽ làm dịu cổ họng.'),
+    ('Bia Các Loại', 10.0, 'Nước', 1, '~/image/Bia.jpg', 'Bia nhẹ chỉ có khoảng hai phần ba lượng calo của bia thông thường và ít cồn hơn một chút. Mặc dù bia chứa một lượng nhỏ vi chất dinh dưỡng, nhưng đây không phải là nguồn tốt so với thực phẩm nguyên chất như trái cây và rau quả.'),
     ('Rau Muống Xào', 10.0, 'Rau', 1, '~/image/RauMuongXao.jpg', 'Rau muống chứa một lượng vitamin C làm tăng cường hệ miễn dịch, ngăn chặn bệnh cảm và cúm. Các nhà nghiên cứu nói hàm lượng vitamin C trong rau còn nhiều hơn trái cây. Rau muống giàu vitamin A tốt cho mắt.'),
     ('Rau Cải Luộc', 10.0, 'Rau', 1, '~/image/RauCaiLuoc.jpg', 'nếu ăn rau cải thường xuyên sẽ gián tiếp hỗ trợ tim, tốt cho mạch máu của cơ thể. Đặc biệt, khi cải bẹ xanh được chế biến theo cách luộc, hấp thì hiệu quả trong việc giảm lượng cholesterol lớn hơn, so với ăn sống.'),
     ('Lợn Luộc', 7.5, 'Thịt', 1, '~/image/LonLuoc.jpg', 'Thịt lợn giúp đóng góp vào cơ thể rất nhiều loại vitamin và khoáng chất khác nhau như photpho, kali, nicaxin, vitamin B6, vitamin B12, kẽm... Trong đó hàm lượng vitamin B có trong thịt lợn là nguồn vitamin chính mà con người nhận từ thực phẩm.');
