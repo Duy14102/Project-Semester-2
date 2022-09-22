@@ -1,24 +1,242 @@
 @using Microsoft.AspNetCore.Http
 @{
+    var viewUsersdata = ViewData["Users"];
+    var viewItemsdata = ViewData["Items"];
     ViewBag.Title = "AdminPanel";
     var context = Context.Session;
 }
-<div class="row justify-content-md-start">
-    <div class="col-md-4">
-        <div class="card">
-            <div class="card-header">
-                Wellcome
-            </div>
-            <div class="card-body">
-                @if (context.GetString("Fullname") != null)
-                {
-                    <p>Name: @context.GetInt32("UserId")</p>
-                    <p>Name: @context.GetString("Fullname")</p>
-                    <p>Email: @context.GetString("Email")</p>
-                    <a href="@Url.Action("Login","Admin")" class="btn btn-warning">Logout</a>
-                }
-            </div>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="~/Admin/AdminPanel.cshtml.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+</head>
+
+<body class="bg-light">
+    <div class="header">
+        <!--Content before waves-->
+        <div class="inner-header flex">
+            <!--Just the logo.. Don't mind this-->
+            <h1>Welcome @context.GetString("Fullname")</h1>
         </div>
 
+        <!--Waves Container-->
+        <div>
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave"
+                        d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <g class="parallax">
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                    <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+                </g>
+            </svg>
+        </div>
+        <!--Waves end-->
+    </div><br><br>
+    <div class="row">
+        <div class="col-3">
+            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <a class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" href="#v-pills-home" role="tab"
+                    aria-controls="v-pills-home" aria-selected="true">Tạo tài khoản</a>
+                <a class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" href="#v-pills-profile" role="tab"
+                    aria-controls="v-pills-profile" aria-selected="false">Danh sách tài khoản</a>
+                <a class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" href="#v-pills-messages" role="tab"
+                    aria-controls="v-pills-messages" aria-selected="false">Tạo mặt hàng</a>
+                <a class="nav-link" asp-area="" asp-action="Author" asp-controller="Admin">Tác giả</a>
+                <a class="nav-link" id="v-pills-orders-tab" data-bs-toggle="pill" href="#v-pills-orders" role="tab"
+                    aria-controls="v-pills-orders" aria-selected="false">Danh sách mặt hàng</a>
+                <button type="button" style="text-align: left;" class="nav-link" data-toggle="modal"
+                    data-target="#exampleModal2">Thoát</button>
+                <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body" style="text-align: left;">
+                                <button type="button" class="close" data-dismiss="modal">
+                                    <b>X</b>
+                                </button>
+                                <h4>Thoát</h4>
+                                <h6>Bạn chắc chắn muốn thoát chứ?</h6><br>
+                                <div class="Heiy">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Không</button>
+                                    <a href="@Url.Action("Logout","Admin")" class="btn btn-warning">Thoát</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-9">
+            <div class="tab-content" id="v-pills-tabContent">
+                <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                    aria-labelledby="v-pills-home-tab">
+                    <section class="get-in-touch">
+                        <navbar>
+                            <h1 class="title">Tạo tài khoản</h1>
+                        </navbar>
+                        <form action="/Admin/EditPost" method="post" class="contact-form row">
+                            <div class="form-field col-lg-12">
+                                <input id="UserName" name="UserName" type="text" class="input-text js-input"
+                                    placeholder="Nhập tài khoản" required>
+                                <span class="text-danger field-validation-valid" data-valmsg-for="UserName"
+                                    data-valmsg-replace="true"></span>
+                            </div>
+                            <div class="form-field col-lg-12 ">
+                                <input id="Password" name="Password" type="password" class="input-text js-input"
+                                    data-type="password" placeholder="Nhập mật khẩu" required>
+                                <span class="text-danger field-validation-valid" data-valmsg-for="Password"
+                                    data-valmsg-replace="true"></span>
+                            </div>
+                            <div class="form-field col-lg-12 ">
+                                <input id="ConfirmPassword" name="ConfirmPassword" type="password"
+                                    class="input-text js-input" data-type="password" placeholder="Nhập lại mật khẩu"
+                                    required>
+                                <span class="text-danger field-validation-valid" data-valmsg-for="ConfirmPassword"
+                                    data-valmsg-replace="true"></span>
+                            </div>
+                            <div class="form-field col-lg-12 ">
+                                <input id="Fullname" name="Fullname" type="text" class="input-text js-input"
+                                    placeholder="Nhập tên" required>
+                                <span class="text-danger field-validation-valid" data-valmsg-for="Fullname"
+                                    data-valmsg-replace="true"></span>
+                            </div>
+                            <div class="form-field col-lg-12 ">
+                                <input id="Email" name="Email" type="email" class="input-text js-input"
+                                    placeholder="Nhập Email" required>
+                                <span class="text-danger field-validation-valid" data-valmsg-for="Email"
+                                    data-valmsg-replace="true"></span>
+                            </div>
+                            <div class="form-field col-lg-12">
+                                <input list="Role" type="text" id="Category12" name="Role" aria-disabled="true" />
+                                <select name="" onchange="myFunction(this.value);">
+                                    <option>Chọn Danh Mục</option>
+                                    <option data-value="1">Admin</option>
+                                    <option data-value="2">User</option>
+                                </select>
+                                <span class="text-danger field-validation-valid" data-valmsg-for="Role"
+                                    data-valmsg-replace="true"></span>
+                            </div>
+                            <div class="form-field col-lg-12">
+                                <input class="submit-btn" type="submit" value="Submit">
+                            </div>
+                        </form>
+                    </section>
+                </div>
+                <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                    @if (viewUsersdata is List<User>)
+                    {
+                        List<User> users = (List<User>)viewUsersdata;
+                        <table class="table table-bordered table-striped">
+                            <tr>
+                                <th>Id</th>
+                                <th>Tài khoản</th>
+                                <th>Mật khẩu</th>
+                                <th>Tên</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>&nbsp;</th>
+                                <th>&nbsp;</th>
+                            </tr>
+                            @foreach (var user in users)
+                            {
+                                <tr>
+                                    <td>@Html.DisplayFor(modelUser => user.UserId)</td>
+                                    <td>@Html.DisplayFor(modelUser => user.UserName)</td>
+                                    <td>@Html.DisplayFor(modelUser => user.Password)</td>
+                                    <td>@Html.DisplayFor(modelUser => user.Fullname)</td>
+                                    <td>@Html.DisplayFor(modelUser => user.Email)</td>
+                                    <td>@Html.DisplayFor(modelUser => user.Role)</td>
+                                    <td><a href="@Url.Action("EditUser", "Admin", new { id = user.UserId })">Sửa</a></td>
+                                    <td><a href="@Url.Action("DeleteUser", "Admin", new { id = user.UserId })">Xóa</a></td>
+                                </tr>
+                            }
+                        </table>
+                    }
+                </div>
+                <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                    <section class="get-in-touch">
+                        <navbar>
+                            <h1 class="title">Tạo mặt hàng</h1>
+                        </navbar>
+                        <form action="/Admin/CreateItem" method="post" class="contact-form row">
+                            <div class="form-field col-lg-12">
+                                <input class="input-text js-input" type="text" id="ItemName" name="ItemName"
+                                    placeholder="Nhập tên sản phẩm" />
+                                <span class="text-danger field-validation-valid" data-valmsg-for="ItemName"
+                                    data-valmsg-replace="true"></span>
+                            </div>
+                            <div class="form-field col-lg-12 ">
+                                <input class="input-text js-input" type="text" id="UnitPrice" name="UnitPrice"
+                                    placeholder="Nhập giá" />
+                                <span class="text-danger field-validation-valid" data-valmsg-for="UnitPrice"
+                                    data-valmsg-replace="true"></span>
+                            </div>
+                            <div class="form-field col-lg-12 ">
+                                <input list="Category" type="text" id="Category12" name="Category"
+                                    aria-disabled="true" />
+                                <select name="" onchange="myFunction(this.value);">
+                                    <option>Chọn Danh Mục</option>
+                                    <option data-value="Đồ Ăn Kèm">Đồ Ăn Kèm</option>
+                                    <option data-value="Thịt">Thịt</option>
+                                    <option data-value="Rau">Rau</option>
+                                    <option data-value="Canh">Canh</option>
+                                    <option data-value="Nước">Nước</option>
+                                </select>
+                                <span class="text-danger field-validation-valid" data-valmsg-for="Category"
+                                    data-valmsg-replace="true"></span>
+                            </div>
+                            <div class="form-field col-lg-12 ">
+                                <input class="input-text js-input" type="text" id="ItemStory" name="ItemStory"
+                                    placeholder="Nhập mô tả" />
+                                <span class="text-danger field-validation-valid" data-valmsg-for="ItemStory"
+                                    data-valmsg-replace="true"></span>
+                            </div>
+                            <div class="form-field col-lg-12">
+                                <input class="submit-btn" type="submit" value="Submit">
+                            </div>
+                        </form>
+                    </section>
+                </div>
+                <div class="tab-pane fade" id="v-pills-orders" role="tabpanel" aria-labelledby="v-pills-orders-tab">
+                    @if (viewItemsdata is List<Item>)
+                    {
+                        List<Item> items = (List<Item>)viewItemsdata;
+                        <table class="table table-bordered table-striped">
+                            <tr>
+                                <th>Id</th>
+                                <th>Tên mặt hàng</th>
+                                <th>Giá</th>
+                                <th>Danh mục</th>
+                                <th>Mô tả</th>
+                                <th>&nbsp;</th>
+                            </tr>
+                            @foreach (var item in items)
+                            {
+                                <tr>
+                                    <td>@Html.DisplayFor(modelItem => item.ItemId)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.ItemName)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.UnitPrice)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Category)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.ItemStory)</td>
+                                    <td><a href="@Url.Action("EditItem", "Admin", new { id = item.ItemId })">Sửa</a></td>
+                                    <td><a href="@Url.Action("DeleteItem", "Admin", new { id = item.ItemId })">Xóa</a></td>
+                                </tr>
+                            }
+                        </table>
+                    }
+                </div>
+                <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                    ...</div>
+            </div>
+        </div>
     </div>
-</div>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>

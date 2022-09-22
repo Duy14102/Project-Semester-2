@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@{
+    var context = Context.Session;
+}
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -39,7 +42,7 @@
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-body">
-                                    <form action="Home/Search" method="get">
+                                    <form asp-action="Search" method="get" id="f_search">
                                         <input id="search4This" type="text" name="searchString"
                                             placeholder="Nhập gì đó..." />
                                         <button type="submit">
@@ -83,15 +86,12 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Thông
                                 Báo</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Author">Tác
-                                Giả</a>
-                        </li>
                         <!--
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Product"
                                 asp-action="Index">Product</a>
                         </li>-->
+
                         <li class="nav-item LoginRespon">
                             <a class="nav-link text-dark LoginRespon" href="#">Đăng Nhập</a>
                         </li>
@@ -111,11 +111,29 @@
                                     d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
                             </svg></a>
                         <div class="UserDrop dropdown-menu animate slideIn" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item text-dark" asp-area="" asp-controller="Admin"
+                            @if (context.GetString("Fullname") != null)
+                            {
+                                if (context.GetInt32("Role") == 1)
+                                {
+                                    <a class="dropdown-item text-dark" asp-area="" asp-controller="Admin"
+                                asp-action="AdminPanel">Tài khoản</a>
+                                }
+                                else if (context.GetInt32("Role") == 2)
+                                {
+                                    <a class="dropdown-item text-dark" asp-area="" asp-controller="Home"
+                                asp-action="Author">Tài khoản</a>
+                                }
+                                <a href="@Url.Action("Logout","Admin")" class="dropdown-item text-dark">Thoát</a>
+                            }
+                            else
+                            {
+                                <a class="dropdown-item text-dark" asp-area="" asp-controller="Admin"
                                 asp-action="Login">Đăng Nhập</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item text-dark" asp-area="" asp-controller="Admin"
+
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-dark" asp-area="" asp-controller="Admin"
                                 asp-action="Register">Đăng Ký</a>
+                            }
                         </div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"

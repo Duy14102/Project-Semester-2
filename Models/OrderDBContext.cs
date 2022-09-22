@@ -165,12 +165,6 @@ namespace FirstAspNetApp.Models
                     .HasPrecision(20, 2)
                     .HasColumnName("unit_price");
 
-                entity.HasOne(d => d.Item)
-                    .WithMany(p => p.OrderDetails)
-                    .HasForeignKey(d => d.ItemId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("fk_OrderDetails_Items");
-
                 entity.HasOne(d => d.Order)
                     .WithMany(p => p.OrderDetails)
                     .HasForeignKey(d => d.OrderId)

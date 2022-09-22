@@ -141,7 +141,6 @@ D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\FirstAspNetApp.Razor
 D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\staticwebassets.build.json
 D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\staticwebassets.development.json
 D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\scopedcss\Views\Admin\Login.cshtml.rz.scp.css
-D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\scopedcss\Views\Home\Author.cshtml.rz.scp.css
 D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\scopedcss\Views\Home\Index.cshtml.rz.scp.css
 D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\scopedcss\Views\Home\Privacy.cshtml.rz.scp.css
 D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\scopedcss\Views\Product\Canh.cshtml.rz.scp.css
@@ -164,7 +163,9 @@ D:\VTCA\WD07\ASP.NET core\ProjectSemester2\bin\Debug\net6.0\JetBrains.Annotation
 D:\VTCA\WD07\ASP.NET core\ProjectSemester2\bin\Debug\net6.0\X.PagedList.dll
 D:\VTCA\WD07\ASP.NET core\ProjectSemester2\bin\Debug\net6.0\X.PagedList.Mvc.Core.dll
 D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\FirstAspNetApp.MvcApplicationPartsAssemblyInfo.cs
-D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\scopedcss\Views\Home\Search.cshtml.rz.scp.css
 D:\VTCA\WD07\ASP.NET core\ProjectSemester2\bin\Debug\net6.0\Newtonsoft.Json.dll
 D:\VTCA\WD07\ASP.NET core\ProjectSemester2\bin\Debug\net6.0\System.Security.Permissions.dll
 D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\scopedcss\Views\Admin\Register.cshtml.rz.scp.css
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\scopedcss\Views\Admin\AdminPanel.cshtml.rz.scp.css
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\scopedcss\Views\Shared\Search.cshtml.rz.scp.css
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\scopedcss\Views\Admin\Author.cshtml.rz.scp.css

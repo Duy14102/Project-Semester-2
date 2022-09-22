@@ -14,3 +14,20 @@ function decreaseValue() {
     value--;
     document.getElementById('number').value = value;
 }
+
+//Category Chosen
+function myFunction(element) {
+    document.getElementById("Category12").value = element;
+}
+
+$(function () {
+    $('#f_search input').keydown(function (e) {
+
+        var searchTerm = $("#search4This").val();
+
+        if (searchTerm == "" && Event.keyCode === 13) {
+            e.preventDefault();
+            return false;
+        }
+    });
+})

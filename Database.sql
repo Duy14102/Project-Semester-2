@@ -14,8 +14,8 @@ create table Users(
 	user_id int auto_increment primary key,
     user_name varchar(500) not null,
     user_password varchar(500) not null,
-    user_fullname varchar(500)not null,
-    user_email varchar(500)not null,
+    user_fullname varchar(500),
+    user_email varchar(500),
     user_role int default 2
 );
 
@@ -44,8 +44,7 @@ create table OrderDetails(
     unit_price decimal(20,2) not null,
     quantity int not null default 1,
     constraint pk_OrderDetails primary key(order_id, item_id),
-    constraint fk_OrderDetails_Orders foreign key(order_id) references Orders(order_id),
-    constraint fk_OrderDetails_Items foreign key(item_id) references Items(item_id)
+    constraint fk_OrderDetails_Orders foreign key(order_id) references Orders(order_id)
 );
 
 create table Feedbacks(
@@ -99,10 +98,12 @@ insert into Customers(customer_name, customer_address) values
 select * from Customers;
 
 insert into Users(user_name, user_password, user_fullname, user_email, user_role) values
-('vtca1234', 'vtca1234', 'VTCA', 'vtca@vtc.edu.vn', 1),
+('duy1234', 'duy1234', 'Duy', 'vtca@vtc.edu.vn', 1),
+('dang1234', 'dang1234', 'Đăng', 'vtca@vtc.edu.vn', 1),
 ('user1234', 'user1234', 'User', 'user@vtc.edu.vn', '2');
 select * from Users;
 select MD5('vtca1234');
+update Users set user_fullname = 'duy', user_email = 'duy@gmail.com', user_role = '1' where user_id = 1;
 
 insert into Feedbacks(feedback_link,feedback_name, feedback_story) values
 ('~/image/FeedBack1.jpg','Bùi Xuân Huấn', 'Đồ ăn ở đây các món cũng giản dị thôi, nhưng mình ăn lại rất hợp, kiểu cơm nhà. Ăn các chỗ khác sẽ nêm nếm nhiều gia vị, rồi có nhiều sốt các thứ, nhưng ở đây món ăn khá đơn giản và mộc mạc. Cơm và thức ăn đầy đặn, được cái nhiều rau, thường có thêm tráng miệng là hoa quả.'),

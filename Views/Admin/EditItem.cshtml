@@ -1,0 +1,57 @@
+@model Item
+@{
+    var viewItemsData = ViewData["Items"];
+}
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <style>
+        .ThisA {
+            text-decoration: none;
+            color: black;
+            padding: 4.5px 6px;
+            background-color: #efefef;
+            border: 1px solid gray;
+            border-radius: 0.2rem;
+        }
+
+        .ThisA:hover {
+            color: black;
+            background-color: #e4e4e4;
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+    @using (Html.BeginForm("EditItem", "Admin", FormMethod.Post))
+    {
+        <table>
+            <tr>
+                <td>Id mặt hàng</td>
+                <td>@Html.DisplayFor(model => model.ItemId)</td>
+            </tr>
+            <tr>
+                <td>Tên mặt hàng</td>
+                <td>@Html.TextBoxFor(model => model.ItemName)</td>
+            </tr>
+            <tr>
+                <td>Giá</td>
+                <td>@Html.TextBoxFor(model => model.UnitPrice)</td>
+            </tr>
+            <tr>
+                <td>Mô tả</td>
+                <td>@Html.TextBoxFor(model => model.ItemStory)</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <input type="submit" value="Lưu" />
+                    <a class="ThisA" asp-area="" asp-action="AdminPanel" asp-controller="Admin">Hủy</a>
+                </td>
+            </tr>
+        </table>
+    }
+</body>

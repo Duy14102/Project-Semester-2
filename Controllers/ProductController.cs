@@ -82,6 +82,43 @@ public class ProductController : Controller
         return View();
     }
 
+    [HttpPost]
+    // [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Create([Bind("FeedbackName,FeedbackStory")] Feedback feedback)
+    {
+        try
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Feedbacks.Add(feedback);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(TatCa));
+            }
+        }
+        catch (DbUpdateException /* ex */)
+        {
+            //Log the error (uncomment ex variable name and write a log.
+            ModelState.AddModelError("", "Unable to save changes. " +
+                "Try again, and if the problem persists " +
+                "see your system administrator.");
+        }
+        return View(feedback);
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> Search(string searchString)
+    {
+        var movies = from m in _context.Items
+                     select m;
+
+        if (!String.IsNullOrEmpty(searchString))
+        {
+            movies = movies.Where(s => s.ItemName.Contains(searchString));
+        }
+        ViewBag.Message = searchString;
+        return View(await movies.ToListAsync());
+    }
+
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {

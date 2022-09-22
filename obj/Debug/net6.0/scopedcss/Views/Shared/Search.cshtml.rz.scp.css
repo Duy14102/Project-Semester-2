@@ -1,40 +1,40 @@
-*[b-5fwd0090s7] {
+*[b-gq2o2d74b1] {
     font-family: 'Montserrat';
     box-sizing: border-box;
 }
 
-.Holder[b-5fwd0090s7] {
+.Holder[b-gq2o2d74b1] {
     width: 18.1%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.paddingItem[b-5fwd0090s7] {
+.paddingItem[b-gq2o2d74b1] {
     padding-left: 2%;
     padding-right: 2%;
 }
 
-.navbar-nav .nav-link[b-5fwd0090s7] {
+.navbar-nav .nav-link[b-gq2o2d74b1] {
     color: #000 !important;
     padding: 0.5rem 0rem !important;
     border-color: transparent;
 }
 
-.navbar .navbar-toggler:focus[b-5fwd0090s7] {
+.navbar .navbar-toggler:focus[b-gq2o2d74b1] {
     box-shadow: none
 }
 
-.navbar-nav .nav-link.active[b-5fwd0090s7],
-.border-red[b-5fwd0090s7] {
+.navbar-nav .nav-link.active[b-gq2o2d74b1],
+.border-red[b-gq2o2d74b1] {
     border-bottom: 3px solid rgb(0, 119, 132)
 }
 
-.navbar-nav .nav-link:hover[b-5fwd0090s7] {
+.navbar-nav .nav-link:hover[b-gq2o2d74b1] {
     border-bottom: 3px solid rgb(0, 119, 132);
 }
 
-.paddingItem .product-item[b-5fwd0090s7] {
+.paddingItem .product-item[b-gq2o2d74b1] {
     min-height: 450px;
     border: none;
     overflow: hidden;
@@ -42,7 +42,7 @@
     border-radius: 0
 }
 
-.paddingItem .product-item .product[b-5fwd0090s7] {
+.paddingItem .product-item .product[b-gq2o2d74b1] {
     width: 100%;
     height: 350px;
     position: relative;
@@ -50,13 +50,13 @@
     cursor: pointer
 }
 
-.paddingItem .product-item .product img[b-5fwd0090s7] {
+.paddingItem .product-item .product img[b-gq2o2d74b1] {
     width: 100%;
     height: 100%;
     object-fit: cover
 }
 
-.paddingItem .product-item .product .icons .icon[b-5fwd0090s7] {
+.paddingItem .product-item .product .icons .icon[b-gq2o2d74b1] {
     width: 40px;
     height: 40px;
     background-color: #fff;
@@ -69,28 +69,28 @@
     cursor: pointer
 }
 
-.paddingItem .product-item .product .icons .icon:hover[b-5fwd0090s7] {
+.paddingItem .product-item .product .icons .icon:hover[b-gq2o2d74b1] {
     background-color: rgb(0, 119, 132);
     color: #fff
 }
 
-.paddingItem .product-item .product .icons .icon:nth-last-of-type(3)[b-5fwd0090s7] {
+.paddingItem .product-item .product .icons .icon:nth-last-of-type(3)[b-gq2o2d74b1] {
     transition-delay: 0.2s
 }
 
-.paddingItem .product-item .product .icons .icon:nth-last-of-type(2)[b-5fwd0090s7] {
+.paddingItem .product-item .product .icons .icon:nth-last-of-type(2)[b-gq2o2d74b1] {
     transition-delay: 0.15s
 }
 
-.paddingItem .product-item .product .icons .icon:nth-last-of-type(1)[b-5fwd0090s7] {
+.paddingItem .product-item .product .icons .icon:nth-last-of-type(1)[b-gq2o2d74b1] {
     transition-delay: 0.1s
 }
 
-.paddingItem .product-item:hover .product .icons .icon[b-5fwd0090s7] {
+.paddingItem .product-item:hover .product .icons .icon[b-gq2o2d74b1] {
     transform: translateY(-60px)
 }
 
-.paddingItem .product-item .tag[b-5fwd0090s7] {
+.paddingItem .product-item .tag[b-gq2o2d74b1] {
     text-transform: uppercase;
     font-size: 0.75rem;
     font-weight: 500;
@@ -100,48 +100,48 @@
     padding: 0 0.4rem
 }
 
-.paddingItem .product-item .title[b-5fwd0090s7] {
+.paddingItem .product-item .title[b-gq2o2d74b1] {
     font-size: 0.95rem;
     letter-spacing: 0.5px
 }
 
-.paddingItem .product-item .fa-star[b-5fwd0090s7] {
+.paddingItem .product-item .fa-star[b-gq2o2d74b1] {
     font-size: 0.65rem;
     color: goldenrod
 }
 
-.paddingItem .product-item .price[b-5fwd0090s7] {
+.paddingItem .product-item .price[b-gq2o2d74b1] {
     margin-top: 10px;
     margin-bottom: 10px;
     font-weight: 600
 }
 
-.fw-800[b-5fwd0090s7] {
+.fw-800[b-gq2o2d74b1] {
     font-weight: 800
 }
 
-.bg-green[b-5fwd0090s7] {
+.bg-green[b-gq2o2d74b1] {
     background-color: #208f20 !important;
     color: #fff
 }
 
-.bg-black[b-5fwd0090s7] {
+.bg-black[b-gq2o2d74b1] {
     background-color: #1f1d1d;
     color: #fff
 }
 
-.bg-red[b-5fwd0090s7] {
+.bg-red[b-gq2o2d74b1] {
     background-color: #bb3535;
     color: #fff
 }
 
 @media (max-width: 575px) {
 
-    .navbar[b-5fwd0090s7] {
+    .navbar[b-gq2o2d74b1] {
         display: none;
     }
 
-    .Holder[b-5fwd0090s7] {
+    .Holder[b-gq2o2d74b1] {
         width: 39%;
     }
 }

@@ -37,6 +37,10 @@
                                             <span class="text-danger field-validation-valid" data-valmsg-for="Username"
                                         data-valmsg-replace="true"></span>
                                         @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "badge badge-danger" })
+                                        @if (ViewBag.error != null)
+                                        {
+                                            <span class="badge badge-danger">@ViewBag.error</span>
+                                        }
                                         </div>
                                         <div class="group">
                                             <label for="Password" class="label">Mật khẩu</label>
@@ -61,10 +65,6 @@
                                             <span class="text-danger field-validation-valid" data-valmsg-for="Email"
                                         data-valmsg-replace="true"></span>
                                         @Html.ValidationMessageFor(m => m.Email, "", new { @class = "badge badge-danger" })
-                                        @if (ViewBag.error != null)
-                                        {
-                                            <span class="badge badge-danger">@ViewBag.error</span>
-                                        }
                                         </div>
                                         <div class="group">
                                             <label for="Fullname" class="label">Tên</label>

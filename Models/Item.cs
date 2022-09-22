@@ -5,10 +5,6 @@ namespace FirstAspNetApp.Models
 {
     public partial class Item
     {
-        public Item()
-        {
-            OrderDetails = new HashSet<OrderDetail>();
-        }
 
         public int ItemId { get; set; }
         public string ItemName { get; set; } = null!;
@@ -19,6 +15,5 @@ namespace FirstAspNetApp.Models
         public string? ItemStory { get; set; }
         public string? ItemDescription { get; set; }
 
-        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
     }
 }

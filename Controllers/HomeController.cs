@@ -23,11 +23,6 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult Author()
-    {
-        return View();
-    }
-
     public IActionResult Privacy()
     {
         return View();
@@ -45,12 +40,6 @@ public class HomeController : Controller
         }
         ViewBag.Message = searchString;
         return View(await movies.ToListAsync());
-    }
-
-    [HttpPost]
-    public string Search(string searchString, bool notUsed)
-    {
-        return "From [HttpPost]Index: filter on " + searchString;
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
