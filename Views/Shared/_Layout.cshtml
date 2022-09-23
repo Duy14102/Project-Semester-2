@@ -1,5 +1,7 @@
-﻿@{
+﻿@model User
+@{
     var context = Context.Session;
+    var viewUsersdata = ViewData["Users"];
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -120,11 +122,13 @@
                                 }
                                 else if (context.GetInt32("Role") == 2)
                                 {
-                                    <a class="dropdown-item text-dark" asp-area="" asp-controller="Home"
-                                asp-action="Author">Tài khoản</a>
+                                    <a class="dropdown-item text-dark"
+                                href="@Url.Action("UserPanel", "Admin", new { id = context.GetInt32("UserId") })">Tài
+                                        khoản</a>
                                 }
                                 <a href="@Url.Action("Logout","Admin")" class="dropdown-item text-dark">Thoát</a>
                             }
+
                             else
                             {
                                 <a class="dropdown-item text-dark" asp-area="" asp-controller="Admin"

@@ -1,0 +1,89 @@
+@model Item
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="~/Admin/DeleteItem.cshtml.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+</head>
+
+<body class="bg-light">
+    <div class="container-xl px-4 mt-4">
+        <!-- Account page navigation-->
+        <div class="row">
+            <div class="col-xl-4">
+                <!-- Profile picture card-->
+                <div class="card mb-4 mb-xl-0">
+                    <div class="card-header">Id mặt hàng : <b>@Html.DisplayFor(Model => Model.ItemId)</b></div>
+                    <div class="card-body text-center">
+                        <!-- Profile picture image-->
+                        <img class="img-account-profile rounded-circle mb-2" src="@Url.Content(@Model.ItemDescription)"
+                            alt="" width="30%">
+                        <!-- Profile picture help block-->
+                        <div class="small font-italic text-muted mb-4">@Html.DisplayFor(Model => Model.ItemName)
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-8">
+                <!-- Account details card-->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        Xóa mặt hàng
+                    </div>
+                    <div class="card-body">
+                        @using (Html.BeginForm("DeleteItem", "Admin", FormMethod.Post))
+                        {
+                            <form>
+                                <!-- Form Group (username)-->
+                            <div class="mb-3">
+                                    Tên mặt hàng : @Html.DisplayFor(m => m.ItemName, new { @class = "form-control"})
+                                </div>
+                                <!-- Form Row-->
+                            <div class="mb-3">
+                                    <!-- Form Group (first name)-->
+                                    Giá : @Html.DisplayFor(m => m.UnitPrice, new { @class = "form-control"})0 đ
+                                </div>
+                                <!-- Form Row        -->
+                            <div class="mb-3">
+                                    Danh mục : @Html.DisplayFor(m => m.Category, new { @class = "form-control"})
+                                </div>
+                                <!-- Form Group (email address)-->
+                            <div class="mb-3">
+                                    Mô tả : @Html.DisplayFor(m => m.ItemStory, new { @class = "form-control"})
+                                </div>
+                                <!-- Form Row-->
+                                <!-- Save changes button-->
+                            <button type="button" style="text-align: left;" class="btn btn-danger" data-toggle="modal"
+                                data-target="#exampleModal3">Xóa</button>
+                                <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog"
+                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-body" style="text-align: left;">
+                                                <button type="button" class="close" data-dismiss="modal">
+                                                    <b>X</b>
+                                                </button>
+                                                <h4>Xóa</h4>
+                                                <h6>Bạn chắc chắn muốn xóa mặt hàng @Html.DisplayFor(m => m.ItemName) chứ?
+                                                </h6><br>
+                                                <div class="Heiy">
+                                                    <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">Hủy</button>
+                                                    <input type="submit" class="btn btn-danger" value="Xóa" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="btn btn-secondary" asp-area="" asp-action="AdminPanel" asp-controller="Admin">Quay
+                                    lại</a>
+                            </form>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

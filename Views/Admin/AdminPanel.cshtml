@@ -134,7 +134,7 @@
                     @if (viewUsersdata is List<User>)
                     {
                         List<User> users = (List<User>)viewUsersdata;
-                        <table class="table table-bordered table-striped">
+                        <table class="table table-bordered table-striped text-center">
                             <tr>
                                 <th>Id</th>
                                 <th>Tài khoản</th>
@@ -142,6 +142,7 @@
                                 <th>Tên</th>
                                 <th>Email</th>
                                 <th>Role</th>
+                                <th>Thời gian gia nhập</th>
                                 <th>&nbsp;</th>
                                 <th>&nbsp;</th>
                             </tr>
@@ -154,6 +155,7 @@
                                     <td>@Html.DisplayFor(modelUser => user.Fullname)</td>
                                     <td>@Html.DisplayFor(modelUser => user.Email)</td>
                                     <td>@Html.DisplayFor(modelUser => user.Role)</td>
+                                    <td>@Html.DisplayFor(modelUser => user.UserDate)</td>
                                     <td><a href="@Url.Action("EditUser", "Admin", new { id = user.UserId })">Sửa</a></td>
                                     <td><a href="@Url.Action("DeleteUser", "Admin", new { id = user.UserId })">Xóa</a></td>
                                 </tr>
@@ -223,11 +225,12 @@
                                 <tr>
                                     <td>@Html.DisplayFor(modelItem => item.ItemId)</td>
                                     <td>@Html.DisplayFor(modelItem => item.ItemName)</td>
-                                    <td>@Html.DisplayFor(modelItem => item.UnitPrice)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.UnitPrice)0 đ</td>
                                     <td>@Html.DisplayFor(modelItem => item.Category)</td>
                                     <td>@Html.DisplayFor(modelItem => item.ItemStory)</td>
                                     <td><a href="@Url.Action("EditItem", "Admin", new { id = item.ItemId })">Sửa</a></td>
-                                    <td><a href="@Url.Action("DeleteItem", "Admin", new { id = item.ItemId })">Xóa</a></td>
+                                    <td><a href="@Url.Action("DeleteItem", "Admin", new { id = item.ItemId })">Xóa</a>
+                                    </td>
                                 </tr>
                             }
                         </table>

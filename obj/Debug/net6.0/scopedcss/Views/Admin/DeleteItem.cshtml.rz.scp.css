@@ -1,0 +1,32 @@
+.modal[b-js6lpldzd0] {
+    top: 35%;
+}
+
+.modal-content[b-js6lpldzd0] {
+    margin: auto;
+    border-radius: 0.5rem;
+    width: 80%;
+    -webkit-box-shadow: -1px -2px 42px -19px rgba(0, 0, 0, 0.74);
+    -moz-box-shadow: -1px -2px 42px -19px rgba(0, 0, 0, 0.74);
+    box-shadow: -1px -2px 42px -19px rgba(0, 0, 0, 0.74);
+}
+
+.close[b-js6lpldzd0] {
+    float: right;
+    border: none;
+    outline: none;
+    background: none;
+    color: gray;
+}
+
+.close:hover[b-js6lpldzd0] {
+    border-radius: 2rem;
+    background: lightgray;
+    transition: 0.1s;
+}
+
+.Heiy[b-js6lpldzd0] {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

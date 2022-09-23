@@ -126,28 +126,82 @@ public class AdminController : Controller
         return View();
     }
 
+    [HttpGet]
+    public IActionResult UserPanel(int id)
+    {
+        var user = _context.Users.Find(id);
+        return View("UserPanel", user);
+    }
+
+    [HttpGet]
+    public IActionResult EditUserPanel(int id)
+    {
+        var user = _context.Users.Find(id);
+        return View("EditUserPanel", user);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> EditUserPanel(int id, User user)
+    {
+        var data = await _context.Users.FirstOrDefaultAsync(i => i.UserId == id);
+        if (data != null)
+        {
+            data.Password = user.Password;
+            data.Fullname = user.Fullname;
+            data.Email = user.Email;
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index", "Home", new { area = "" });
+        }
+        return View(data);
+    }
+
+    [HttpGet]
     public IActionResult DeleteUser(int id)
     {
         var user = _context.Users.Find(id);
-        _context.Users.Remove(user);
-        _context.SaveChanges();
-        return RedirectToAction("AdminPanel");
+        return View("DeleteUser", user);
     }
 
+    [HttpPost]
+    public async Task<IActionResult> DeleteUser(int id, User user)
+    {
+        var data = await _context.Users.FirstOrDefaultAsync(i => i.UserId == id);
+        if (data != null)
+        {
+            _context.Users.Remove(data);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(AdminPanel));
+        }
+        return View(data);
+    }
+
+    [HttpGet]
     public IActionResult DeleteItem(int id)
     {
         var item = _context.Items.Find(id);
-        _context.Items.Remove(item);
-        _context.SaveChanges();
-        return RedirectToAction("AdminPanel");
+        return View("DeleteItem", item);
     }
+
+    [HttpPost]
+    public async Task<IActionResult> DeleteItem(int id, Item item)
+    {
+        var data = await _context.Items.FirstOrDefaultAsync(i => i.ItemId == id);
+        if (data != null)
+        {
+            _context.Items.Remove(data);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(AdminPanel));
+        }
+        return View(data);
+    }
+
 
     /*   Register from Login Form    */
     [HttpPost]
     [ValidateAntiForgeryToken]
     public IActionResult Register(User _user)
     {
-        if (ModelState.IsValid)
+        if (!ModelState.IsValid)
         {
             var check = _context.Users.FirstOrDefault(s => s.UserName == _user.UserName);
             if (check == null)

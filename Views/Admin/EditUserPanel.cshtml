@@ -36,15 +36,9 @@
                         Chỉnh sửa tài khoản
                     </div>
                     <div class="card-body">
-                        @using (Html.BeginForm("EditUser", "Admin", FormMethod.Post))
+                        @using (Html.BeginForm("EditUserPanel", "Admin", FormMethod.Post))
                         {
                             <form>
-                                <!-- Form Group (username)-->
-                            <div class="mb-3">
-                                    <label class="small mb-1" for="UserName">Tài khoản</label>
-                                    @Html.TextBoxFor(Model => Model.UserName, new { @class = "form-control", @id =
-                                "UserName"})
-                                </div>
                                 <!-- Form Row-->
                             <div class="mb-3">
                                     <!-- Form Group (first name)-->
@@ -65,19 +59,9 @@
                                 "Email", @type = "email"})
                                 </div>
                                 <!-- Form Row-->
-                            <div class="row gx-3 mb-3">
-                                    <label class="small mb-1" for="Category12">Role</label>
-                                    <div class="col-md-6">
-                                        @Html.TextBoxFor(Model => Model.Role, new { @class = "form-control", @type =
-                                    "number", @min = "1", @max = "2"})
-                                    </div>
-                                    <div class="col-md-6">
-                                        <p class="text-muted">1 : Admin ㅤㅤ2 : User</p>
-                                    </div>
-                                </div>
                                 <!-- Save changes button-->
                             <input type="submit" class="btn btn-primary" value="Lưu" />
-                                <a class="btn btn-secondary" asp-area="" asp-action="AdminPanel"
+                                <a class="btn btn-secondary" asp-area="" asp-action="UserPanel"
                                 asp-controller="Admin">Hủy</a>
                             </form>
                         }

@@ -8,101 +8,117 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = FirstAspNetApp
 build_property.RootNamespace = FirstAspNetApp
-build_property.ProjectDir = d:\VTCA\WD07\ASP.NET core\ProjectSemester2\
+build_property.ProjectDir = D:\VTCA\WD07\ASP.NET core\ProjectSemester2\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = d:\VTCA\WD07\ASP.NET core\ProjectSemester2
+build_property.MSBuildProjectDirectory = D:\VTCA\WD07\ASP.NET core\ProjectSemester2
 build_property._RazorSourceGeneratorDebug = 
 
-[d:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/Admin/EditItem.cshtml]
+[D:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/Admin/EditItem.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdEl0ZW0uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/Admin/EditUser.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdFVzZXIuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[d:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/Product/Details.cshtml]
+[D:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/Product/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/Product/Index.cshtml]
+[D:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/Product/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/Shared/Error.cshtml]
+[D:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/_ViewImports.cshtml]
+[D:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/_ViewStart.cshtml]
+[D:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/Admin/AdminPanel.cshtml]
+[D:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/Admin/AdminPanel.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRtaW5QYW5lbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = b-gl5o3kad0i
 
-[d:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/Admin/Author.cshtml]
+[D:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/Admin/Author.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQXV0aG9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = b-50nfdw5oj0
 
-[d:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/Admin/Login.cshtml]
+[D:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/Admin/DeleteItem.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGVsZXRlSXRlbS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-js6lpldzd0
+
+[D:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/Admin/DeleteUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGVsZXRlVXNlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-rmbjwhqv83
+
+[D:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/Admin/EditUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdFVzZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-8hvpozfj2l
+
+[D:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/Admin/EditUserPanel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdFVzZXJQYW5lbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-fm8gc1yqz1
+
+[D:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/Admin/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-5w4vkayr2p
 
-[d:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/Admin/Register.cshtml]
+[D:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/Admin/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUmVnaXN0ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-1iifa5ko7t
 
-[d:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/Home/Index.cshtml]
+[D:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/Admin/UserPanel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXNlclBhbmVsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-59ggsk09w3
+
+[D:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = b-wltpxrv65e
 
-[d:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/Home/Privacy.cshtml]
+[D:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = b-1qq99n4679
 
-[d:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/Product/Canh.cshtml]
+[D:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/Product/Canh.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxDYW5oLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = b-8wfwsrzvcq
 
-[d:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/Product/DoAnKem.cshtml]
+[D:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/Product/DoAnKem.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxEb0FuS2VtLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = b-rq1zps0chz
 
-[d:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/Product/Nuoc.cshtml]
+[D:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/Product/Nuoc.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxOdW9jLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = b-vp2uhernvc
 
-[d:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/Product/ProductDetail.cshtml]
+[D:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/Product/ProductDetail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxQcm9kdWN0RGV0YWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = b-w11e45rlk6
 
-[d:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/Product/Rau.cshtml]
+[D:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/Product/Rau.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxSYXUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-1gpc6h4yz7
 
-[d:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/Product/TatCa.cshtml]
+[D:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/Product/TatCa.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxUYXRDYS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = b-lfppxljbpl
 
-[d:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/Product/Thit.cshtml]
+[D:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/Product/Thit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxUaGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = b-brrxniix0a
 
-[d:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/Shared/Search.cshtml]
+[D:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/Shared/Search.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFNlYXJjaC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = b-gq2o2d74b1
 
-[d:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/Shared/_Layout.cshtml]
+[D:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-o0sea61oc0

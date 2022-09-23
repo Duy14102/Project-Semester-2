@@ -198,6 +198,14 @@
     cursor: pointer;
 }
 
+.ThisButton[b-gl5o3kad0i] {
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
 #Category12[b-gl5o3kad0i] {
     pointer-events: none;
 }
@@ -988,6 +996,212 @@ p[b-50nfdw5oj0] {
         margin-bottom: 100px;
     }
 }
+/* _content/FirstAspNetApp/Views/Admin/DeleteItem.cshtml.rz.scp.css */
+.modal[b-js6lpldzd0] {
+    top: 35%;
+}
+
+.modal-content[b-js6lpldzd0] {
+    margin: auto;
+    border-radius: 0.5rem;
+    width: 80%;
+    -webkit-box-shadow: -1px -2px 42px -19px rgba(0, 0, 0, 0.74);
+    -moz-box-shadow: -1px -2px 42px -19px rgba(0, 0, 0, 0.74);
+    box-shadow: -1px -2px 42px -19px rgba(0, 0, 0, 0.74);
+}
+
+.close[b-js6lpldzd0] {
+    float: right;
+    border: none;
+    outline: none;
+    background: none;
+    color: gray;
+}
+
+.close:hover[b-js6lpldzd0] {
+    border-radius: 2rem;
+    background: lightgray;
+    transition: 0.1s;
+}
+
+.Heiy[b-js6lpldzd0] {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+/* _content/FirstAspNetApp/Views/Admin/DeleteUser.cshtml.rz.scp.css */
+.modal[b-rmbjwhqv83] {
+    top: 35%;
+}
+
+.modal-content[b-rmbjwhqv83] {
+    margin: auto;
+    border-radius: 0.5rem;
+    width: 80%;
+    -webkit-box-shadow: -1px -2px 42px -19px rgba(0, 0, 0, 0.74);
+    -moz-box-shadow: -1px -2px 42px -19px rgba(0, 0, 0, 0.74);
+    box-shadow: -1px -2px 42px -19px rgba(0, 0, 0, 0.74);
+}
+
+.close[b-rmbjwhqv83] {
+    float: right;
+    border: none;
+    outline: none;
+    background: none;
+    color: gray;
+}
+
+.close:hover[b-rmbjwhqv83] {
+    border-radius: 2rem;
+    background: lightgray;
+    transition: 0.1s;
+}
+
+.Heiy[b-rmbjwhqv83] {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+/* _content/FirstAspNetApp/Views/Admin/EditUser.cshtml.rz.scp.css */
+body[b-8hvpozfj2l] {
+    margin-top: 20px;
+    background-color: #f2f6fc;
+    color: #69707a;
+}
+
+.img-account-profile[b-8hvpozfj2l] {
+    height: 10rem;
+}
+
+.rounded-circle[b-8hvpozfj2l] {
+    border-radius: 50% !important;
+}
+
+.card[b-8hvpozfj2l] {
+    box-shadow: 0 0.15rem 1.75rem 0 rgb(33 40 50 / 15%);
+}
+
+.card .card-header[b-8hvpozfj2l] {
+    font-weight: 500;
+}
+
+.card-header:first-child[b-8hvpozfj2l] {
+    border-radius: 0.35rem 0.35rem 0 0;
+}
+
+.card-header[b-8hvpozfj2l] {
+    padding: 1rem 1.35rem;
+    margin-bottom: 0;
+    background-color: rgba(33, 40, 50, 0.03);
+    border-bottom: 1px solid rgba(33, 40, 50, 0.125);
+}
+
+.form-control[b-8hvpozfj2l],
+.dataTable-input[b-8hvpozfj2l] {
+    display: block;
+    width: 100%;
+    padding: 0.875rem 1.125rem;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1;
+    color: #69707a;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #c5ccd6;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0.35rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.nav-borders .nav-link.active[b-8hvpozfj2l] {
+    color: #0061f2;
+    border-bottom-color: #0061f2;
+}
+
+.nav-borders .nav-link[b-8hvpozfj2l] {
+    color: #69707a;
+    border-bottom-width: 0.125rem;
+    border-bottom-style: solid;
+    border-bottom-color: transparent;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+/* _content/FirstAspNetApp/Views/Admin/EditUserPanel.cshtml.rz.scp.css */
+body[b-fm8gc1yqz1] {
+    margin-top: 20px;
+    background-color: #f2f6fc;
+    color: #69707a;
+}
+
+.img-account-profile[b-fm8gc1yqz1] {
+    height: 10rem;
+}
+
+.rounded-circle[b-fm8gc1yqz1] {
+    border-radius: 50% !important;
+}
+
+.card[b-fm8gc1yqz1] {
+    box-shadow: 0 0.15rem 1.75rem 0 rgb(33 40 50 / 15%);
+}
+
+.card .card-header[b-fm8gc1yqz1] {
+    font-weight: 500;
+}
+
+.card-header:first-child[b-fm8gc1yqz1] {
+    border-radius: 0.35rem 0.35rem 0 0;
+}
+
+.card-header[b-fm8gc1yqz1] {
+    padding: 1rem 1.35rem;
+    margin-bottom: 0;
+    background-color: rgba(33, 40, 50, 0.03);
+    border-bottom: 1px solid rgba(33, 40, 50, 0.125);
+}
+
+.form-control[b-fm8gc1yqz1],
+.dataTable-input[b-fm8gc1yqz1] {
+    display: block;
+    width: 100%;
+    padding: 0.875rem 1.125rem;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1;
+    color: #69707a;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #c5ccd6;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0.35rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.nav-borders .nav-link.active[b-fm8gc1yqz1] {
+    color: #0061f2;
+    border-bottom-color: #0061f2;
+}
+
+.nav-borders .nav-link[b-fm8gc1yqz1] {
+    color: #69707a;
+    border-bottom-width: 0.125rem;
+    border-bottom-style: solid;
+    border-bottom-color: transparent;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
 /* _content/FirstAspNetApp/Views/Admin/Login.cshtml.rz.scp.css */
 *[b-5w4vkayr2p] {
     font-family: 'Montserrat';
@@ -1423,6 +1637,39 @@ a[b-1iifa5ko7t] {
 
 [b-1iifa5ko7t]::placeholder {
     color: #b3b3b3;
+}
+/* _content/FirstAspNetApp/Views/Admin/UserPanel.cshtml.rz.scp.css */
+.modal[b-59ggsk09w3] {
+    top: 35%;
+}
+
+.modal-content[b-59ggsk09w3] {
+    margin: auto;
+    border-radius: 0.5rem;
+    width: 80%;
+    -webkit-box-shadow: -1px -2px 42px -19px rgba(0, 0, 0, 0.74);
+    -moz-box-shadow: -1px -2px 42px -19px rgba(0, 0, 0, 0.74);
+    box-shadow: -1px -2px 42px -19px rgba(0, 0, 0, 0.74);
+}
+
+.close[b-59ggsk09w3] {
+    float: right;
+    border: none;
+    outline: none;
+    background: none;
+    color: gray;
+}
+
+.close:hover[b-59ggsk09w3] {
+    border-radius: 2rem;
+    background: lightgray;
+    transition: 0.1s;
+}
+
+.Heiy[b-59ggsk09w3] {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 /* _content/FirstAspNetApp/Views/Home/Index.cshtml.rz.scp.css */
 *[b-wltpxrv65e] {

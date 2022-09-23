@@ -71,6 +71,11 @@ namespace FirstAspNetApp.Models
                     .HasColumnName("user_email");
 
                 entity.Property(e => e.Role).HasColumnName("user_role").HasDefaultValue(2);
+
+                entity.Property(e => e.UserDate)
+                    .HasColumnType("datetime")
+                    .HasColumnName("user_date")
+                    .HasDefaultValueSql("CURRENT_TIMESTAMP");
             });
 
             modelBuilder.Entity<Item>(entity =>
