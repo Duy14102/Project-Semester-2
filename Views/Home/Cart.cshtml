@@ -1,0 +1,73 @@
+@model List<CartItem>
+
+<h2>GIỎ HÀNG</h2>
+
+@if (Model.Count > 0)
+{
+    decimal? total = 0;
+    int stt = 1;
+
+    <table class="table">
+        <tr>
+            <th>#</th>
+            <th>Sản phẩm</th>
+            <th>Giá</th>
+            <th>Số lượng</th>
+            <th>Thành tiền</th>
+            <th></th>
+        </tr>
+        @foreach (var cartitem in Model)
+        {
+            var thanhtien = cartitem.Quantity * cartitem.item.UnitPrice;
+            total += thanhtien;
+
+            <tr>
+                <td>@(stt++)</td>
+                <td>@cartitem.item.ItemName</td>
+                <td>@cartitem.item.UnitPrice đ</td>
+                <td><input asp-for="@cartitem.Quantity" id="@($"Quantity-{cartitem.item.ItemId}")" /></td>
+                <td>@thanhtien</td>
+                <td>
+                    <button class="btn btn-success updatecartitem" data-ItemId="@cartitem.item.ItemId">Cập
+                        nhật</button>
+                    <a asp-route="removecart" asp-route-ItemId="@cartitem.item.ItemId" class="btn btn-danger">Xóa</a>
+                </td>
+            </tr>
+        }
+        <tr>
+            <td colspan="4" class="text-right">Tổng tiền</td>
+            <td>@total</td>
+            <td></td>
+        </tr>
+    </table>
+
+    <a asp-controller="Home" asp-action="Checkout" class="btn btn-success">Gửi đơn hàng</a>
+
+    @section Scripts {
+<script>
+    $(document).ready(function () {
+        $(".updatecartitem").click(function (event) {
+            event.preventDefault();
+            var productid = $(this).attr("data-ItemId");
+            var Quantity = $("#Quantity-" + productid).val();
+            $.ajax({
+                type: "POST",
+                url: "@Url.RouteUrl("updatecart")",
+                data: {
+                    ItemId: productid,
+                    Quantity: Quantity
+                },
+                success: function (result) {
+                    window.location.href = "@Url.RouteUrl("cart")";
+                }
+            });
+        });
+    });
+</script>
+}
+
+}
+else
+{
+    <p class="alert alert-danger">Giỏ hàng trống</p>
+}

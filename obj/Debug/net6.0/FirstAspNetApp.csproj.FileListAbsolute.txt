@@ -174,3 +174,4 @@ D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\scopedcss\Views\Admi
 D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\scopedcss\Views\Admin\DeleteUser.cshtml.rz.scp.css
 D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\scopedcss\Views\Admin\UserPanel.cshtml.rz.scp.css
 D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\scopedcss\Views\Admin\EditUserPanel.cshtml.rz.scp.css
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\scopedcss\Views\Home\Checkout.cshtml.rz.scp.css

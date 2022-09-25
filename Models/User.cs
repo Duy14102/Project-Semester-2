@@ -7,7 +7,6 @@ namespace FirstAspNetApp.Models
 {
     public class User
     {
-        [Key]
         public int UserId { get; set; }
         [Required]
         [StringLength(500, MinimumLength = 3)]
