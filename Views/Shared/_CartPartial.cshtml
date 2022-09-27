@@ -1,0 +1,24 @@
+@using Microsoft.AspNetCore.Http
+@using Newtonsoft.Json
+@{
+    var context = Context.Session;
+}
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+
+@{
+    string jsoncart = context.GetString("cart");
+    if (jsoncart != null)
+    {
+        var cart = JsonConvert.DeserializeObject<List<CartItem>>(jsoncart);
+        <i style="font-size: 24px;" class="fa-solid fa-cart-shopping"></i>
+        <span class='badge badge-warning' id='lblCartCount'> @cart.Count </span>
+    }
+    else
+    {
+        <i style="font-size: 24px;" class="fa-solid fa-cart-shopping"></i>
+        <span class='badge badge-warning' id='lblCartCount'> 0 </span>
+    }
+}

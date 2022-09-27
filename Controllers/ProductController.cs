@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using FirstAspNetApp.Models;
 using Microsoft.EntityFrameworkCore;
 using X.PagedList;
+using Newtonsoft.Json;
 
 namespace FirstAspNetApp.Controllers;
 
@@ -117,6 +118,28 @@ public class ProductController : Controller
         }
         ViewBag.Message = searchString;
         return View(await movies.ToListAsync());
+    }
+
+    /*     Shopping Cart     */
+
+    // Hiện thị giỏ hàng
+    public IActionResult Cart()
+    {
+        return View(GetCartItems());
+    }
+
+    public const string CARTKEY = "cart";
+
+    // Lấy cart từ Session (danh sách CartItem)
+    List<CartItem> GetCartItems()
+    {
+        var session = HttpContext.Session;
+        string jsoncart = session.GetString(CARTKEY);
+        if (jsoncart != null)
+        {
+            return JsonConvert.DeserializeObject<List<CartItem>>(jsoncart);
+        }
+        return new List<CartItem>();
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

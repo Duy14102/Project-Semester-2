@@ -5,14 +5,32 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="~/Home/Checkout.cshtml.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Shared/Checkout.cshtml.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
 </head>
 
 <body class="bg-light">
 
-    <h3 align="center" class="text-danger">Thông Báo</h3>
+
+    <div class="row justify-content-center">
+        <div class="col-md-8 hh-grayBox">
+            <div class="row justify-content-between">
+                <div class="order-tracking completed">
+                    <span class="is-complete"></span>
+                    <p>Đặt hàng</p>
+                </div>
+                <div class="order-tracking completed">
+                    <span class="is-complete"></span>
+                    <p>Giao hàng</p>
+                </div>
+                <div class="order-tracking completed">
+                    <span class="is-complete"></span>
+                    <p>Thành công</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <h1>
         <span>Order</span>

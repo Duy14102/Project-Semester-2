@@ -59,7 +59,6 @@ public class HomeController : Controller
     }
 
     // Hiện thị giỏ hàng
-    [Route("/cart", Name = "cart")]
     public IActionResult Cart()
     {
         return View(GetCartItems());
@@ -107,12 +106,16 @@ public class HomeController : Controller
         return View();
     }
 
+    public IActionResult CheckoutDetail()
+    {
+        return View(GetCartItems());
+    }
+
     public const string CARTKEY = "cart";
 
     // Lấy cart từ Session (danh sách CartItem)
     List<CartItem> GetCartItems()
     {
-
         var session = HttpContext.Session;
         string jsoncart = session.GetString(CARTKEY);
         if (jsoncart != null)

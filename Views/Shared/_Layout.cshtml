@@ -1,4 +1,5 @@
-﻿@{
+﻿@using Newtonsoft.Json;
+@{
     var context = Context.Session;
     var viewUsersdata = ViewData["Users"];
 }
@@ -21,15 +22,20 @@
 </head>
 
 <body>
+    <button type="button" class="btn btn-floating" id="btn-back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a style="width: 200px;" class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img
-                        src="~/image/logo.png" width="20%" height="20%"><b>Cơm Nhé ?</b></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                <div class="ThisImg">
+                    <a style="width: 200px;" class="navbar-brand" asp-area="" asp-controller="Home"
+                        asp-action="Index"><img src="~/image/logo.png" width="20%" height="20%"><b>Cơm Nhé ?</b></a>
+                </div>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <button type="button" class="btn  search" data-toggle="modal" data-target="#exampleModal">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -102,37 +108,35 @@
                     </ul>
                 </div>
                 <div class="CartandUser">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Cart">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                            class="bi bi-cart" viewBox="0 0 16 16">
-                            <path
-                                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
-                        </svg>
+                    <a class="nav-link text-dark" asp-action="Cart">
+                        @await Html.PartialAsync("_CartPartial")
                     </a>
                     <div class="UserThis">
                         <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false" style="color: black;"><svg
-                                xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
                                 class="bi bi-person-circle" viewBox="0 0 16 16">
                                 <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
                                 <path fill-rule="evenodd"
                                     d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
                             </svg></a>
-                        <div class="UserDrop dropdown-menu animate slideIn" aria-labelledby="navbarDropdown">
+                        <div class="UserDrop dropdown-menu animate slideIn text-center"
+                            aria-labelledby="navbarDropdown">
                             @if (context.GetString("Fullname") != null)
                             {
                                 if (context.GetInt32("Role") == 1)
                                 {
-                                    <a class="dropdown-item text-dark" asp-area="" asp-controller="Admin"
+                                    <a class="dropdown-item text-dark text-center" asp-area="" asp-controller="Admin"
                                 asp-action="AdminPanel">Tài khoản</a>
                                 }
                                 else if (context.GetInt32("Role") == 2)
                                 {
-                                    <a class="dropdown-item text-dark"
+                                    <a class="dropdown-item text-dark text-center"
                                 href="@Url.Action("UserPanel", "Admin", new { id = context.GetInt32("UserId") })">Tài
                                         khoản</a>
                                 }
-                                <a href="@Url.Action("Logout","Admin")" class="dropdown-item text-dark">Thoát</a>
+                                <a href="@Url.Action("Logout","Admin")"
+                                class="dropdown-item text-dark text-center">Thoát</a>
                             }
 
                             else

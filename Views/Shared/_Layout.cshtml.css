@@ -168,7 +168,15 @@ button {
   width: 100%;
 }
 
+.ThisImg {
+  width: 200px;
+}
+
 @media only screen and (max-width: 575px) {
+  .ThisImg {
+    width: 150px;
+  }
+
   .search {
     display: none;
   }
@@ -345,6 +353,23 @@ button {
   text-align: center;
   height: 1.5em;
   opacity: .5;
+}
+
+#btn-back-to-top {
+  z-index: 9999;
+  background-color: transparent;
+  border: 2px solid;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+}
+
+#btn-back-to-top:hover {
+  color: white;
+  background: rgb(0, 119, 132);
+  transition: 0.2s;
+  border: 2px solid rgb(0, 119, 132);
 }
 
 .hr-text:before {

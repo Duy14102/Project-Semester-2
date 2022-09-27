@@ -1,0 +1,117 @@
+.hh-grayBox[b-8eij8cghaw] {
+    background-color: #F8F8F8;
+    padding: 35px;
+}
+
+.order-tracking[b-8eij8cghaw] {
+    text-align: center;
+    width: 33.33%;
+    position: relative;
+    display: block;
+}
+
+.order-tracking .is-complete[b-8eij8cghaw] {
+    display: block;
+    position: relative;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    border: 0px solid #AFAFAF;
+    background-color: #f7be16;
+    margin: 0 auto;
+    transition: background 0.25s linear;
+    -webkit-transition: background 0.25s linear;
+    z-index: 2;
+}
+
+.order-tracking .is-complete[b-8eij8cghaw]:after {
+    display: block;
+    position: absolute;
+    content: '';
+    height: 14px;
+    width: 7px;
+    top: -2px;
+    bottom: 0;
+    left: 5px;
+    margin: auto 0;
+    border: 0px solid #AFAFAF;
+    border-width: 0px 2px 2px 0;
+    transform: rotate(45deg);
+    opacity: 0;
+}
+
+.order-tracking.completed .is-complete[b-8eij8cghaw] {
+    border-color: rgb(0, 119, 132);
+    border-width: 0px;
+    background-color: rgb(0, 119, 132);
+}
+
+.order-tracking.completed .is-complete[b-8eij8cghaw]:after {
+    border-color: #fff;
+    border-width: 0px 3px 3px 0;
+    width: 7px;
+    left: 11px;
+    opacity: 1;
+}
+
+.order-tracking p[b-8eij8cghaw] {
+    color: #A4A4A4;
+    font-size: 16px;
+    margin-top: 8px;
+    margin-bottom: 0;
+    line-height: 20px;
+}
+
+.order-tracking p span[b-8eij8cghaw] {
+    font-size: 14px;
+}
+
+.order-tracking.completed p[b-8eij8cghaw] {
+    color: #000;
+}
+
+.order-tracking[b-8eij8cghaw]::before {
+    content: '';
+    display: block;
+    height: 3px;
+    width: calc(100% - 40px);
+    background-color: #f7be16;
+    top: 13px;
+    position: absolute;
+    left: calc(-50% + 20px);
+    z-index: 0;
+}
+
+.order-tracking:first-child[b-8eij8cghaw]:before {
+    display: none;
+}
+
+.order-tracking.completed[b-8eij8cghaw]:before {
+    background-color: #27aa80;
+}
+
+.BackToHome[b-8eij8cghaw] {
+    display: inline-block;
+    text-align: center;
+    width: 9%;
+    padding: 3px;
+    border: 2px solid rgb(0, 119, 132);
+    color: rgb(0, 119, 132);
+    font-weight: bold;
+}
+
+.BackToHome:hover[b-8eij8cghaw] {
+    transition: 0.2s;
+    color: white;
+    background-color: rgb(0, 119, 132);
+}
+
+.coverThis[b-8eij8cghaw] {
+    text-align: center;
+}
+
+@media (max-width:575px) {
+    .BackToHome[b-8eij8cghaw] {
+        width: 18%;
+    }
+}
