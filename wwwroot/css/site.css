@@ -1,4 +1,4 @@
-*{
+* {
   font-family: 'Montserrat';
 }
 
@@ -17,8 +17,12 @@ html {
   min-height: 100%;
 }
 
-header{
+header {
   z-index: 2000;
   position: sticky;
   top: 0;
+}
+
+footer {
+  bottom: 0;
 }

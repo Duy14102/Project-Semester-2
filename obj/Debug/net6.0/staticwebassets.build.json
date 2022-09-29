@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "zg9BiRkeInt2G5cNwXyIsOB3L5UGRO6+l9H20uUKJkg=",
+  "Hash": "36+ekAb52PKSv63DtuUGaz2Csig4xkKGZx6+aRKjG88=",
   "Source": "FirstAspNetApp",
   "BasePath": "_content/FirstAspNetApp",
   "Mode": "Default",
@@ -100,6 +100,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\image\\250670629_1272525803208455_9189865693551795789_n.jpg",
+      "SourceId": "FirstAspNetApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "BasePath": "_content/FirstAspNetApp",
+      "RelativePath": "image/250670629_1272525803208455_9189865693551795789_n.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\image\\250670629_1272525803208455_9189865693551795789_n.jpg"
     },
     {
       "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\image\\BannerHere.png",

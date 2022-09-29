@@ -151,7 +151,7 @@ button[b-o0sea61oc0] {
   text-decoration: none;
 }
 
-.searchRespon[b-o0sea61oc0] {
+.SearchRespon[b-o0sea61oc0] {
   display: none;
 }
 
@@ -159,7 +159,7 @@ button[b-o0sea61oc0] {
   display: none;
 }
 
-.CartRespon[b-o0sea61oc0] {
+.ThisCart[b-o0sea61oc0] {
   display: none;
 }
 
@@ -169,6 +169,7 @@ button[b-o0sea61oc0] {
 }
 
 .ThisImg[b-o0sea61oc0] {
+  text-align: center;
   width: 200px;
 }
 
@@ -193,12 +194,13 @@ button[b-o0sea61oc0] {
     display: block;
   }
 
-  .CartRespon[b-o0sea61oc0] {
+  .ThisCart[b-o0sea61oc0] {
     display: block;
   }
 
-  .searchRespon[b-o0sea61oc0] {
+  .SearchRespon[b-o0sea61oc0] {
     display: block;
+    width: 100%;
   }
 
   .animUl li:hover[b-o0sea61oc0]::after {

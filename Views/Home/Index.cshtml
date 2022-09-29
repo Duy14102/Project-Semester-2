@@ -1,5 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Trang Chủ";
+    var format = System.Globalization.CultureInfo.GetCultureInfo("vi-VN");
     var viewItemsData = ViewData["Items"];
     var viewFeedbacksData = ViewData["Feedbacks"];
     var Nuoc = "Nước";
@@ -48,10 +49,12 @@
                         class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
                                 <div class="product">
                                     <a href='@Url.Action("ProductDetail", "Product", new { id=item.ItemId })'>
-                                        <img src="@Url.Content(@item.ItemDescription)" loading="lazy" />
+                                        <img id="myImage" src="@Url.Content(@item.ItemDescription)" loading="lazy" />
                                     </a>
                                     <ul class="d-flex align-items-center justify-content-center list-unstyled icons">
-                                        <li class="icon"><span class="fas fa-expand-arrows-alt"></span></li>
+                                        <a class="text-dark" href='@Url.Action("ProductDetail", "Product", new { id=item.ItemId })'>
+                                            <li class="icon"><span class="fa-solid fa-info"></span></li>
+                                        </a>
                                         <li class="icon mx-3"><span class="far fa-heart"></span></li>
                                         <a class="text-dark" asp-route="addcart" 
                                         asp-route-ItemId="@item.ItemId">
@@ -90,14 +93,14 @@
                             item.Category)</a>
                                 }
                                 <a style="text-decoration: none;" class="title pt-1 pb-1 text-dark"
-                            href="#">@Html.DisplayFor(modelItem => item.ItemName)</a>
+                            href='@Url.Action("ProductDetail", "Product", new { id=item.ItemId })'>@Html.DisplayFor(modelItem => item.ItemName)</a>
                                 <div class="pt-1 d-flex align-content-center justify-content-center"> <span
                                 class="fas fa-star"></span>
                                     <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span
                                 class="fas fa-star"></span>
                                     <span class="fas fa-star"></span>
                                 </div>
-                                <div class="price">@Html.DisplayFor(modelItem => item.UnitPrice)0 ₫</div>
+                                <div class="price">@String.Format(format, "{0:c0}", @item.UnitPrice )</div>
                             </div>
                         }
                     }
@@ -127,11 +130,11 @@
                         <div class="col-md-4">
                             <div class="card p-3 text-center px-4">
                                 <div class="user-image">
-                                    <img src="@Url.Content(@feedback.FeedbackLink)" class="rounded-circle" width="80">
+                                    <img id="myImage" src="@Url.Content(@feedback.FeedbackLink)" class="rounded-circle" width="80">
                                 </div>
                                 <div class="user-content">
                                     <h5 class="mb-0">@Html.DisplayFor(modelFeedback => feedback.FeedbackName)</h5>
-                                    <span>Software Architect</span>
+                                    <span>Khách hàng</span>
                                     <p>@Html.DisplayFor(modelFeedback => feedback.FeedbackStory)</p>
                                 </div>
                                 <div class="ratings">

@@ -22,6 +22,7 @@ namespace FirstAspNetApp.Models
         public virtual DbSet<Order> Orders { get; set; } = null!;
         public virtual DbSet<OrderDetail> OrderDetails { get; set; } = null!;
         public virtual DbSet<Feedback> Feedbacks { get; set; } = null!;
+        public virtual DbSet<Announ> Announs { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -48,6 +49,19 @@ namespace FirstAspNetApp.Models
                 entity.Property(e => e.CustomerName)
                     .HasMaxLength(100)
                     .HasColumnName("customer_name");
+            });
+
+            modelBuilder.Entity<Announ>(entity =>
+            {
+                entity.Property(e => e.AnnounId).HasColumnName("announ_id");
+
+                entity.Property(e => e.AnnounName)
+                    .HasMaxLength(500)
+                    .HasColumnName("announ_name");
+
+                entity.Property(e => e.AnnounStory)
+                    .HasMaxLength(500)
+                    .HasColumnName("announ_story");
             });
 
             modelBuilder.Entity<User>(entity =>

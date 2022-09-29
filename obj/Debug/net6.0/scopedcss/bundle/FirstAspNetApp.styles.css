@@ -2005,6 +2005,16 @@ span:nth-child(14)[b-1qq99n4679] {
     text-align: center;
 }
 
+.ThisSpan[b-1qq99n4679] {
+    width: 25px;
+    height: 25px;
+    background-color: lightgray;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+}
+
 @media (max-width:575px) {
     .BackToHome[b-1qq99n4679] {
         width: 18%;
@@ -4236,7 +4246,7 @@ button[b-o0sea61oc0] {
   text-decoration: none;
 }
 
-.searchRespon[b-o0sea61oc0] {
+.SearchRespon[b-o0sea61oc0] {
   display: none;
 }
 
@@ -4244,7 +4254,7 @@ button[b-o0sea61oc0] {
   display: none;
 }
 
-.CartRespon[b-o0sea61oc0] {
+.ThisCart[b-o0sea61oc0] {
   display: none;
 }
 
@@ -4254,6 +4264,7 @@ button[b-o0sea61oc0] {
 }
 
 .ThisImg[b-o0sea61oc0] {
+  text-align: center;
   width: 200px;
 }
 
@@ -4278,12 +4289,13 @@ button[b-o0sea61oc0] {
     display: block;
   }
 
-  .CartRespon[b-o0sea61oc0] {
+  .ThisCart[b-o0sea61oc0] {
     display: block;
   }
 
-  .searchRespon[b-o0sea61oc0] {
+  .SearchRespon[b-o0sea61oc0] {
     display: block;
+    width: 100%;
   }
 
   .animUl li:hover[b-o0sea61oc0]::after {

@@ -142,6 +142,42 @@ public class ProductController : Controller
         return new List<CartItem>();
     }
 
+    [Route("addcartProduct/{ItemId:int}", Name = "addcartProduct")]
+    public IActionResult AddToCart([FromRoute] int ItemId, int number45)
+    {
+
+        var data = _context.Items
+            .Where(p => p.ItemId == ItemId)
+            .FirstOrDefault();
+        if (data == null)
+            return NotFound("Không có sản phẩm");
+
+        // Xử lý đưa vào Cart ...
+        var cart = GetCartItems();
+        var cartitem = cart.Find(p => p.item.ItemId == ItemId);
+        if (cartitem != null)
+        {
+            // Đã tồn tại, tăng thêm 1
+            cartitem.Quantity++;
+        }
+        else
+        {
+            //  Thêm mới
+            cart.Add(new CartItem() { Quantity = number45, item = data });
+        }
+        // Lưu cart vào Session
+        SaveCartSession(cart);
+        // Chuyển đến trang hiện thị Cart
+        return RedirectToAction(nameof(Cart));
+    }
+
+    void SaveCartSession(List<CartItem> ls)
+    {
+        var session = HttpContext.Session;
+        string jsoncart = JsonConvert.SerializeObject(ls);
+        session.SetString(CARTKEY, jsoncart);
+    }
+
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {

@@ -2,6 +2,7 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using FirstAspNetApp.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Web;
 using System.Text;
 using Newtonsoft.Json;
 
@@ -25,6 +26,7 @@ public class AdminController : Controller
         {
             ViewData["Users"] = await _context.Users.OrderBy(i => i.UserId).ToListAsync();
             ViewData["Items"] = await _context.Items.OrderBy(u => u.ItemId).ToListAsync();
+            ViewData["Announs"] = await _context.Announs.OrderBy(a => a.AnnounId).ToListAsync();
             return View();
         }
         else
@@ -228,16 +230,24 @@ public class AdminController : Controller
     }
     /*   Create New Item    */
     [HttpPost]
-    public async Task<IActionResult> CreateItem([Bind("ItemName,UnitPrice,Category,ItemStory")] Item value)
+    public async Task<IActionResult> CreateItem([Bind("ItemName,UnitPrice,Category,ItemStory,ItemDescription")] Item value, IFormFile uploadFile)
     {
         try
         {
-            if (ModelState.IsValid)
+            if (uploadFile != null && uploadFile.Length > 0)
             {
+                var fileName = Path.GetFileName(uploadFile.FileName);
+                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/image", fileName);
+                var thisFile = "~/image/" + fileName;
+                value.ItemDescription = thisFile;
                 _context.Items.Add(value);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(AdminPanel));
+                using (var fileSrteam = new FileStream(filePath, FileMode.Create))
+                {
+                    await uploadFile.CopyToAsync(fileSrteam);
+                }
             }
+            return RedirectToAction(nameof(AdminPanel));
         }
         catch (DbUpdateException /* ex */)
         {
@@ -256,6 +266,27 @@ public class AdminController : Controller
             if (!ModelState.IsValid)
             {
                 _context.Users.Add(value);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(AdminPanel));
+            }
+        }
+        catch (DbUpdateException /* ex */)
+        {
+            //Log the error (uncomment ex variable name and write a log.
+            ModelState.AddModelError("", "Unable to save changes. " +
+                "Try again, and if the problem persists " +
+                "see your system administrator.");
+        }
+        return View(value);
+    }
+
+    public async Task<IActionResult> CreateAnnoun([Bind("AnnounName, AnnounStory")] Announ value)
+    {
+        try
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Announs.Add(value);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(AdminPanel));
             }

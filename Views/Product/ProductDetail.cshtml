@@ -1,5 +1,7 @@
 @{
     ViewData["Title"] = "Product Page";
+    var format = System.Globalization.CultureInfo.GetCultureInfo("vi-VN");
+    var viewCartItemData = ViewData["CartItem"];
     var viewItemData = ViewData["Items"];
     var viewFeedbackData = ViewData["Feedbacks"];
     var Nuoc = "Nước";
@@ -54,7 +56,7 @@
                 <div class="col-md-6">
                     <div class="product-dtl">
                         <div class="product-info">
-                            <div class="product-name">@item.ItemName</div>
+                            <div class="product-name pb-2">@item.ItemName</div>
                             @if (item.Category == DoAnKem)
                             {
                                 <a asp-area="" asp-controller="Product" asp-action="DoAnKem" class="text-muted pt-2"
@@ -85,7 +87,7 @@
                             style="text-decoration: none;">@Html.DisplayFor(modelItem =>
                             item.Category)</a>
                             }
-                            <div class="reviews-counter pt-2">
+                            <div class="reviews-counter pt-3">
                                 <div class="rate">
                                     <input type="radio" id="star5" name="rate" value="5" checked />
                                     <label for="star5" title="text">5 stars</label>
@@ -100,37 +102,26 @@
                                 </div>
                                 <span>​</span>
                             </div>
-                            <div class="text-muted pt-2">@item.UnitPrice<span>0 ₫</span>
+                            <div class="text-muted pt-3">@String.Format(format, "{0:c0}", @item.UnitPrice )
                             </div>
                         </div>
-                        <p class="pt-2">@item.ItemStory</p>
-                        <div class="row pt-1">
-                            <div class="col-md-6">
-                                <label for="size">Size</label>
-                                <select id="size" name="size" class="form-control">
-                                    <option>Lớn</option>
-                                    <option>Vừa</option>
-                                    <option>Bé</option>
-                                </select>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="color">Ship</label>
-                                <select id="color" name="color" class="form-control">
-                                    <option>Lấy Tại Quán</option>
-                                    <option>Shipper</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="product-count">
-                            <label for="size">Số lượng</label>
-                            <form>
-                                <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-
+                        <p class="pt-4">@item.ItemStory</p>
+                        <div class="product-count pt-3">
+                            <form asp-route="addcartProduct" asp-route-ItemId="@item.ItemId" class="pb-4">
+                                <label for="number45">Số lượng</label>
+                                <div>
+                                    <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-
+                                    </div>
+                                        <input class="text-center" value="1" type="number" max="99" min="1" id="number45" name="number45" required/>
+                                        <span class="text-danger field-validation-valid" data-valmsg-for="number45"
+                                        data-valmsg-replace="true"></span>
+                                    <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+
+                                    </div>
                                 </div>
-                                <input type="number" id="number" value="0" />
-                                <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+
+                                <div>
+                                    <button class="mt-5 btn btn-primary" type="submit">Thêm giỏ hàng</button>
                                 </div>
                             </form>
-                            <a class="mt-4 btn btn-primary" asp-route="addcart" asp-route-ItemId="@item.ItemId">Thêm giỏ hàng</a>
                         </div>
                     </div>
                 </div>

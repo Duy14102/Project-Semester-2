@@ -36,6 +36,11 @@
                     <a style="width: 200px;" class="navbar-brand" asp-area="" asp-controller="Home"
                         asp-action="Index"><img src="~/image/logo.png" width="20%" height="20%"><b>Cơm Nhé ?</b></a>
                 </div>
+                <div class="ThisCart">
+                    <a class="nav-link text-dark ThisCart" asp-action="Cart">
+                        @await Html.PartialAsync("_CartPartial")
+                    </a>
+                </div>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <button type="button" class="btn  search" data-toggle="modal" data-target="#exampleModal">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -65,9 +70,21 @@
                         </div>
                     </div>
                     <ul class="navbar-nav flex-grow-1 animUl MainRespon">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark searchRespon">Tìm Kiếm</a>
-                        </li>
+                        <div class="SearchRespon">
+                            <li class="nav-item SearchRespon">
+                                <form asp-action="Search" method="get" id="f_search" class="pt-2 pb-3">
+                                    <input style="background-color: rgb(231, 230, 230);" class="px-2 py-2"
+                                        id="search4This" type="text" name="searchString" placeholder="Nhập gì đó..." />
+                                    <button class="pt-2" type="submit">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                            <path
+                                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                        </svg>
+                                    </button>
+                                </form>
+                            </li>
+                        </div>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Trang
                                 Chủ</a>
@@ -102,8 +119,8 @@
                         <li class="nav-item LoginRespon">
                             <a class="nav-link text-dark LoginRespon" href="#">Đăng Nhập</a>
                         </li>
-                        <li class="nav-item CartRespon">
-                            <a class="nav-link text-dark CartRespon" href="#">Giỏ Hàng</a>
+                        <li class="nav-item LoginRespon">
+                            <a class="nav-link text-dark LoginRespon" href="#">Đăng Ký</a>
                         </li>
                     </ul>
                 </div>
@@ -163,9 +180,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-md-5">
-                    <h6 style="color:black;">About</h6>
+                    <h6 style="color:black;">Về chúng tôi</h6>
                     <p class="text-justify">Website chính thức và duy nhất<br> của Cơm nhé ?.Mọi thông tin chi
-                        tiết<br>xinliên hệ số điện thoại 0123456789</p>
+                        tiết<br>xin liên hệ số điện thoại <a style="text-decoration: none; color:rgb(0, 119, 132);" href="tel:1234567890">1234567890</a></p>
                 </div>
 
                 <div class="col-xs-6 col-md-4">

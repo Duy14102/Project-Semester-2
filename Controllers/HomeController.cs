@@ -51,7 +51,6 @@ public class HomeController : Controller
             //  Thêm mới
             cart.Add(new CartItem() { Quantity = 1, item = data });
         }
-
         // Lưu cart vào Session
         SaveCartSession(cart);
         // Chuyển đến trang hiện thị Cart
@@ -142,6 +141,7 @@ public class HomeController : Controller
 
     public IActionResult Privacy()
     {
+        ViewData["Announs"] = _context.Announs.OrderBy(i => i.AnnounId).ToList();
         return View();
     }
 

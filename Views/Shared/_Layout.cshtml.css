@@ -151,7 +151,7 @@ button {
   text-decoration: none;
 }
 
-.searchRespon {
+.SearchRespon {
   display: none;
 }
 
@@ -159,7 +159,7 @@ button {
   display: none;
 }
 
-.CartRespon {
+.ThisCart {
   display: none;
 }
 
@@ -169,6 +169,7 @@ button {
 }
 
 .ThisImg {
+  text-align: center;
   width: 200px;
 }
 
@@ -193,12 +194,13 @@ button {
     display: block;
   }
 
-  .CartRespon {
+  .ThisCart {
     display: block;
   }
 
-  .searchRespon {
+  .SearchRespon {
     display: block;
+    width: 100%;
   }
 
   .animUl li:hover::after {

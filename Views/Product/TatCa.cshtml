@@ -4,6 +4,7 @@
 @model IPagedList<Item>
 @{
     ViewData["Title"] = "Tất Cả";
+    var format = System.Globalization.CultureInfo.GetCultureInfo("vi-VN");
     var viewItemsData = ViewData["Items"];
     var Nuoc = "Nước";
     var Canh = "Canh";
@@ -107,7 +108,7 @@
                         class="fas fa-star"></span>
                             <span class="fas fa-star"></span>
                         </div>
-                        <div class="price">@Html.DisplayFor(modelItem => item.UnitPrice)0 ₫</div>
+                        <div class="price">@String.Format(format, "{0:c0}", @item.UnitPrice )</div>
                     </div>
                 }
             }
@@ -119,8 +120,8 @@
                 PageClasses = new[]{ "page-link"},
                 LiElementClasses=new[] { "page-item" },
                 UlElementClasses = new[] { "pagination","justify-content-center", "mt-3" },
-                LinkToNextPageFormat = "Next",
-                LinkToPreviousPageFormat = "Previous",
+                LinkToNextPageFormat = "Sau",
+                LinkToPreviousPageFormat = "Trước",
                 MaximumPageNumbersToDisplay = 5,
                 DisplayLinkToPreviousPage = PagedListDisplayMode.Always,
                 DisplayLinkToNextPage = PagedListDisplayMode.Always

@@ -1,5 +1,7 @@
-﻿@{
+﻿@model Announ
+@{
     ViewData["Title"] = "Thông Báo";
+    var viewAnnounsData = ViewData["Announs"];
 }
 
 <head>
@@ -11,27 +13,48 @@
 </head>
 
 <body class="bg-light">
-
+    <div class="px-3">
     <h3 align="center" class="text-danger">Thông Báo</h3>
-
-    <h1>
-        <span>Hiện</span>
-        <span>chưa</span>
-        <span>có</span>
-        <span>thông</span>
-        <span>báo</span>
-        <span>nào</span>
-        <span>hết!</span><br>
-        <span>Quay</span>
-        <span>trở</span>
-        <span>về</span>
-        <span>trang</span>
-        <span>chủ</span>
-        <span>nhé.</span>
-    </h1>
+    @if (viewAnnounsData is List<Announ>)
+    {
+        List<Announ> announs = (List<Announ>)viewAnnounsData;
+        @if (!announs.Any())
+        {
+            <h1>
+                <span>Hiện</span>
+                <span>chưa</span>
+                <span>có</span>
+                <span>thông</span>
+                <span>báo</span>
+                <span>nào</span>
+                <span>hết!</span><br>
+                <span>Quay</span>
+                <span>trở</span>
+                <span>về</span>
+                <span>trang</span>
+                <span>chủ</span>
+                <span>nhé.</span>
+            </h1>
+        }
+        else
+        {
+            @foreach (var announ in announs)
+            {
+                <div class="py-2">
+                <div class="row text-left">
+                    <b><span>@announ.AnnounId</span>. @announ.AnnounName :</b>
+                </div>
+                <div style="padding-left: 2%;" class="row text-left text-muted">
+                    @announ.AnnounStory
+                </div>
+                </div>
+            }
+        }
+    }
     <div class="coverThis">
         <a asp-area="" asp-controller="Home" asp-action="Index">
             <p class="BackToHome">Trang Chủ</p>
         </a>
+    </div>
     </div>
 </body>
