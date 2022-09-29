@@ -2,14 +2,15 @@
 
 function increaseValue() {
     var value = parseInt(document.getElementById('number45').value, 10);
-    value = isNaN(value) ? 0 : value;
+    value = isNaN(value) ? 1 : value;
+    value > 99 ? value = 99 : '';
     value++;
     document.getElementById('number45').value = value;
 }
 
 function decreaseValue() {
     var value = parseInt(document.getElementById('number45').value, 10);
-    value = isNaN(value) ? 0 : value;
+    value = isNaN(value) ? 1 : value;
     value < 1 ? value = 1 : '';
     value--;
     document.getElementById('number45').value = value;
