@@ -105,6 +105,7 @@ public class HomeController : Controller
         return View();
     }
 
+    [Route("/CheckoutDetail", Name = "CheckoutDetail")]
     public IActionResult CheckoutDetail()
     {
         return View(GetCartItems());

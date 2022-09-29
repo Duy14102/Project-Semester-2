@@ -90,6 +90,10 @@ namespace FirstAspNetApp.Models
                     .HasColumnType("datetime")
                     .HasColumnName("user_date")
                     .HasDefaultValueSql("CURRENT_TIMESTAMP");
+
+                entity.Property(e => e.Image)
+                    .HasMaxLength(500)
+                    .HasColumnName("user_image");
             });
 
             modelBuilder.Entity<Item>(entity =>

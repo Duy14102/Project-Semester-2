@@ -17,6 +17,7 @@ create table Users(
     user_fullname varchar(500),
     user_email varchar(500),
     user_date datetime default now() not null,
+    user_image varchar(500),
     user_role int default 2
 );
 

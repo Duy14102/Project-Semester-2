@@ -21,8 +21,8 @@
                     <div class="card-header">Id tài khoản : <b>@Html.DisplayFor(Model => Model.UserId)</b></div>
                     <div class="card-body text-center">
                         <!-- Profile picture image-->
-                        <img class="img-account-profile rounded-circle mb-2" src="~/image/DefaultFeedback.jpg" alt=""
-                            width="30%">
+                        <img class="img-account-profile rounded-circle mb-2" src="@Url.Content(@Model.Image)" alt=""
+                            width="50%">
                         <!-- Profile picture help block-->
                         <div class="small font-italic text-muted mb-4">@Html.DisplayFor(Model => Model.UserName)
                         </div>
@@ -36,11 +36,20 @@
                         Chỉnh sửa tài khoản
                     </div>
                     <div class="card-body">
-                        @using (Html.BeginForm("EditUserPanel", "Admin", FormMethod.Post))
+                        @using (Html.BeginForm("EditUserPanel", "Admin", FormMethod.Post, new
+                        {
+                            enctype = "multipart/form-data"
+                        }))
                         {
                             <form>
-                                <!-- Form Row-->
-                            <div class="mb-3">
+                                <div class="mb-3">
+                                    <!-- Form Group (first name)-->
+                                <label class="small mb-1" for="uploadFile">Ảnh đại diện</label>
+                                    <input type="file" id="uploadFile" name="uploadFile">
+                                    <span class="text-danger field-validation-valid" data-valmsg-for="UploadFile"
+                                    data-valmsg-replace="true"></span>
+                                </div>
+                                <div class="mb-3">
                                     <!-- Form Group (first name)-->
                                 <label class="small mb-1" for="Password">Mật khẩu</label>
                                     @Html.TextBoxFor(Model => Model.Password, new { @class = "form-control", @id =
@@ -61,8 +70,7 @@
                                 <!-- Form Row-->
                                 <!-- Save changes button-->
                             <input type="submit" class="btn btn-primary" value="Lưu" />
-                                <a class="btn btn-secondary" asp-area="" asp-action="UserPanel"
-                                asp-controller="Admin">Hủy</a>
+                                <a class="btn btn-secondary" href="javascript:javascript:history.go(-1)">Hủy</a>
                             </form>
                         }
                     </div>

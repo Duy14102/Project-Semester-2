@@ -30,6 +30,6 @@ namespace FirstAspNetApp.Models
 
         public DateTime UserDate { get; set; }
 
-
+        public string? Image { get; set; }
     }
 }

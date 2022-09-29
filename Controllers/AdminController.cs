@@ -143,15 +143,25 @@ public class AdminController : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult> EditUserPanel(int id, User user)
+    public async Task<IActionResult> EditUserPanel(int id, User user, IFormFile uploadFile)
     {
         var data = await _context.Users.FirstOrDefaultAsync(i => i.UserId == id);
         if (data != null)
         {
-            data.Password = user.Password;
-            data.Fullname = user.Fullname;
-            data.Email = user.Email;
-            await _context.SaveChangesAsync();
+            if (uploadFile != null && uploadFile.Length > 0)
+            {
+                var fileName = Path.GetFileName(uploadFile.FileName);
+                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/image", fileName);
+                data.Image = "~/image/" + fileName;
+                data.Password = user.Password;
+                data.Fullname = user.Fullname;
+                data.Email = user.Email;
+                await _context.SaveChangesAsync();
+                using (var fileSrteam = new FileStream(filePath, FileMode.Create))
+                {
+                    await uploadFile.CopyToAsync(fileSrteam);
+                }
+            }
             return RedirectToAction("Index", "Home", new { area = "" });
         }
         return View(data);
