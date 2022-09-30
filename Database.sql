@@ -17,14 +17,14 @@ create table Users(
     user_fullname varchar(500),
     user_email varchar(500),
     user_date datetime default now() not null,
-    user_image varchar(500),
+    user_image varchar(500 ) default '~/image/DefaultFeedback.jpg',
     user_role int default 2
 );
 
 create table Items(
 	item_id int auto_increment primary key,
     item_name varchar(200) not null,
-    unit_price decimal(20,2) default 0,
+    unit_price decimal(20,0) default 0,
     amount int not null default 0,
     category varchar(500),
     item_story varchar(500),

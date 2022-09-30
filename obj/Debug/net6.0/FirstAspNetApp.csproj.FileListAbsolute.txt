@@ -178,3 +178,4 @@ D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\scopedcss\Views\Shar
 D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\scopedcss\Views\Shared\Cart.cshtml.rz.scp.css
 D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\scopedcss\Views\Shared\Checkout.cshtml.rz.scp.css
 D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\scopedcss\Views\Shared\CheckoutDetail.cshtml.rz.scp.css
+D:\VTCA\WD07\ASP.NET core\ProjectSemester2\obj\Debug\net6.0\scopedcss\Views\Admin\EditItem.cshtml.rz.scp.css

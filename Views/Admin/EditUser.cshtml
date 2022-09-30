@@ -21,7 +21,7 @@
                     <div class="card-header">Id tài khoản : <b>@Html.DisplayFor(Model => Model.UserId)</b></div>
                     <div class="card-body text-center">
                         <!-- Profile picture image-->
-                        <img class="img-account-profile rounded-circle mb-2" src="~/image/DefaultFeedback.jpg" alt=""
+                        <img class="img-account-profile rounded-circle mb-2" src="@Url.Content(@Model.Image)" alt=""
                             width="30%">
                         <!-- Profile picture help block-->
                         <div class="small font-italic text-muted mb-4">@Html.DisplayFor(Model => Model.UserName)
@@ -36,9 +36,19 @@
                         Chỉnh sửa tài khoản
                     </div>
                     <div class="card-body">
-                        @using (Html.BeginForm("EditUser", "Admin", FormMethod.Post))
+                        @using (Html.BeginForm("EditUser", "Admin", FormMethod.Post, new
+                        {
+                            enctype = "multipart/form-data"
+                        }))
                         {
                             <form>
+                                <!-- Form Group (first name)-->
+                            <div class="mb-3">
+                                    <label class="small mb-1" for="uploadFile">Ảnh đại diện</label>
+                                    <input type="file" id="uploadFile" name="uploadFile">
+                                    <span class="text-danger field-validation-valid" data-valmsg-for="uploadFile"
+                                    data-valmsg-replace="true"></span>
+                                </div>
                                 <!-- Form Group (username)-->
                             <div class="mb-3">
                                     <label class="small mb-1" for="UserName">Tài khoản</label>

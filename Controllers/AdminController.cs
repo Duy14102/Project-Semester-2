@@ -48,17 +48,28 @@ public class AdminController : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult> EditUser(int id, User user)
+    public async Task<IActionResult> EditUser(int id, User user, IFormFile uploadFile)
     {
         var data = await _context.Users.FirstOrDefaultAsync(i => i.UserId == id);
         if (data != null)
         {
-            data.UserName = user.UserName;
-            data.Fullname = user.Fullname;
-            data.Email = user.Email;
-            data.Role = user.Role;
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(AdminPanel));
+            if (uploadFile != null && uploadFile.Length > 0)
+            {
+                var fileName = Path.GetFileName(uploadFile.FileName);
+                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/image", fileName);
+                data.Image = "~/image/" + fileName;
+                data.UserName = user.UserName;
+                data.Password = user.Password;
+                data.Fullname = user.Fullname;
+                data.Email = user.Email;
+                data.Role = user.Role;
+                await _context.SaveChangesAsync();
+                using (var fileSrteam = new FileStream(filePath, FileMode.Create))
+                {
+                    await uploadFile.CopyToAsync(fileSrteam);
+                }
+                return RedirectToAction(nameof(AdminPanel));
+            }
         }
         return View(data);
     }
@@ -71,15 +82,26 @@ public class AdminController : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult> EditItem(int id, Item item)
+    public async Task<IActionResult> EditItem(int id, Item item, IFormFile uploadFile)
     {
         var data = await _context.Items.FirstOrDefaultAsync(i => i.ItemId == id);
         if (data != null)
         {
-            data.ItemName = item.ItemName;
-            data.UnitPrice = item.UnitPrice;
-            data.ItemStory = item.ItemStory;
-            await _context.SaveChangesAsync();
+            if (uploadFile != null && uploadFile.Length > 0)
+            {
+                var fileName = Path.GetFileName(uploadFile.FileName);
+                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/image", fileName);
+                data.ItemDescription = "~/image/" + fileName;
+                data.Category = item.Category;
+                data.ItemName = item.ItemName;
+                data.UnitPrice = item.UnitPrice;
+                data.ItemStory = item.ItemStory;
+                await _context.SaveChangesAsync();
+                using (var fileSrteam = new FileStream(filePath, FileMode.Create))
+                {
+                    await uploadFile.CopyToAsync(fileSrteam);
+                }
+            }
             return RedirectToAction(nameof(AdminPanel));
         }
         return View(data);
@@ -269,14 +291,25 @@ public class AdminController : Controller
         return View(value);
     }
     /*   Create New User    */
-    public async Task<IActionResult> EditPost([Bind("UserName, Password, Fullname, Email, Role")] User value)
+    public async Task<IActionResult> EditPost([Bind("UserName, Password, Fullname, Email, Role")] User value, IFormFile uploadFile)
     {
         try
         {
             if (!ModelState.IsValid)
             {
-                _context.Users.Add(value);
-                await _context.SaveChangesAsync();
+                if (uploadFile != null && uploadFile.Length > 0)
+                {
+                    var fileName = Path.GetFileName(uploadFile.FileName);
+                    var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/image", fileName);
+                    var thisFile = "~/image/" + fileName;
+                    value.Image = thisFile;
+                    _context.Users.Add(value);
+                    await _context.SaveChangesAsync();
+                    using (var fileSrteam = new FileStream(filePath, FileMode.Create))
+                    {
+                        await uploadFile.CopyToAsync(fileSrteam);
+                    }
+                }
                 return RedirectToAction(nameof(AdminPanel));
             }
         }

@@ -86,6 +86,10 @@
 
 /*   Wave   */
 
+.ThisIsImg {
+    width: 70%;
+}
+
 /*   Logout Modal   */
 .modal {
     top: 35%;

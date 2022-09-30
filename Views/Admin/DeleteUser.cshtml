@@ -18,8 +18,8 @@
                     <div class="card-header">Id tài khoản : <b>@Html.DisplayFor(Model => Model.UserId)</b></div>
                     <div class="card-body text-center">
                         <!-- Profile picture image-->
-                        <img class="img-account-profile rounded-circle mb-2" src="~/image/DefaultFeedback.jpg" alt=""
-                            width="30%">
+                        <img class="img-account-profile rounded-circle mb-2" src="@Url.Content(@Model.Image)" alt=""
+                            width="50%">
                         <!-- Profile picture help block-->
                         <div class="small font-italic text-muted mb-4">@Html.DisplayFor(Model => Model.UserName)
                         </div>

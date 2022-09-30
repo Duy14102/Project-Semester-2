@@ -1,4 +1,7 @@
 @model Item
+@{
+    var format = System.Globalization.CultureInfo.GetCultureInfo("vi-VN");
+}
 
 <head>
     <meta charset="utf-8">
@@ -43,7 +46,7 @@
                                 <!-- Form Row-->
                             <div class="mb-3">
                                     <!-- Form Group (first name)-->
-                                    Giá : @Html.DisplayFor(m => m.UnitPrice, new { @class = "form-control"})0 đ
+                                    Giá : @String.Format(format, "{0:c0}", @Model.UnitPrice, new { @class = "form-control"} )
                                 </div>
                                 <!-- Form Row        -->
                             <div class="mb-3">

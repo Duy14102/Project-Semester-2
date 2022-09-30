@@ -1,57 +1,98 @@
 @model Item
 @{
-    var viewItemsData = ViewData["Items"];
+    var viewItemsdata = ViewData["Items"];
 }
 
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="~/Admin/EditItem.cshtml.css" asp-append-version="true">
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-    <style>
-        .ThisA {
-            text-decoration: none;
-            color: black;
-            padding: 4.5px 6px;
-            background-color: #efefef;
-            border: 1px solid gray;
-            border-radius: 0.2rem;
-        }
-
-        .ThisA:hover {
-            color: black;
-            background-color: #e4e4e4;
-        }
-    </style>
 </head>
 
 <body class="bg-light">
-    @using (Html.BeginForm("EditItem", "Admin", FormMethod.Post))
-    {
-        <table>
-            <tr>
-                <td>Id mặt hàng</td>
-                <td>@Html.DisplayFor(model => model.ItemId)</td>
-            </tr>
-            <tr>
-                <td>Tên mặt hàng</td>
-                <td>@Html.TextBoxFor(model => model.ItemName)</td>
-            </tr>
-            <tr>
-                <td>Giá</td>
-                <td>@Html.TextBoxFor(model => model.UnitPrice)</td>
-            </tr>
-            <tr>
-                <td>Mô tả</td>
-                <td>@Html.TextBoxFor(model => model.ItemStory)</td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td>
-                    <input type="submit" value="Lưu" />
-                    <a class="ThisA" asp-area="" asp-action="AdminPanel" asp-controller="Admin">Hủy</a>
-                </td>
-            </tr>
-        </table>
-    }
+    <div class="container-xl px-4 mt-4">
+        <!-- Account page navigation-->
+        <div class="row">
+            <div class="col-xl-4">
+                <!-- Profile picture card-->
+                <div class="card mb-4 mb-xl-0">
+                    <div class="card-header">Id mặt hàng : <b>@Html.DisplayFor(Model => Model.ItemId)</b></div>
+                    <div class="card-body text-center">
+                        <!-- Profile picture image-->
+                        <img class="img-account-profile rounded-circle mb-2" src="@Url.Content(@Model.ItemDescription)"
+                            alt="" width="30%">
+                        <!-- Profile picture help block-->
+                        <div class="small font-italic text-muted mb-4">@Html.DisplayFor(Model => Model.ItemName)
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-8">
+                <!-- Account details card-->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        Chỉnh sửa mặt hàng
+                    </div>
+                    <div class="card-body">
+                        @using (Html.BeginForm("EditItem", "Admin", FormMethod.Post, new
+                        {
+                            enctype = "multipart/form-data"
+                        }))
+                        {
+                            <form>
+                                <!-- Form Group (Avatar)-->
+                            <div class="mb-3">
+                                    <label class="small mb-1" for="uploadFile">Ảnh đại diện</label>
+                                    <input type="file" id="uploadFile" name="uploadFile">
+                                    <span class="text-danger field-validation-valid" data-valmsg-for="uploadFile"
+                                    data-valmsg-replace="true"></span>
+                                </div>
+                                <!-- Form Row-->
+                            <div class="mb-3">
+                                    <!-- Form Group (first name)-->
+                                <label class="small mb-1" for="ItemName">Tên mặt hàng</label>
+                                    @Html.TextBoxFor(Model => Model.ItemName, new { @class = "form-control", @id =
+                                "ItemName"})
+                                </div>
+                                <!-- Form Row        -->
+                            <div class="mb-3">
+                                    <label class="small mb-1" for="UnitPrice">Giá</label>
+                                    @Html.TextBoxFor(Model => Model.UnitPrice, new { @class = "form-control", @id =
+                                "UnitPrice", @type = "number"})
+                                </div>
+                                <!-- Form Group ()-->
+                            <div class="mb-3">
+                                    <label class="small mb-1" for="Category12">Danh mục</label><br>
+                                    <input style="pointer-events: none;" list="Category" type="text" id="Category12"
+                                    name="Category" aria-disabled="true" placeholder="@Model.Category" />
+                                    <select name="" onchange="myFunction(this.value);">
+                                        <option>Chọn Danh Mục</option>
+                                        <option data-value="Đồ Ăn Kèm">Đồ Ăn Kèm</option>
+                                        <option data-value="Thịt">Thịt</option>
+                                        <option data-value="Rau">Rau</option>
+                                        <option data-value="Canh">Canh</option>
+                                        <option data-value="Nước">Nước</option>
+                                    </select>
+                                    <span class="text-danger field-validation-valid" data-valmsg-for="Category"
+                                    data-valmsg-replace="true"></span>
+                                </div>
+                                <!-- Form Row-->
+                            <div class="row gx-3 mb-3">
+                                    <label class="small mb-1" for="ItemStory">Mô tả</label>
+                                    @Html.TextBoxFor(Model => Model.ItemStory, new { @class = "form-control", @id =
+                                "ItemStory"})
+                                </div>
+                                <!-- Save changes button-->
+                            <input type="submit" class="btn btn-primary" value="Lưu" />
+                                <a class="btn btn-secondary" asp-area="" asp-action="AdminPanel"
+                                asp-controller="Admin">Hủy</a>
+                            </form>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>

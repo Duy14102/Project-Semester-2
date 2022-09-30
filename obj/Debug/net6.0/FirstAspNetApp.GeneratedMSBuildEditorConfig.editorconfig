@@ -15,10 +15,6 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\VTCA\WD07\ASP.NET core\ProjectSemester2
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/Admin/EditItem.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdEl0ZW0uY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/Product/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -58,6 +54,10 @@ build_metadata.AdditionalFiles.CssScope = b-js6lpldzd0
 [D:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/Admin/DeleteUser.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGVsZXRlVXNlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = b-rmbjwhqv83
+
+[D:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/Admin/EditItem.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdEl0ZW0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-ml3n9fxbiv
 
 [D:/VTCA/WD07/ASP.NET core/ProjectSemester2/Views/Admin/EditUser.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdFVzZXIuY3NodG1s
