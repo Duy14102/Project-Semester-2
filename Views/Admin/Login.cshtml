@@ -50,6 +50,10 @@
                                     <div class="group">
                                         <input type="submit" name="submit" class="button" value="Đăng Nhập">
                                     </div>
+                                    @if (TempData["error"] != null)
+                                    {
+                                        <span class="text-danger">@TempData["error"]</span>
+                                    }
                                     <div class="hr"></div>
                                     <div style="padding-left: 15px;" class="foot d-flex justify-content-center">
                                         <p>Chưa có tài khoản?</p>

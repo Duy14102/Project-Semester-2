@@ -1,4 +1,7 @@
-@model Item
+@using X.PagedList;
+@using X.PagedList.Mvc.Core;
+@using X.PagedList.Web.Common;
+@model IPagedList<Item>
 @{
     ViewData["Title"] = "Canh";
     var format = System.Globalization.CultureInfo.GetCultureInfo("vi-VN");
@@ -23,17 +26,21 @@
 </head>
 
 <body class="bg-light">
+    @if(TempData["CartPopup2"] != null){
+        <script>
+            setTimeout(() => {
+                alert('Thêm mặt hàng vào giỏ hàng thành công')
+            }, 1);
+        </script>
+    }
     <div class="paddingItem bg-light">
         <div class="Holder">
             <a asp-area="" asp-controller="Home" asp-action="Index" class="nav-link text-muted">Trang Chủ</a> /
             <a class="nav-link text-dark" href="#">Canh</a>
         </div>
         <nav class="navbar navbar-expand-md navbar-light bg-light">
-            <div class="container-fluid p-0"> <a class="navbar-brand text-uppercase fw-800" href="#">Canh</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myNav"
-                    aria-controls="myNav" aria-expanded="false" aria-label="Toggle navigation"> <span
-                        class="fas fa-bars"></span> </button>
-                <div class="collapse navbar-collapse" id="myNav">
+            <div class="container-fluid p-0">
+                <div id="myNav">
                     <div class="navbar-nav ms-auto"> <a class="nav-link" asp-area="" asp-controller="Product"
                             asp-action="TatCa">Tất Cả</a>
                         <a class="nav-link" asp-area="" asp-controller="Product" asp-action="DoAnKem">Đồ Ăn
@@ -44,13 +51,42 @@
                         <a class="nav-link" asp-area="" asp-controller="Product" asp-action="Nuoc">Nước</a>
                     </div>
                 </div>
+                <div class="dropdown">
+                    <button onclick="hamDropdown()" class="nut_dropdown">
+                        <div>
+                            Sắp xếp
+                        </div>
+                        <div>
+                            v
+                        </div>
+                    </button>
+                    <div class="noidung_dropdown">
+                        <div class="insideThis">
+                            @Html.ActionLink("Món mới", "Canh", new { sortOrder ="idnewc"}, new {@class = "nav-link text-dark" })
+                        </div>
+                        <div class="insideThis">
+                            @Html.ActionLink("Món cũ", "Canh", new { sortOrder ="idoldc"}, new {@class = "nav-link text-dark" })
+                        </div>
+                        <div class="insideThis">
+                            @Html.ActionLink("Giá từ thấp đến cao", "Canh",  new { sortOrder ="priceupc"}, new {@class = "nav-link text-dark" })
+                        </div>
+                        <div class="insideThis">
+                            @Html.ActionLink("Giá từ cao đến thấp", "Canh",  new { sortOrder ="pricedownc"}, new {@class = "nav-link text-dark" })
+                        </div>
+                        <div class="insideThis">
+                            @Html.ActionLink("Danh mục chính", "Canh", new { sortOrder = "categoryc"}, new {@class = "nav-link text-dark" })
+                        </div>
+                    </div>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myNav"
+                    aria-controls="myNav" aria-expanded="false" aria-label="Toggle navigation"> <span
+                        class="fas fa-bars"></span> </button>
             </div>
         </nav>
         <div class="row">
-            @if (viewItemsData is List<Item>)
+            @if (Model != null && Model.Count > 1)
             {
-                List<Item> items = (List<Item>)viewItemsData;
-                @foreach (var item in items)
+                foreach (var item in Model)
                 {
                     <div
                 class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
@@ -61,7 +97,7 @@
                             <ul class="d-flex align-items-center justify-content-center list-unstyled icons">
                                 <li class="icon"><span class="fas fa-expand-arrows-alt"></span></li>
                                 <li class="icon mx-3"><span class="far fa-heart"></span></li>
-                                <a class="text-dark" asp-route="addcart" asp-route-ItemId="@item.ItemId">
+                                <a class="text-dark" asp-route="addcartProduct" asp-route-ItemId="@item.ItemId">
                                     <li class="icon"><span class="fas fa-shopping-bag"></span></li>
                                 </a>
                             </ul>

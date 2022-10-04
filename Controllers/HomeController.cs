@@ -51,10 +51,11 @@ public class HomeController : Controller
             //  Thêm mới
             cart.Add(new CartItem() { Quantity = 1, item = data });
         }
+        TempData["CartPopup"] = "Sản phẩm đã được thêm vào giỏ hàng";
         // Lưu cart vào Session
         SaveCartSession(cart);
         // Chuyển đến trang hiện thị Cart
-        return RedirectToAction(nameof(Cart));
+        return RedirectToAction(nameof(Index));
     }
 
     // Hiện thị giỏ hàng
@@ -155,6 +156,10 @@ public class HomeController : Controller
         if (!String.IsNullOrEmpty(searchString))
         {
             movies = movies.Where(s => s.ItemName.Contains(searchString));
+        }
+        else if (searchString == null)
+        {
+            return RedirectToAction("Index");
         }
         ViewBag.Message = searchString;
         return View(await movies.ToListAsync());

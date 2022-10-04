@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "G+i5YXoevvbtfBjIsxXA+2J+UlHWVBhiMnLbcfZVMJ4=",
+  "Hash": "2ug0v+Rc6Yj6/dfA1kNIDu4gUod4OsLoquA/al4kc+0=",
   "Source": "FirstAspNetApp",
   "BasePath": "_content/FirstAspNetApp",
   "Mode": "Default",
@@ -100,40 +100,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
-    },
-    {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\image\\250670629_1272525803208455_9189865693551795789_n.jpg",
-      "SourceId": "FirstAspNetApp",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
-      "BasePath": "_content/FirstAspNetApp",
-      "RelativePath": "image/250670629_1272525803208455_9189865693551795789_n.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\image\\250670629_1272525803208455_9189865693551795789_n.jpg"
-    },
-    {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\image\\278869054_145592054667829_828849604714772978_n.jpg",
-      "SourceId": "FirstAspNetApp",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
-      "BasePath": "_content/FirstAspNetApp",
-      "RelativePath": "image/278869054_145592054667829_828849604714772978_n.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\image\\278869054_145592054667829_828849604714772978_n.jpg"
     },
     {
       "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\image\\AdminOpen.png",

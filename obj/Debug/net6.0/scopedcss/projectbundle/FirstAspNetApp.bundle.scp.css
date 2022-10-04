@@ -1494,6 +1494,34 @@ a[b-5w4vkayr2p] {
 [b-5w4vkayr2p]::placeholder {
     color: #b3b3b3;
 }
+
+/*   Modal    */
+.modal[b-5w4vkayr2p] {
+    top: 35%;
+}
+
+.modal-content[b-5w4vkayr2p] {
+    margin: auto;
+    border-radius: 0.5rem;
+    width: 80%;
+    -webkit-box-shadow: -1px -2px 42px -19px rgba(0, 0, 0, 0.74);
+    -moz-box-shadow: -1px -2px 42px -19px rgba(0, 0, 0, 0.74);
+    box-shadow: -1px -2px 42px -19px rgba(0, 0, 0, 0.74);
+}
+
+.close[b-5w4vkayr2p] {
+    float: right;
+    border: none;
+    outline: none;
+    background: none;
+    color: gray;
+}
+
+.close:hover[b-5w4vkayr2p] {
+    border-radius: 2rem;
+    background: lightgray;
+    transition: 0.1s;
+}
 /* _content/FirstAspNetApp/Views/Admin/Register.cshtml.rz.scp.css */
 *[b-1iifa5ko7t] {
     font-family: 'Montserrat';
@@ -2235,13 +2263,67 @@ span:nth-child(14)[b-1qq99n4679] {
 
 @media (max-width: 575px) {
 
-    .navbar[b-8wfwsrzvcq] {
+    .navbar #myNav[b-8wfwsrzvcq] {
         display: none;
     }
 
-    .Holder[b-8wfwsrzvcq] {
-        width: 33.1%;
+    .navbar .navbar-toggler[b-8wfwsrzvcq] {
+        display: none;
     }
+
+    .navbar .dropdown[b-8wfwsrzvcq] {
+        margin: 0 auto;
+    }
+
+    .Holder[b-8wfwsrzvcq] {
+        width: 49.3%;
+        margin: 0 auto;
+    }
+}
+
+/*   Dropdown For Sort   */
+.nut_dropdown[b-8wfwsrzvcq] {
+    display: flex;
+    justify-content: space-between;
+    min-width: 220px;
+    border: none;
+    font-size: 2.4vmin;
+    box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.2);
+    border: 1px solid lightgray;
+    background-color: white;
+}
+
+/* Thiết lập vị trí cho thẻ div với class dropdown*/
+.dropdown[b-8wfwsrzvcq] {
+    position: relative;
+    display: inline-block;
+}
+
+/* Nội dung Dropdown */
+.noidung_dropdown[b-8wfwsrzvcq] {
+    font-size: 2.4vmin;
+    /*Ẩn nội dụng các đường dẫn*/
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 220px;
+    border: 1px solid black;
+    z-index: 1;
+}
+
+/* Thiết kế style cho các đường dẫn tronng Dropdown */
+.noidung_dropdown a[b-8wfwsrzvcq] {
+    color: black;
+    text-decoration: none;
+    display: block;
+}
+
+.noidung_dropdown .insideThis:hover[b-8wfwsrzvcq] {
+    background-color: lightgray;
+}
+
+.hienThi[b-8wfwsrzvcq] {
+    display: block;
 }
 /* _content/FirstAspNetApp/Views/Product/DoAnKem.cshtml.rz.scp.css */
 *[b-rq1zps0chz] {
@@ -2383,13 +2465,67 @@ span:nth-child(14)[b-1qq99n4679] {
 
 @media (max-width: 575px) {
 
-    .navbar[b-rq1zps0chz] {
+    .navbar #myNav[b-rq1zps0chz] {
         display: none;
     }
 
-    .Holder[b-rq1zps0chz] {
-        width: 41.5%;
+    .navbar .navbar-toggler[b-rq1zps0chz] {
+        display: none;
     }
+
+    .navbar .dropdown[b-rq1zps0chz] {
+        margin: 0 auto;
+    }
+
+    .Holder[b-rq1zps0chz] {
+        width: 49.3%;
+        margin: 0 auto;
+    }
+}
+
+/*   Dropdown For Sort   */
+.nut_dropdown[b-rq1zps0chz] {
+    display: flex;
+    justify-content: space-between;
+    min-width: 220px;
+    border: none;
+    font-size: 2.4vmin;
+    box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.2);
+    border: 1px solid lightgray;
+    background-color: white;
+}
+
+/* Thiết lập vị trí cho thẻ div với class dropdown*/
+.dropdown[b-rq1zps0chz] {
+    position: relative;
+    display: inline-block;
+}
+
+/* Nội dung Dropdown */
+.noidung_dropdown[b-rq1zps0chz] {
+    font-size: 2.4vmin;
+    /*Ẩn nội dụng các đường dẫn*/
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 220px;
+    border: 1px solid black;
+    z-index: 1;
+}
+
+/* Thiết kế style cho các đường dẫn tronng Dropdown */
+.noidung_dropdown a[b-rq1zps0chz] {
+    color: black;
+    text-decoration: none;
+    display: block;
+}
+
+.noidung_dropdown .insideThis:hover[b-rq1zps0chz] {
+    background-color: lightgray;
+}
+
+.hienThi[b-rq1zps0chz] {
+    display: block;
 }
 /* _content/FirstAspNetApp/Views/Product/Nuoc.cshtml.rz.scp.css */
 *[b-vp2uhernvc] {
@@ -2531,13 +2667,67 @@ span:nth-child(14)[b-1qq99n4679] {
 
 @media (max-width: 575px) {
 
-    .navbar[b-vp2uhernvc] {
+    .navbar #myNav[b-vp2uhernvc] {
         display: none;
     }
 
-    .Holder[b-vp2uhernvc] {
-        width: 33.2%;
+    .navbar .navbar-toggler[b-vp2uhernvc] {
+        display: none;
     }
+
+    .navbar .dropdown[b-vp2uhernvc] {
+        margin: 0 auto;
+    }
+
+    .Holder[b-vp2uhernvc] {
+        width: 49.3%;
+        margin: 0 auto;
+    }
+}
+
+/*   Dropdown For Sort   */
+.nut_dropdown[b-vp2uhernvc] {
+    display: flex;
+    justify-content: space-between;
+    min-width: 220px;
+    border: none;
+    font-size: 2.4vmin;
+    box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.2);
+    border: 1px solid lightgray;
+    background-color: white;
+}
+
+/* Thiết lập vị trí cho thẻ div với class dropdown*/
+.dropdown[b-vp2uhernvc] {
+    position: relative;
+    display: inline-block;
+}
+
+/* Nội dung Dropdown */
+.noidung_dropdown[b-vp2uhernvc] {
+    font-size: 2.4vmin;
+    /*Ẩn nội dụng các đường dẫn*/
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 220px;
+    border: 1px solid black;
+    z-index: 1;
+}
+
+/* Thiết kế style cho các đường dẫn tronng Dropdown */
+.noidung_dropdown a[b-vp2uhernvc] {
+    color: black;
+    text-decoration: none;
+    display: block;
+}
+
+.noidung_dropdown .insideThis:hover[b-vp2uhernvc] {
+    background-color: lightgray;
+}
+
+.hienThi[b-vp2uhernvc] {
+    display: block;
 }
 /* _content/FirstAspNetApp/Views/Product/ProductDetail.cshtml.rz.scp.css */
 /*****************globals*************/
@@ -3280,13 +3470,67 @@ input[type=number][b-w11e45rlk6]::-webkit-outer-spin-button {
 
 @media (max-width: 575px) {
 
-    .navbar[b-1gpc6h4yz7] {
+    .navbar #myNav[b-1gpc6h4yz7] {
         display: none;
     }
 
-    .Holder[b-1gpc6h4yz7] {
-        width: 31.3%;
+    .navbar .navbar-toggler[b-1gpc6h4yz7] {
+        display: none;
     }
+
+    .navbar .dropdown[b-1gpc6h4yz7] {
+        margin: 0 auto;
+    }
+
+    .Holder[b-1gpc6h4yz7] {
+        width: 49.3%;
+        margin: 0 auto;
+    }
+}
+
+/*   Dropdown For Sort   */
+.nut_dropdown[b-1gpc6h4yz7] {
+    display: flex;
+    justify-content: space-between;
+    min-width: 220px;
+    border: none;
+    font-size: 2.4vmin;
+    box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.2);
+    border: 1px solid lightgray;
+    background-color: white;
+}
+
+/* Thiết lập vị trí cho thẻ div với class dropdown*/
+.dropdown[b-1gpc6h4yz7] {
+    position: relative;
+    display: inline-block;
+}
+
+/* Nội dung Dropdown */
+.noidung_dropdown[b-1gpc6h4yz7] {
+    font-size: 2.4vmin;
+    /*Ẩn nội dụng các đường dẫn*/
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 220px;
+    border: 1px solid black;
+    z-index: 1;
+}
+
+/* Thiết kế style cho các đường dẫn tronng Dropdown */
+.noidung_dropdown a[b-1gpc6h4yz7] {
+    color: black;
+    text-decoration: none;
+    display: block;
+}
+
+.noidung_dropdown .insideThis:hover[b-1gpc6h4yz7] {
+    background-color: lightgray;
+}
+
+.hienThi[b-1gpc6h4yz7] {
+    display: block;
 }
 /* _content/FirstAspNetApp/Views/Product/TatCa.cshtml.rz.scp.css */
 *[b-lfppxljbpl] {
@@ -3432,14 +3676,68 @@ input[type=number][b-w11e45rlk6]::-webkit-outer-spin-button {
     color: #fff
 }
 
+/*   Dropdown For Sort   */
+.nut_dropdown[b-lfppxljbpl] {
+    display: flex;
+    justify-content: space-between;
+    min-width: 220px;
+    border: none;
+    font-size: 2.4vmin;
+    box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.2);
+    border: 1px solid lightgray;
+    background-color: white;
+}
+
+/* Thiết lập vị trí cho thẻ div với class dropdown*/
+.dropdown[b-lfppxljbpl] {
+    position: relative;
+    display: inline-block;
+}
+
+/* Nội dung Dropdown */
+.noidung_dropdown[b-lfppxljbpl] {
+    font-size: 2.4vmin;
+    /*Ẩn nội dụng các đường dẫn*/
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 220px;
+    border: 1px solid black;
+    z-index: 1;
+}
+
+/* Thiết kế style cho các đường dẫn tronng Dropdown */
+.noidung_dropdown a[b-lfppxljbpl] {
+    color: black;
+    text-decoration: none;
+    display: block;
+}
+
+.noidung_dropdown .insideThis:hover[b-lfppxljbpl] {
+    background-color: lightgray;
+}
+
+.hienThi[b-lfppxljbpl] {
+    display: block;
+}
+
 @media (max-width: 575px) {
 
-    .navbar[b-lfppxljbpl] {
+    .navbar #myNav[b-lfppxljbpl] {
         display: none;
+    }
+
+    .navbar .navbar-toggler[b-lfppxljbpl] {
+        display: none;
+    }
+
+    .navbar .dropdown[b-lfppxljbpl] {
+        margin: 0 auto;
     }
 
     .Holder[b-lfppxljbpl] {
         width: 49.3%;
+        margin: 0 auto;
     }
 }
 /* _content/FirstAspNetApp/Views/Product/Thit.cshtml.rz.scp.css */
@@ -3582,13 +3880,67 @@ input[type=number][b-w11e45rlk6]::-webkit-outer-spin-button {
 
 @media (max-width: 575px) {
 
-    .navbar[b-brrxniix0a] {
+    .navbar #myNav[b-brrxniix0a] {
         display: none;
     }
 
-    .Holder[b-brrxniix0a] {
-        width: 31.2%;
+    .navbar .navbar-toggler[b-brrxniix0a] {
+        display: none;
     }
+
+    .navbar .dropdown[b-brrxniix0a] {
+        margin: 0 auto;
+    }
+
+    .Holder[b-brrxniix0a] {
+        width: 49.3%;
+        margin: 0 auto;
+    }
+}
+
+/*   Dropdown For Sort   */
+.nut_dropdown[b-brrxniix0a] {
+    display: flex;
+    justify-content: space-between;
+    min-width: 220px;
+    border: none;
+    font-size: 2.4vmin;
+    box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.2);
+    border: 1px solid lightgray;
+    background-color: white;
+}
+
+/* Thiết lập vị trí cho thẻ div với class dropdown*/
+.dropdown[b-brrxniix0a] {
+    position: relative;
+    display: inline-block;
+}
+
+/* Nội dung Dropdown */
+.noidung_dropdown[b-brrxniix0a] {
+    font-size: 2.4vmin;
+    /*Ẩn nội dụng các đường dẫn*/
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 220px;
+    border: 1px solid black;
+    z-index: 1;
+}
+
+/* Thiết kế style cho các đường dẫn tronng Dropdown */
+.noidung_dropdown a[b-brrxniix0a] {
+    color: black;
+    text-decoration: none;
+    display: block;
+}
+
+.noidung_dropdown .insideThis:hover[b-brrxniix0a] {
+    background-color: lightgray;
+}
+
+.hienThi[b-brrxniix0a] {
+    display: block;
 }
 /* _content/FirstAspNetApp/Views/Shared/Cart.cshtml.rz.scp.css */
 .hh-grayBox[b-8eij8cghaw] {
@@ -4341,6 +4693,7 @@ button[b-o0sea61oc0] {
   text-align: center;
   width: 200px;
 }
+
 
 @media only screen and (max-width: 575px) {
   .ThisImg[b-o0sea61oc0] {

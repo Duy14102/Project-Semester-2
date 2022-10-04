@@ -141,13 +141,67 @@
     color: #fff
 }
 
+/*   Dropdown For Sort   */
+.nut_dropdown {
+    display: flex;
+    justify-content: space-between;
+    min-width: 220px;
+    border: none;
+    font-size: 2.4vmin;
+    box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.2);
+    border: 1px solid lightgray;
+    background-color: white;
+}
+
+/* Thiết lập vị trí cho thẻ div với class dropdown*/
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Nội dung Dropdown */
+.noidung_dropdown {
+    font-size: 2.4vmin;
+    /*Ẩn nội dụng các đường dẫn*/
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 220px;
+    border: 1px solid black;
+    z-index: 1;
+}
+
+/* Thiết kế style cho các đường dẫn tronng Dropdown */
+.noidung_dropdown a {
+    color: black;
+    text-decoration: none;
+    display: block;
+}
+
+.noidung_dropdown .insideThis:hover {
+    background-color: lightgray;
+}
+
+.hienThi {
+    display: block;
+}
+
 @media (max-width: 575px) {
 
-    .navbar {
+    .navbar #myNav {
         display: none;
+    }
+
+    .navbar .navbar-toggler {
+        display: none;
+    }
+
+    .navbar .dropdown {
+        margin: 0 auto;
     }
 
     .Holder {
         width: 49.3%;
+        margin: 0 auto;
     }
 }
