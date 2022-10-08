@@ -2,6 +2,7 @@
 @{
     ViewData["Title"] = "Nước";
     var viewItemsData = ViewData["Items"];
+    var format = System.Globalization.CultureInfo.GetCultureInfo("vi-VN");
 }
 
 <!DOCTYPE html>
@@ -54,7 +55,7 @@
                         class="fas fa-star"></span>
                         <span class="fas fa-star"></span>
                     </div>
-                    <div class="price">@Html.DisplayFor(modelItem => item.UnitPrice)0 ₫</div>
+                    <div class="price">@String.Format(format, "{0:c0}", item.UnitPrice)</div>
                 </div>
             }
         </div>
