@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "3+V/xSA/hwJm3UM5e7+YzIuObca9JII9UKMyA08HJM8=",
+  "Hash": "2ug0v+Rc6Yj6/dfA1kNIDu4gUod4OsLoquA/al4kc+0=",
   "Source": "FirstAspNetApp",
   "BasePath": "_content/FirstAspNetApp",
   "Mode": "Default",
@@ -457,23 +457,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\image\\Sprite.jpg"
-    },
-    {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\image\\video-1614277826.mp4",
-      "SourceId": "FirstAspNetApp",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
-      "BasePath": "_content/FirstAspNetApp",
-      "RelativePath": "image/video-1614277826.mp4",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\image\\video-1614277826.mp4"
     },
     {
       "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\image\\VitQuay.png",
