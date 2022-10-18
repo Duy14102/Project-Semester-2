@@ -215,3 +215,10 @@ a[b-1iifa5ko7t] {
 [b-1iifa5ko7t]::placeholder {
     color: #b3b3b3;
 }
+
+@media (min-width:575px) {
+    .card[b-1iifa5ko7t] {
+        left: 0;
+        margin: 0 auto;
+    }
+}

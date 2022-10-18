@@ -57,42 +57,44 @@ public class ProductController : Controller
                 item = _context.Items.OrderBy(b => b.Category).ToPagedList(page ?? 1, pageSize);
                 break;
         }
+        ViewBag.OrderTatCa = sortOrder;
         return View(item);
     }
 
-    public IActionResult DoAnKem(string sortOrder, int? page = 1)
+    public IActionResult DoAnKem(string sortOrder, int? DAKpage = 1)
     {
         string water = "Đồ Ăn Kèm";
-        if (page != null && page < 1)
+        if (DAKpage != null && DAKpage < 1)
         {
-            page = 1;
+            DAKpage = 1;
         }
         var pageSize = 12;
-        var item = _context.Items.OrderBy(i => i.ItemId).Where(i => i.Category == water).ToPagedList(page ?? 1, pageSize);
+        var item = _context.Items.OrderBy(i => i.ItemId).Where(i => i.Category == water).ToPagedList(DAKpage ?? 1, pageSize);
         switch (sortOrder)
         {
             // 3.2 Mặc định thì sẽ sắp tăng
             default:
-                item = _context.Items.OrderBy(b => b.ItemId).Where(i => i.Category == water).ToPagedList(page ?? 1, pageSize);
+                item = _context.Items.OrderBy(b => b.ItemId).Where(i => i.Category == water).ToPagedList(DAKpage ?? 1, pageSize);
                 break;
             case "idnewdak":
-                item = _context.Items.OrderByDescending(b => b.ItemId).Where(i => i.Category == water).ToPagedList(page ?? 1, pageSize);
+                item = _context.Items.OrderByDescending(b => b.ItemId).Where(i => i.Category == water).ToPagedList(DAKpage ?? 1, pageSize);
                 break;
             case "idolddak":
-                item = _context.Items.OrderBy(b => b.ItemId).Where(i => i.Category == water).ToPagedList(page ?? 1, pageSize);
+                item = _context.Items.OrderBy(b => b.ItemId).Where(i => i.Category == water).ToPagedList(DAKpage ?? 1, pageSize);
                 break;
             // 3.2 Sắp tăng dần theo price
             case "priceupdak":
-                item = _context.Items.OrderBy(b => b.UnitPrice).Where(i => i.Category == water).ToPagedList(page ?? 1, pageSize);
+                item = _context.Items.OrderBy(b => b.UnitPrice).Where(i => i.Category == water).ToPagedList(DAKpage ?? 1, pageSize);
                 break;
             // 3.4 Sắp giảm theo price
             case "pricedowndak":
-                item = _context.Items.OrderByDescending(b => b.UnitPrice).Where(i => i.Category == water).ToPagedList(page ?? 1, pageSize);
+                item = _context.Items.OrderByDescending(b => b.UnitPrice).Where(i => i.Category == water).ToPagedList(DAKpage ?? 1, pageSize);
                 break;
             case "categorydak":
-                item = _context.Items.OrderBy(b => b.Category).Where(i => i.Category == water).ToPagedList(page ?? 1, pageSize);
+                item = _context.Items.OrderBy(b => b.Category).Where(i => i.Category == water).ToPagedList(DAKpage ?? 1, pageSize);
                 break;
         }
+        ViewBag.OrderDAK = sortOrder;
         return View(item);
     }
 
@@ -129,6 +131,7 @@ public class ProductController : Controller
                 item = _context.Items.OrderBy(b => b.Category).Where(i => i.Category == water).ToPagedList(page ?? 1, pageSize);
                 break;
         }
+        ViewBag.OrderThit = sortOrder;
         return View(item);
     }
 
@@ -165,6 +168,7 @@ public class ProductController : Controller
                 item = _context.Items.OrderBy(b => b.Category).Where(i => i.Category == water).ToPagedList(page ?? 1, pageSize);
                 break;
         }
+        ViewBag.OrderRau = sortOrder;
         return View(item);
     }
 
@@ -201,6 +205,7 @@ public class ProductController : Controller
                 item = _context.Items.OrderBy(b => b.Category).Where(i => i.Category == water).ToPagedList(page ?? 1, pageSize);
                 break;
         }
+        ViewBag.OrderCanh = sortOrder;
         return View(item);
     }
 
@@ -237,13 +242,17 @@ public class ProductController : Controller
                 item = _context.Items.OrderBy(b => b.Category).Where(i => i.Category == water).ToPagedList(page ?? 1, pageSize);
                 break;
         }
+        ViewBag.OrderNuoc = sortOrder;
         return View(item);
     }
 
     public IActionResult ProductDetail(int? id)
     {
+        Random r = new Random();
+        int rnd = r.Next();
         ViewData["Feedbacks"] = _context.Feedbacks.OrderBy(i => i.FeedbackId).ToList();
         ViewData["Items"] = _context.Items.Single(i => i.ItemId == id);
+        ViewData["ItemsLike"] = _context.Items.OrderBy(i => (~(i.ItemId & rnd)) & (i.ItemId | rnd)).Where(a => a.ItemId != id).Take(4).ToList();
         if (ViewData["Items"] == null)
         {
             TempData["msg"] = "Can't find Item with id = " + id;
@@ -275,21 +284,49 @@ public class ProductController : Controller
     }
 
     [HttpGet]
-    public async Task<IActionResult> Search(string searchString)
+    public IActionResult Search(string searchString, string sortOrder, int? page = 1)
     {
-        var movies = from m in _context.Items
-                     select m;
-
+        if (page != null && page < 1)
+        {
+            page = 1;
+        }
+        var pageSize = 12;
+        var movies = _context.Items.ToPagedList();
         if (!String.IsNullOrEmpty(searchString))
         {
-            movies = movies.Where(s => s.ItemName.Contains(searchString));
+            movies = _context.Items.Where(s => s.ItemName.Contains(searchString)).OrderBy(i => i.ItemId).ToPagedList(page ?? 1, pageSize);
         }
         else if (searchString == null)
         {
             return RedirectToAction("TatCa");
         }
+        switch (sortOrder)
+            {
+                // 3.2 Mặc định thì sẽ sắp tăng
+                default:
+                    movies = _context.Items.Where(s => s.ItemName.Contains(searchString)).OrderBy(b => b.ItemId).ToPagedList(page ?? 1, pageSize);
+                    break;
+                case "idnewsearch":
+                    movies = _context.Items.Where(s => s.ItemName.Contains(searchString)).OrderByDescending(b => b.ItemId).ToPagedList(page ?? 1, pageSize);
+                    break;
+                case "idoldsearch":
+                    movies = _context.Items.Where(s => s.ItemName.Contains(searchString)).OrderBy(b => b.ItemId).ToPagedList(page ?? 1, pageSize);
+                    break;
+                // 3.2 Sắp tăng dần theo price
+                case "priceupsearch":
+                    movies = _context.Items.Where(s => s.ItemName.Contains(searchString)).OrderBy(b => b.UnitPrice).ToPagedList(page ?? 1, pageSize);
+                    break;
+                // 3.4 Sắp giảm theo price
+                case "pricedownsearch":
+                    movies = _context.Items.Where(s => s.ItemName.Contains(searchString)).OrderByDescending(b => b.UnitPrice).ToPagedList(page ?? 1, pageSize);
+                    break;
+                case "categorysearch":
+                    movies = _context.Items.Where(s => s.ItemName.Contains(searchString)).OrderBy(b => b.Category).ToPagedList(page ?? 1, pageSize);
+                    break;
+            }
+        ViewBag.OrderTimkiem = sortOrder;
         ViewBag.Message = searchString;
-        return View(await movies.ToListAsync());
+        return View(movies);
     }
 
     /*     Shopping Cart     */

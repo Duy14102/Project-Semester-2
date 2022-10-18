@@ -95,7 +95,9 @@
                                 <img src="@Url.Content(@item.ItemDescription)" />
                             </a>
                             <ul class="d-flex align-items-center justify-content-center list-unstyled icons">
-                                <li class="icon"><span class="fas fa-expand-arrows-alt"></span></li>
+                                <a class="text-dark" href='@Url.Action("ProductDetail", "Product", new { id=item.ItemId })'>
+                                            <li class="icon"><span class="fa-solid fa-info"></span></li>
+                                        </a>
                                 <li class="icon mx-3"><span class="far fa-heart"></span></li>
                                 <a class="text-dark" asp-route="addcartProduct" asp-route-ItemId="@item.ItemId">
                                     <li class="icon"><span class="fas fa-shopping-bag"></span></li>
@@ -114,6 +116,22 @@
                     </div>
                 }
             }
+            <nav>
+                @Html.PagedListPager(
+                    Model, page => Url.Action("Rau", new { page = page, sortOrder = ViewBag.OrderRau}),
+                    new PagedListRenderOptions()
+                {
+                ActiveLiElementClass = "active",
+                PageClasses = new[]{ "page-link"},
+                LiElementClasses=new[] { "page-item" },
+                UlElementClasses = new[] { "pagination","justify-content-center", "mt-3" },
+                LinkToNextPageFormat = "Sau",
+                LinkToPreviousPageFormat = "Trước",
+                MaximumPageNumbersToDisplay = 5,
+                DisplayLinkToPreviousPage = PagedListDisplayMode.Always,
+                DisplayLinkToNextPage = PagedListDisplayMode.Always
+                })
+            </nav>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"

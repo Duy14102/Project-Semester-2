@@ -4,6 +4,7 @@
     var viewCartItemData = ViewData["CartItem"];
     var viewItemData = ViewData["Items"];
     var viewFeedbackData = ViewData["Feedbacks"];
+    var ItemsLike = ViewData["ItemsLike"];
     var Nuoc = "Nước";
     var Canh = "Canh";
     var DoAnKem = "Đồ Ăn Kèm";
@@ -248,20 +249,25 @@
         <h2 align="center"><b>Sản phẩm tương tự</b></h2>
         <div class="containerCard">
             <div class="row">
-                @if (viewItemData is List<Item>)
+                @if (ItemsLike is List<Item>)
                 {
-                    List<Item> items = (List<Item>)viewItemData;
+                    List<Item> items = (List<Item>)ItemsLike;
                     @foreach (var itemd in items)
                     {
                         <div
                 class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
-                            <div class="product"><a href="#"><img
-                            src="https://images.pexels.com/photos/54203/pexels-photo-54203.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                            alt=""></a>
+                            <div class="product">
+                                <a href='@Url.Action("ProductDetail", "Product", new { id=itemd.ItemId })'>
+                                <img src="@Url.Content(@itemd.ItemDescription)" />
+                            </a>
                                 <ul class="d-flex align-items-center justify-content-center list-unstyled icons">
-                                    <li class="icon"><span class="fas fa-expand-arrows-alt"></span></li>
+                                    <a class="text-dark" href='@Url.Action("ProductDetail", "Product", new { id=itemd.ItemId })'>
+                                            <li class="icon"><span class="fa-solid fa-info"></span></li>
+                                        </a>
                                     <li class="icon mx-3"><span class="far fa-heart"></span></li>
+                                    <a class="text-dark" asp-route="addcartProduct" asp-route-ItemId="@item.ItemId">
                                     <li class="icon"><span class="fas fa-shopping-bag"></span></li>
+                                </a>
                                 </ul>
                             </div>
                             <a style="text-decoration: none;" class="title pt-4 pb-1 text-dark" href="#">@Html.DisplayFor(modelItem
@@ -276,6 +282,11 @@
                     }
                 }
             </div>
+        </div>
+        <div class="coverThis">
+            <a asp-area="" asp-controller="Product" asp-action="TatCa">
+                <p class="BackToHome">Xem Tất Cả</p>
+            </a>
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"

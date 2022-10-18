@@ -299,39 +299,41 @@
                     @if (viewUsersdata is List<User>)
                     {
                         List<User> users = (List<User>)viewUsersdata;
-                        <table class="table table-bordered table-striped text-center">
-                            <tr>
-                                <th>Id</th>
-                                <th>Tài khoản</th>
-                                <th>Mật khẩu</th>
-                                <th>Tên</th>
-                                <th>Email</th>
-                                <th>Role</th>
-                                <th>Thời gian gia nhập</th>
-                                <th>&nbsp;</th>
-                                <th>&nbsp;</th>
-                            </tr>
-                            @foreach (var user in users)
-                            {
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped text-center">
                                 <tr>
-                                    @Html.HiddenFor(modelUser => user.Image)
-                                    <td>@Html.DisplayFor(modelUser => user.UserId)</td>
-                                    <td>@Html.DisplayFor(modelUser => user.UserName)</td>
-                                    <td>
-                                        <details>
-                                            <summary>Hiện mật khẩu</summary>
-                                            @Html.DisplayFor(modelUser => user.Password)
-                                        </details>
-                                    </td>
-                                    <td>@Html.DisplayFor(modelUser => user.Fullname)</td>
-                                    <td>@Html.DisplayFor(modelUser => user.Email)</td>
-                                    <td>@Html.DisplayFor(modelUser => user.Role)</td>
-                                    <td>@Html.DisplayFor(modelUser => user.UserDate)</td>
-                                    <td><a href="@Url.Action("EditUser", "Admin", new { id = user.UserId })">Sửa</a></td>
-                                    <td><a href="@Url.Action("DeleteUser", "Admin", new { id = user.UserId })">Xóa</a></td>
+                                    <th>Id</th>
+                                    <th>Tài khoản</th>
+                                    <th>Mật khẩu</th>
+                                    <th>Tên</th>
+                                    <th>Email</th>
+                                    <th>Role</th>
+                                    <th>Thời gian gia nhập</th>
+                                    <th>&nbsp;</th>
+                                    <th>&nbsp;</th>
                                 </tr>
-                            }
-                        </table>
+                                @foreach (var user in users)
+                                {
+                                    <tr>
+                                        @Html.HiddenFor(modelUser => user.Image)
+                                        <td>@Html.DisplayFor(modelUser => user.UserId)</td>
+                                        <td>@Html.DisplayFor(modelUser => user.UserName)</td>
+                                        <td>
+                                            <details>
+                                                <summary>Hiện mật khẩu</summary>
+                                                @Html.DisplayFor(modelUser => user.Password)
+                                            </details>
+                                        </td>
+                                        <td>@Html.DisplayFor(modelUser => user.Fullname)</td>
+                                        <td>@Html.DisplayFor(modelUser => user.Email)</td>
+                                        <td>@Html.DisplayFor(modelUser => user.Role)</td>
+                                        <td>@Html.DisplayFor(modelUser => user.UserDate)</td>
+                                        <td><a href="@Url.Action("EditUser", "Admin", new { id = user.UserId })">Sửa</a></td>
+                                        <td><a href="@Url.Action("DeleteUser", "Admin", new { id = user.UserId })">Xóa</a></td>
+                                    </tr>
+                                }
+                            </table>
+                        </div>
                     }
                 </div>
                 <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">

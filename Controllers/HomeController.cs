@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using FirstAspNetApp.Models;
 using Microsoft.EntityFrameworkCore;
+using X.PagedList;
 using Newtonsoft.Json;
 
 namespace FirstAspNetApp.Controllers;
@@ -51,7 +52,7 @@ public class HomeController : Controller
             //  Thêm mới
             cart.Add(new CartItem() { Quantity = 1, item = data });
         }
-        TempData["CartPopup"] = "Sản phẩm đã được thêm vào giỏ hàng";
+        TempData["CartPopup2"] = "Sản phẩm đã được thêm vào giỏ hàng";
         // Lưu cart vào Session
         SaveCartSession(cart);
         // Chuyển đến trang hiện thị Cart
@@ -148,21 +149,49 @@ public class HomeController : Controller
     }
 
     [HttpGet]
-    public async Task<IActionResult> Search(string searchString)
+    public IActionResult Search(string searchString, string sortOrder, int? page = 1)
     {
-        var movies = from m in _context.Items
-                     select m;
-
+        if (page != null && page < 1)
+        {
+            page = 1;
+        }
+        var pageSize = 12;
+        var movies = _context.Items.ToPagedList();
         if (!String.IsNullOrEmpty(searchString))
         {
-            movies = movies.Where(s => s.ItemName.Contains(searchString));
+            movies = _context.Items.Where(s => s.ItemName.Contains(searchString)).OrderBy(i => i.ItemId).ToPagedList(page ?? 1, pageSize);
         }
         else if (searchString == null)
         {
-            return RedirectToAction("Index");
+            return RedirectToAction("TatCa");
         }
+        switch (sortOrder)
+        {
+            // 3.2 Mặc định thì sẽ sắp tăng
+            default:
+                movies = _context.Items.Where(s => s.ItemName.Contains(searchString)).OrderBy(b => b.ItemId).ToPagedList(page ?? 1, pageSize);
+                break;
+            case "idnewsearch":
+                movies = _context.Items.Where(s => s.ItemName.Contains(searchString)).OrderByDescending(b => b.ItemId).ToPagedList(page ?? 1, pageSize);
+                break;
+            case "idoldsearch":
+                movies = _context.Items.Where(s => s.ItemName.Contains(searchString)).OrderBy(b => b.ItemId).ToPagedList(page ?? 1, pageSize);
+                break;
+            // 3.2 Sắp tăng dần theo price
+            case "priceupsearch":
+                movies = _context.Items.Where(s => s.ItemName.Contains(searchString)).OrderBy(b => b.UnitPrice).ToPagedList(page ?? 1, pageSize);
+                break;
+            // 3.4 Sắp giảm theo price
+            case "pricedownsearch":
+                movies = _context.Items.Where(s => s.ItemName.Contains(searchString)).OrderByDescending(b => b.UnitPrice).ToPagedList(page ?? 1, pageSize);
+                break;
+            case "categorysearch":
+                movies = _context.Items.Where(s => s.ItemName.Contains(searchString)).OrderBy(b => b.Category).ToPagedList(page ?? 1, pageSize);
+                break;
+        }
+        ViewBag.OrderTimkiem = sortOrder;
         ViewBag.Message = searchString;
-        return View(await movies.ToListAsync());
+        return View(movies);
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

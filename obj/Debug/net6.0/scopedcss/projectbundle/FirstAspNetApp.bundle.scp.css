@@ -1522,6 +1522,13 @@ a[b-5w4vkayr2p] {
     background: lightgray;
     transition: 0.1s;
 }
+
+@media (min-width:575px) {
+    .card[b-5w4vkayr2p] {
+        left: 0;
+        margin: 0 auto;
+    }
+}
 /* _content/FirstAspNetApp/Views/Admin/Register.cshtml.rz.scp.css */
 *[b-1iifa5ko7t] {
     font-family: 'Montserrat';
@@ -1739,6 +1746,13 @@ a[b-1iifa5ko7t] {
 
 [b-1iifa5ko7t]::placeholder {
     color: #b3b3b3;
+}
+
+@media (min-width:575px) {
+    .card[b-1iifa5ko7t] {
+        left: 0;
+        margin: 0 auto;
+    }
 }
 /* _content/FirstAspNetApp/Views/Admin/UserPanel.cshtml.rz.scp.css */
 .modal[b-59ggsk09w3] {
@@ -3317,6 +3331,26 @@ input[type=number][b-w11e45rlk6]::-webkit-outer-spin-button {
     margin-left: 50px;
 }
 
+.BackToHome[b-w11e45rlk6] {
+    display: inline-block;
+    text-align: center;
+    width: 9%;
+    padding: 3px;
+    border: 2px solid rgb(0, 119, 132);
+    color: rgb(0, 119, 132);
+    font-weight: bold;
+}
+
+.BackToHome:hover[b-w11e45rlk6] {
+    transition: 0.2s;
+    color: white;
+    background-color: rgb(0, 119, 132);
+}
+
+.coverThis[b-w11e45rlk6] {
+    text-align: center;
+}
+
 @media (max-width:575px) {
     .product-name[b-w11e45rlk6] {
         margin-top: 15px;
@@ -3328,6 +3362,10 @@ input[type=number][b-w11e45rlk6]::-webkit-outer-spin-button {
 
     .formCover[b-w11e45rlk6] {
         height: 630px;
+    }
+
+    .BackToHome[b-w11e45rlk6] {
+        width: 18%;
     }
 }
 /* _content/FirstAspNetApp/Views/Product/Rau.cshtml.rz.scp.css */
@@ -4495,6 +4533,61 @@ span:nth-child(12)[b-7w3efva4nl] {
     .Holder[b-gq2o2d74b1] {
         width: 39%;
     }
+
+    .getoverit[b-gq2o2d74b1]{
+        display: block;
+        justify-content: center;
+    }
+}
+
+/*   Dropdown For Sort   */
+.nut_dropdown[b-gq2o2d74b1] {
+    display: flex;
+    justify-content: space-between;
+    min-width: 220px;
+    border: none;
+    font-size: 2.4vmin;
+    box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.2);
+    border: 1px solid lightgray;
+    background-color: white;
+}
+
+/* Thiết lập vị trí cho thẻ div với class dropdown*/
+.dropdown[b-gq2o2d74b1] {
+    position: relative;
+    display: inline-block;
+}
+
+/* Nội dung Dropdown */
+.noidung_dropdown[b-gq2o2d74b1] {
+    font-size: 2.4vmin;
+    /*Ẩn nội dụng các đường dẫn*/
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 220px;
+    border: 1px solid black;
+    z-index: 1;
+}
+
+/* Thiết kế style cho các đường dẫn tronng Dropdown */
+.noidung_dropdown a[b-gq2o2d74b1] {
+    color: black;
+    text-decoration: none;
+    display: block;
+}
+
+.noidung_dropdown .insideThis:hover[b-gq2o2d74b1] {
+    background-color: lightgray;
+}
+
+.hienThi[b-gq2o2d74b1] {
+    display: block;
+}
+
+.getoverit[b-gq2o2d74b1]{
+    display: flex;
+    justify-content: space-between;
 }
 /* _content/FirstAspNetApp/Views/Shared/_CartPartial.cshtml.rz.scp.css */
 .badge[b-jd1vi0qglz] {
@@ -4694,7 +4787,6 @@ button[b-o0sea61oc0] {
   width: 200px;
 }
 
-
 @media only screen and (max-width: 575px) {
   .ThisImg[b-o0sea61oc0] {
     width: 150px;
@@ -4741,6 +4833,10 @@ button[b-o0sea61oc0] {
 
   .animUl li:active[b-o0sea61oc0] {
     background-color: lightgray;
+  }
+
+  .animUl[b-o0sea61oc0]{
+    align-items:flex-start;
   }
 }
 

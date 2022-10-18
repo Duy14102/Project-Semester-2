@@ -215,3 +215,10 @@ a {
 ::placeholder {
     color: #b3b3b3;
 }
+
+@media (min-width:575px) {
+    .card {
+        left: 0;
+        margin: 0 auto;
+    }
+}

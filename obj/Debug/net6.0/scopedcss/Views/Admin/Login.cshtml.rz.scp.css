@@ -243,3 +243,10 @@ a[b-5w4vkayr2p] {
     background: lightgray;
     transition: 0.1s;
 }
+
+@media (min-width:575px) {
+    .card[b-5w4vkayr2p] {
+        left: 0;
+        margin: 0 auto;
+    }
+}
