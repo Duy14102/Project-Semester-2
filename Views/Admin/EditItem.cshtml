@@ -60,7 +60,7 @@
                             <div class="mb-3">
                                     <label class="small mb-1" for="UnitPrice">Giá</label>
                                     @Html.TextBoxFor(Model => Model.UnitPrice, new { @class = "form-control", @id =
-                                "UnitPrice", @type = "number"})
+                                "UnitPrice", @type = "number", @min = "1000", @max = ""})
                                 </div>
                                 <!-- Form Group ()-->
                             <div class="mb-3">

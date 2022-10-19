@@ -147,7 +147,7 @@
                                     data-valmsg-replace="true"></span>
                             </div>
                             <div class="form-field col-lg-12">
-                                <input class="submit-btn" type="submit" value="Submit">
+                                <input class="submit-btn" type="submit" value="Tạo tài khoản">
                             </div>
                         </form>
                     </section>
@@ -167,13 +167,13 @@
                             </div>
                             <div class="form-field col-lg-12">
                                 <input class="input-text js-input" type="text" id="ItemName" name="ItemName"
-                                    placeholder="Nhập tên sản phẩm" />
+                                    placeholder="Nhập tên sản phẩm" required/>
                                 <span class="text-danger field-validation-valid" data-valmsg-for="ItemName"
                                     data-valmsg-replace="true"></span>
                             </div>
                             <div class="form-field col-lg-12 ">
                                 <input class="input-text js-input" type="text" id="UnitPrice" name="UnitPrice"
-                                    placeholder="Nhập giá" />
+                                    min="1000" max="" placeholder="Nhập giá" required/>
                                 <span class="text-danger field-validation-valid" data-valmsg-for="UnitPrice"
                                     data-valmsg-replace="true"></span>
                             </div>
@@ -198,7 +198,7 @@
                                     data-valmsg-replace="true"></span>
                             </div>
                             <div class="form-field col-lg-12">
-                                <input class="submit-btn" type="submit" value="Submit">
+                                <input class="submit-btn" type="submit" value="Tạo mặt hàng">
                             </div>
                         </form>
                     </section>
@@ -211,18 +211,18 @@
                         <form action="/Admin/CreateAnnoun" method="post" class="contact-form row">
                             <div class="form-field col-lg-12">
                                 <input class="input-text js-input" type="text" id="AnnounName" name="AnnounName"
-                                    placeholder="Nhập tên thông báo" />
+                                    placeholder="Nhập tên thông báo" required/>
                                 <span class="text-danger field-validation-valid" data-valmsg-for="AnnounName"
                                     data-valmsg-replace="true"></span>
                             </div>
                             <div class="form-field col-lg-12 ">
                                 <input class="input-text js-input" type="text" id="AnnounStory" name="AnnounStory"
-                                    placeholder="Nhập nội dung" />
+                                    placeholder="Nhập nội dung" required/>
                                 <span class="text-danger field-validation-valid" data-valmsg-for="AnnounStory"
                                     data-valmsg-replace="true"></span>
                             </div>
                             <div class="form-field col-lg-12">
-                                <input class="submit-btn" type="submit" value="Submit">
+                                <input class="submit-btn" type="submit" value="Tạo thông báo">
                             </div>
                         </form>
                     </section>
