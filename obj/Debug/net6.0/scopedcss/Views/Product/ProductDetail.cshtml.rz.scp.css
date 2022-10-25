@@ -85,6 +85,7 @@
 .product-thumb .item img[b-w11e45rlk6] {
     background: none;
     height: 417px;
+    object-fit: contain;
 }
 
 .product-name[b-w11e45rlk6] {

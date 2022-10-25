@@ -18,7 +18,6 @@ namespace FirstAspNetApp.Models
         [StringLength(500, MinimumLength = 3)]
         public string Fullname { get; set; } = null!;
         [Required]
-        [RegularExpression(@"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}")]
         public string Email { get; set; } = null!;
         [Required]
         [Range(1, 2)]

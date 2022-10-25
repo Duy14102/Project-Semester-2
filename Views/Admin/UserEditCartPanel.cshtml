@@ -1,0 +1,117 @@
+@model History
+@{
+    var format = System.Globalization.CultureInfo.GetCultureInfo("vi-VN");
+    var viewitnow = ViewData["offerpro"];
+    var viewpros = ViewData["Prosbro"];
+    decimal? total = 0;
+    decimal? pricebank = 0;
+}
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="~/Admin/EditItem.cshtml.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.2/css/all.css'>
+</head>
+
+<body class="bg-light">
+    <div class="container-xl px-4 mt-4">
+        <!-- Account page navigation-->
+        <div class="row">
+            <div class="col-xl-4">
+                <!-- Profile picture card-->
+                <div class="card mb-4 mb-xl-0">
+                    <div class="card-header">Id đơn hàng : <b>@Model.HistoryOrderId</b></div>
+                </div>
+            </div>
+            <div class="col-xl-8">
+                <!-- Account details card-->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        Chi tiết đơn hàng
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <!-- Form Group (Avatar)-->
+                            <table class="table table-bordered table-striped">
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Tên mặt hàng</th>
+                                    <th>Số lượng</th>
+                                    <th>Giá</th>
+                                    <th>Thành tiền</th>
+                                </tr>
+                                @if (viewpros is List<History>)
+                                {
+                                    List<History> sickor = (List<History>)viewpros;
+                                    <!-- Save changes button-->
+                                    @foreach (var previous in sickor)
+                                    {
+                                        if (previous.HistoryOrderId == Model.HistoryOrderId)
+                                        {
+                                            pricebank = previous.HistoryQuantity * previous.HistoryPrice;
+                                            total += pricebank;
+                                            <tr>
+                                                <td>@previous.HistoryID</td>
+                                                <td>@previous.HistoryName</td>
+                                                <td>@previous.HistoryQuantity</td>
+                                                <td>@String.Format(format, "{0:0,0 vnđ}", @previous.HistoryPrice )</td>
+                                                <td>@String.Format(format, "{0:0,0 vnđ}", @pricebank )</td>
+                                            </tr>
+                                        }
+                                    }
+                                }
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Tổng tiền : </td>
+                                    <td>@String.Format(format, "{0:0,0 vnđ}", @total )</td>
+                                </tr>
+                            </table>
+                            @if (viewitnow is List<OrderHistory>)
+                            {
+                                List<OrderHistory> orders = (List<OrderHistory>)viewitnow;
+                                <!-- Save changes button-->
+                                @foreach (var next in orders)
+                                {
+                                    @if (next.OrderHistoryID == Model.HistoryOrderId)
+                                    {
+                                        var datex = next.OrderHistoryDate.AddDays(7);
+                                        @if (next.OrderHistoryStatus == 1)
+                                        {
+                                            <div class="d-flex justify-content-between">
+                                                <div style="align-self: flex-start;">
+                                                    <a class="btn btn-secondary" asp-area="" asp-action="Index"
+                                        asp-controller="Home">Quay lại</a>
+                                                </div>
+                                                <div style="align-self: center;">
+                                                    <p><i class="fa fa-circle-xmark text-danger"></i> Đơn hàng đang chờ</p>
+                                                </div>
+                                            </div>
+                                        }
+                                        else if (next.OrderHistoryStatus == 2)
+                                        {
+                                            <div class="d-flex justify-content-between">
+                                                <div style="align-self: flex-start;">
+                                                    <a class="btn btn-secondary" asp-area="" asp-action="Index"
+                                        asp-controller="Home">Quay lại</a>
+                                                </div>
+                                                <div style="align-self: center;">
+                                                    <p><i class="fa fa-check yippsi"></i> Đơn hàng đã được xử lý</p>
+                                                    <p class="text-muted">Thời gian giao dự kiến @datex</p>
+                                                </div>
+                                            </div>
+                                        }
+                                    }
+                                }
+                            }
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

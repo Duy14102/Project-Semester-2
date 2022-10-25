@@ -21,9 +21,27 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- Font Awesome 5 CSS -->
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.2/css/all.css'>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body class="bg-light">
+    @if(TempData["CartPopup2"] != null){
+        <div id="cartpopup2" classs="container">
+	<div class="row no-gutters">
+		<div class="col-lg-2 col-md-12 ml-auto">
+			<div class="alert alert-success shadow p-2" role="alert" style="border-radius: 3px">
+				<div class="text-center">
+					<svg width="3em" height="3em" viewBox="0 0 16 16" class="m-1 bi bi-shield-fill-check" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" d="M8 .5c-.662 0-1.77.249-2.813.525a61.11 61.11 0 0 0-2.772.815 1.454 1.454 0 0 0-1.003 1.184c-.573 4.197.756 7.307 2.368 9.365a11.192 11.192 0 0 0 2.417 2.3c.371.256.715.451 1.007.586.27.124.558.225.796.225s.527-.101.796-.225c.292-.135.636-.33 1.007-.586a11.191 11.191 0 0 0 2.418-2.3c1.611-2.058 2.94-5.168 2.367-9.365a1.454 1.454 0 0 0-1.003-1.184 61.09 61.09 0 0 0-2.772-.815C9.77.749 8.663.5 8 .5zm2.854 6.354a.5.5 0 0 0-.708-.708L7.5 8.793 6.354 7.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
+					</svg>
+				</div>
+				<p style="font-size:15px" class="mb-0 font-weight-light text-center"><b class="mr-1">@TempData["CartPopup2"]</b></p>
+			</div>
+		</div>
+	</div>
+</div>
+    }
     <div class="text-center">
         <!--   Banner   -->
         <img src="~/image/BannerHere.png" width="100%">
@@ -34,13 +52,6 @@
                 <p class="BackToHome">Xem Tất Cả</p>
             </a>
         </div>
-        @if(TempData["CartPopup2"] != null){
-            <script>
-                setTimeout(() => {
-                    alert('Thêm mặt hàng vào giỏ hàng thành công')
-                }, 1);
-            </script>
-        }
         <!--   Item   -->
         <div class="paddingItem">
             <div class="containerCard">
@@ -54,14 +65,14 @@
                         class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
                                 <div class="product">
                                     <a href='@Url.Action("ProductDetail", "Product", new { id=item.ItemId })'>
-                                        <img class="lazy" id="myImage" data-src="@Url.Content(@item.ItemDescription)" />
+                                        <img src="@Url.Content(@item.ItemDescription)" />
                                     </a>
                                     <ul class="d-flex align-items-center justify-content-center list-unstyled icons">
                                         <a class="text-dark" href='@Url.Action("ProductDetail", "Product", new { id=item.ItemId })'>
                                             <li class="icon"><span class="fa-solid fa-info"></span></li>
                                         </a>
                                         <li class="icon mx-3"><span class="far fa-heart"></span></li>
-                                        <a class="text-dark" asp-route="addcart" 
+                                        <a type="button" id="clicktoadd" class="text-dark" asp-route="addcart" 
                                         asp-route-ItemId="@item.ItemId">
                                             <li class="icon"><span class="fas fa-shopping-bag"></span></li>
                                         </a>
@@ -105,7 +116,7 @@
                                 class="fas fa-star"></span>
                                     <span class="fas fa-star"></span>
                                 </div>
-                                <div class="price">@String.Format(format, "{0:c0}", @item.UnitPrice )</div>
+                                <div class="price">@String.Format(format, "{0:0,0 vnđ}", @item.UnitPrice )</div>
                             </div>
                         }
                     }

@@ -19,6 +19,20 @@
     text-align: center;
 }
 
+.yippsi[b-gl5o3kad0i] {
+    border: 1px solid white;
+    background-color: #5cb85c;
+    color: white;
+    padding: 2px;
+    border-radius: 5rem;
+}
+
+#cartpopup2[b-gl5o3kad0i] {
+    position: absolute;
+    width: 100%;
+    right: -84%;
+}
+
 .waves[b-gl5o3kad0i] {
     position: relative;
     width: 100%;
@@ -81,6 +95,10 @@
 
     .content[b-gl5o3kad0i] {
         height: 30vh;
+    }
+
+    #cartpopup2[b-gl5o3kad0i] {
+        right: 0%;
     }
 }
 

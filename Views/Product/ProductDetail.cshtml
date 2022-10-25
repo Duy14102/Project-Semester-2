@@ -47,14 +47,14 @@
                 <a class="text-muted" style="text-decoration: none;" href="#">@item.ItemName</a>
             </div>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-5">
                     <div id="thumb" class="product-thumb">
                         <div class="item">
                             <img src="@Url.Content(@item.ItemDescription)" width="100%"/>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-7">
                     <div class="product-dtl">
                         <div class="product-info">
                             <div class="product-name pb-2">@item.ItemName</div>
@@ -103,7 +103,7 @@
                                 </div>
                                 <span>​</span>
                             </div>
-                            <div class="text-muted pt-3">@String.Format(format, "{0:c0}", @item.UnitPrice )
+                            <div class="text-muted pt-3">@String.Format(format, "{0:0,0 vnđ}", @item.UnitPrice )
                             </div>
                         </div>
                         <p class="pt-4">@item.ItemStory</p>
@@ -277,7 +277,7 @@
                         class="fas fa-star"></span>
                                 <span class="fas fa-star"></span>
                             </div>
-                            <div class="price">$ 60.0</div>
+                            <div class="price">@String.Format(format, "{0:0,0 vnđ}", @item.UnitPrice )</div>
                         </div>
                     }
                 }

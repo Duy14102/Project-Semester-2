@@ -108,3 +108,5 @@ document.addEventListener("DOMContentLoaded", function () {
 function hamDropdown() {
     document.querySelector(".noidung_dropdown").classList.toggle("hienThi");
 }
+
+setTimeout(function() { $("#cartpopup2").fadeOut(); }, 2500);

@@ -1,3 +1,8 @@
+* {
+    font-family: 'Montserrat';
+    box-sizing: border-box;
+  }
+
 .hh-grayBox {
     background-color: #F8F8F8;
     padding: 35px;
@@ -23,6 +28,7 @@
     -webkit-transition: background 0.25s linear;
     z-index: 2;
 }
+
 
 .order-tracking .is-complete:after {
     display: block;
@@ -110,8 +116,18 @@
     text-align: center;
 }
 
+#cartpopup2 {
+    position: absolute;
+    width: 100%;
+    right: -84%;
+}
+
 @media (max-width:575px) {
     .BackToHome {
         width: 18%;
+    }
+
+    #cartpopup2 {
+        right: 0;
     }
 }

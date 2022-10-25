@@ -22,12 +22,21 @@ public class AdminController : Controller
     public async Task<IActionResult> AdminPanel()
     {
         var y = HttpContext.Session.GetInt32("UserId");
+        var x = HttpContext.Session.GetInt32("Role");
         if (y != null)
         {
-            ViewData["Users"] = await _context.Users.OrderBy(i => i.UserId).ToListAsync();
-            ViewData["Items"] = await _context.Items.OrderBy(u => u.ItemId).ToListAsync();
-            ViewData["Announs"] = await _context.Announs.OrderBy(a => a.AnnounId).ToListAsync();
-            return View();
+            if (x == 1)
+            {
+                ViewData["Users"] = await _context.Users.OrderBy(i => i.UserId).Where(a => a.UserId != y).ToListAsync();
+                ViewData["Items"] = await _context.Items.OrderBy(u => u.ItemId).ToListAsync();
+                ViewData["Announs"] = await _context.Announs.OrderBy(a => a.AnnounId).ToListAsync();
+                ViewData["OHistory"] = await _context.OrderHistories.OrderBy(a => a.OrderHistoryStatus).ToListAsync();
+                return View();
+            }
+            else
+            {
+                return NotFound();
+            }
         }
         else
         {
@@ -57,29 +66,66 @@ public class AdminController : Controller
         return RedirectToAction("Login");
     }
 
+    [HttpPost]
+    public async Task<IActionResult> EditHistory(int? id)
+    {
+        var viewvers = await _context.Histories.FirstOrDefaultAsync(i => i.HistoryOrderId == id);
+        var updatethat = 2;
+        if (viewvers != null)
+        {
+            var curse = await _context.OrderHistories.FindAsync(id);
+            if (curse != null)
+            {
+                curse.OrderHistoryStatus = updatethat;
+                await _context.SaveChangesAsync();
+                return RedirectToAction("AdminPanel");
+            }
+        }
+        return View(viewvers);
+    }
+
     /*   Create New Item    */
     [HttpPost]
     public async Task<IActionResult> EditUser(int id, User user, IFormFile uploadFile)
     {
         var data = await _context.Users.FirstOrDefaultAsync(i => i.UserId == id);
+        var checkq = await _context.Users.FirstOrDefaultAsync(a => a.UserName == user.UserName);
+        var checkw = await _context.Users.FirstOrDefaultAsync(b => b.Email == user.Email);
+        var finduser = _context.Users.Find(id);
         if (data != null)
         {
-            if (uploadFile != null && uploadFile.Length > 0)
+            if (checkq == null)
             {
-                var fileName = Path.GetFileName(uploadFile.FileName);
-                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/image", fileName);
-                data.Image = "~/image/" + fileName;
-                data.UserName = user.UserName;
-                data.Password = user.Password;
-                data.Fullname = user.Fullname;
-                data.Email = user.Email;
-                data.Role = user.Role;
-                await _context.SaveChangesAsync();
-                using (var fileSrteam = new FileStream(filePath, FileMode.Create))
+                if (checkw == null)
                 {
-                    await uploadFile.CopyToAsync(fileSrteam);
+                    if (uploadFile != null && uploadFile.Length > 0)
+                    {
+                        var fileName = Path.GetFileName(uploadFile.FileName);
+                        var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/image", fileName);
+                        data.Image = "~/image/" + fileName;
+                        data.UserName = user.UserName;
+                        data.Password = user.Password;
+                        data.Fullname = user.Fullname;
+                        data.Email = user.Email;
+                        await _context.SaveChangesAsync();
+                        using (var fileSrteam = new FileStream(filePath, FileMode.Create))
+                        {
+                            await uploadFile.CopyToAsync(fileSrteam);
+                        }
+                        TempData["EditSuccess"] = "Cập nhật thành công";
+                        return View("EditUser", finduser);
+                    }
                 }
-                return RedirectToAction(nameof(AdminPanel));
+                else
+                {
+                    TempData["InEmail"] = "Email đã tồn tại";
+                    return View("EditUser", finduser);
+                }
+            }
+            else
+            {
+                TempData["InUsername"] = "Tài khoản đã tồn tại";
+                return View("EditUser", finduser);
             }
         }
         return View(data);
@@ -88,24 +134,35 @@ public class AdminController : Controller
     public async Task<IActionResult> EditItem(int id, Item item, IFormFile uploadFile)
     {
         var data = await _context.Items.FirstOrDefaultAsync(i => i.ItemId == id);
+        var checkuy = await _context.Items.FirstOrDefaultAsync(a => a.ItemName == item.ItemName);
+        var ofwhat = _context.Items.Find(id);
         if (data != null)
         {
-            if (uploadFile != null && uploadFile.Length > 0)
+            if (checkuy == null)
             {
-                var fileName = Path.GetFileName(uploadFile.FileName);
-                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/image", fileName);
-                data.ItemDescription = "~/image/" + fileName;
-                data.Category = item.Category;
-                data.ItemName = item.ItemName;
-                data.UnitPrice = item.UnitPrice;
-                data.ItemStory = item.ItemStory;
-                await _context.SaveChangesAsync();
-                using (var fileSrteam = new FileStream(filePath, FileMode.Create))
+                if (uploadFile != null && uploadFile.Length > 0)
                 {
-                    await uploadFile.CopyToAsync(fileSrteam);
+                    var fileName = Path.GetFileName(uploadFile.FileName);
+                    var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/image", fileName);
+                    data.ItemDescription = "~/image/" + fileName;
+                    data.Category = item.Category;
+                    data.ItemName = item.ItemName;
+                    data.UnitPrice = item.UnitPrice;
+                    data.ItemStory = item.ItemStory;
+                    await _context.SaveChangesAsync();
+                    using (var fileSrteam = new FileStream(filePath, FileMode.Create))
+                    {
+                        await uploadFile.CopyToAsync(fileSrteam);
+                    }
+                    TempData["SuccessThisItemname"] = "Cập nhật mặt hàng thành công";
+                    return View("EditItem", ofwhat);
                 }
             }
-            return RedirectToAction(nameof(AdminPanel));
+            else
+            {
+                TempData["ErrorThisItemname"] = "Tên mặt hàng đã tồn tại";
+                return View("EditItem", ofwhat);
+            }
         }
         return View(data);
     }
@@ -169,11 +226,22 @@ public class AdminController : Controller
     public async Task<IActionResult> DeleteUser(int id, User user)
     {
         var data = await _context.Users.FirstOrDefaultAsync(i => i.UserId == id);
+        var checkons = HttpContext.Session.GetString("Fullname");
+        var onthis = _context.Users.Find(id);
         if (data != null)
         {
-            _context.Users.Remove(data);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(AdminPanel));
+            if (checkons == null)
+            {
+                _context.Users.Remove(data);
+                await _context.SaveChangesAsync();
+                TempData["DeleteUserSuccess"] = "Xóa người dùng thành công";
+                return RedirectToAction(nameof(AdminPanel));
+            }
+            else
+            {
+                TempData["WrongDelete"] = "Người dùng đang hoạt động";
+                return View("DeleteUser", id);
+            }
         }
         return View(data);
     }
@@ -181,11 +249,23 @@ public class AdminController : Controller
     public async Task<IActionResult> DeleteItem(int id, Item item)
     {
         var data = await _context.Items.FirstOrDefaultAsync(i => i.ItemId == id);
+        var kuky = _context.Items.Find(id);
+        var cart = GetCartItems();
+        var cartitem = cart.Find(p => p.item.ItemId == id);
         if (data != null)
         {
-            _context.Items.Remove(data);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(AdminPanel));
+            if (cartitem == null)
+            {
+                _context.Items.Remove(data);
+                await _context.SaveChangesAsync();
+                TempData["DeleteItemSuccess"] = "Xóa mặt hàng thành công";
+                return RedirectToAction(nameof(AdminPanel));
+            }
+            else
+            {
+                TempData["Existitem"] = "Không thể xóa mặt hàng vì đang tồn tại trong giỏ hàng";
+                return View("DeleteItem", kuky);
+            }
         }
         return View(data);
     }
@@ -194,20 +274,29 @@ public class AdminController : Controller
     {
         try
         {
-            if (uploadFile != null && uploadFile.Length > 0)
+            var checkfirst = _context.Items.FirstOrDefault(a => a.ItemName == value.ItemName);
+            if (checkfirst == null)
             {
-                var fileName = Path.GetFileName(uploadFile.FileName);
-                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/image", fileName);
-                var thisFile = "~/image/" + fileName;
-                value.ItemDescription = thisFile;
-                _context.Items.Add(value);
-                await _context.SaveChangesAsync();
-                using (var fileSrteam = new FileStream(filePath, FileMode.Create))
+                if (uploadFile != null && uploadFile.Length > 0)
                 {
-                    await uploadFile.CopyToAsync(fileSrteam);
+                    var fileName = Path.GetFileName(uploadFile.FileName);
+                    var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/image", fileName);
+                    var thisFile = "~/image/" + fileName;
+                    value.ItemDescription = thisFile;
+                    _context.Items.Add(value);
+                    await _context.SaveChangesAsync();
+                    using (var fileSrteam = new FileStream(filePath, FileMode.Create))
+                    {
+                        await uploadFile.CopyToAsync(fileSrteam);
+                    }
+                    return RedirectToAction(nameof(AdminPanel));
                 }
             }
-            return RedirectToAction(nameof(AdminPanel));
+            else
+            {
+                TempData["DuplicateName"] = "Tên sản phẩm đã tồn tại";
+                return RedirectToAction(nameof(AdminPanel));
+            }
         }
         catch (DbUpdateException /* ex */)
         {
@@ -220,27 +309,43 @@ public class AdminController : Controller
     }
     [HttpPost]
     /*   Create New User    */
-    public async Task<IActionResult> EditPost([Bind("UserName, Password, Fullname, Email, Role")] User value, IFormFile uploadFile)
+    public async Task<IActionResult> EditPost([Bind("UserName, Password, Fullname, Email")] User value, IFormFile uploadFile)
     {
         try
         {
-            if (!ModelState.IsValid)
+            var dood = _context.Users.FirstOrDefault(a => a.Email == value.Email);
+            var checkon = _context.Users.FirstOrDefault(a => a.UserName == value.UserName);
+            if (checkon == null)
             {
-                if (uploadFile != null && uploadFile.Length > 0)
+                if (dood == null)
                 {
-                    var fileName = Path.GetFileName(uploadFile.FileName);
-                    var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/image", fileName);
-                    var thisFile = "~/image/" + fileName;
-                    value.Image = thisFile;
-                    _context.Users.Add(value);
-                    await _context.SaveChangesAsync();
-                    using (var fileSrteam = new FileStream(filePath, FileMode.Create))
+                    if (uploadFile != null && uploadFile.Length > 0)
                     {
-                        await uploadFile.CopyToAsync(fileSrteam);
+                        var fileName = Path.GetFileName(uploadFile.FileName);
+                        var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/image", fileName);
+                        var thisFile = "~/image/" + fileName;
+                        value.Image = thisFile;
+                        value.Role = 1;
+                        _context.Users.Add(value);
+                        await _context.SaveChangesAsync();
+                        using (var fileSrteam = new FileStream(filePath, FileMode.Create))
+                        {
+                            await uploadFile.CopyToAsync(fileSrteam);
+                        }
+                        TempData["errorchecksuccess"] = "Tạo tài khoản thành công";
+                        return RedirectToAction(nameof(AdminPanel));
                     }
                 }
-                return RedirectToAction(nameof(AdminPanel));
+                else
+                {
+                    TempData["erroremailcheck"] = "Email đã tồn tại";
+                }
             }
+            else
+            {
+                TempData["errorcheckon"] = "Tài khoản đã tồn tại";
+            }
+            return RedirectToAction(nameof(AdminPanel));
         }
         catch (DbUpdateException /* ex */)
         {
@@ -256,10 +361,20 @@ public class AdminController : Controller
     {
         try
         {
-            if (ModelState.IsValid)
+            var checku = _context.Announs.FirstOrDefault(a => a.AnnounName == value.AnnounName);
+            if (checku == null)
             {
-                _context.Announs.Add(value);
-                await _context.SaveChangesAsync();
+                if (ModelState.IsValid)
+                {
+                    _context.Announs.Add(value);
+                    await _context.SaveChangesAsync();
+                    TempData["SuccessAnnoun"] = "Tạo thông báo thành công";
+                    return RedirectToAction(nameof(AdminPanel));
+                }
+            }
+            else
+            {
+                TempData["DuplicateAnnoun"] = "Tên thông báo đã tồn tại";
                 return RedirectToAction(nameof(AdminPanel));
             }
         }
@@ -276,22 +391,33 @@ public class AdminController : Controller
     [ValidateAntiForgeryToken]
     public IActionResult Register(User _user)
     {
-        if (!ModelState.IsValid)
+        var dood = _context.Users.FirstOrDefault(a => a.Email == _user.Email);
+        var check = _context.Users.FirstOrDefault(s => s.UserName == _user.UserName);
+        if (check == null)
         {
-            var check = _context.Users.FirstOrDefault(s => s.UserName == _user.UserName);
-            if (check == null)
+            if (dood == null)
             {
-                _context.Users.Add(_user);
-                _context.SaveChanges();
-                return RedirectToAction("Login");
+                if (_user.Password == _user.ConfirmPassword)
+                {
+                    _context.Users.Add(_user);
+                    _context.SaveChanges();
+                    TempData["registersuccess"] = "Tạo tài khoản thành công";
+                    return RedirectToAction("Login");
+                }
+                else
+                {
+                    ViewBag.errorpassword = "Mật khẩu không trùng khớp";
+                }
             }
             else
             {
-                ViewBag.error = "Username already exists";
-                return View();
+                ViewBag.erroremail = "Email đã tồn tại";
             }
-
-
+        }
+        else
+        {
+            ViewBag.error = "Tài khoản đã tồn tại";
+            return View();
         }
         return View();
     }
@@ -360,6 +486,28 @@ public class AdminController : Controller
     {
         var user = _context.Users.Find(id);
         return View("EditUser", user);
+    }
+    public IActionResult EditHistory(int id)
+    {
+        var history = _context.Histories.FirstOrDefault(a => a.HistoryOrderId == id);
+        ViewData["offerpro"] = _context.OrderHistories.ToList();
+        ViewData["Prosbro"] = _context.Histories.ToList();
+        return View("EditHistory", history);
+    }
+
+    public IActionResult UserEditCartPanel(int id)
+    {
+        var history = _context.Histories.FirstOrDefault(a => a.HistoryOrderId == id);
+        ViewData["offerpro"] = _context.OrderHistories.ToList();
+        ViewData["Prosbro"] = _context.Histories.ToList();
+        return View("UserEditCartPanel", history);
+    }
+
+    public IActionResult UserPanelCart(string id)
+    {
+        var Orderse = _context.OrderHistories.FirstOrDefault(b => b.OrderHistoryUser == id);
+        ViewData["openitrightnow"] = _context.OrderHistories.ToList();
+        return View("UserPanelCart", Orderse);
     }
     public IActionResult UserPanel(int id)
     {

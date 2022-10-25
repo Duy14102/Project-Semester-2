@@ -19,6 +19,20 @@
     text-align: center;
 }
 
+.yippsi {
+    border: 1px solid white;
+    background-color: #5cb85c;
+    color: white;
+    padding: 2px;
+    border-radius: 5rem;
+}
+
+#cartpopup2 {
+    position: absolute;
+    width: 100%;
+    right: -84%;
+}
+
 .waves {
     position: relative;
     width: 100%;
@@ -81,6 +95,10 @@
 
     .content {
         height: 30vh;
+    }
+
+    #cartpopup2 {
+        right: 0%;
     }
 }
 

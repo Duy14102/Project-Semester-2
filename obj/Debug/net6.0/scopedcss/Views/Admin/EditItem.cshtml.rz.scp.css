@@ -1,3 +1,8 @@
+*[b-ml3n9fxbiv] {
+    font-family: 'Montserrat';
+    box-sizing: border-box;
+  }
+
 body[b-ml3n9fxbiv] {
     margin-top: 20px;
     background-color: #f2f6fc;
@@ -29,6 +34,12 @@ body[b-ml3n9fxbiv] {
     margin-bottom: 0;
     background-color: rgba(33, 40, 50, 0.03);
     border-bottom: 1px solid rgba(33, 40, 50, 0.125);
+}
+
+#cartpopup2[b-ml3n9fxbiv] {
+    position: absolute;
+    width: 100%;
+    right: -84%;
 }
 
 .form-control[b-ml3n9fxbiv],
@@ -66,4 +77,10 @@ body[b-ml3n9fxbiv] {
     padding-right: 0;
     margin-left: 1rem;
     margin-right: 1rem;
+}
+
+@media (max-width:575px) {
+    #cartpopup2[b-ml3n9fxbiv] {
+        right: 0;
+    }
 }

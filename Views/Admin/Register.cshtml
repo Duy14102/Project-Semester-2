@@ -38,7 +38,7 @@
                                         @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "badge badge-danger" })
                                         @if (ViewBag.error != null)
                                         {
-                                            <span class="badge badge-danger">@ViewBag.error</span>
+                                            <span class="badge badge-danger text-danger">@ViewBag.error</span>
                                         }
                                         </div>
                                         <div class="group">
@@ -55,7 +55,10 @@
                                         data-type="password" placeholder="Nhập lại mật khẩu" required>
                                             <span class="text-danger field-validation-valid" data-valmsg-for="ConfirmPassword"
                                         data-valmsg-replace="true"></span>
-                                        @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "badge badge-danger" })
+                                        @if (ViewBag.errorpassword != null)
+                                        {
+                                            <span class="badge badge-danger text-danger">@ViewBag.errorpassword</span>
+                                        }
                                         </div>
                                         <div class="group">
                                             <label for="Email" class="label">Email</label>
@@ -63,7 +66,11 @@
                                         placeholder="Nhập Email" required>
                                             <span class="text-danger field-validation-valid" data-valmsg-for="Email"
                                         data-valmsg-replace="true"></span>
-                                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "badge badge-danger" })
+                                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "badge badge-danger text-danger" })
+                                        @if (ViewBag.erroremail != null)
+                                        {
+                                            <span class="badge badge-danger text-danger">@ViewBag.erroremail</span>
+                                        }
                                         </div>
                                         <div class="group">
                                             <label for="Fullname" class="label">Tên</label>

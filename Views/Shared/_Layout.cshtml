@@ -129,6 +129,9 @@
                                 <li class="nav-item LoginRespon">
                                     <a class="nav-link text-dark LoginRespon" href="@Url.Action("UserPanel", "Admin", new { id = context.GetInt32("UserId") })">Tài khoản</a>
                                 </li>
+                                <li class="nav-item LoginRespon">
+                                    <a class="nav-link text-dark LoginRespon" href="@Url.Action("UserPanelCart", "Admin", new { id = context.GetInt32("Fullname") })">Đơn hàng</a>
+                                </li>
                             }
                             <li class="nav-item LoginRespon">
                                 <a href="@Url.Action("Logout","Admin")" class="nav-link text-dark LoginRespon">Thoát</a>
@@ -178,6 +181,7 @@
                                     <a class="dropdown-item text-dark text-center"
                                 href="@Url.Action("UserPanel", "Admin", new { id = context.GetInt32("UserId") })">Tài
                                         khoản</a>
+                                        <a class="dropdown-item text-dark text-center" href="@Url.Action("UserPanelCart", "Admin", new { id = context.GetInt32("Fullname") })">Đơn hàng</a>
                                 }
                                 <a href="@Url.Action("Logout","Admin")"
                                 class="dropdown-item text-dark text-center">Thoát</a>

@@ -23,6 +23,8 @@ namespace FirstAspNetApp.Models
         public virtual DbSet<OrderDetail> OrderDetails { get; set; } = null!;
         public virtual DbSet<Feedback> Feedbacks { get; set; } = null!;
         public virtual DbSet<Announ> Announs { get; set; } = null!;
+        public virtual DbSet<History> Histories { get; set; } = null!;
+        public virtual DbSet<OrderHistory> OrderHistories { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -49,6 +51,47 @@ namespace FirstAspNetApp.Models
                 entity.Property(e => e.CustomerName)
                     .HasMaxLength(100)
                     .HasColumnName("customer_name");
+            });
+
+            modelBuilder.Entity<History>(entity =>
+            {
+                entity.Property(e => e.HistoryID).HasColumnName("history_id");
+
+                entity.Property(e => e.HistoryName)
+                    .HasMaxLength(500)
+                    .HasColumnName("history_name");
+
+                entity.Property(e => e.HistoryPrice)
+                    .HasPrecision(20, 2)
+                    .HasColumnName("history_price")
+                    .HasDefaultValueSql("'0.00'");
+
+                entity.Property(e => e.HistoryQuantity).HasColumnName("history_quantity").HasDefaultValueSql("'1.00");
+
+                entity.Property(e => e.HistoryOrderId).HasColumnName("history_orderid");
+
+                entity.HasOne(d => d.OrderHistory)
+                    .WithMany(p => p.Histories)
+                    .HasForeignKey(d => d.HistoryOrderId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("fk_histories_orderhistories");
+            });
+
+            modelBuilder.Entity<OrderHistory>(entity =>
+            {
+                entity.Property(e => e.OrderHistoryID).HasColumnName("orderh_id");
+
+
+                entity.Property(e => e.OrderHistoryDate)
+                    .HasColumnType("datetime")
+                    .HasColumnName("orderh_date")
+                    .HasDefaultValueSql("CURRENT_TIMESTAMP");
+
+                entity.Property(e => e.OrderHistoryUser)
+                    .HasMaxLength(500)
+                    .HasColumnName("orderh_user");
+
+                entity.Property(e => e.OrderHistoryStatus).HasColumnName("orderh_status").HasDefaultValueSql("'1.00'");;
             });
 
             modelBuilder.Entity<Announ>(entity =>
@@ -99,6 +142,8 @@ namespace FirstAspNetApp.Models
             modelBuilder.Entity<Item>(entity =>
             {
                 entity.Property(e => e.ItemId).HasColumnName("item_id");
+
+                entity.Property(e => e.Amount).HasColumnName("amount");
 
                 entity.Property(e => e.Category)
                     .HasMaxLength(500)

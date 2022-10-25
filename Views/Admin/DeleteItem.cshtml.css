@@ -1,3 +1,8 @@
+* {
+    font-family: 'Montserrat';
+    box-sizing: border-box;
+  }
+
 .modal {
     top: 35%;
 }
@@ -29,4 +34,16 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+
+#cartpopup2 {
+    position: absolute;
+    width: 100%;
+    right: -84%;
+}
+
+@media (max-width: 575px) {
+    #cartpopup2 {
+        right: 0;
+    }
 }

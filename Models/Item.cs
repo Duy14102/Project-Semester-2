@@ -8,12 +8,13 @@ namespace FirstAspNetApp.Models
 
         public int ItemId { get; set; }
         public string ItemName { get; set; } = null!;
-        public decimal? UnitPrice { get; set; }
+        public decimal UnitPrice { get; set; }
         public int Amount { get; set; }
         public sbyte ItemStatus { get; set; }
         public string? Category { get; set; }
         public string? ItemStory { get; set; }
         public string? ItemDescription { get; set; }
 
+            
     }
 }

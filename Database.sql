@@ -10,6 +10,25 @@ create table Customers(
     customer_address varchar(200)
 );
 
+create table orderhistories(
+	orderh_id int auto_increment primary key,
+    orderh_date datetime default now() not null,
+    orderh_user varchar(500),
+    orderh_status int default 1
+);
+
+select * from orderhistories;
+
+create table histories(
+	history_id int auto_increment primary key,
+    history_name varchar(500),
+    history_quantity int default 1,
+    history_orderid int,
+    history_price decimal(20,0) default 0,
+    constraint fk_histories_orderhistories foreign key(history_orderid) references orderhistories(orderh_id)
+);
+select * from histories;
+
 create table Users(
 	user_id int auto_increment primary key,
     user_name varchar(500) not null,
@@ -21,7 +40,7 @@ create table Users(
     user_role int default 2
 );
 
-create table Items(
+create table items(
 	item_id int auto_increment primary key,
     item_name varchar(200) not null,
     unit_price decimal(20,0) default 0,
@@ -122,21 +141,21 @@ insert into Feedbacks(feedback_link,feedback_name, feedback_story) values
 select * from Feedbacks;
 
 
-insert into Items(item_name, unit_price, category, item_status, item_description, item_story) values
-	('Cơm Trắng', 10000, 'Đồ Ăn Kèm', 1, '~/image/ComTrang.jpg', 'Bạn nên ăn cơm hàng ngày vì nó rất giàu vitamin D, niacin, canxi, chất xơ, riboflavin, sắt và thiamine. Tất cả các thành phần dinh dưỡng này đều cần thiết cho cơ thể bạn để thúc đẩy hệ miễn dịch và giúp cân bằng các hoạt động chung của cơ thể.'),
-    ('Đậu Hũ', 10000, 'Đồ Ăn Kèm', 1, '~/image/DauHu.jpg', 'Đậu phụ là nguồn selen dồi dào, khoáng chất cần thiết cho cơ thể để giúp hệ thống chống oxy hóa hoạt động đúng đắn, từ đó ngăn ngừa ung thư đường ruột. Đàn ông cũng có thể ngăn ngừa ung thư tuyến tiền liệt bằng cách ăn đậu phụ, nhưng với số lượng vừa phải.'),
-    ('Dưa Xào Lòng', 30000, 'Thịt', 1, '~/image/DuaXaoLong.jpg', 'Sự kết hợp giữa lòng non (lòng già, tràng lợn) với dưa thành món ăn ngon giòn chua chua mặn măn, dai dai, giòn giòn ai ăn cũng khoái khẩu - nhất là đàn ông ham nhậu. Món ăn này làm rất đơn giản, rất ngon miệng, rẻ tiền, vừa dễ ăn với cơm vừa dùng làm "mồi nhậu".'),
-    ('Vịt Quay', 50000, 'Thịt', 1, '~/image/VitQuay.png', 'Theo các nhà thuốc đông y thì thịt vịt có tác dụng dưỡng âm. Các bệnh về tiểu tiện bất lợi, lao phổi, nhiệt cơ thể nếu sử dụng thịt vịt để bồi bổ sẽ rất tốt. Thịt vịt đực càng có tác dụng tốt hơn trong việc chữa bệnh.'),
-    ('Cà Muối', 5000, 'Đồ Ăn Kèm', 1, '~/image/CaMuoi.jpg', 'Cà có vị ngọt, tính hàn; có tác dụng nhuận tràng, lợi tiểu, tiêu thũng, trừ ôn dịch, hoạt huyết, tiêu viêm chỉ thống; cà là tác nhân kích thích chuyển hóa cholesterol ở gan. Cà có một alcaloid độc, có nhiều khi quả còn non xanh, nên Hải Thượng Lãn Ông khuyên không ăn nhiều cà sống.'),
-    ('Dưa Muối', 5000, 'Đồ Ăn Kèm', 1, '~/image/DuaMuoi.jpg', 'Dưa muối chứa rất nhiều vitamin, khoáng chất trong nước muối ngâm giấm của chúng cũng như là nguồn bổ sung chất chống oxy hóa tuyệt vời, có thể trung hòa các gốc tự do, làm chậm quá trình lão hóa và giảm nguy cơ mắc các bệnh lý liên quan đến tim mạch.'),
-    ('Canh Cua', 10000, 'Canh', 1, '~/image/CanhCua.jpg', 'Canh cua đồng được xem là món ăn có tác dụng giải nhiệt hiệu quả trong mùa hè. Canh cua đồng được xem là món ăn tốt đối với trẻ còi xương và người bị loãng xương. Theo đông y, cua đồng có vị mặn, tính hàn, hơi độc, có tác dụng sinh phong liền gân nối xương.'),
-    ('Canh Bí', 7000, 'Canh', 1, '~/image/CanhBi.jpg', 'Trong bí xanh chứa rất nhiều kali. Kali có khả năng làm giãn mạch cũng như giảm sự căng thẳng trên mạch máu và động mạch, giúp ngăn ngừa các vấn đề liên quan đến tim mạch như đột quỵ và đau thắt cơ tim.'),
-    ('Cocacola', 10000, 'Nước', 1, '~/image/Cocacola.png', 'Thức uống này có công hiệu gần như gừng trong điều trị buồn nôn. Vậy nên, nếu bị chứng buồn nôn gây khó chịu, hãy nhấm nháp một chút nước ngọt Cocacola, chứng buồn nôn của bạn sẽ được cải thiện đáng kể.'),
-    ('Sprite', 10000, 'Nước', 1, '~/image/Sprite.jpg', 'Sprite cũng được sử dụng để điều trị tắc nghẽn dạ dày. Các axit trong thức uống này tương tự như axit dạ dày; giúp tiêu hóa chất xơ và phá hủy các tắc nghẽn, nhấm nháp một chút Sprite ở nhiệt độ phòng sẽ làm dịu cổ họng.'),
-    ('Bia Các Loại', 10000, 'Nước', 1, '~/image/Bia.jpg', 'Bia nhẹ chỉ có khoảng hai phần ba lượng calo của bia thông thường và ít cồn hơn một chút. Mặc dù bia chứa một lượng nhỏ vi chất dinh dưỡng, nhưng đây không phải là nguồn tốt so với thực phẩm nguyên chất như trái cây và rau quả.'),
-    ('Rau Muống Xào', 10000, 'Rau', 1, '~/image/RauMuongXao.jpg', 'Rau muống chứa một lượng vitamin C làm tăng cường hệ miễn dịch, ngăn chặn bệnh cảm và cúm. Các nhà nghiên cứu nói hàm lượng vitamin C trong rau còn nhiều hơn trái cây. Rau muống giàu vitamin A tốt cho mắt.'),
-    ('Rau Cải Luộc', 10000, 'Rau', 1, '~/image/RauCaiLuoc.jpg', 'nếu ăn rau cải thường xuyên sẽ gián tiếp hỗ trợ tim, tốt cho mạch máu của cơ thể. Đặc biệt, khi cải bẹ xanh được chế biến theo cách luộc, hấp thì hiệu quả trong việc giảm lượng cholesterol lớn hơn, so với ăn sống.'),
-    ('Lợn Luộc', 15000, 'Thịt', 1, '~/image/LonLuoc.jpg', 'Thịt lợn giúp đóng góp vào cơ thể rất nhiều loại vitamin và khoáng chất khác nhau như photpho, kali, nicaxin, vitamin B6, vitamin B12, kẽm... Trong đó hàm lượng vitamin B có trong thịt lợn là nguồn vitamin chính mà con người nhận từ thực phẩm.');
+insert into Items(item_name, amount, unit_price, category, item_status, item_description, item_story) values
+	('Cơm Trắng', 10, 10000, 'Đồ Ăn Kèm', 1, '~/image/ComTrang.jpg', 'Bạn nên ăn cơm hàng ngày vì nó rất giàu vitamin D, niacin, canxi, chất xơ, riboflavin, sắt và thiamine. Tất cả các thành phần dinh dưỡng này đều cần thiết cho cơ thể bạn để thúc đẩy hệ miễn dịch và giúp cân bằng các hoạt động chung của cơ thể.'),
+    ('Đậu Hũ',10, 10000, 'Đồ Ăn Kèm', 1, '~/image/DauHu.jpg', 'Đậu phụ là nguồn selen dồi dào, khoáng chất cần thiết cho cơ thể để giúp hệ thống chống oxy hóa hoạt động đúng đắn, từ đó ngăn ngừa ung thư đường ruột. Đàn ông cũng có thể ngăn ngừa ung thư tuyến tiền liệt bằng cách ăn đậu phụ, nhưng với số lượng vừa phải.'),
+    ('Dưa Xào Lòng',10, 30000, 'Thịt', 1, '~/image/DuaXaoLong.jpg', 'Sự kết hợp giữa lòng non (lòng già, tràng lợn) với dưa thành món ăn ngon giòn chua chua mặn măn, dai dai, giòn giòn ai ăn cũng khoái khẩu - nhất là đàn ông ham nhậu. Món ăn này làm rất đơn giản, rất ngon miệng, rẻ tiền, vừa dễ ăn với cơm vừa dùng làm "mồi nhậu".'),
+    ('Vịt Quay',10, 50000, 'Thịt', 1, '~/image/VitQuay.png', 'Theo các nhà thuốc đông y thì thịt vịt có tác dụng dưỡng âm. Các bệnh về tiểu tiện bất lợi, lao phổi, nhiệt cơ thể nếu sử dụng thịt vịt để bồi bổ sẽ rất tốt. Thịt vịt đực càng có tác dụng tốt hơn trong việc chữa bệnh.'),
+    ('Cà Muối',10, 5000, 'Đồ Ăn Kèm', 1, '~/image/CaMuoi.jpg', 'Cà có vị ngọt, tính hàn; có tác dụng nhuận tràng, lợi tiểu, tiêu thũng, trừ ôn dịch, hoạt huyết, tiêu viêm chỉ thống; cà là tác nhân kích thích chuyển hóa cholesterol ở gan. Cà có một alcaloid độc, có nhiều khi quả còn non xanh, nên Hải Thượng Lãn Ông khuyên không ăn nhiều cà sống.'),
+    ('Dưa Muối',10, 5000, 'Đồ Ăn Kèm', 1, '~/image/DuaMuoi.jpg', 'Dưa muối chứa rất nhiều vitamin, khoáng chất trong nước muối ngâm giấm của chúng cũng như là nguồn bổ sung chất chống oxy hóa tuyệt vời, có thể trung hòa các gốc tự do, làm chậm quá trình lão hóa và giảm nguy cơ mắc các bệnh lý liên quan đến tim mạch.'),
+    ('Canh Cua',10, 10000, 'Canh', 1, '~/image/CanhCua.jpg', 'Canh cua đồng được xem là món ăn có tác dụng giải nhiệt hiệu quả trong mùa hè. Canh cua đồng được xem là món ăn tốt đối với trẻ còi xương và người bị loãng xương. Theo đông y, cua đồng có vị mặn, tính hàn, hơi độc, có tác dụng sinh phong liền gân nối xương.'),
+    ('Canh Bí',10, 7000, 'Canh', 1, '~/image/CanhBi.jpg', 'Trong bí xanh chứa rất nhiều kali. Kali có khả năng làm giãn mạch cũng như giảm sự căng thẳng trên mạch máu và động mạch, giúp ngăn ngừa các vấn đề liên quan đến tim mạch như đột quỵ và đau thắt cơ tim.'),
+    ('Cocacola',10, 10000, 'Nước', 1, '~/image/Cocacola.png', 'Thức uống này có công hiệu gần như gừng trong điều trị buồn nôn. Vậy nên, nếu bị chứng buồn nôn gây khó chịu, hãy nhấm nháp một chút nước ngọt Cocacola, chứng buồn nôn của bạn sẽ được cải thiện đáng kể.'),
+    ('Sprite',10, 10000, 'Nước', 1, '~/image/Sprite.jpg', 'Sprite cũng được sử dụng để điều trị tắc nghẽn dạ dày. Các axit trong thức uống này tương tự như axit dạ dày; giúp tiêu hóa chất xơ và phá hủy các tắc nghẽn, nhấm nháp một chút Sprite ở nhiệt độ phòng sẽ làm dịu cổ họng.'),
+    ('Bia Các Loại',10, 10000, 'Nước', 1, '~/image/Bia.jpg', 'Bia nhẹ chỉ có khoảng hai phần ba lượng calo của bia thông thường và ít cồn hơn một chút. Mặc dù bia chứa một lượng nhỏ vi chất dinh dưỡng, nhưng đây không phải là nguồn tốt so với thực phẩm nguyên chất như trái cây và rau quả.'),
+    ('Rau Muống Xào',10, 10000, 'Rau', 1, '~/image/RauMuongXao.jpg', 'Rau muống chứa một lượng vitamin C làm tăng cường hệ miễn dịch, ngăn chặn bệnh cảm và cúm. Các nhà nghiên cứu nói hàm lượng vitamin C trong rau còn nhiều hơn trái cây. Rau muống giàu vitamin A tốt cho mắt.'),
+    ('Rau Cải Luộc',10, 10000, 'Rau', 1, '~/image/RauCaiLuoc.jpg', 'nếu ăn rau cải thường xuyên sẽ gián tiếp hỗ trợ tim, tốt cho mạch máu của cơ thể. Đặc biệt, khi cải bẹ xanh được chế biến theo cách luộc, hấp thì hiệu quả trong việc giảm lượng cholesterol lớn hơn, so với ăn sống.'),
+    ('Lợn Luộc',10, 15000, 'Thịt', 1, '~/image/LonLuoc.jpg', 'Thịt lợn giúp đóng góp vào cơ thể rất nhiều loại vitamin và khoáng chất khác nhau như photpho, kali, nicaxin, vitamin B6, vitamin B12, kẽm... Trong đó hàm lượng vitamin B có trong thịt lợn là nguồn vitamin chính mà con người nhận từ thực phẩm.');
 select * from Items;
 
 insert into Orders(customer_id, order_status) values

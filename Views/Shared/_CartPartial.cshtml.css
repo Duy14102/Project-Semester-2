@@ -1,3 +1,8 @@
+* {
+    font-family: 'Montserrat';
+    box-sizing: border-box;
+  }
+
 .badge {
     padding-left: 9px;
     padding-right: 9px;

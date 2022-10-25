@@ -1,0 +1,54 @@
+@{
+    var format = System.Globalization.CultureInfo.GetCultureInfo("vi-VN");
+    var context = Context.Session;
+    var viewitnow = ViewData["openitrightnow"];
+}
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="~/Shared/Cart.cshtml.css" asp-append-version="true" />
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+</head>
+
+<body class="bg-light">
+        <!-- Save changes button-->
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th>Id</th>
+                <th>Khách hàng</th>
+                <th>Thời gian đơn hàng</th>
+                <th>Trạng thái</th>
+                <th>&nbsp;</th>
+            </tr>
+            @if (viewitnow is List<OrderHistory>)
+    {
+        List<OrderHistory> orders = (List<OrderHistory>)viewitnow;
+        
+            @foreach (var next in orders)
+            {
+                if(next.OrderHistoryUser == context.GetString("Fullname")){
+                string orderstatus = "";
+                <tr>
+                    <td>@Html.DisplayFor(modelOrderHistory => next.OrderHistoryID)</td>
+                    <td>@Html.DisplayFor(modelOrderHistory => next.OrderHistoryUser)</td>
+                    <td>@Html.DisplayFor(modelOrderHistory => next.OrderHistoryDate)</td>
+                    @if (next.OrderHistoryStatus == 1)
+                    {
+                        orderstatus = "Đang chờ xử lý";
+                    }
+                    else if (next.OrderHistoryStatus == 2)
+                    {
+                        orderstatus = "Đã xử lý";
+                    }
+                    <td>@orderstatus</td>
+                    <td><a type="button" class="btn btn-primary"
+                    href="@Url.Action("UserEditCartPanel", "Admin", new { id = next.OrderHistoryID, status = next.OrderHistoryStatus })">Chi
+                            Tiết</a></td>
+                </tr>
+                }
+            }
+    }
+        </table>
+</body>

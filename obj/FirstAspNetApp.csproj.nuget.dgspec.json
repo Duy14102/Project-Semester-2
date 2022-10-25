@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\FirstAspNetApp.csproj": {}
+    "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\FirstAspNetApp.csproj": {}
   },
   "projects": {
-    "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\FirstAspNetApp.csproj": {
+    "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\FirstAspNetApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\FirstAspNetApp.csproj",
+        "projectUniqueName": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\FirstAspNetApp.csproj",
         "projectName": "FirstAspNetApp",
-        "projectPath": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\FirstAspNetApp.csproj",
-        "packagesPath": "C:\\Users\\KyThuat88\\.nuget\\packages\\",
-        "outputPath": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\obj\\",
+        "projectPath": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\FirstAspNetApp.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\KyThuat88\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -71,7 +71,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -83,7 +84,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -4,6 +4,7 @@
     var viewUsersdata = ViewData["Users"];
     var viewItemsdata = ViewData["Items"];
     var viewAnnounsdata = ViewData["Announs"];
+    var viewOHistorydata = ViewData["OHistory"];
     ViewBag.Title = "AdminPanel";
     var context = Context.Session;
 }
@@ -18,6 +19,126 @@
 
 <body class="bg-light">
     <div class="header">
+        @if (TempData["errorcheckon"] != null)
+        {
+            <div id="cartpopup2" classs="container">
+                <div class="row no-gutters">
+                    <div class="col-lg-2 col-md-12 ml-auto">
+                        <div class="alert alert-danger shadow p-2" role="alert" style="border-radius: 3px">
+                            <div class="text-center">
+                                <svg width="3em" height="3em" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                class="m-1 bi bi-shield-fill-x" viewBox="0 0 16 16">
+                                    <path
+                                    d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.777 11.777 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7.159 7.159 0 0 0 1.048-.625 11.775 11.775 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.541 1.541 0 0 0-1.044-1.263 62.467 62.467 0 0 0-2.887-.87C9.843.266 8.69 0 8 0zM6.854 5.146 8 6.293l1.146-1.147a.5.5 0 1 1 .708.708L8.707 7l1.147 1.146a.5.5 0 0 1-.708.708L8 7.707 6.854 8.854a.5.5 0 1 1-.708-.708L7.293 7 6.146 5.854a.5.5 0 1 1 .708-.708z" />
+                                </svg>
+                            </div>
+                            <p style="font-size:15px" class="mb-0 font-weight-light text-center"><b
+                                class="mr-1">@TempData["errorcheckon"]</b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        @if (TempData["erroremailcheck"] != null)
+        {
+            <div id="cartpopup2" classs="container">
+                <div class="row no-gutters">
+                    <div class="col-lg-2 col-md-12 ml-auto">
+                        <div class="alert alert-danger shadow p-2" role="alert" style="border-radius: 3px">
+                            <div class="text-center">
+                                <svg width="3em" height="3em" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                class="m-1 bi bi-shield-fill-x" viewBox="0 0 16 16">
+                                    <path
+                                    d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.777 11.777 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7.159 7.159 0 0 0 1.048-.625 11.775 11.775 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.541 1.541 0 0 0-1.044-1.263 62.467 62.467 0 0 0-2.887-.87C9.843.266 8.69 0 8 0zM6.854 5.146 8 6.293l1.146-1.147a.5.5 0 1 1 .708.708L8.707 7l1.147 1.146a.5.5 0 0 1-.708.708L8 7.707 6.854 8.854a.5.5 0 1 1-.708-.708L7.293 7 6.146 5.854a.5.5 0 1 1 .708-.708z" />
+                                </svg>
+                            </div>
+                            <p style="font-size:15px" class="mb-0 font-weight-light text-center"><b
+                                class="mr-1">@TempData["erroremailcheck"]</b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        @if (TempData["errorchecksuccess"] != null)
+        {
+            <div id="cartpopup2" classs="container">
+                <div class="row no-gutters">
+                    <div class="col-lg-2 col-md-12 ml-auto">
+                        <div class="alert alert-success shadow p-2" role="alert" style="border-radius: 3px">
+                            <div class="text-center">
+                                <svg width="3em" height="3em" viewBox="0 0 16 16" class="m-1 bi bi-shield-fill-check"
+                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                    d="M8 .5c-.662 0-1.77.249-2.813.525a61.11 61.11 0 0 0-2.772.815 1.454 1.454 0 0 0-1.003 1.184c-.573 4.197.756 7.307 2.368 9.365a11.192 11.192 0 0 0 2.417 2.3c.371.256.715.451 1.007.586.27.124.558.225.796.225s.527-.101.796-.225c.292-.135.636-.33 1.007-.586a11.191 11.191 0 0 0 2.418-2.3c1.611-2.058 2.94-5.168 2.367-9.365a1.454 1.454 0 0 0-1.003-1.184 61.09 61.09 0 0 0-2.772-.815C9.77.749 8.663.5 8 .5zm2.854 6.354a.5.5 0 0 0-.708-.708L7.5 8.793 6.354 7.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z" />
+                                </svg>
+                            </div>
+                            <p style="font-size:15px" class="mb-0 font-weight-light text-center"><b
+                                class="mr-1">@TempData["errorchecksuccess"]</b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        @if (TempData["SuccessAnnoun"] != null)
+        {
+            <div id="cartpopup2" classs="container">
+                <div class="row no-gutters">
+                    <div class="col-lg-2 col-md-12 ml-auto">
+                        <div class="alert alert-success shadow p-2" role="alert" style="border-radius: 3px">
+                            <div class="text-center">
+                                <svg width="3em" height="3em" viewBox="0 0 16 16" class="m-1 bi bi-shield-fill-check"
+                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                    d="M8 .5c-.662 0-1.77.249-2.813.525a61.11 61.11 0 0 0-2.772.815 1.454 1.454 0 0 0-1.003 1.184c-.573 4.197.756 7.307 2.368 9.365a11.192 11.192 0 0 0 2.417 2.3c.371.256.715.451 1.007.586.27.124.558.225.796.225s.527-.101.796-.225c.292-.135.636-.33 1.007-.586a11.191 11.191 0 0 0 2.418-2.3c1.611-2.058 2.94-5.168 2.367-9.365a1.454 1.454 0 0 0-1.003-1.184 61.09 61.09 0 0 0-2.772-.815C9.77.749 8.663.5 8 .5zm2.854 6.354a.5.5 0 0 0-.708-.708L7.5 8.793 6.354 7.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z" />
+                                </svg>
+                            </div>
+                            <p style="font-size:15px" class="mb-0 font-weight-light text-center"><b
+                                class="mr-1">@TempData["SuccessAnnoun"]</b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        @if (TempData["DuplicateName"] != null)
+        {
+            <div id="cartpopup2" classs="container">
+                <div class="row no-gutters">
+                    <div class="col-lg-2 col-md-12 ml-auto">
+                        <div class="alert alert-danger shadow p-2" role="alert" style="border-radius: 3px">
+                            <div class="text-center">
+                                <svg width="3em" height="3em" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                class="m-1 bi bi-shield-fill-x" viewBox="0 0 16 16">
+                                    <path
+                                    d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.777 11.777 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7.159 7.159 0 0 0 1.048-.625 11.775 11.775 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.541 1.541 0 0 0-1.044-1.263 62.467 62.467 0 0 0-2.887-.87C9.843.266 8.69 0 8 0zM6.854 5.146 8 6.293l1.146-1.147a.5.5 0 1 1 .708.708L8.707 7l1.147 1.146a.5.5 0 0 1-.708.708L8 7.707 6.854 8.854a.5.5 0 1 1-.708-.708L7.293 7 6.146 5.854a.5.5 0 1 1 .708-.708z" />
+                                </svg>
+                            </div>
+                            <p style="font-size:15px" class="mb-0 font-weight-light text-center"><b
+                                class="mr-1">@TempData["DuplicateName"]</b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        @if (TempData["DuplicateAnnoun"] != null)
+        {
+            <div id="cartpopup2" classs="container">
+                <div class="row no-gutters">
+                    <div class="col-lg-2 col-md-12 ml-auto">
+                        <div class="alert alert-danger shadow p-2" role="alert" style="border-radius: 3px">
+                            <div class="text-center">
+                                <svg width="3em" height="3em" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                class="m-1 bi bi-shield-fill-x" viewBox="0 0 16 16">
+                                    <path
+                                    d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.777 11.777 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7.159 7.159 0 0 0 1.048-.625 11.775 11.775 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.541 1.541 0 0 0-1.044-1.263 62.467 62.467 0 0 0-2.887-.87C9.843.266 8.69 0 8 0zM6.854 5.146 8 6.293l1.146-1.147a.5.5 0 1 1 .708.708L8.707 7l1.147 1.146a.5.5 0 0 1-.708.708L8 7.707 6.854 8.854a.5.5 0 1 1-.708-.708L7.293 7 6.146 5.854a.5.5 0 1 1 .708-.708z" />
+                                </svg>
+                            </div>
+                            <p style="font-size:15px" class="mb-0 font-weight-light text-center"><b
+                                class="mr-1">@TempData["DuplicateAnnoun"]</b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
         <!--Content before waves-->
         <div class="inner-header flex">
             <!--Just the logo.. Don't mind this-->
@@ -47,24 +168,24 @@
             <div class="border p-2 nav flex-column nav-pills" id="v-pills-tab" role="tablist"
                 aria-orientation="vertical">
                 <a class="nav-link active border-bottom" id="v-pills-firsts-tab" data-bs-toggle="pill"
-                    href="#v-pills-firsts" role="tab" aria-controls="v-pills-firsts" aria-selected="true">• Mở đầu</a>
-                <a class="nav-link border-bottom" id="v-pills-home-tab" data-bs-toggle="pill" href="#v-pills-home"
-                    role="tab" aria-controls="v-pills-home" aria-selected="true">• Tạo tài khoản</a>
-                <a class="nav-link border-bottom" id="v-pills-profile-tab" data-bs-toggle="pill" href="#v-pills-profile"
-                    role="tab" aria-controls="v-pills-profile" aria-selected="false">• Tạo mặt hàng</a>
-                <a class="nav-link border-bottom" id="v-pills-messages-tab" data-bs-toggle="pill"
-                    href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">• Tạo
-                    thông báo</a>
-                <a class="nav-link border-bottom" asp-area="" asp-action="Author" asp-controller="Admin">• Tác giả</a>
+                    href="#v-pills-firsts" role="tab" aria-controls="v-pills-firsts" aria-selected="true">1. Đơn
+                    hàng</a>
                 <a class="nav-link border-bottom" id="v-pills-orders-tab" data-bs-toggle="pill" href="#v-pills-orders"
-                    role="tab" aria-controls="v-pills-orders" aria-selected="false">• Danh sách mặt hàng</a>
-                <a class="nav-link border-bottom" id="v-pills-announs-tab" data-bs-toggle="pill" href="#v-pills-announs"
-                    role="tab" aria-controls="v-pills-announs" aria-selected="false">• Danh sách thông báo</a>
+                    role="tab" aria-controls="v-pills-orders" aria-selected="false">2. Danh sách mặt hàng</a>
                 <a class="nav-link border-bottom" id="v-pills-announsCr-tab" data-bs-toggle="pill"
-                    href="#v-pills-announsCr" role="tab" aria-controls="v-pills-announsCr" aria-selected="false">• Danh
+                    href="#v-pills-announsCr" role="tab" aria-controls="v-pills-announsCr" aria-selected="false">3. Danh
                     sách tài khoản</a>
+                <a class="nav-link border-bottom" id="v-pills-announs-tab" data-bs-toggle="pill" href="#v-pills-announs"
+                    role="tab" aria-controls="v-pills-announs" aria-selected="false">4. Danh sách thông báo</a>
+                <a class="nav-link border-bottom" id="v-pills-home-tab" data-bs-toggle="pill" href="#v-pills-home"
+                    role="tab" aria-controls="v-pills-home" aria-selected="true">5. Tạo tài khoản</a>
+                <a class="nav-link border-bottom" id="v-pills-profile-tab" data-bs-toggle="pill" href="#v-pills-profile"
+                    role="tab" aria-controls="v-pills-profile" aria-selected="false">6. Tạo mặt hàng</a>
+                <a class="nav-link border-bottom" id="v-pills-messages-tab" data-bs-toggle="pill"
+                    href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">7. Tạo
+                    thông báo</a>
                 <button type="button" style="text-align: left;" class="nav-link" data-toggle="modal"
-                    data-target="#exampleModal2">• Thoát</button>
+                    data-target="#exampleModal2">8. Thoát</button>
                 <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog"
                     aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -89,7 +210,40 @@
             <div class="tab-content" id="v-pills-tabContent">
                 <div class="tab-pane fade show active" id="v-pills-firsts" role="tabpanel"
                     aria-labelledby="v-pills-firsts-tab">
-                    <img class="ThisisImg img-fluid" src="~/image/AdminOpen.png" style="background: none;">
+                    @if (viewOHistorydata is List<OrderHistory>)
+                    {
+                        List<OrderHistory> orderHistories = (List<OrderHistory>)viewOHistorydata;
+                        <table class="table table-bordered table-striped text-center align-middle">
+                            <tr>
+                                <th>Id</th>
+                                <th>Khách hàng</th>
+                                <th>Thời gian đơn hàng</th>
+                                <th>Trạng thái đơn hàng</th>
+                                <th>&nbsp;</th>
+                            </tr>
+                            @foreach (var orderHistory in orderHistories)
+                            {
+                                string orderstatus = "";
+                                <tr>
+                                    <td>@Html.DisplayFor(modelOrderHistory => orderHistory.OrderHistoryID)</td>
+                                    <td>@Html.DisplayFor(modelOrderHistory => orderHistory.OrderHistoryUser)</td>
+                                    <td>@Html.DisplayFor(modelOrderHistory => orderHistory.OrderHistoryDate)</td>
+                                    @if (orderHistory.OrderHistoryStatus == 1)
+                                    {
+                                        orderstatus = "Đang chờ xử lý";
+                                    }
+                                    else if (orderHistory.OrderHistoryStatus == 2)
+                                    {
+                                        orderstatus = "Đã xử lý";
+                                    }
+                                    <td>@orderstatus</td>
+                                    <td><a type="button" class="btn btn-primary"
+                                    href="@Url.Action("EditHistory", "Admin", new { id = orderHistory.OrderHistoryID, status = orderHistory.OrderHistoryStatus })">Chi
+                                            Tiết</a></td>
+                                </tr>
+                            }
+                        </table>
+                    }
                 </div>
                 <div class="tab-pane fade" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                     <section class="get-in-touch">
@@ -136,17 +290,6 @@
                                     data-valmsg-replace="true"></span>
                             </div>
                             <div class="form-field col-lg-12">
-                                <input style="pointer-events: none;" list="Role" type="text" id="Category13" name="Role"
-                                    aria-disabled="true" />
-                                <select name="" onchange="myFunctionEx(this.value);">
-                                    <option>Chọn Danh Mục</option>
-                                    <option data-value="1">Admin</option>
-                                    <option data-value="2">User</option>
-                                </select>
-                                <span class="text-danger field-validation-valid" data-valmsg-for="Role"
-                                    data-valmsg-replace="true"></span>
-                            </div>
-                            <div class="form-field col-lg-12">
                                 <input class="submit-btn" type="submit" value="Tạo tài khoản">
                             </div>
                         </form>
@@ -167,13 +310,13 @@
                             </div>
                             <div class="form-field col-lg-12">
                                 <input class="input-text js-input" type="text" id="ItemName" name="ItemName"
-                                    placeholder="Nhập tên sản phẩm" required/>
+                                    placeholder="Nhập tên sản phẩm" required />
                                 <span class="text-danger field-validation-valid" data-valmsg-for="ItemName"
                                     data-valmsg-replace="true"></span>
                             </div>
                             <div class="form-field col-lg-12 ">
                                 <input class="input-text js-input" type="text" id="UnitPrice" name="UnitPrice"
-                                    min="1000" max="" placeholder="Nhập giá" required/>
+                                    min="1000" max="" placeholder="Nhập giá" required />
                                 <span class="text-danger field-validation-valid" data-valmsg-for="UnitPrice"
                                     data-valmsg-replace="true"></span>
                             </div>
@@ -192,8 +335,8 @@
                                     data-valmsg-replace="true"></span>
                             </div>
                             <div class="form-field col-lg-12 ">
-                                <input class="input-text js-input" type="text" id="ItemStory" name="ItemStory"
-                                    placeholder="Nhập mô tả" />
+                                <textarea style="width: 100%; height:300px;" class="input-text js-input" type="text"
+                                    id="ItemStory" name="ItemStory" placeholder="Nhập mô tả"></textarea>
                                 <span class="text-danger field-validation-valid" data-valmsg-for="ItemStory"
                                     data-valmsg-replace="true"></span>
                             </div>
@@ -211,13 +354,13 @@
                         <form action="/Admin/CreateAnnoun" method="post" class="contact-form row">
                             <div class="form-field col-lg-12">
                                 <input class="input-text js-input" type="text" id="AnnounName" name="AnnounName"
-                                    placeholder="Nhập tên thông báo" required/>
+                                    placeholder="Nhập tên thông báo" required />
                                 <span class="text-danger field-validation-valid" data-valmsg-for="AnnounName"
                                     data-valmsg-replace="true"></span>
                             </div>
                             <div class="form-field col-lg-12 ">
-                                <input class="input-text js-input" type="text" id="AnnounStory" name="AnnounStory"
-                                    placeholder="Nhập nội dung" required/>
+                                <textarea style="width: 100%; height:300px;" class="input-text js-input" type="text"
+                                    id="AnnounStory" name="AnnounStory" placeholder="Nhập nội dung" required></textarea>
                                 <span class="text-danger field-validation-valid" data-valmsg-for="AnnounStory"
                                     data-valmsg-replace="true"></span>
                             </div>
@@ -247,7 +390,7 @@
                                     @Html.HiddenFor(modelItem => item.ItemDescription)
                                     <td>@Html.DisplayFor(modelItem => item.ItemId)</td>
                                     <td>@Html.DisplayFor(modelItem => item.ItemName)</td>
-                                    <td>@String.Format(format, "{0:c0}", @item.UnitPrice )</td>
+                                    <td>@String.Format(format, "{0:0,0 vnđ}", @item.UnitPrice )</td>
                                     <td>@Html.DisplayFor(modelItem => item.Category)</td>
                                     <td>
                                         <details>
@@ -255,8 +398,10 @@
                                             @Html.DisplayFor(modelItem => item.ItemStory)
                                         </details>
                                     </td>
-                                    <td><a href="@Url.Action("EditItem", "Admin", new { id = item.ItemId })">Sửa</a></td>
-                                    <td><a href="@Url.Action("DeleteItem", "Admin", new { id = item.ItemId })">Xóa</a>
+                                    <td class="text-center"><a type="button" class="btn btn-primary"
+                                    href="@Url.Action("EditItem", "Admin", new { id = item.ItemId })">Cập nhật</a></td>
+                                    <td class="text-center"><a type="button" class="btn btn-danger"
+                                    href="@Url.Action("DeleteItem", "Admin", new { id = item.ItemId })">Xóa</a>
                                     </td>
                                 </tr>
                             }
@@ -286,7 +431,8 @@
                                             @Html.DisplayFor(modelAnnoun => announ.AnnounStory)
                                         </details>
                                     </td>
-                                    <td><a href="@Url.Action("EditAnnoun", "Admin", new { id = announ.AnnounId })">Sửa</a></td>
+                                    <td><a href="@Url.Action("EditAnnoun", "Admin", new { id = announ.AnnounId })">Cập nhật</a>
+                                    </td>
                                     <td><a href="@Url.Action("DeleteAnnoun", "Admin", new { id = announ.AnnounId })">Xóa</a>
                                     </td>
                                 </tr>
@@ -300,36 +446,47 @@
                     {
                         List<User> users = (List<User>)viewUsersdata;
                         <div class="table-responsive">
-                            <table class="table table-bordered table-striped text-center">
+                            <table class="table table-bordered table-striped text-center align-middle">
                                 <tr>
                                     <th>Id</th>
                                     <th>Tài khoản</th>
-                                    <th>Mật khẩu</th>
                                     <th>Tên</th>
                                     <th>Email</th>
-                                    <th>Role</th>
+                                    <th>Vai trò</th>
                                     <th>Thời gian gia nhập</th>
                                     <th>&nbsp;</th>
                                     <th>&nbsp;</th>
                                 </tr>
                                 @foreach (var user in users)
                                 {
+                                    string admin = "";
                                     <tr>
                                         @Html.HiddenFor(modelUser => user.Image)
                                         <td>@Html.DisplayFor(modelUser => user.UserId)</td>
                                         <td>@Html.DisplayFor(modelUser => user.UserName)</td>
-                                        <td>
-                                            <details>
-                                                <summary>Hiện mật khẩu</summary>
-                                                @Html.DisplayFor(modelUser => user.Password)
-                                            </details>
-                                        </td>
                                         <td>@Html.DisplayFor(modelUser => user.Fullname)</td>
                                         <td>@Html.DisplayFor(modelUser => user.Email)</td>
-                                        <td>@Html.DisplayFor(modelUser => user.Role)</td>
+                                        @if (user.Role == 1)
+                                        {
+                                            admin = "Quản trị viên";
+                                        }
+                                        else if (user.Role == 2)
+                                        {
+                                            admin = "Người dùng";
+                                        }
+                                        <td>@admin</td>
                                         <td>@Html.DisplayFor(modelUser => user.UserDate)</td>
-                                        <td><a href="@Url.Action("EditUser", "Admin", new { id = user.UserId })">Sửa</a></td>
-                                        <td><a href="@Url.Action("DeleteUser", "Admin", new { id = user.UserId })">Xóa</a></td>
+                                        @if (user.Role != 2)
+                                        {
+                                            <td><a class="btn btn-primary" href="@Url.Action("EditUser", "Admin", new { id = user.UserId })">Cập nhật</a>
+                                            </td>
+                                            <td><a class="btn btn-danger" href="@Url.Action("DeleteUser", "Admin", new { id = user.UserId })">Xóa</a></td>
+                                        }
+                                        else
+                                        {
+                                            <td></td>
+                                            <td></td>
+                                        }
                                     </tr>
                                 }
                             </table>

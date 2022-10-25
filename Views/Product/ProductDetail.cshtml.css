@@ -85,6 +85,7 @@
 .product-thumb .item img {
     background: none;
     height: 417px;
+    object-fit: contain;
 }
 
 .product-name {

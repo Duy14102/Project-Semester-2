@@ -156,23 +156,19 @@
     text-align: center;
 }
 
-@media (max-width:575px) {
-    .BackToHome {
-        width: 18%;
-    }
-}
-
 #tv {
     padding: 10px 20px;
     background: white;
-    border-radius: 0% 0% 0% 0% / 0% 0% 0% 0% ;
-    box-shadow: 20px 20px rgba(0,0,0,.15);
+    border-radius: 0% 0% 0% 0% / 0% 0% 0% 0%;
+    box-shadow: 20px 20px rgba(0, 0, 0, .15);
     transition: all .4s ease;
-  }
-  #tv:hover {
-    border-radius: 0% 0% 50% 50% / 0% 0% 5% 5% ;
-    box-shadow: 10px 10px rgba(0,0,0,.25);
-  }
+}
+
+#tv:hover {
+    border-radius: 0% 0% 50% 50% / 0% 0% 5% 5%;
+    box-shadow: 10px 10px rgba(0, 0, 0, .25);
+}
+
 /*   Gif Banner   */
 
 .textCentered1 {
@@ -234,4 +230,20 @@
 
 .ratings i {
     color: rgb(255, 226, 52);
+}
+
+#cartpopup2 {
+    position: absolute;
+    width: 100%;
+    right: -84%;
+}
+
+@media (max-width:575px) {
+    .BackToHome {
+        width: 18%;
+    }
+
+    #cartpopup2 {
+        right: 0;
+    }
 }

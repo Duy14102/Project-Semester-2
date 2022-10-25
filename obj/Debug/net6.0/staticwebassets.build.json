@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "2ug0v+Rc6Yj6/dfA1kNIDu4gUod4OsLoquA/al4kc+0=",
+  "Hash": "LfRdxUeMxJt2/yg+ppBEs7Y3ZTuUdji9jb/qjUKHtz8=",
   "Source": "FirstAspNetApp",
   "BasePath": "_content/FirstAspNetApp",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "FirstAspNetApp\\wwwroot",
       "Source": "FirstAspNetApp",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\obj\\Debug\\net6.0\\scopedcss\\bundle\\FirstAspNetApp.styles.css",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\obj\\Debug\\net6.0\\scopedcss\\bundle\\FirstAspNetApp.styles.css",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Computed",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "FirstAspNetApp.styles.css",
       "AssetKind": "All",
@@ -31,13 +31,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\obj\\Debug\\net6.0\\scopedcss\\bundle\\FirstAspNetApp.styles.css"
+      "OriginalItemSpec": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\obj\\Debug\\net6.0\\scopedcss\\bundle\\FirstAspNetApp.styles.css"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\FirstAspNetApp.bundle.scp.css",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\FirstAspNetApp.bundle.scp.css",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Computed",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "FirstAspNetApp.bundle.scp.css",
       "AssetKind": "All",
@@ -48,13 +48,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\FirstAspNetApp.bundle.scp.css"
+      "OriginalItemSpec": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\FirstAspNetApp.bundle.scp.css"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\.DS_Store",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\.DS_Store",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": ".DS_Store",
       "AssetKind": "All",
@@ -68,10 +68,10 @@
       "OriginalItemSpec": "wwwroot\\.DS_Store"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\css\\site.css",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\css\\site.css",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -85,10 +85,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\favicon.ico",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\favicon.ico",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -102,10 +102,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\image\\AdminOpen.png",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\image\\AdminOpen.png",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "image/AdminOpen.png",
       "AssetKind": "All",
@@ -119,10 +119,10 @@
       "OriginalItemSpec": "wwwroot\\image\\AdminOpen.png"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\image\\BannerHere.png",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\image\\BannerHere.png",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "image/BannerHere.png",
       "AssetKind": "All",
@@ -136,10 +136,10 @@
       "OriginalItemSpec": "wwwroot\\image\\BannerHere.png"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\image\\Bia.jpg",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\image\\Bia.jpg",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "image/Bia.jpg",
       "AssetKind": "All",
@@ -153,10 +153,10 @@
       "OriginalItemSpec": "wwwroot\\image\\Bia.jpg"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\image\\CaMuoi.jpg",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\image\\CaMuoi.jpg",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "image/CaMuoi.jpg",
       "AssetKind": "All",
@@ -170,10 +170,10 @@
       "OriginalItemSpec": "wwwroot\\image\\CaMuoi.jpg"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\image\\CanhBi.jpg",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\image\\CanhBi.jpg",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "image/CanhBi.jpg",
       "AssetKind": "All",
@@ -187,10 +187,10 @@
       "OriginalItemSpec": "wwwroot\\image\\CanhBi.jpg"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\image\\CanhCua.jpg",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\image\\CanhCua.jpg",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "image/CanhCua.jpg",
       "AssetKind": "All",
@@ -204,10 +204,10 @@
       "OriginalItemSpec": "wwwroot\\image\\CanhCua.jpg"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\image\\Cocacola.png",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\image\\Cocacola.png",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "image/Cocacola.png",
       "AssetKind": "All",
@@ -221,10 +221,10 @@
       "OriginalItemSpec": "wwwroot\\image\\Cocacola.png"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\image\\ComTrang.jpg",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\image\\ComTrang.jpg",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "image/ComTrang.jpg",
       "AssetKind": "All",
@@ -238,10 +238,10 @@
       "OriginalItemSpec": "wwwroot\\image\\ComTrang.jpg"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\image\\DauHu.jpg",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\image\\DauHu.jpg",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "image/DauHu.jpg",
       "AssetKind": "All",
@@ -255,10 +255,10 @@
       "OriginalItemSpec": "wwwroot\\image\\DauHu.jpg"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\image\\DefaultFeedback.jpg",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\image\\DefaultFeedback.jpg",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "image/DefaultFeedback.jpg",
       "AssetKind": "All",
@@ -272,10 +272,10 @@
       "OriginalItemSpec": "wwwroot\\image\\DefaultFeedback.jpg"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\image\\DuaMuoi.jpg",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\image\\DuaMuoi.jpg",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "image/DuaMuoi.jpg",
       "AssetKind": "All",
@@ -289,10 +289,10 @@
       "OriginalItemSpec": "wwwroot\\image\\DuaMuoi.jpg"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\image\\DuaXaoLong.jpg",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\image\\DuaXaoLong.jpg",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "image/DuaXaoLong.jpg",
       "AssetKind": "All",
@@ -306,10 +306,10 @@
       "OriginalItemSpec": "wwwroot\\image\\DuaXaoLong.jpg"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\image\\FeedBack1.jpg",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\image\\FeedBack1.jpg",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "image/FeedBack1.jpg",
       "AssetKind": "All",
@@ -323,10 +323,10 @@
       "OriginalItemSpec": "wwwroot\\image\\FeedBack1.jpg"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\image\\FeedBack2.jpg",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\image\\FeedBack2.jpg",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "image/FeedBack2.jpg",
       "AssetKind": "All",
@@ -340,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\image\\FeedBack2.jpg"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\image\\FeedBack3.jpg",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\image\\FeedBack3.jpg",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "image/FeedBack3.jpg",
       "AssetKind": "All",
@@ -357,10 +357,10 @@
       "OriginalItemSpec": "wwwroot\\image\\FeedBack3.jpg"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\image\\gifBanner.gif",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\image\\gifBanner.gif",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "image/gifBanner.gif",
       "AssetKind": "All",
@@ -374,10 +374,10 @@
       "OriginalItemSpec": "wwwroot\\image\\gifBanner.gif"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\image\\logo.png",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\image\\logo.png",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "image/logo.png",
       "AssetKind": "All",
@@ -391,10 +391,10 @@
       "OriginalItemSpec": "wwwroot\\image\\logo.png"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\image\\LonLuoc.jpg",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\image\\LonLuoc.jpg",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "image/LonLuoc.jpg",
       "AssetKind": "All",
@@ -408,10 +408,10 @@
       "OriginalItemSpec": "wwwroot\\image\\LonLuoc.jpg"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\image\\RauCaiLuoc.jpg",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\image\\RauCaiLuoc.jpg",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "image/RauCaiLuoc.jpg",
       "AssetKind": "All",
@@ -425,10 +425,10 @@
       "OriginalItemSpec": "wwwroot\\image\\RauCaiLuoc.jpg"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\image\\RauMuongXao.jpg",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\image\\RauMuongXao.jpg",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "image/RauMuongXao.jpg",
       "AssetKind": "All",
@@ -442,10 +442,10 @@
       "OriginalItemSpec": "wwwroot\\image\\RauMuongXao.jpg"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\image\\Sprite.jpg",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\image\\Sprite.jpg",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "image/Sprite.jpg",
       "AssetKind": "All",
@@ -459,10 +459,10 @@
       "OriginalItemSpec": "wwwroot\\image\\Sprite.jpg"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\image\\VitQuay.png",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\image\\VitQuay.png",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "image/VitQuay.png",
       "AssetKind": "All",
@@ -476,10 +476,10 @@
       "OriginalItemSpec": "wwwroot\\image\\VitQuay.png"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\image\\zed.jpg",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\image\\zed.jpg",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "image/zed.jpg",
       "AssetKind": "All",
@@ -493,10 +493,10 @@
       "OriginalItemSpec": "wwwroot\\image\\zed.jpg"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\js\\site.js",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\js\\site.js",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -510,10 +510,10 @@
       "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css",
       "AssetKind": "All",
@@ -527,10 +527,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "AssetKind": "All",
@@ -544,10 +544,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "AssetKind": "All",
@@ -561,10 +561,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "AssetKind": "All",
@@ -578,10 +578,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "AssetKind": "All",
@@ -595,10 +595,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "AssetKind": "All",
@@ -612,10 +612,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "AssetKind": "All",
@@ -629,10 +629,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "AssetKind": "All",
@@ -646,10 +646,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css",
       "AssetKind": "All",
@@ -663,10 +663,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "AssetKind": "All",
@@ -680,10 +680,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "AssetKind": "All",
@@ -697,10 +697,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "AssetKind": "All",
@@ -714,10 +714,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "AssetKind": "All",
@@ -731,10 +731,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "AssetKind": "All",
@@ -748,10 +748,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "AssetKind": "All",
@@ -765,10 +765,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "AssetKind": "All",
@@ -782,10 +782,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css",
       "AssetKind": "All",
@@ -799,10 +799,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "AssetKind": "All",
@@ -816,10 +816,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "AssetKind": "All",
@@ -833,10 +833,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "AssetKind": "All",
@@ -850,10 +850,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "AssetKind": "All",
@@ -867,10 +867,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "AssetKind": "All",
@@ -884,10 +884,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "AssetKind": "All",
@@ -901,10 +901,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "AssetKind": "All",
@@ -918,10 +918,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css",
       "AssetKind": "All",
@@ -935,10 +935,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css.map",
       "AssetKind": "All",
@@ -952,10 +952,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css",
       "AssetKind": "All",
@@ -969,10 +969,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -986,10 +986,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css",
       "AssetKind": "All",
@@ -1003,10 +1003,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css.map",
       "AssetKind": "All",
@@ -1020,10 +1020,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css",
       "AssetKind": "All",
@@ -1037,10 +1037,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
       "AssetKind": "All",
@@ -1054,10 +1054,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js",
       "AssetKind": "All",
@@ -1071,10 +1071,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "AssetKind": "All",
@@ -1088,10 +1088,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "AssetKind": "All",
@@ -1105,10 +1105,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "AssetKind": "All",
@@ -1122,10 +1122,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js",
       "AssetKind": "All",
@@ -1139,10 +1139,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "AssetKind": "All",
@@ -1156,10 +1156,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "AssetKind": "All",
@@ -1173,10 +1173,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "AssetKind": "All",
@@ -1190,10 +1190,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js",
       "AssetKind": "All",
@@ -1207,10 +1207,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js.map",
       "AssetKind": "All",
@@ -1224,10 +1224,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js",
       "AssetKind": "All",
@@ -1241,10 +1241,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js.map",
       "AssetKind": "All",
@@ -1258,10 +1258,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\bootstrap\\LICENSE",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/bootstrap/LICENSE",
       "AssetKind": "All",
@@ -1275,10 +1275,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\LICENSE"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -1292,10 +1292,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -1309,10 +1309,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",
@@ -1326,10 +1326,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -1343,10 +1343,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -1360,10 +1360,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -1377,10 +1377,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -1394,10 +1394,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -1411,10 +1411,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -1428,10 +1428,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -1445,10 +1445,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -1462,10 +1462,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "FirstAspNetApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\VTCA\\WD07\\ASP.NET core\\ProjectSemester2\\wwwroot\\",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
       "BasePath": "_content/FirstAspNetApp",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",

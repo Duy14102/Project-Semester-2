@@ -6,7 +6,6 @@
 .Holder[b-lfppxljbpl] {
     width: 26%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
@@ -15,9 +14,20 @@
     padding-right: 2%;
 }
 
+#cartpopup2[b-lfppxljbpl] {
+    position: absolute;
+    width: 100%;
+    right: -84%;
+    z-index: 1000;
+}
+
 @media (max-width:575px) {
     .Holder[b-lfppxljbpl] {
         width: 49.2%;
+    }
+
+    #cartpopup2[b-lfppxljbpl] {
+        right: 0;
     }
 }
 

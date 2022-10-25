@@ -1,6 +1,7 @@
 @model List<CartItem>
 @{
     var format = System.Globalization.CultureInfo.GetCultureInfo("vi-VN");
+    var context = Context.Session;
 }
 
 <head>
@@ -12,6 +13,39 @@
 </head>
 
 <body class="bg-light">
+    @if(TempData["updatesuccess"] != null){
+    <div id="cartpopup2" classs="container">
+        <div class="row no-gutters">
+            <div class="col-lg-2 col-md-12 ml-auto">
+                <div class="alert alert-success shadow p-2" role="alert" style="border-radius: 3px">
+                    <div class="text-center">
+                        <svg width="3em" height="3em" viewBox="0 0 16 16" class="m-1 bi bi-shield-fill-check" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M8 .5c-.662 0-1.77.249-2.813.525a61.11 61.11 0 0 0-2.772.815 1.454 1.454 0 0 0-1.003 1.184c-.573 4.197.756 7.307 2.368 9.365a11.192 11.192 0 0 0 2.417 2.3c.371.256.715.451 1.007.586.27.124.558.225.796.225s.527-.101.796-.225c.292-.135.636-.33 1.007-.586a11.191 11.191 0 0 0 2.418-2.3c1.611-2.058 2.94-5.168 2.367-9.365a1.454 1.454 0 0 0-1.003-1.184 61.09 61.09 0 0 0-2.772-.815C9.77.749 8.663.5 8 .5zm2.854 6.354a.5.5 0 0 0-.708-.708L7.5 8.793 6.354 7.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
+                        </svg>
+                    </div>
+                    <p style="font-size:15px" class="mb-0 font-weight-light text-center"><b class="mr-1">@TempData["updatesuccess"]</b></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+    @if (TempData["removesuccess"] != null)
+        {
+            <div id="cartpopup2" classs="container">
+        <div class="row no-gutters">
+            <div class="col-lg-2 col-md-12 ml-auto">
+                <div class="alert alert-success shadow p-2" role="alert" style="border-radius: 3px">
+                    <div class="text-center">
+                        <svg width="3em" height="3em" viewBox="0 0 16 16" class="m-1 bi bi-shield-fill-check" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M8 .5c-.662 0-1.77.249-2.813.525a61.11 61.11 0 0 0-2.772.815 1.454 1.454 0 0 0-1.003 1.184c-.573 4.197.756 7.307 2.368 9.365a11.192 11.192 0 0 0 2.417 2.3c.371.256.715.451 1.007.586.27.124.558.225.796.225s.527-.101.796-.225c.292-.135.636-.33 1.007-.586a11.191 11.191 0 0 0 2.418-2.3c1.611-2.058 2.94-5.168 2.367-9.365a1.454 1.454 0 0 0-1.003-1.184 61.09 61.09 0 0 0-2.772-.815C9.77.749 8.663.5 8 .5zm2.854 6.354a.5.5 0 0 0-.708-.708L7.5 8.793 6.354 7.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
+                        </svg>
+                    </div>
+                    <p style="font-size:15px" class="mb-0 font-weight-light text-center"><b class="mr-1">@TempData["removesuccess"]</b></p>
+                </div>
+            </div>
+        </div>
+    </div>
+        }
     <div style="padding-left: 5%;padding-right:4%;">
         <h2 class="text-center">GIỎ HÀNG</h2>
         @if (Model.Count > 0)
@@ -38,7 +72,7 @@
             </div>
             <table style="vertical-align: middle;" class="table table-bordered bg-white">
                 <tr style="background-color: rgb(0, 119, 132);color:white;">
-                    <th>#</th>
+                    <th>ID</th>
                     <th>Sản phẩm</th>
                     <th>Giá</th>
                     <th>Số lượng</th>
@@ -50,18 +84,15 @@
                 {
                     var thanhtien = cartitem.Quantity * cartitem.item.UnitPrice;
                     total += thanhtien;
-
                     <tr>
                         <td>@(stt++)</td>
                         <td>@cartitem.item.ItemName</td>
-                        <td>@String.Format(format, "{0:c0}", cartitem.item.UnitPrice )</td>
+                        <td>@String.Format(format, "{0:0,0 vnđ}", cartitem.item.UnitPrice )</td>
                         <td><input type="number" max="99" min="1" asp-for="@cartitem.Quantity"
                         id="@($"Quantity-{cartitem.item.ItemId}")" /></td>
-                        <td>@String.Format(format, "{0:c0}", thanhtien )</td>
-                        <td class="text-center">
-                            <button class="btn btn-primary updatecartitem" data-ItemId="@cartitem.item.ItemId">Cập
-                                nhật</button>
-                        </td>
+                        <td>@String.Format(format, "{0:0,0 vnđ}", thanhtien )</td>
+                        <td class="text-center"><button class="btn btn-primary updatecartitem" data-ItemId="@cartitem.item.ItemId">Cập
+                            nhật</button></td>
                         <td class="text-center"><a asp-route="removecart" asp-route-ItemId="@cartitem.item.ItemId"
                         class="btn btn-danger">Xóa</a>
                         </td>
@@ -69,18 +100,32 @@
                 }
                 <tr>
                     <td colspan="4" class="text-right">Tổng tiền</td>
-                    <td>@String.Format(format, "{0:c0}", total )</td>
+                    <td>@String.Format(format, "{0:0,0 vnđ}", total )</td>
                     <td></td>
                 </tr>
             </table>
-            <div class="ThisAparent d-flex justify-content-between">
+            <div class="d-flex justify-content-between align-center">
                 <div class="text-left">
-                    <a style="text-decoration: none;color:rgb(0, 119, 132);" href="javascript:javascript:history.go(-1)">⬅
+                    <a style="text-decoration: none;color: rgb(0, 119, 132);" onMouseOver="this.style.color='rgb(64, 64, 252)'"
+                    onMouseOut="this.style.color='rgb(0, 119, 132)'" href="javascript:javascript:history.go(-1)">⬅
                         Tiếp
                         tục mua sắm</a>
                 </div>
                 <div class="text-right">
-                    <a asp-route="CheckoutDetail" class="btn btn-primary">Tiếp theo</a>
+                    @if(context.GetString("Fullname") == null){
+                    <a asp-route="CheckoutDetail" class="btn btn-success">Tiếp theo</a>
+                    }else if(context.GetString("Fullname") != null){
+                        <form asp-route="Checkoutmain" method="post">
+                            @foreach (var onlyyou in Model)
+                            {
+                                @Html.HiddenFor(modelCartItem => onlyyou.item.ItemName)
+                                @Html.HiddenFor(modelCartItem => onlyyou.item.UnitPrice)
+                                @Html.HiddenFor(modelCartItem => onlyyou.Quantity)
+                                @Html.HiddenFor(modelCartItem => onlyyou.OrderHistory.OrderHistoryID)
+                            }
+                            <button type="submit" class="btn btn-success">Đặt hàng</button>
+                        </form>
+                    }
                 </div>
             </div>
             @section Scripts {
@@ -105,7 +150,6 @@
             });
         </script>
         }
-
         }
         else
         {

@@ -6,7 +6,6 @@
 .Holder {
     width: 26%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
@@ -15,9 +14,20 @@
     padding-right: 2%;
 }
 
+#cartpopup2 {
+    position: absolute;
+    width: 100%;
+    right: -84%;
+    z-index: 1000;
+}
+
 @media (max-width:575px) {
     .Holder {
         width: 49.2%;
+    }
+
+    #cartpopup2 {
+        right: 0;
     }
 }
 

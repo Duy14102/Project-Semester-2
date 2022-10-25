@@ -52,12 +52,13 @@ public class HomeController : Controller
             //  Thêm mới
             cart.Add(new CartItem() { Quantity = 1, item = data });
         }
-        TempData["CartPopup2"] = "Sản phẩm đã được thêm vào giỏ hàng";
+        TempData["CartPopup2"] = "Thêm giỏ hàng thành công";
         // Lưu cart vào Session
         SaveCartSession(cart);
         // Chuyển đến trang hiện thị Cart
         return RedirectToAction(nameof(Index));
     }
+
 
     // Hiện thị giỏ hàng
     public IActionResult Cart()
@@ -78,6 +79,7 @@ public class HomeController : Controller
             // Đã tồn tại, tăng thêm 1
             cartitem.Quantity = Quantity;
         }
+        TempData["updatesuccess"] = "Cập nhật giỏ hàng thành công";
         SaveCartSession(cart);
         // Trả về mã thành công (không có nội dung gì - chỉ để Ajax gọi)
         return Ok();
@@ -94,17 +96,60 @@ public class HomeController : Controller
             // Đã tồn tại, tăng thêm 1
             cart.Remove(cartitem);
         }
-
+        TempData["removesuccess"] = "Xóa mặt hàng thành công";
         SaveCartSession(cart);
         return RedirectToAction(nameof(Cart));
     }
 
     //Checkout
-    [Route("/checkout")]
-    public IActionResult CheckOut()
+    [HttpPost]
+    [Route("/Checkoutmain", Name = "Checkoutmain")]
+    public IActionResult Checkout()
     {
-        ClearCart();
-        return View();
+        try
+        {
+            var getitem = GetCartItems();
+            if (getitem == null)
+            {
+                return View("Index");
+            }
+            var getuser = HttpContext.Session.GetString("Fullname");
+            OrderHistory ohi = new OrderHistory();
+            if (getuser == null)
+            {
+                var kvl = "Khách vãng lai";
+                ohi.OrderHistoryUser = kvl;
+                _context.OrderHistories.Add(ohi);
+            }
+            else
+            {
+                ohi.OrderHistoryUser = getuser;
+                _context.OrderHistories.Add(ohi);
+            }
+            _context.SaveChanges();
+            History hi;
+            foreach (var value in getitem)
+            {
+                hi = new History();
+                hi.HistoryOrderId = ohi.OrderHistoryID;
+                hi.HistoryQuantity = value.Quantity;
+                hi.HistoryName = value.item.ItemName;
+                hi.HistoryPrice = value.item.UnitPrice;
+                _context.Histories.Add(hi);
+
+            }
+            _context.SaveChanges();
+            ClearCart();
+            return View();
+        }
+        catch (DbUpdateException /* ex */)
+        {
+            //Log the error (uncomment ex variable name and write a log.
+            ModelState.AddModelError("", "Unable to save changes. " +
+                "Try again, and if the problem persists " +
+                "see your system administrator.");
+        }
+        return View("Index");
     }
 
     [Route("/CheckoutDetail", Name = "CheckoutDetail")]
