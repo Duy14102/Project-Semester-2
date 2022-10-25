@@ -104,41 +104,60 @@ public class HomeController : Controller
     //Checkout
     [HttpPost]
     [Route("/Checkoutmain", Name = "Checkoutmain")]
-    public IActionResult Checkout()
+    public IActionResult Checkout([Bind("HistoryFullname,HistoryEmail,HistoryAddress,HistoryPhone,HistoryNote")] History he)
     {
         try
         {
+            var calmdown = HttpContext.Session;
             var getitem = GetCartItems();
             if (getitem == null)
             {
                 return View("Index");
             }
             var getuser = HttpContext.Session.GetString("Fullname");
+            var forgetit = "(Khách vãng lai)";
             OrderHistory ohi = new OrderHistory();
+            History hi;
             if (getuser == null)
             {
-                var kvl = "Khách vãng lai";
-                ohi.OrderHistoryUser = kvl;
+                ohi.OrderHistoryUser = he.HistoryFullname;
                 _context.OrderHistories.Add(ohi);
+                _context.SaveChanges();
+                foreach (var value in getitem)
+                {
+                    hi = new History();
+                    hi.HistoryFullname = he.HistoryFullname + forgetit;
+                    hi.HistoryEmail = he.HistoryEmail;
+                    hi.HistoryAddress = he.HistoryAddress;
+                    hi.HistoryPhone = he.HistoryPhone;
+                    hi.HistoryQuantity = value.Quantity;
+                    hi.HistoryName = value.item.ItemName;
+                    hi.HistoryPrice = value.item.UnitPrice;
+                    hi.HistoryOrderId = ohi.OrderHistoryID;
+                    _context.Histories.Add(hi);
+                }
+                _context.SaveChanges();
             }
             else
             {
                 ohi.OrderHistoryUser = getuser;
                 _context.OrderHistories.Add(ohi);
+                _context.SaveChanges();
+                foreach (var value in getitem)
+                {
+                    hi = new History();
+                    hi.HistoryFullname = calmdown.GetString("Fullname");
+                    hi.HistoryEmail = calmdown.GetString("Email");
+                    hi.HistoryAddress = calmdown.GetString("Address");
+                    hi.HistoryPhone = calmdown.GetString("Phone");
+                    hi.HistoryQuantity = value.Quantity;
+                    hi.HistoryName = value.item.ItemName;
+                    hi.HistoryPrice = value.item.UnitPrice;
+                    hi.HistoryOrderId = ohi.OrderHistoryID;
+                    _context.Histories.Add(hi);
+                }
+                _context.SaveChanges();
             }
-            _context.SaveChanges();
-            History hi;
-            foreach (var value in getitem)
-            {
-                hi = new History();
-                hi.HistoryOrderId = ohi.OrderHistoryID;
-                hi.HistoryQuantity = value.Quantity;
-                hi.HistoryName = value.item.ItemName;
-                hi.HistoryPrice = value.item.UnitPrice;
-                _context.Histories.Add(hi);
-
-            }
-            _context.SaveChanges();
             ClearCart();
             return View();
         }

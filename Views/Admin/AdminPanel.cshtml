@@ -19,6 +19,26 @@
 
 <body class="bg-light">
     <div class="header">
+        @if (TempData["holdmybeer"] != null)
+        {
+            <div id="cartpopup2" classs="container">
+                <div class="row no-gutters">
+                    <div class="col-lg-2 col-md-12 ml-auto">
+                        <div class="alert alert-success shadow p-2" role="alert" style="border-radius: 3px">
+                            <div class="text-center">
+                                <svg width="3em" height="3em" viewBox="0 0 16 16" class="m-1 bi bi-shield-fill-check"
+                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                    d="M8 .5c-.662 0-1.77.249-2.813.525a61.11 61.11 0 0 0-2.772.815 1.454 1.454 0 0 0-1.003 1.184c-.573 4.197.756 7.307 2.368 9.365a11.192 11.192 0 0 0 2.417 2.3c.371.256.715.451 1.007.586.27.124.558.225.796.225s.527-.101.796-.225c.292-.135.636-.33 1.007-.586a11.191 11.191 0 0 0 2.418-2.3c1.611-2.058 2.94-5.168 2.367-9.365a1.454 1.454 0 0 0-1.003-1.184 61.09 61.09 0 0 0-2.772-.815C9.77.749 8.663.5 8 .5zm2.854 6.354a.5.5 0 0 0-.708-.708L7.5 8.793 6.354 7.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z" />
+                                </svg>
+                            </div>
+                            <p style="font-size:15px" class="mb-0 font-weight-light text-center"><b
+                                class="mr-1">@TempData["holdmybeer"]</b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
         @if (TempData["errorcheckon"] != null)
         {
             <div id="cartpopup2" classs="container">
@@ -178,7 +198,7 @@
                 <a class="nav-link border-bottom" id="v-pills-announs-tab" data-bs-toggle="pill" href="#v-pills-announs"
                     role="tab" aria-controls="v-pills-announs" aria-selected="false">4. Danh sách thông báo</a>
                 <a class="nav-link border-bottom" id="v-pills-home-tab" data-bs-toggle="pill" href="#v-pills-home"
-                    role="tab" aria-controls="v-pills-home" aria-selected="true">5. Tạo tài khoản</a>
+                    role="tab" aria-controls="v-pills-home" aria-selected="true">5. Tạo tài khoản admin</a>
                 <a class="nav-link border-bottom" id="v-pills-profile-tab" data-bs-toggle="pill" href="#v-pills-profile"
                     role="tab" aria-controls="v-pills-profile" aria-selected="false">6. Tạo mặt hàng</a>
                 <a class="nav-link border-bottom" id="v-pills-messages-tab" data-bs-toggle="pill"
@@ -223,18 +243,31 @@
                             </tr>
                             @foreach (var orderHistory in orderHistories)
                             {
+                                var a = DateTime.Now;
+                                var balder = orderHistory.OrderHistoryDate.AddMinutes(45);
                                 string orderstatus = "";
                                 <tr>
                                     <td>@Html.DisplayFor(modelOrderHistory => orderHistory.OrderHistoryID)</td>
-                                    <td>@Html.DisplayFor(modelOrderHistory => orderHistory.OrderHistoryUser)</td>
+                                    @if (TempData["forgetit"] != null)
+                                    {
+                                        <td>@Html.DisplayFor(modelOrderHistory => orderHistory.OrderHistoryUser)</td>
+                                    }
+                                    else
+                                    {
+                                        <td>@Html.DisplayFor(modelOrderHistory => orderHistory.OrderHistoryUser)</td>
+                                    }
                                     <td>@Html.DisplayFor(modelOrderHistory => orderHistory.OrderHistoryDate)</td>
                                     @if (orderHistory.OrderHistoryStatus == 1)
                                     {
-                                        orderstatus = "Đang chờ xử lý";
+                                        orderstatus = "Chờ xác nhận";
                                     }
                                     else if (orderHistory.OrderHistoryStatus == 2)
                                     {
-                                        orderstatus = "Đã xử lý";
+                                        orderstatus = "Đã xác nhận và giao cho ĐVVC";
+                                    }
+                                    @if (a >= balder)
+                                    {
+                                        orderstatus = "Giao thành công";
                                     }
                                     <td>@orderstatus</td>
                                     <td><a type="button" class="btn btn-primary"
@@ -248,7 +281,7 @@
                 <div class="tab-pane fade" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                     <section class="get-in-touch">
                         <navbar>
-                            <h1 class="title">Tạo tài khoản</h1>
+                            <h1 class="title">Tạo tài khoản admin</h1>
                         </navbar>
                         <form action="/Admin/EditPost" method="post" class="contact-form row" new {
                             enctype="multipart/form-data" }>
@@ -287,6 +320,18 @@
                                 <input id="Email" name="Email" type="email" class="input-text js-input"
                                     placeholder="Nhập Email" required>
                                 <span class="text-danger field-validation-valid" data-valmsg-for="Email"
+                                    data-valmsg-replace="true"></span>
+                            </div>
+                            <div class="form-field col-lg-12 ">
+                                <input id="Address" name="Address" type="text" class="input-text js-input"
+                                    placeholder="Nhập địa chỉ" required>
+                                <span class="text-danger field-validation-valid" data-valmsg-for="Address"
+                                    data-valmsg-replace="true"></span>
+                            </div>
+                            <div class="form-field col-lg-12 ">
+                                <input id="Phone" name="Phone" type="number" class="input-text js-input"
+                                    placeholder="Nhập số điện thoại" required>
+                                <span class="text-danger field-validation-valid" data-valmsg-for="Phone"
                                     data-valmsg-replace="true"></span>
                             </div>
                             <div class="form-field col-lg-12">
@@ -374,38 +419,36 @@
                     @if (viewItemsdata is List<Item>)
                     {
                         List<Item> items = (List<Item>)viewItemsdata;
-                        <table class="table table-bordered table-striped">
-                            <tr>
-                                <th>Id</th>
-                                <th>Tên mặt hàng</th>
-                                <th>Giá</th>
-                                <th>Danh mục</th>
-                                <th>Mô tả</th>
-                                <th>&nbsp;</th>
-                                <th>&nbsp;</th>
-                            </tr>
-                            @foreach (var item in items)
-                            {
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped">
                                 <tr>
-                                    @Html.HiddenFor(modelItem => item.ItemDescription)
-                                    <td>@Html.DisplayFor(modelItem => item.ItemId)</td>
-                                    <td>@Html.DisplayFor(modelItem => item.ItemName)</td>
-                                    <td>@String.Format(format, "{0:0,0 vnđ}", @item.UnitPrice )</td>
-                                    <td>@Html.DisplayFor(modelItem => item.Category)</td>
-                                    <td>
-                                        <details>
-                                            <summary>Xem chi tiết</summary>
-                                            @Html.DisplayFor(modelItem => item.ItemStory)
-                                        </details>
-                                    </td>
-                                    <td class="text-center"><a type="button" class="btn btn-primary"
-                                    href="@Url.Action("EditItem", "Admin", new { id = item.ItemId })">Cập nhật</a></td>
-                                    <td class="text-center"><a type="button" class="btn btn-danger"
-                                    href="@Url.Action("DeleteItem", "Admin", new { id = item.ItemId })">Xóa</a>
-                                    </td>
+                                    <th class="whatever">Id</th>
+                                    <th class="whatif">Tên mặt hàng</th>
+                                    <th class="whatif">Giá</th>
+                                    <th class="whatif">Danh mục</th>
+                                    <th>Mô tả</th>
+                                    <th class="whatif">&nbsp;</th>
+                                    <th class="whatif">&nbsp;</th>
                                 </tr>
-                            }
-                        </table>
+                                @foreach (var item in items)
+                                {
+                                    <tr>
+                                        @Html.HiddenFor(modelItem => item.ItemDescription)
+                                        <td class="whatever">@Html.DisplayFor(modelItem => item.ItemId)</td>
+                                        <td class="whatif">@Html.DisplayFor(modelItem => item.ItemName)</td>
+                                        <td class="whatif">@String.Format(format, "{0:0,0 vnđ}", @item.UnitPrice )</td>
+                                        <td class="whatif">@Html.DisplayFor(modelItem => item.Category)</td>
+                                        <td class="whatelse">@Html.DisplayFor(modelItem => item.ItemStory)</td>
+                                        <td class="text-center"><a type="button" class="btn btn-primary"
+                                        href="@Url.Action("EditItem", "Admin", new { id = item.ItemId })">Cập nhật</a>
+                                        </td>
+                                        <td class="text-center"><a type="button" class="btn btn-danger"
+                                        href="@Url.Action("DeleteItem", "Admin", new { id = item.ItemId })">Xóa</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </table>
+                        </div>
                     }
                 </div>
                 <div class="tab-pane fade" id="v-pills-announs" role="tabpanel" aria-labelledby="v-pills-announs-tab">
@@ -414,8 +457,8 @@
                         List<Announ> announs = (List<Announ>)viewAnnounsdata;
                         <table class="table table-bordered table-striped text-center">
                             <tr>
-                                <th>Id</th>
-                                <th>Tên thông báo</th>
+                                <th class="whatever">Id</th>
+                                <th class="whatif">Tên thông báo</th>
                                 <th>Nội dung</th>
                                 <th>&nbsp;</th>
                                 <th>&nbsp;</th>
@@ -423,17 +466,14 @@
                             @foreach (var announ in announs)
                             {
                                 <tr>
-                                    <td>@Html.DisplayFor(modelAnnoun => announ.AnnounId)</td>
-                                    <td>@Html.DisplayFor(modelAnnoun => announ.AnnounName)</td>
-                                    <td>
-                                        <details>
-                                            <summary>Xem thêm</summary>
-                                            @Html.DisplayFor(modelAnnoun => announ.AnnounStory)
-                                        </details>
+                                    <td class="whatever">@Html.DisplayFor(modelAnnoun => announ.AnnounId)</td>
+                                    <td class="whatif">@Html.DisplayFor(modelAnnoun => announ.AnnounName)</td>
+                                    <td class="whatelse">@Html.DisplayFor(modelAnnoun => announ.AnnounStory)</td>
+                                    <td><a class="btn btn-primary"
+                                    href="@Url.Action("EditAnnoun", "Admin", new { id = announ.AnnounId })">Cập nhật</a>
                                     </td>
-                                    <td><a href="@Url.Action("EditAnnoun", "Admin", new { id = announ.AnnounId })">Cập nhật</a>
-                                    </td>
-                                    <td><a href="@Url.Action("DeleteAnnoun", "Admin", new { id = announ.AnnounId })">Xóa</a>
+                                    <td><a class="btn btn-danger"
+                                    href="@Url.Action("DeleteAnnoun", "Admin", new { id = announ.AnnounId })">Xóa</a>
                                     </td>
                                 </tr>
                             }
@@ -452,9 +492,10 @@
                                     <th>Tài khoản</th>
                                     <th>Tên</th>
                                     <th>Email</th>
+                                    <th>Địa chỉ</th>
+                                    <th>Số điện thoại</th>
                                     <th>Vai trò</th>
                                     <th>Thời gian gia nhập</th>
-                                    <th>&nbsp;</th>
                                     <th>&nbsp;</th>
                                 </tr>
                                 @foreach (var user in users)
@@ -466,6 +507,8 @@
                                         <td>@Html.DisplayFor(modelUser => user.UserName)</td>
                                         <td>@Html.DisplayFor(modelUser => user.Fullname)</td>
                                         <td>@Html.DisplayFor(modelUser => user.Email)</td>
+                                        <td class="whatif">@Html.DisplayFor(modelUser => user.Address)</td>
+                                        <td>@Html.DisplayFor(modelUser => user.Phone)</td>
                                         @if (user.Role == 1)
                                         {
                                             admin = "Quản trị viên";
@@ -476,15 +519,16 @@
                                         }
                                         <td>@admin</td>
                                         <td>@Html.DisplayFor(modelUser => user.UserDate)</td>
-                                        @if (user.Role != 2)
+                                        @if (context.GetString("Fullname") == user.Fullname)
                                         {
-                                            <td><a class="btn btn-primary" href="@Url.Action("EditUser", "Admin", new { id = user.UserId })">Cập nhật</a>
+                                            <td><a class="btn btn-primary"
+                                        href="@Url.Action("EditUser", "Admin", new { id = user.UserId })">Cập nhật</a>
                                             </td>
-                                            <td><a class="btn btn-danger" href="@Url.Action("DeleteUser", "Admin", new { id = user.UserId })">Xóa</a></td>
+                                            @* <td><a class="btn btn-danger"
+                                                href="@Url.Action("DeleteUser", "Admin", new { id = user.UserId })">Xóa</a></td> *@
                                         }
                                         else
                                         {
-                                            <td></td>
                                             <td></td>
                                         }
                                     </tr>

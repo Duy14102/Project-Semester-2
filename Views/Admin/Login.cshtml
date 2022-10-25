@@ -30,10 +30,10 @@
                                 {
                                     @Html.AntiForgeryToken()
                                     <div class="group">
-                                        <label for="Username" class="label">Tài khoản</label>
-                                        <input id="Username" name="Username" type="text" class="input"
+                                        <label for="UserName" class="label">Tài khoản</label>
+                                        <input id="UserName" name="UserName" type="text" class="input"
                                         placeholder="Nhập tài khoản" required>
-                                        <span class="text-danger field-validation-valid" data-valmsg-for="Username"
+                                        <span class="text-danger field-validation-valid" data-valmsg-for="UserName"
                                         data-valmsg-replace="true"></span>
                                     </div>
                                     <div class="group">
@@ -51,15 +51,18 @@
                                         <input type="submit" name="submit" class="button" value="Đăng Nhập">
                                     </div>
                                     @if (TempData["error"] != null)
+
                                     {
                                         <span class="text-danger">@TempData["error"]</span>
+
                                     }
-                                    <div class="hr"></div>
-                                    <div style="padding-left: 15px;" class="foot d-flex justify-content-center">
-                                        <p>Chưa có tài khoản?</p>
-                                        <a asp-area="" asp-controller="Admin" asp-action="Register">Đăng ký ngay</a>
-                                    </div>
+
                                 }
+                                <div class="hr"></div>
+                                <div style="padding-left: 15px;" class="foot d-flex justify-content-center">
+                                    <p>Chưa có tài khoản?</p>
+                                    <a asp-area="" asp-controller="Admin" asp-action="Register">Đăng ký ngay</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -69,5 +72,4 @@
     </div>
     <script src="~/js/site.js" asp-append-version="true"></script>
 </body>
-
 </html>

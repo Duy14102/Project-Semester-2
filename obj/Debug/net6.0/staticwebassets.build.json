@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "LfRdxUeMxJt2/yg+ppBEs7Y3ZTuUdji9jb/qjUKHtz8=",
+  "Hash": "NTr4uYP9Y6nX1ORd1/G60uKV+Yjm3eBjlE4aSt8zu4c=",
   "Source": "FirstAspNetApp",
   "BasePath": "_content/FirstAspNetApp",
   "Mode": "Default",
@@ -440,6 +440,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\image\\RauMuongXao.jpg"
+    },
+    {
+      "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\image\\Screenshot (2).png",
+      "SourceId": "FirstAspNetApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\",
+      "BasePath": "_content/FirstAspNetApp",
+      "RelativePath": "image/Screenshot (2).png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\image\\Screenshot (2).png"
     },
     {
       "Identity": "F:\\Code\\VTCA\\WD07\\Project-Semester-2-main\\wwwroot\\image\\Sprite.jpg",

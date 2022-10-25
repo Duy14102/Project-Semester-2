@@ -1,5 +1,6 @@
 @model User
 @{
+
     var viewUsersdata = ViewData["Users"];
 }
 
@@ -12,6 +13,26 @@
 </head>
 
 <body class="bg-light">
+    @if (TempData["Fixxer"] != null)
+    {
+        <div id="cartpopup2" classs="container">
+            <div class="row no-gutters">
+                <div class="col-lg-2 col-md-12 ml-auto">
+                    <div class="alert alert-success shadow p-2" role="alert" style="border-radius: 3px">
+                        <div class="text-center">
+                            <svg width="3em" height="3em" viewBox="0 0 16 16" class="m-1 bi bi-shield-fill-check"
+                            fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                d="M8 .5c-.662 0-1.77.249-2.813.525a61.11 61.11 0 0 0-2.772.815 1.454 1.454 0 0 0-1.003 1.184c-.573 4.197.756 7.307 2.368 9.365a11.192 11.192 0 0 0 2.417 2.3c.371.256.715.451 1.007.586.27.124.558.225.796.225s.527-.101.796-.225c.292-.135.636-.33 1.007-.586a11.191 11.191 0 0 0 2.418-2.3c1.611-2.058 2.94-5.168 2.367-9.365a1.454 1.454 0 0 0-1.003-1.184 61.09 61.09 0 0 0-2.772-.815C9.77.749 8.663.5 8 .5zm2.854 6.354a.5.5 0 0 0-.708-.708L7.5 8.793 6.354 7.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z" />
+                            </svg>
+                        </div>
+                        <p style="font-size:15px" class="mb-0 font-weight-light text-center"><b
+                            class="mr-1">@TempData["Fixxer"]</b></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
     <div class="container-xl px-4 mt-4">
         <!-- Account page navigation-->
         <div class="row">
@@ -42,14 +63,14 @@
                         }))
                         {
                             <form>
-                                <div class="mb-3">
+                            <div class="mb-3">
                                     <!-- Form Group (first name)-->
                                 <label class="small mb-1" for="uploadFile">Ảnh đại diện</label>
                                     <input type="file" id="uploadFile" name="uploadFile">
                                     <span class="text-danger field-validation-valid" data-valmsg-for="uploadFile"
                                     data-valmsg-replace="true"></span>
                                 </div>
-                                <div class="mb-3">
+                            <div class="mb-3">
                                     <!-- Form Group (first name)-->
                                 <label class="small mb-1" for="Password">Mật khẩu</label>
                                     @Html.TextBoxFor(Model => Model.Password, new { @class = "form-control", @id =
@@ -67,11 +88,22 @@
                                     @Html.TextBoxFor(Model => Model.Email, new { @class = "form-control", @id =
                                 "Email", @type = "email"})
                                 </div>
+                            <div class="mb-3">
+                                    <label class="small mb-1" for="Address">Địa chỉ</label>
+                                    @Html.TextBoxFor(Model => Model.Address, new { @class = "form-control", @id =
+                                "Address"})
+                                </div>
+                            <div class="mb-3">
+                                    <label class="small mb-1" for="Phone">Số điện thoại</label>
+                                    @Html.TextBoxFor(Model => Model.Phone, new { @class = "form-control", @id =
+                                "Phone"})
+                                </div>
                                 <!-- Form Row-->
                                 <!-- Save changes button-->
                             <input type="submit" class="btn btn-primary" value="Lưu" />
-                                <a class="btn btn-secondary" href="javascript:javascript:history.go(-1)">Hủy</a>
+                                <a class="btn btn-secondary" href="@Url.Action("UserPanel", "Admin", new { id = Model.UserId})">Hủy</a>
                             </form>
+
                         }
                     </div>
                 </div>

@@ -134,6 +134,16 @@
                                     @Html.TextBoxFor(Model => Model.Email, new { @class = "form-control", @id =
                                 "Email", @type = "email"})
                                 </div>
+                            <div class="mb-3">
+                                    <label class="small mb-1" for="Address">Địa chỉ</label>
+                                    @Html.TextBoxFor(Model => Model.Address, new { @class = "form-control", @id =
+                                "Address"})
+                                </div>
+                            <div class="mb-3">
+                                    <label class="small mb-1" for="Phone">Số điện thoại</label>
+                                    @Html.TextBoxFor(Model => Model.Phone, new { @class = "form-control", @id =
+                                "Phone"})
+                                </div>
                                 <!-- Save changes button-->
                                     <input type="submit" class="btn btn-primary" value="Lưu" />
                                     <a class="btn btn-secondary" asp-area="" asp-action="AdminPanel"

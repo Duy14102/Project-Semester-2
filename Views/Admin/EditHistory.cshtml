@@ -24,6 +24,9 @@
                 <!-- Profile picture card-->
                 <div class="card mb-4 mb-xl-0">
                     <div class="card-header">Id đơn hàng : <b>@Model.HistoryOrderId</b></div>
+                    <div class="card-header">Địa chỉ : <b>@Model.HistoryAddress</b></div>
+                    <div class="card-header">Số điện thoại : <b>@Model.HistoryPhone</b></div>
+                    <div class="card-header">Email : <b>@Model.HistoryEmail</b></div>
                 </div>
             </div>
             <div class="col-xl-8">
@@ -79,9 +82,19 @@
                                     <!-- Save changes button-->
                                     @foreach (var next in orders)
                                     {
+                                        var objty = "Hà Nội";
                                         @if (next.OrderHistoryID == Model.HistoryOrderId)
                                         {
-                                            var datex = next.OrderHistoryDate.AddDays(7);
+                                            var datex = next.OrderHistoryDate;
+                                            @if (Model.HistoryAddress.Contains(objty))
+                                            {
+                                                datex = next.OrderHistoryDate.AddMinutes(45);
+                                            }
+                                            else
+                                            {
+                                                datex = next.OrderHistoryDate.AddMinutes(20).AddDays(3);
+                                            }
+                                            var balder = DateTime.Now;
                                             @if (next.OrderHistoryStatus == 1)
                                             {
                                                 <input type="submit" class="btn btn-success" value="Xử lí đơn hàng" />
@@ -95,10 +108,20 @@
                                                         <a class="btn btn-secondary" asp-area="" asp-action="AdminPanel"
                                         asp-controller="Admin">Quay lại</a>
                                                     </div>
-                                                    <div style="align-self: center;">
-                                                        <p><i class="fa fa-check yippsi"></i> Đơn hàng đã được xử lý</p>
-                                                        <p class="text-muted">Thời gian giao dự kiến @datex</p>
-                                                    </div>
+                                                    @if (balder < datex)
+                                                    {
+                                                        <div style="align-self: center;">
+                                                            <p><i class="fa fa-check yippsi"></i> Đơn hàng đã được xử lý</p>
+                                                            <p class="text-muted">Thời gian giao dự kiến @datex.Day/@datex.Month/@datex.Year -
+                                                                @datex.Hour:@datex.Minute:@datex.Second</p>
+                                                        </div>
+                                                    }
+                                                    else if (balder >= datex)
+                                                    {
+                                                        <div style="align-self: center;">
+                                                            <p><i class="fa fa-check yippsi"></i> Đơn hàng giao thành công</p>
+                                                        </div>
+                                                    }
                                                 </div>
                                             }
                                         }

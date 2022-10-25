@@ -61,12 +61,28 @@ namespace FirstAspNetApp.Models
                     .HasMaxLength(500)
                     .HasColumnName("history_name");
 
+                entity.Property(e => e.HistoryFullname)
+                .HasMaxLength(200)
+                .HasColumnName("history_fullname");
+
+                entity.Property(e => e.HistoryAddress)
+                .HasMaxLength(200)
+                .HasColumnName("history_address");
+
+                entity.Property(e => e.HistoryEmail)
+                .HasMaxLength(200)
+                .HasColumnName("history_email");
+
                 entity.Property(e => e.HistoryPrice)
                     .HasPrecision(20, 2)
                     .HasColumnName("history_price")
                     .HasDefaultValueSql("'0.00'");
 
                 entity.Property(e => e.HistoryQuantity).HasColumnName("history_quantity").HasDefaultValueSql("'1.00");
+
+                entity.Property(e => e.HistoryPhone)
+                .HasMaxLength(200)
+                .HasColumnName("history_phone");
 
                 entity.Property(e => e.HistoryOrderId).HasColumnName("history_orderid");
 
@@ -91,7 +107,7 @@ namespace FirstAspNetApp.Models
                     .HasMaxLength(500)
                     .HasColumnName("orderh_user");
 
-                entity.Property(e => e.OrderHistoryStatus).HasColumnName("orderh_status").HasDefaultValueSql("'1.00'");;
+                entity.Property(e => e.OrderHistoryStatus).HasColumnName("orderh_status").HasDefaultValueSql("'1.00'"); ;
             });
 
             modelBuilder.Entity<Announ>(entity =>
@@ -110,6 +126,10 @@ namespace FirstAspNetApp.Models
             modelBuilder.Entity<User>(entity =>
             {
                 entity.Property(e => e.UserId).HasColumnName("user_id");
+                
+                entity.Property(e => e.Phone)
+                    .HasMaxLength(200)
+                    .HasColumnName("user_phone");
 
                 entity.Property(e => e.UserName)
                     .HasMaxLength(500)
@@ -126,6 +146,10 @@ namespace FirstAspNetApp.Models
                 entity.Property(e => e.Email)
                     .HasMaxLength(500)
                     .HasColumnName("user_email");
+
+                entity.Property(e => e.Address)
+                .HasMaxLength(500)
+                .HasColumnName("user_address");
 
                 entity.Property(e => e.Role).HasColumnName("user_role").HasDefaultValue(2);
 

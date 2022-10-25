@@ -27,7 +27,7 @@ public class AdminController : Controller
         {
             if (x == 1)
             {
-                ViewData["Users"] = await _context.Users.OrderBy(i => i.UserId).Where(a => a.UserId != y).ToListAsync();
+                ViewData["Users"] = await _context.Users.OrderBy(i => i.UserId).ToListAsync();
                 ViewData["Items"] = await _context.Items.OrderBy(u => u.ItemId).ToListAsync();
                 ViewData["Announs"] = await _context.Announs.OrderBy(a => a.AnnounId).ToListAsync();
                 ViewData["OHistory"] = await _context.OrderHistories.OrderBy(a => a.OrderHistoryStatus).ToListAsync();
@@ -78,6 +78,7 @@ public class AdminController : Controller
             {
                 curse.OrderHistoryStatus = updatethat;
                 await _context.SaveChangesAsync();
+                TempData["holdmybeer"] = "Xử lý đơn hàng thành công";
                 return RedirectToAction("AdminPanel");
             }
         }
@@ -107,6 +108,8 @@ public class AdminController : Controller
                         data.Password = user.Password;
                         data.Fullname = user.Fullname;
                         data.Email = user.Email;
+                        data.Address = user.Address;
+                        data.Phone = user.Phone;
                         await _context.SaveChangesAsync();
                         using (var fileSrteam = new FileStream(filePath, FileMode.Create))
                         {
@@ -170,6 +173,7 @@ public class AdminController : Controller
     public async Task<IActionResult> EditUserPanel(int id, User user, IFormFile uploadFile)
     {
         var data = await _context.Users.FirstOrDefaultAsync(i => i.UserId == id);
+        var overkit = _context.Users.Find(id);
         if (data != null)
         {
             if (uploadFile != null && uploadFile.Length > 0)
@@ -180,13 +184,16 @@ public class AdminController : Controller
                 data.Password = user.Password;
                 data.Fullname = user.Fullname;
                 data.Email = user.Email;
+                data.Address = user.Address;
+                data.Phone = user.Phone;
                 await _context.SaveChangesAsync();
+                TempData["Fixxer"] = "Cập nhật thành công";
                 using (var fileSrteam = new FileStream(filePath, FileMode.Create))
                 {
                     await uploadFile.CopyToAsync(fileSrteam);
                 }
             }
-            return RedirectToAction("Index", "Home", new { area = "" });
+            return View("EditUserPanel", overkit);
         }
         return View(data);
     }
@@ -203,6 +210,8 @@ public class AdminController : Controller
                 //add session
                 session.SetString("Fullname", data.First().Fullname);
                 session.SetString("Email", data.First().Email);
+                session.SetString("Address", data.First().Address);
+                session.SetString("Phone", data.First().Phone);
                 session.SetInt32("UserId", data.First().UserId);
                 session.SetInt32("Role", data.First().Role);
                 if (data.First().Role == 1)
@@ -309,7 +318,7 @@ public class AdminController : Controller
     }
     [HttpPost]
     /*   Create New User    */
-    public async Task<IActionResult> EditPost([Bind("UserName, Password, Fullname, Email")] User value, IFormFile uploadFile)
+    public async Task<IActionResult> EditPost([Bind("UserName, Password, Fullname, Email, Address, Phone")] User value, IFormFile uploadFile)
     {
         try
         {
@@ -393,20 +402,28 @@ public class AdminController : Controller
     {
         var dood = _context.Users.FirstOrDefault(a => a.Email == _user.Email);
         var check = _context.Users.FirstOrDefault(s => s.UserName == _user.UserName);
+        var ffdi = _context.Users.FirstOrDefault(q => q.Phone == _user.Phone);
         if (check == null)
         {
             if (dood == null)
             {
-                if (_user.Password == _user.ConfirmPassword)
+                if (ffdi == null)
                 {
-                    _context.Users.Add(_user);
-                    _context.SaveChanges();
-                    TempData["registersuccess"] = "Tạo tài khoản thành công";
-                    return RedirectToAction("Login");
+                    if (_user.Password == _user.ConfirmPassword)
+                    {
+                        _context.Users.Add(_user);
+                        _context.SaveChanges();
+                        TempData["registersuccess"] = "Tạo tài khoản thành công";
+                        return RedirectToAction("Login");
+                    }
+                    else
+                    {
+                        ViewBag.errorpassword = "Mật khẩu không trùng khớp";
+                    }
                 }
                 else
                 {
-                    ViewBag.errorpassword = "Mật khẩu không trùng khớp";
+                    TempData["errorphoneregis"] = "Số điện thoại đã tồn tại";
                 }
             }
             else

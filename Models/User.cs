@@ -20,6 +20,9 @@ namespace FirstAspNetApp.Models
         [Required]
         public string Email { get; set; } = null!;
         [Required]
+        public string Address { set; get; } = null!;
+        [Required]
+        public string Phone { set; get; } = null!;
         [Range(1, 2)]
         public int Role { get; set; }
         [NotMapped]

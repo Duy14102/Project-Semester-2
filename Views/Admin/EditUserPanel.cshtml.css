@@ -21,6 +21,12 @@ body {
     box-shadow: 0 0.15rem 1.75rem 0 rgb(33 40 50 / 15%);
 }
 
+#cartpopup2 {
+    position: absolute;
+    width: 100%;
+    right: -84%;
+}
+
 .card .card-header {
     font-weight: 500;
 }
@@ -71,4 +77,10 @@ body {
     padding-right: 0;
     margin-left: 1rem;
     margin-right: 1rem;
+}
+
+@media (max-width:575px) {
+    #cartpopup2 {
+        right: 0;
+    }
 }

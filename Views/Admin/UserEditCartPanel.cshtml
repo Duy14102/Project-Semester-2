@@ -79,7 +79,8 @@
                                 {
                                     @if (next.OrderHistoryID == Model.HistoryOrderId)
                                     {
-                                        var datex = next.OrderHistoryDate.AddDays(7);
+                                        var datex = next.OrderHistoryDate.AddMinutes(45);
+                                        var a = DateTime.Now;
                                         @if (next.OrderHistoryStatus == 1)
                                         {
                                             <div class="d-flex justify-content-between">
@@ -99,10 +100,20 @@
                                                     <a class="btn btn-secondary" asp-area="" asp-action="Index"
                                         asp-controller="Home">Quay lại</a>
                                                 </div>
-                                                <div style="align-self: center;">
-                                                    <p><i class="fa fa-check yippsi"></i> Đơn hàng đã được xử lý</p>
-                                                    <p class="text-muted">Thời gian giao dự kiến @datex</p>
-                                                </div>
+                                                @if (a < datex)
+                                                {
+                                                    <div style="align-self: center;">
+                                                        <p><i class="fa fa-check yippsi"></i> Đơn hàng đã được xử lý</p>
+                                                        <p class="text-muted">Thời gian giao dự kiến @datex.Day/@datex.Month/@datex.Year -
+                                                            @datex.Hour:@datex.Minute:@datex.Second</p>
+                                                    </div>
+                                                }
+                                                else if (a >= datex)
+                                                {
+                                                    <div style="align-self: center;">
+                                                        <p><i class="fa fa-check yippsi"></i> Giao thành công</p>
+                                                    </div>
+                                                }
                                             </div>
                                         }
                                     }

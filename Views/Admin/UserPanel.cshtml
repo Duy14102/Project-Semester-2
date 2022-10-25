@@ -22,8 +22,8 @@
                     <div class="card-header">Id tài khoản : <b>@Html.DisplayFor(Model => Model.UserId)</b></div>
                     <div class="card-body text-center">
                         <!-- Profile picture image-->
-                        <img class="img-account-profile rounded-circle mb-2"
-                            src="@Url.Content(@Model.Image)" alt="" width="30%">
+                        <img class="img-account-profile rounded-circle mb-2" src="@Url.Content(@Model.Image)" alt=""
+                            width="30%">
                         <!-- Profile picture help block-->
                         <div class="small font-italic text-muted mb-4">@Html.DisplayFor(Model => Model.UserName)
                         </div>
@@ -49,6 +49,12 @@
                             <!-- Form Group (email address)-->
                             <div class="mb-3">
                                 Email : @Html.DisplayFor(m => m.Email, new { @class = "form-control"})
+                            </div>
+                            <div class="mb-3">
+                                Địa chỉ : @Html.DisplayFor(m => m.Address, new { @class = "form-control"})
+                            </div>
+                            <div class="mb-3">
+                                Số điện thoại : @Html.DisplayFor(m => m.Phone, new { @class = "form-control"})
                             </div>
                             <!-- Form Row-->
                             <div class="mb-3">

@@ -20,6 +20,27 @@
     text-align: center;
 }
 
+.whatelse[b-gl5o3kad0i] {
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.whatif[b-gl5o3kad0i] {
+    max-width: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.whatever[b-gl5o3kad0i] {
+    max-width: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 .yippsi[b-gl5o3kad0i] {
     border: 1px solid white;
     background-color: #5cb85c;
@@ -612,6 +633,12 @@ body[b-fm8gc1yqz1] {
     box-shadow: 0 0.15rem 1.75rem 0 rgb(33 40 50 / 15%);
 }
 
+#cartpopup2[b-fm8gc1yqz1] {
+    position: absolute;
+    width: 100%;
+    right: -84%;
+}
+
 .card .card-header[b-fm8gc1yqz1] {
     font-weight: 500;
 }
@@ -662,6 +689,12 @@ body[b-fm8gc1yqz1] {
     padding-right: 0;
     margin-left: 1rem;
     margin-right: 1rem;
+}
+
+@media (max-width:575px) {
+    #cartpopup2[b-fm8gc1yqz1] {
+        right: 0;
+    }
 }
 /* _content/FirstAspNetApp/Views/Admin/Login.cshtml.rz.scp.css */
 *[b-5w4vkayr2p] {
@@ -931,10 +964,11 @@ body[b-1iifa5ko7t] {
     width: 100%;
     margin: auto;
     max-width: 525px;
-    min-height: 730px;
+    min-height: 888px;
     position: relative;
     background: url(https://anh.eva.vn/upload/3-2017/images/2017-09-02/mam-com-hinh-chu-s-xuat-hien-dung-dot-quoc-khanh-29-khien-dan-mang-thich-thu-mam-com-gia-dinh-hinh-chu-s-2-1504368875-width600height800.jpg) no-repeat center;
     box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
+    background-size: cover;
 }
 
 .login-snip[b-1iifa5ko7t] {
@@ -3846,7 +3880,6 @@ span:nth-child(12)[b-7w3efva4nl] {
 .Holder[b-gq2o2d74b1] {
     width: 18.1%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
@@ -4123,9 +4156,12 @@ button.accept-policy[b-o0sea61oc0] {
 }
 
 .animUl li[b-o0sea61oc0] {
-  display: inline-block;
   position: relative;
   transition: all 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.animUl li .LoginRespon[b-o0sea61oc0] {
+  display: none;
 }
 
 .animUl li[b-o0sea61oc0]:after {
@@ -4229,6 +4265,10 @@ button[b-o0sea61oc0] {
   display: none;
 }
 
+#OverRespon[b-o0sea61oc0] {
+  display: none;
+}
+
 .ThisCart[b-o0sea61oc0] {
   display: none;
 }
@@ -4243,13 +4283,17 @@ button[b-o0sea61oc0] {
   width: 200px;
 }
 
-@media only screen and (max-width: 575px) {
+@media (max-width: 575px) {
   .ThisImg[b-o0sea61oc0] {
     width: 150px;
   }
 
   .search[b-o0sea61oc0] {
     display: none;
+  }
+
+  .animUl li .LoginRespon[b-o0sea61oc0] {
+    display: block;
   }
 
   .MainRespon[b-o0sea61oc0] {
@@ -4261,6 +4305,10 @@ button[b-o0sea61oc0] {
   }
 
   .LoginRespon[b-o0sea61oc0] {
+    display: block;
+  }
+
+  #OverRespon[b-o0sea61oc0] {
     display: block;
   }
 
@@ -4291,8 +4339,8 @@ button[b-o0sea61oc0] {
     background-color: lightgray;
   }
 
-  .animUl[b-o0sea61oc0]{
-    align-items:flex-start;
+  .animUl[b-o0sea61oc0] {
+    align-items: flex-start;
   }
 }
 

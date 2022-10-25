@@ -10,6 +10,12 @@ namespace FirstAspNetApp.Models
         public int HistoryQuantity { set; get; }
         public decimal HistoryPrice { set; get; }
         public int HistoryOrderId { set; get; }
+
+        public string HistoryFullname { set; get; } = null!;
+
+        public string HistoryAddress { set; get; } = null!;
+        public string HistoryEmail { set; get; } = null!;
+        public string HistoryPhone { set; get; } = null!;
         public virtual OrderHistory OrderHistory { get; set; } = null!;
     }
 }

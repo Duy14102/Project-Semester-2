@@ -19,6 +19,27 @@
     text-align: center;
 }
 
+.whatelse[b-gl5o3kad0i] {
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.whatif[b-gl5o3kad0i] {
+    max-width: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.whatever[b-gl5o3kad0i] {
+    max-width: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 .yippsi[b-gl5o3kad0i] {
     border: 1px solid white;
     background-color: #5cb85c;

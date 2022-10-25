@@ -53,6 +53,9 @@
                             <div class="mb-3">
                                     Email : @Html.DisplayFor(m => m.Email, new { @class = "form-control"})
                                 </div>
+                            <div class="mb-3">
+                                    Địa chỉ : @Html.DisplayFor(m => m.Address, new { @class = "form-control"})
+                                </div>
                                 <!-- Form Row-->
                             <div class="mb-3">
                                     Role : @Html.DisplayFor(m => m.Role, new { @class = "form-control"})
@@ -83,6 +86,7 @@
                                 <a class="btn btn-secondary" asp-area="" asp-action="AdminPanel" asp-controller="Admin">Quay
                                     lại</a>
                             </form>
+
                         }
                     </div>
                 </div>

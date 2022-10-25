@@ -21,6 +21,10 @@ select * from orderhistories;
 
 create table histories(
 	history_id int auto_increment primary key,
+    history_fullname varchar(200),
+    history_address varchar(200),
+    history_email varchar(200),
+    history_phone varchar(200),
     history_name varchar(500),
     history_quantity int default 1,
     history_orderid int,
@@ -35,10 +39,14 @@ create table Users(
     user_password varchar(500) not null,
     user_fullname varchar(500),
     user_email varchar(500),
+    user_address varchar(500),
+    user_phone varchar(200),
     user_date datetime default now() not null,
     user_image varchar(500 ) default '~/image/DefaultFeedback.jpg',
     user_role int default 2
 );
+
+select * from Users;
 
 create table items(
 	item_id int auto_increment primary key,
@@ -126,10 +134,10 @@ select * from Customers;
 
 select * from Announs;
 
-insert into Users(user_name, user_password, user_fullname, user_email, user_role) values
-('duy1234', 'duy1234', 'Duy', 'vtca@vtc.edu.vn', 1),
-('dang1234', 'dang1234', 'Đăng', 'vtca@vtc.edu.vn', 1),
-('user1234', 'user1234', 'User', 'user@vtc.edu.vn', '2');
+insert into Users(user_name, user_password, user_fullname, user_email, user_role, user_address, user_phone) values
+('duy1234', 'duy1234', 'Duy', 'vtca@vtc.edu.vn', 1, 'Hà Nội', '1234567890'),
+('dang1234', 'dang1234', 'Đăng', 'vtca@vtc.edu.vn', 1, 'Bình Dương', '0987654321'),
+('user1234', 'user1234', 'User', 'user@vtc.edu.vn', '2', 'Không biết', '111');
 select * from Users;
 select MD5('vtca1234');
 update Users set user_fullname = 'duy', user_email = 'duy@gmail.com', user_role = '1' where user_id = 1;
