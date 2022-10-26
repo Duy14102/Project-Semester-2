@@ -10,29 +10,6 @@ create table Customers(
     customer_address varchar(200)
 );
 
-create table orderhistories(
-	orderh_id int auto_increment primary key,
-    orderh_date datetime default now() not null,
-    orderh_user varchar(500),
-    orderh_status int default 1
-);
-
-select * from orderhistories;
-
-create table histories(
-	history_id int auto_increment primary key,
-    history_fullname varchar(200),
-    history_address varchar(200),
-    history_email varchar(200),
-    history_phone varchar(200),
-    history_name varchar(500),
-    history_quantity int default 1,
-    history_orderid int,
-    history_price decimal(20,0) default 0,
-    constraint fk_histories_orderhistories foreign key(history_orderid) references orderhistories(orderh_id)
-);
-select * from histories;
-
 create table Users(
 	user_id int auto_increment primary key,
     user_name varchar(500) not null,
@@ -48,6 +25,32 @@ create table Users(
 
 select * from Users;
 
+create table orderhistories(
+	orderh_id int auto_increment primary key,
+    orderh_date datetime default now() not null,
+    orderh_user varchar(500),
+    orderh_nothing int,
+    orderh_status int default 1,
+     constraint fk_orderhistories_Users foreign key(orderh_nothing) references Users(user_id)
+);
+
+select * from orderhistories;
+
+
+create table histories(
+	history_id int auto_increment primary key,
+    history_fullname varchar(200),
+    history_address varchar(200),
+    history_email varchar(200),
+    history_phone varchar(200),
+    history_name varchar(500),
+    history_quantity int default 1,
+    history_orderid int,
+    history_price decimal(20,0) default 0,
+    constraint fk_histories_orderhistories foreign key(history_orderid) references orderhistories(orderh_id)
+);
+select * from histories;
+
 create table items(
 	item_id int auto_increment primary key,
     item_name varchar(200) not null,
@@ -55,8 +58,12 @@ create table items(
     amount int not null default 0,
     category varchar(500),
     item_story varchar(500),
-    item_status tinyint not null, 
-    item_description varchar(500)
+    item_status tinyint not null,
+    item_nothing int,
+    historiitem int,
+    item_description varchar(500),
+    constraint fk_items_Users foreign key(item_nothing) references Users(user_id),
+    constraint fk_items_histories foreign key(historiitem) references histories(history_id)
 );
 
 create table Announs(
@@ -87,7 +94,9 @@ create table Feedbacks(
 	feedback_name varchar(500),
     feedback_story varchar(500),
     feedback_link varchar(500) default '~/image/DefaultFeedback.jpg',
-    feedback_date datetime default now() not null
+    feedback_date datetime default now() not null,
+    feedback_nothing int,
+    constraint fk_Feedbacks_Users foreign key(feedback_nothing) references Users(user_id)
 );
 
 SELECT DATE_FORMAT(feedback_date, 'Ngày %d Tháng %m Năm %Y') FROM Feedbacks;

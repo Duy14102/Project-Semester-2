@@ -36,7 +36,7 @@
                         Chi tiết đơn hàng
                     </div>
                     <div class="card-body">
-                        @using (Html.BeginForm("EditHistory", "Admin", FormMethod.Post))
+                        @using (Html.BeginForm("CancelOrder", "Admin", FormMethod.Post))
                         {
                             <form>
                                 <!-- Form Group (Avatar)-->
@@ -97,9 +97,9 @@
                                             var balder = DateTime.Now;
                                             @if (next.OrderHistoryStatus == 1)
                                             {
-                                                <input type="submit" class="btn btn-success" value="Xử lí đơn hàng" />
-                                                <a class="btn btn-secondary" asp-area="" asp-action="AdminPanel"
-                                asp-controller="Admin">Hủy</a>
+                                                <input type="submit" class="btn btn-danger" value="Hủy đơn" />
+                                                <a class="btn btn-secondary" asp-area="" asp-action="UserPanelCart"
+                                asp-controller="Admin">Quay lại</a>
                                             }
                                             else if (next.OrderHistoryStatus == 2)
                                             {
@@ -123,17 +123,15 @@
                                                         </div>
                                                     }
                                                 </div>
-                                            }
-                                            else if (next.OrderHistoryStatus == 3)
-                                            {
+                                            }else if(next.OrderHistoryStatus == 3){
                                                 <div class="d-flex justify-content-between">
                                                     <div style="align-self: flex-start;">
                                                         <a class="btn btn-secondary" asp-area="" asp-action="AdminPanel"
                                         asp-controller="Admin">Quay lại</a>
                                                     </div>
-                                                    <div style="align-self: center;">
-                                                        <p><i class="fa fa-circle-xmark text-danger"></i> Đơn hàng đã bị hủy</p>
-                                                    </div>
+                                                        <div style="align-self: center;">
+                                                            <p><i class="fa fa-circle-xmark text-danger"></i> Đơn hàng đã bị hủy</p>
+                                                        </div>
                                                 </div>
                                             }
                                         }

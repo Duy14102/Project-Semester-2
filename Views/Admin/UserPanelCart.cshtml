@@ -1,3 +1,4 @@
+@model OrderHistory
 @{
     var format = System.Globalization.CultureInfo.GetCultureInfo("vi-VN");
     var context = Context.Session;
@@ -13,42 +14,86 @@
 </head>
 
 <body class="bg-light">
-        <!-- Save changes button-->
-        <table class="table table-bordered table-striped">
-            <tr>
-                <th>Id</th>
-                <th>Khách hàng</th>
-                <th>Thời gian đơn hàng</th>
-                <th>Trạng thái</th>
-                <th>&nbsp;</th>
-            </tr>
-            @if (viewitnow is List<OrderHistory>)
+    <!-- Save changes button-->
+    @if (viewitnow is List<OrderHistory>)
     {
         List<OrderHistory> orders = (List<OrderHistory>)viewitnow;
-        
-            @foreach (var next in orders)
-            {
-                if(next.OrderHistoryUser == context.GetString("Fullname")){
-                string orderstatus = "";
+        if (!orders.Any())
+        {
+            <h1>
+                <span>Hiện</span>
+                <span>chưa</span>
+                <span>có</span>
+                <span>đơn</span>
+                <span>hàng</span>
+                <span>nào</span>
+                <span>hết!</span><br>
+                <span>Về</span>
+                <span>trang</span>
+                <span>chủ</span>
+                <span>order</span>
+                <span>chủ</span>
+                <span>nhé.</span>
+            </h1>
+            <div class="coverThis">
+                <a asp-area="" asp-controller="Home" asp-action="Index">
+                    <p class="BackToHome">Trang Chủ</p>
+                </a>
+            </div>
+        }
+        else
+        {
+            <h1 align="center">Đơn hàng</h1>
+            <table class="table table-bordered table-striped">
                 <tr>
-                    <td>@Html.DisplayFor(modelOrderHistory => next.OrderHistoryID)</td>
-                    <td>@Html.DisplayFor(modelOrderHistory => next.OrderHistoryUser)</td>
-                    <td>@Html.DisplayFor(modelOrderHistory => next.OrderHistoryDate)</td>
-                    @if (next.OrderHistoryStatus == 1)
-                    {
-                        orderstatus = "Đang chờ xử lý";
-                    }
-                    else if (next.OrderHistoryStatus == 2)
-                    {
-                        orderstatus = "Đã xử lý";
-                    }
-                    <td>@orderstatus</td>
-                    <td><a type="button" class="btn btn-primary"
-                    href="@Url.Action("UserEditCartPanel", "Admin", new { id = next.OrderHistoryID, status = next.OrderHistoryStatus })">Chi
-                            Tiết</a></td>
+                    <th>Id</th>
+                    <th>Khách hàng</th>
+                    <th>Thời gian đơn hàng</th>
+                    <th>Trạng thái</th>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
                 </tr>
+                @foreach (var next in orders)
+                {
+                    if (next.OrderHistoryUser == context.GetString("Fullname"))
+                    {
+                        string orderstatus = "";
+                        <tr>
+                            <td>@Html.DisplayFor(modelOrderHistory => next.OrderHistoryID)</td>
+                            <td>@Html.DisplayFor(modelOrderHistory => next.OrderHistoryUser, new{name = "agree"})</td>
+                            <span class="text-danger field-validation-valid" data-valmsg-for="agree" data-valmsg-replace="true"></span>
+                            <td>@Html.DisplayFor(modelOrderHistory => next.OrderHistoryDate)</td>
+                            @if (next.OrderHistoryStatus == 1)
+                            {
+                                orderstatus = "Chờ xác nhận";
+                            }
+                            else if (next.OrderHistoryStatus == 2)
+                            {
+                                orderstatus = "Đã xử lý";
+                            }
+                            else if (next.OrderHistoryStatus == 3)
+                            {
+                                orderstatus = "Đã bị hủy";
+                            }
+                            <td>@orderstatus</td>
+                            @if (next.OrderHistoryStatus == 1)
+                            {
+                                <td class="text-center"><a type="button" class="btn btn-primary"
+                    href="@Url.Action("UserEditCartPanel", "Admin", new { id = next.OrderHistoryID, status = next.OrderHistoryStatus })">Chi
+                                        Tiết</a></td>
+                                <td align="center"><a type="button" class="btn btn-danger"
+                    href="@Url.Action("CancelOrder", "Admin", new { id = next.OrderHistoryID})">Hủy đơn</a></td>
+                            }
+                            else
+                            {
+                                <td class="text-center"><a type="button" class="btn btn-primary"
+                    href="@Url.Action("UserEditCartPanel", "Admin", new { id = next.OrderHistoryID, status = next.OrderHistoryStatus })">Chi
+                                        Tiết</a></td>
+                            }
+                        </tr>
+                    }
                 }
-            }
+            </table>
+        }
     }
-        </table>
 </body>

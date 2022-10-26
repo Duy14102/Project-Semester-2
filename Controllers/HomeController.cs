@@ -174,6 +174,7 @@ public class HomeController : Controller
     [Route("/CheckoutDetail", Name = "CheckoutDetail")]
     public IActionResult CheckoutDetail()
     {
+        ViewData["Gotyoubaby"] = _context.Histories.ToList();
         return View(GetCartItems());
     }
 

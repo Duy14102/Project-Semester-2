@@ -246,3 +246,4 @@ F:\Code\VTCA\WD07\Project-Semester-2-main\obj\Debug\net6.0\ref\FirstAspNetApp.dl
 F:\Code\VTCA\WD07\Project-Semester-2-main\obj\Debug\net6.0\scopedcss\Views\Admin\EditHistory.cshtml.rz.scp.css
 F:\Code\VTCA\WD07\Project-Semester-2-main\obj\Debug\net6.0\scopedcss\Views\Admin\UserPanelCart.cshtml.rz.scp.css
 F:\Code\VTCA\WD07\Project-Semester-2-main\obj\Debug\net6.0\scopedcss\Views\Admin\UserEditCartPanel.cshtml.rz.scp.css
+F:\Code\VTCA\WD07\Project-Semester-2-main\obj\Debug\net6.0\scopedcss\Views\Admin\CancelOrder.cshtml.rz.scp.css

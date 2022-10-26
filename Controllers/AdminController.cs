@@ -85,6 +85,40 @@ public class AdminController : Controller
         return View(viewvers);
     }
 
+    [HttpPost]
+    public async Task<IActionResult> CancelOrder(int? id)
+    {
+        var viewvers = await _context.Histories.FirstOrDefaultAsync(i => i.HistoryOrderId == id);
+        var updatethat = 3;
+        if (viewvers != null)
+        {
+            var curse = await _context.OrderHistories.FindAsync(id);
+            if (curse != null)
+            {
+                curse.OrderHistoryStatus = updatethat;
+                await _context.SaveChangesAsync();
+                TempData["holdmybeernow"] = "Xử lý đơn hàng thành công";
+                return RedirectToAction("Login");
+            }
+        }
+        return View(viewvers);
+    }
+
+    [HttpGet]
+    public IActionResult UserPanelCart(string id)
+    {
+        var Orderse = _context.OrderHistories.FirstOrDefault(b => b.OrderHistoryUser == id);
+        ViewData["openitrightnow"] = _context.OrderHistories.ToList();
+        if (Orderse != null)
+        {
+            Orderse.OrderHistoryStatus = 3;
+            _context.SaveChangesAsync();
+            TempData["holdmybeerrightnow"] = "Hủy đơn hàng thành công";
+            return RedirectToAction("Login");
+        }
+        return View("UserPanelCart", Orderse);
+    }
+
     /*   Create New Item    */
     [HttpPost]
     public async Task<IActionResult> EditUser(int id, User user, IFormFile uploadFile)
@@ -519,12 +553,12 @@ public class AdminController : Controller
         ViewData["Prosbro"] = _context.Histories.ToList();
         return View("UserEditCartPanel", history);
     }
-
-    public IActionResult UserPanelCart(string id)
+    public IActionResult CancelOrder(int id)
     {
-        var Orderse = _context.OrderHistories.FirstOrDefault(b => b.OrderHistoryUser == id);
-        ViewData["openitrightnow"] = _context.OrderHistories.ToList();
-        return View("UserPanelCart", Orderse);
+        var history = _context.Histories.FirstOrDefault(a => a.HistoryOrderId == id);
+        ViewData["offerpro"] = _context.OrderHistories.ToList();
+        ViewData["Prosbro"] = _context.Histories.ToList();
+        return View("CancelOrder", history);
     }
     public IActionResult UserPanel(int id)
     {

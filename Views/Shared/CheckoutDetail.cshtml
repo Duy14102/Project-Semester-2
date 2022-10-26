@@ -1,8 +1,7 @@
 @model List<CartItem>
 @{
-
     var format = System.Globalization.CultureInfo.GetCultureInfo("vi-VN");
-
+    var offlinewhat = ViewData["gotyoubaby"];
     var context = Context.Session;
 }
 
@@ -16,9 +15,7 @@
 
 <body class="bg-light">
     @if (Model.Count > 0)
-
     {
-
         decimal? total = 0;
         <div class="row justify-content-center">
             <div class="col-md-8 hh-grayBox">
@@ -47,13 +44,11 @@
                     <div class="card-body">
                         <form asp-route="Checkoutmain" method="post" id="anythingF">
                             @foreach (var onlyyou in Model)
-
                             {
                                 @Html.HiddenFor(modelCartItem => onlyyou.item.ItemName)
                                 @Html.HiddenFor(modelCartItem => onlyyou.item.UnitPrice)
                                 @Html.HiddenFor(modelCartItem => onlyyou.Quantity)
                                 @Html.HiddenFor(modelCartItem => onlyyou.OrderHistory.OrderHistoryID)
-
                             }
                             <!-- 2 column grid layout with text inputs for the first and last names -->
                         <div class="form-outline mb-4">
@@ -107,11 +102,9 @@
                     </div>
                     <div class="card-body">
                         @foreach (var cartitem in Model)
-
                         {
                             var thanhtien = cartitem.Quantity * cartitem.item.UnitPrice;
                             total += thanhtien;
-
                         }
                         <ul class="list-group list-group-flush">
                             <li
@@ -133,11 +126,11 @@
                                 <span><strong>@String.Format(format, "{0:0,0 vnđ}", total )</strong></span>
                             </li>
                         </ul>
-                            <input value="Đặt hàng" type="button" onclick="$('#anythingF').submit();" class="btn btn-lg btn-block btn-success"/>
+                        <input value="Đặt hàng" type="button" onclick="$('#anythingF').submit();"
+                        class="btn btn-lg btn-block btn-success" />
                     </div>
                 </div>
             </div>
         </div>
-
     }
 </body>

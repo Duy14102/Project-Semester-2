@@ -264,10 +264,12 @@
                                     else if (orderHistory.OrderHistoryStatus == 2)
                                     {
                                         orderstatus = "Đã xác nhận và giao cho ĐVVC";
-                                    }
-                                    @if (a >= balder)
-                                    {
-                                        orderstatus = "Giao thành công";
+                                        @if (a >= balder)
+                                        {
+                                            orderstatus = "Giao thành công";
+                                        }
+                                    }else if(orderHistory.OrderHistoryStatus == 3){
+                                        orderstatus = "Đã bị hủy";
                                     }
                                     <td>@orderstatus</td>
                                     <td><a type="button" class="btn btn-primary"

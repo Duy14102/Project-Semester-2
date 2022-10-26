@@ -85,11 +85,11 @@
                                         {
                                             <div class="d-flex justify-content-between">
                                                 <div style="align-self: flex-start;">
-                                                    <a class="btn btn-secondary" asp-area="" asp-action="Index"
-                                        asp-controller="Home">Quay lại</a>
+                                                    <a class="btn btn-secondary" asp-area="" asp-action="UserPanelCart"
+                                        asp-controller="Admin">Quay lại</a>
                                                 </div>
                                                 <div style="align-self: center;">
-                                                    <p><i class="fa fa-circle-xmark text-danger"></i> Đơn hàng đang chờ</p>
+                                                    <p>Đơn hàng đang chờ xác nhận...</p>
                                                 </div>
                                             </div>
                                         }
@@ -97,8 +97,8 @@
                                         {
                                             <div class="d-flex justify-content-between">
                                                 <div style="align-self: flex-start;">
-                                                    <a class="btn btn-secondary" asp-area="" asp-action="Index"
-                                        asp-controller="Home">Quay lại</a>
+                                                    <a class="btn btn-secondary" asp-area="" asp-action="UserPanelCart"
+                                        asp-controller="Admin">Quay lại</a>
                                                 </div>
                                                 @if (a < datex)
                                                 {
@@ -114,6 +114,18 @@
                                                         <p><i class="fa fa-check yippsi"></i> Giao thành công</p>
                                                     </div>
                                                 }
+                                            </div>
+                                        }
+                                        else if (next.OrderHistoryStatus == 3)
+                                        {
+                                            <div class="d-flex justify-content-between">
+                                                <div style="align-self: flex-start;">
+                                                    <a class="btn btn-secondary" asp-area="" asp-action="UserPanelCart"
+                                        asp-controller="Admin">Quay lại</a>
+                                                </div>
+                                                <div style="align-self: center;">
+                                                    <p><i class="fa fa-circle-xmark text-danger"></i>Đơn hàng đã bị hủy</p>
+                                                </div>
                                             </div>
                                         }
                                     }

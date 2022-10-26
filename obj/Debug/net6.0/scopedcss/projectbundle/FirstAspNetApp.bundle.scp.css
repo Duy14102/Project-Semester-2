@@ -252,6 +252,14 @@
 #Category12[b-gl5o3kad0i] {
     pointer-events: none;
 }
+/* _content/FirstAspNetApp/Views/Admin/CancelOrder.cshtml.rz.scp.css */
+.yippsi[b-f97runct0b] {
+    border: 1px solid white;
+    background-color: #5cb85c;
+    color: white;
+    padding: 2px;
+    border-radius: 5rem;
+}
 /* _content/FirstAspNetApp/Views/Admin/DeleteItem.cshtml.rz.scp.css */
 *[b-js6lpldzd0] {
     font-family: 'Montserrat';
@@ -1222,6 +1230,160 @@ a[b-1iifa5ko7t] {
     align-items: center;
 }
 /* _content/FirstAspNetApp/Views/Admin/UserPanelCart.cshtml.rz.scp.css */
+.modal[b-bqxu4z9vso] {
+    top: 35%;
+}
+
+.modal-content[b-bqxu4z9vso] {
+    margin: auto;
+    border-radius: 0.5rem;
+    width: 80%;
+    -webkit-box-shadow: -1px -2px 42px -19px rgba(0, 0, 0, 0.74);
+    -moz-box-shadow: -1px -2px 42px -19px rgba(0, 0, 0, 0.74);
+    box-shadow: -1px -2px 42px -19px rgba(0, 0, 0, 0.74);
+}
+
+.close[b-bqxu4z9vso] {
+    float: right;
+    border: none;
+    outline: none;
+    background: none;
+    color: gray;
+}
+
+.close:hover[b-bqxu4z9vso] {
+    border-radius: 2rem;
+    background: lightgray;
+    transition: 0.1s;
+}
+
+.Heiy[b-bqxu4z9vso] {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+*[b-bqxu4z9vso] {
+    font-family: 'Montserrat';
+    box-sizing: border-box;
+}
+
+h1[b-bqxu4z9vso] {
+    text-align: center;
+    transform: scale(0.94);
+    animation: scale-b-bqxu4z9vso 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+}
+
+@keyframes scale-b-bqxu4z9vso {
+    100% {
+        transform: scale(1);
+    }
+}
+
+span[b-bqxu4z9vso] {
+    display: inline-block;
+    opacity: 0;
+    filter: blur(4px);
+}
+
+span:nth-child(1)[b-bqxu4z9vso] {
+    animation: fade-in-b-bqxu4z9vso 0.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(2)[b-bqxu4z9vso] {
+    animation: fade-in-b-bqxu4z9vso 0.8s 0.2s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(3)[b-bqxu4z9vso] {
+    animation: fade-in-b-bqxu4z9vso 0.8s 0.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(4)[b-bqxu4z9vso] {
+    animation: fade-in-b-bqxu4z9vso 0.8s 0.4s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(5)[b-bqxu4z9vso] {
+    animation: fade-in-b-bqxu4z9vso 0.8s 0.5s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(6)[b-bqxu4z9vso] {
+    animation: fade-in-b-bqxu4z9vso 0.8s 0.6s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(7)[b-bqxu4z9vso] {
+    animation: fade-in-b-bqxu4z9vso 0.8s 0.7s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(8)[b-bqxu4z9vso] {
+    animation: fade-in-b-bqxu4z9vso 0.8s 0.8s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(9)[b-bqxu4z9vso] {
+    animation: fade-in-b-bqxu4z9vso 0.8s 0.9s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(10)[b-bqxu4z9vso] {
+    animation: fade-in-b-bqxu4z9vso 0.8s 1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(11)[b-bqxu4z9vso] {
+    animation: fade-in-b-bqxu4z9vso 0.8s 1.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(12)[b-bqxu4z9vso] {
+    animation: fade-in-b-bqxu4z9vso 0.8s 1.2s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(13)[b-bqxu4z9vso] {
+    animation: fade-in-b-bqxu4z9vso 0.8s 1.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(14)[b-bqxu4z9vso] {
+    animation: fade-in-b-bqxu4z9vso 0.8s 1.4s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+@keyframes fade-in-b-bqxu4z9vso {
+    100% {
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+.BackToHome[b-bqxu4z9vso] {
+    display: inline-block;
+    text-align: center;
+    width: 9%;
+    padding: 3px;
+    border: 2px solid rgb(0, 119, 132);
+    color: rgb(0, 119, 132);
+    font-weight: bold;
+}
+
+.BackToHome:hover[b-bqxu4z9vso] {
+    transition: 0.2s;
+    color: white;
+    background-color: rgb(0, 119, 132);
+}
+
+.coverThis[b-bqxu4z9vso] {
+    text-align: center;
+}
+
+.ThisSpan[b-bqxu4z9vso] {
+    width: 25px;
+    height: 25px;
+    background-color: lightgray;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+@media (max-width:575px) {
+    .BackToHome[b-bqxu4z9vso] {
+        width: 18%;
+    }
+}
 /* _content/FirstAspNetApp/Views/Home/Index.cshtml.rz.scp.css */
 *[b-wltpxrv65e] {
     font-family: 'Montserrat';
@@ -1758,7 +1920,6 @@ span:nth-child(14)[b-1qq99n4679] {
     justify-content: space-between;
     min-width: 220px;
     border: none;
-    font-size: 2.4vmin;
     box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.2);
     border: 1px solid lightgray;
     background-color: white;
@@ -1772,7 +1933,6 @@ span:nth-child(14)[b-1qq99n4679] {
 
 /* Nội dung Dropdown */
 .noidung_dropdown[b-8wfwsrzvcq] {
-    font-size: 2.4vmin;
     /*Ẩn nội dụng các đường dẫn*/
     display: none;
     position: absolute;
@@ -1959,7 +2119,6 @@ span:nth-child(14)[b-1qq99n4679] {
     justify-content: space-between;
     min-width: 220px;
     border: none;
-    font-size: 2.4vmin;
     box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.2);
     border: 1px solid lightgray;
     background-color: white;
@@ -1973,7 +2132,6 @@ span:nth-child(14)[b-1qq99n4679] {
 
 /* Nội dung Dropdown */
 .noidung_dropdown[b-rq1zps0chz] {
-    font-size: 2.4vmin;
     /*Ẩn nội dụng các đường dẫn*/
     display: none;
     position: absolute;
@@ -2160,7 +2318,6 @@ span:nth-child(14)[b-1qq99n4679] {
     justify-content: space-between;
     min-width: 220px;
     border: none;
-    font-size: 2.4vmin;
     box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.2);
     border: 1px solid lightgray;
     background-color: white;
@@ -2174,7 +2331,6 @@ span:nth-child(14)[b-1qq99n4679] {
 
 /* Nội dung Dropdown */
 .noidung_dropdown[b-vp2uhernvc] {
-    font-size: 2.4vmin;
     /*Ẩn nội dụng các đường dẫn*/
     display: none;
     position: absolute;
@@ -2987,7 +3143,6 @@ input[type=number][b-w11e45rlk6]::-webkit-outer-spin-button {
     justify-content: space-between;
     min-width: 220px;
     border: none;
-    font-size: 2.4vmin;
     box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.2);
     border: 1px solid lightgray;
     background-color: white;
@@ -3001,7 +3156,6 @@ input[type=number][b-w11e45rlk6]::-webkit-outer-spin-button {
 
 /* Nội dung Dropdown */
 .noidung_dropdown[b-1gpc6h4yz7] {
-    font-size: 2.4vmin;
     /*Ẩn nội dụng các đường dẫn*/
     display: none;
     position: absolute;
@@ -3185,7 +3339,6 @@ input[type=number][b-w11e45rlk6]::-webkit-outer-spin-button {
     justify-content: space-between;
     min-width: 220px;
     border: none;
-    font-size: 2.4vmin;
     box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.2);
     border: 1px solid lightgray;
     background-color: white;
@@ -3199,7 +3352,6 @@ input[type=number][b-w11e45rlk6]::-webkit-outer-spin-button {
 
 /* Nội dung Dropdown */
 .noidung_dropdown[b-lfppxljbpl] {
-    font-size: 2.4vmin;
     /*Ẩn nội dụng các đường dẫn*/
     display: none;
     position: absolute;
@@ -3406,7 +3558,6 @@ input[type=number][b-w11e45rlk6]::-webkit-outer-spin-button {
     justify-content: space-between;
     min-width: 220px;
     border: none;
-    font-size: 2.4vmin;
     box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.2);
     border: 1px solid lightgray;
     background-color: white;
@@ -3420,7 +3571,6 @@ input[type=number][b-w11e45rlk6]::-webkit-outer-spin-button {
 
 /* Nội dung Dropdown */
 .noidung_dropdown[b-brrxniix0a] {
-    font-size: 2.4vmin;
     /*Ẩn nội dụng các đường dẫn*/
     display: none;
     position: absolute;
