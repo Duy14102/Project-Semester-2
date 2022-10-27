@@ -94,11 +94,10 @@
                             <a href='@Url.Action("ProductDetail", "Product", new { id=item.ItemId })'>
                                 <img src="@Url.Content(@item.ItemDescription)" />
                             </a>
-                            <ul class="d-flex align-items-center justify-content-center list-unstyled icons">
+                            <ul class="d-flex align-items-center justify-content-around list-unstyled icons">
                                 <a class="text-dark" href='@Url.Action("ProductDetail", "Product", new { id=item.ItemId })'>
                                             <li class="icon"><span class="fa-solid fa-info"></span></li>
                                         </a>
-                                <li class="icon mx-3"><span class="far fa-heart"></span></li>
                                 <a class="text-dark" asp-route="addcartProduct" asp-route-ItemId="@item.ItemId">
                                     <li class="icon"><span class="fas fa-shopping-bag"></span></li>
                                 </a>

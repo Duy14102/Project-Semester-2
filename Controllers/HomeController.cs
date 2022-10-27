@@ -115,7 +115,7 @@ public class HomeController : Controller
                 return View("Index");
             }
             var getuser = HttpContext.Session.GetString("Fullname");
-            var forgetit = "(Khách vãng lai)";
+            var forgetit = 3;
             OrderHistory ohi = new OrderHistory();
             History hi;
             if (getuser == null)

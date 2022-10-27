@@ -2377,7 +2377,6 @@ span:nth-child(14)[b-1qq99n4679] {
 
 .heading-section a[b-w11e45rlk6] {
     text-decoration: none;
-    font-size: 2.5vmin;
     padding-top: 10px;
     padding-bottom: 15px;
 }
@@ -4180,7 +4179,6 @@ span:nth-child(12)[b-7w3efva4nl] {
     justify-content: space-between;
     min-width: 220px;
     border: none;
-    font-size: 2.4vmin;
     box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.2);
     border: 1px solid lightgray;
     background-color: white;
@@ -4194,7 +4192,6 @@ span:nth-child(12)[b-7w3efva4nl] {
 
 /* Nội dung Dropdown */
 .noidung_dropdown[b-gq2o2d74b1] {
-    font-size: 2.4vmin;
     /*Ẩn nội dụng các đường dẫn*/
     display: none;
     position: absolute;

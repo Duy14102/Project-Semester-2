@@ -1,9 +1,6 @@
 drop database if exists OrderDB;
-
-create database OrderDB;
-
+Create database if not exists OrderDB;
 use OrderDB;
-
 create table Customers(
 	customer_id int auto_increment primary key,
     customer_name varchar(100) not null,
@@ -99,40 +96,6 @@ create table Feedbacks(
     constraint fk_Feedbacks_Users foreign key(feedback_nothing) references Users(user_id)
 );
 
-SELECT DATE_FORMAT(feedback_date, 'Ngày %d Tháng %m Năm %Y') FROM Feedbacks;
-
-delimiter $$
-create trigger tg_before_insert before insert
-	on Items for each row
-    begin
-		if new.amount < 0 then
-            signal sqlstate '45001' set message_text = 'tg_before_insert: amount must > 0';
-        end if;
-    end $$
-delimiter ;
-
-delimiter $$
-create trigger tg_CheckAmount
-	before update on Items
-	for each row
-	begin
-		if new.amount < 0 then
-            signal sqlstate '45001' set message_text = 'tg_CheckAmount: amount must > 0';
-        end if;
-    end $$
-delimiter ;
-
-delimiter $$
-create procedure sp_createCustomer(IN customerName varchar(100), IN customerAddress varchar(200), OUT customerId int)
-begin
-	insert into Customers(customer_name, customer_address) values (customerName, customerAddress); 
-    select max(customer_id) into customerId from Customers;
-end $$
-delimiter ;
-
-call sp_createCustomer('no name','any where', @cusId);
-select @cusId;
-
 /* INSERT DATA */
 insert into Customers(customer_name, customer_address) values
 	('Nguyen Thi X','Hai Duong'),
@@ -185,8 +148,8 @@ insert into OrderDetails(order_id, item_id, unit_price, quantity) values
 select * from OrderDetails;
 
 /* CREATE & GRANT USER */
-create user if not exists 'vtca'@'localhost' identified by 'vtcacademy';
-grant all on OrderDB.* to 'vtca'@'localhost';
+/*create user if not exists 'vtca'@'localhost' identified by 'vtcacademy';
+grant all on OrderDB.* to 'a8ecd5_orderdb'@'%';*/
 -- grant all on Items to 'vtca'@'localhost';
 -- grant all on Customers to 'vtca'@'localhost';
 -- grant all on Orders to 'vtca'@'localhost';
@@ -202,7 +165,5 @@ select order_id from Orders order by order_id desc limit 1;
 
 select LAST_INSERT_ID();
 select customer_id from Customers order by customer_id desc limit 1;
-
-update Items set amount=10 where item_id=3;
 -- lock table Orders write;
 -- unlock tables;
